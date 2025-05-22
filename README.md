@@ -7,7 +7,7 @@
   <em>
     Data Science & Information Science Student @ University of Illinois Urbana-Champaign (Expected May 2026) <br>
     Minors in Computer Science & Statistics <br>
-    Passionate about the intersection of Computer Vision, Machine Learning, and Generative AI.
+    Driven by the power of Computer Vision, Machine Learning, and Generative AI to solve real-world challenges.
   </em>
 </p>
 
@@ -44,13 +44,24 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ### 📊 My GitHub Stats & Coding Activity
 
 <p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=2" alt="Qiran's Top Languages" />
+  <img width="60%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Edward-H26&theme=radical&hide_border=true" alt="Qiran's GitHub Streak Stats" />
 </p>
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories" alt="GitHub Trophies - Commits, Experience, Repositories" />
 </p>
+
+---
+#### ✨ Highly Customizable Stats with GitHub Metrics (Requires GitHub Action Setup)
+<p align="center">
+  <em>To add highly detailed and customizable metrics like activity graphs, language statistics, and more, consider setting up <a href="https://github.com/lowlighter/metrics" target="_blank">lowlighter/metrics</a> via GitHub Actions.</em>
+</p>
+
+---
 
 ---
 
