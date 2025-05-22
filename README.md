@@ -43,7 +43,8 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ---
 
 <div align="center">
-  <h3 align="center">📊 My GitHub Stats & Coding Activity</h3>
+
+### 📊 My GitHub Stats & Coding Activity
 
   <img style="display: block; margin-left: auto; margin-right: auto;" src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
 
@@ -71,15 +72,21 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
   <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
+  <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" alt="Ruby">
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
+  <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" alt="Canva">
   <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" alt="Microsoft Office">
   <img src="https://img.shields.io/badge/Adobe_Creative_Suite-FF0000?style=for-the-badge&logo=adobecreativesuite&logoColor=white" alt="Adobe Creative Suite">
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
 </p>
 
 **Detailed Proficiency:**
-* **🖥️ Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite.
-* **💻 Professional Working Proficiency:** C#, C, SAS, React, Git.
-* **⌨️ Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO.
+* **🖥️ Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite. [cite: 2]
+* **💻 Professional Working Proficiency:** C#, C, SAS, React, Git. [cite: 2]
+* **⌨️ Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO. [cite: 2]
 
 **Key Areas of Expertise:**
 * 🧠 Machine Learning & Deep Learning
@@ -107,9 +114,9 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 * **Degree:** Bachelor of Science in Data Science & Information Science
 * **Minors:** Computer Science and Statistics
 * **🏅 Honors & Awards:**
-    * UIUC James Scholar
-    * UIUC Dean's List
-* **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher
+    * UIUC James Scholar [cite: 1]
+    * UIUC Dean's List [cite: 1]
+* **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher [cite: 1]
 
 ---
 
@@ -117,27 +124,27 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 **Undergraduate Research Assistant** | <em>Computer Vision and Machine Learning Group - Champaign, IL</em>
 *(05/2025-Current)*
-* Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images.
-* Conducted experiments on real-time perception, 3D reconstruction, and visual-inertial odometry.
-* Aiming to submit to International Conference on Learning Representations (ICLR 2026).
+* Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images. [cite: 4]
+* Conducted experiments on real-time perception, 3D reconstruction, and visual-inertial odometry. [cite: 4]
+* Aiming to submit to International Conference on Learning Representations (ICLR 2026). [cite: 4, 5]
 
 **Data Analyst** | <em>UIUC Student Affairs WRC Department - Champaign, IL</em>
 *(08/2024-12/2024)*
-* Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program.
-* Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
-* Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
+* Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program. [cite: 3, 4]
+* Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs. [cite: 4]
+* Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness. [cite: 4]
 
 **Data Engineer** | <em>CPC Brooklyn Community Center - Brooklyn, NY</em>
 *(06/2023-08/2023)*
-* Analyzed over 4GB workforce management data to identify customer usage patterns and conducted exploratory data analysis.
-* Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
-* Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences.
+* Analyzed over 4GB workforce management data to identify customer usage patterns and conducted exploratory data analysis. [cite: 5]
+* Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance. [cite: 5]
+* Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences. [cite: 5]
 
 **BCI Neuroengineering Researcher** | <em>Wake Forest University Summer Immersion Program - Winston-Salem, NC</em>
 *(05/2021-09/2021)*
-* Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect brain waves and evaluate the specific brainwave bands.
-* Designed and conducted experiments on the delivery of neurostimulation strategies.
-* Created programs for amyotrophic lateral sclerosis to live independently by notifying nursing assistants of aids such as wiping mouths, eating snacks, and flipping newspapers.
+* Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect brain waves and evaluate the specific brainwave bands. [cite: 3]
+* Designed and conducted experiments on the delivery of neurostimulation strategies. [cite: 3]
+* Created programs for amyotrophic lateral sclerosis to live independently by notifying nursing assistants of aids such as wiping mouths, eating snacks, and flipping newspapers. [cite: 3]
 
 ---
 
@@ -145,15 +152,15 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 **Course Assistant** | <em>University of Illinois Urbana-Champaign DISCOVERY DATA SCIENCE CS 107</em>
 *(August 2023 - Present)*
-* Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
-* Created informative and intriguing contents for DISCOVERY's Guides to explain data science concepts through practical applications of Python libraries - [https://discovery.cs.illinois.edu/guides/](https://discovery.cs.illinois.edu/guides/).
-* Developed difficult homework assignments, exam questions, test suites, and autograder scripts, for DISCOVERY's Mastery Platform - [https://mastery.cs.illinois.edu/](https://mastery.cs.illinois.edu/).
+* Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students. [cite: 5]
+* Created informative and intriguing contents for DISCOVERY's Guides to explain data science concepts through practical applications of Python libraries - [https://discovery.cs.illinois.edu/guides/](https://discovery.cs.illinois.edu/guides/). [cite: 5, 6]
+* Developed difficult homework assignments, exam questions, test suites, and autograder scripts, for DISCOVERY's Mastery Platform - [https://mastery.cs.illinois.edu/](https://mastery.cs.illinois.edu/). [cite: 6]
 
 **Student Government** | <em>University of Illinois Urbana-Champaign iSchool Student Representative</em>
 *(September 2022 - September 2023)*
-* Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
-* Facilitated with university and prospective students and parents during campus tours, answering questions, and providing insight.
-* Obtained approval for modifications to existing and new activities from students' feedback.
+* Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines. [cite: 6]
+* Facilitated with university and prospective students and parents during campus tours, answering questions, and providing insight. [cite: 6]
+* Obtained approval for modifications to existing and new activities from students' feedback. [cite: 6]
 
 ---
 
@@ -175,9 +182,9 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ### 🌐 Languages I Speak
 
-* **🇺🇸 English:** Native / Bilingual Proficiency
-* **🇨🇳 Mandarin:** Native / Bilingual Proficiency
-* **🇪🇸 Spanish:** Elementary Proficiency
+* **🇺🇸 English:** Native / Bilingual Proficiency [cite: 2]
+* **🇨🇳 Mandarin:** Native / Bilingual Proficiency [cite: 2]
+* **🇪🇸 Spanish:** Elementary Proficiency [cite: 2]
 
 ---
 
@@ -191,4 +198,13 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <a href="https://www.linkedin.com/in/qiran-hu-ba713b250/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Connect">
   </a>
-  <a href="mailto:qiranhu8
+  <a href="mailto:qiranhu8@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+</p>
+
+---
+
+<p align="center">
+  Thanks for visiting my profile! 👋
+</p>
