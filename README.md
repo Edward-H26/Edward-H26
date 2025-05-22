@@ -39,7 +39,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 * 👯 **Open to collaboration on:** Projects involving computer vision, applied machine learning, data-driven solutions, or anything at the intersection of AI and 3D technology.
 * 💬 **Ask me about:** Data Science methodologies, Python for ML, computer vision fundamentals, my research, or even my favorite anime (as per one of my projects!).
 * 📫 **Let's connect:** Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/qiran-hu-ba713b250/) or [Email](mailto:qiranhu8@gmail.com).
-* ⚡ **Fun Fact:** I enjoy breaking down seemingly complex concepts into easily digestible pieces for both technical and non-technical audiences! (Inspired by your resume's Data Engineer role description)
+* ⚡ **Fun Fact:** I enjoy breaking down seemingly complex concepts into easily digestible pieces for both technical and non-technical audiences!
 
 ---
 
@@ -47,10 +47,10 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Qiran's Top Languages" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=2" alt="Qiran's Top Languages" />
 </p>
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Repositories" alt="GitHub Trophies - Repositories" />
 </p>
 ---
 
@@ -96,32 +96,29 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ### 💼 Professional Experience & Research
 
-**Undergraduate Research Assistant** | Computer Vision and Machine Learning Group, UIUC
-*(May 2025 - Current)*
-* Pioneering improvements in text-to-3D generation pipelines, focusing on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024).
-* Addressing key failure modes and significantly enhancing 3D consistency in generated images.
-* Conducting experiments in real-time perception, 3D reconstruction, and visual-inertial odometry.
+**Undergraduate Research Assistant** | Computer Vision and Machine Learning Group - Champaign, IL
+*(05/2025-Current)*
+* Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images
+* Conducted experiments on real-time perception, 3D reconstruction, and visual-inertial odometry
+* Aiming to submit to International Conference on Learning Representations (ICLR 2026)
 
-**Data Analyst** | UIUC Student Affairs WRC Department
-*(Aug 2024 - Dec 2024)*
-* Performed rigorous statistical analysis on performance metrics and survey responses for ~19,800 students.
-* Implemented a comprehensive data analysis framework, leading to a 6.5% improvement in resource allocation for student success programs.
+**Data Analyst** | UIUC Student Affairs WRC Department - Champaign, IL
+*(08/2024-12/2024)*
+* Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program
+* Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs
+* Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness
 
-**Course Assistant (CS 107: Discovery Data Science)** | University of Illinois Urbana-Champaign
-*(Aug 2023 - Present)*
-* Mentored and provided technical assistance to over 2000 students weekly.
-* Authored engaging content for DISCOVERY's Guides on data science concepts (Python libraries).
-* Developed assignments, exam questions, and autograder scripts for the Mastery Platform.
+**Data Engineer** | CPC Brooklyn Community Center - Brooklyn, NY
+*(06/2023-08/2023)*
+* Analyzed over 4GB workforce management data to identify customer usage patterns and conducted exploratory data analysis
+* Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance
+* Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences
 
-**Data Engineer** | CPC Brooklyn Community Center
-*(Jun 2023 - Aug 2023)*
-* Analyzed 4GB+ of workforce management data, identifying customer usage patterns via exploratory data analysis.
-* Engineered streamlined workflows by deconstructing complex processes into manageable components.
-
-**BCI Neuroengineering Researcher** | Wake Forest University Summer Immersion Program
-*(May 2021 - Sep 2021)*
-* Contributed to Brain-Computer Interface research by developing an Arduino model for brainwave collection and analysis.
-* Designed and executed experiments on neurostimulation strategies.
+**BCI Neuroengineering Researcher** | Wake Forest University Summer Immersion Program - Winston-Salem, NC
+*(05/2021-09/2021)*
+* Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect collect brain waves and evaluate the specific brainwave bands
+* Designed and conducted experiments on the delivery of neurostimulation strategies
+* Created programs for amyotrophic lateral sclerosis to live independently by notifying nursing assistants of aids such as wiping mouths, eating snacks, and flipping newspapers
 
 ---
 
