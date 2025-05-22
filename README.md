@@ -44,13 +44,18 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ### 📊 My GitHub Stats & Coding Activity
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak Stats"/>
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
-</p>
+<div align="center">
+  <table style="border: none; width: auto;">
+    <tr style="border: none;">
+      <td style="border: none; padding: 5px;" valign="top">
+        <img src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
+      </td>
+      <td style="border: none; padding: 5px;" valign="top">
+        <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
