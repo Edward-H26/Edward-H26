@@ -1,13 +1,14 @@
 <p align="center">
-  </p>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmRkeGQ5cTdscjR0cjN0YjZpM3R2MHNzcXFrbXNjeThvbzRkMnRhaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ entusiasmarqiranhu/giphy.gif" width="200px" alt="Animated Welcome Banner"/>
+</p>
 
 <h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
 
 <p align="center">
   <em>
-    Data Science & Information Science Student @ University of Illinois Urbana-Champaign (Expected May 2026) <br>
-    Minors in Computer Science & Statistics <br>
-    Driven by the power of Computer Vision, Machine Learning, and Generative AI to solve real-world challenges.
+    🎓 Data Science & Information Science Student @ University of Illinois Urbana-Champaign (Expected May 2026) <br>
+    🔬 Minors in Computer Science & Statistics <br>
+    💡 Driven by the power of Computer Vision, Machine Learning, and Generative AI to solve real-world challenges.
   </em>
 </p>
 
@@ -34,28 +35,35 @@
 I'm deeply fascinated by the potential of AI to understand and interact with the world visually. My journey in Data Science and Information Science is fueled by a desire to build intelligent systems that can learn, adapt, and generate novel insights from complex data.
 
 * 🎯 **My Mission:** To leverage cutting-edge AI to develop innovative solutions for complex challenges and contribute to advancements in intelligent visual systems.
-* 🔭 **Currently engrossed in research:** Enhancing text-to-3D generation pipelines, tackling challenges in 3D consistency and exploring diffusion models. My work aims for contribution to ICLR 2026.
+* 🔭 **Currently engrossed in research:** Enhancing text-to-3D generation pipelines, tackling challenges in 3D consistency and exploring diffusion models. My work aims for contribution to ICLR 2026. [cite: 4]
 * 🌱 **Always learning & exploring:** Advanced generative modeling, the nuances of 3D geometric representations, real-time perception, and visual-inertial odometry.
-* 👯 **Open to collaboration on:** Projects involving computer vision, applied machine learning, data-driven solutions, or anything at the intersection of AI and 3D technology.
-* ⚡ **Fun Fact:** I enjoy breaking down seemingly complex concepts into easily digestible pieces for both technical and non-technical audiences!
+* 🤝 **Open to collaboration on:** Projects involving computer vision, applied machine learning, data-driven solutions, or anything at the intersection of AI and 3D technology.
+* ⚡ **Fun Fact:** I enjoy breaking down seemingly complex concepts into easily digestible pieces for both technical and non-technical audiences! [cite: 5]
 
 ---
 
 ### 📊 My GitHub Stats & Coding Activity
 
 <p align="center">
-  <img width="60%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
+  <img width="55%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
+  <img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=8&card_width=320" alt="Top Languages" />
 </p>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories" alt="GitHub Trophies - Commits, Experience, Repositories" />
-</p>
+  <a href="https://skyline.github.com/Edward-H26/2024">
+    <img src="https://skyline.github.com/Edward-H26/2024.svg" width="80%" alt="GitHub Skyline 2024" />
+  </a>
+  </p>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
+  </p>
 
 ---
 
 ### 🛠️ My Tech Stack & Skills
 
-<p align="center">
+<p align="center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++">
@@ -69,89 +77,112 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" alt="Django">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
   <img src="https://img.shields.io/badge/Shiny-1E90FF?style=for-the-badge&logo=rstudio&logoColor=white" alt="Shiny for R">
-  <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
   <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
   <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" alt="Microsoft Office">
   <img src="https://img.shields.io/badge/Adobe_Creative_Suite-FF0000?style=for-the-badge&logo=adobecreativesuite&logoColor=white" alt="Adobe Creative Suite">
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
 </p>
 
 **Detailed Proficiency:**
-* **Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite.
-* **Professional Working Proficiency:** C#, C, SAS, React, Git.
-* **Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO.
-* **Key Areas:** Machine Learning, Computer Vision, Generative Models (Diffusion Models), Data Analysis & Visualization, 3D Reconstruction.
+* **🖥️ Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite. [cite: 2]
+* **💻 Professional Working Proficiency:** C#, C, SAS, React, Git. [cite: 2]
+* **⌨️ Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO. [cite: 2]
+
+**Key Areas of Expertise:**
+* 🧠 Machine Learning & Deep Learning
+* 👁️ Computer Vision (3D Reconstruction, Real-time Perception)
+* ✨ Generative Models (Diffusion Models, GANs)
+* 📊 Data Analysis, Visualization & Storytelling
+* 🏗️ Text-to-3D Generation Pipelines
 
 ---
 
 ### 🌱 Tech I'm Excited To Explore Further
 
-* Advanced Generative Modeling Approaches (e.g., GANs, VAEs, advanced Diffusion Models)
-* Sophisticated 3D Geometric Representations for complex scene understanding
-* Real-time Perception and Sensor Fusion
-* Visual-Inertial Odometry and SLAM techniques
-* Building AI systems that learn and adapt with minimal human supervision and limited datasets
+* 🚀 Advanced Generative Modeling Approaches (e.g., GANs, VAEs, advanced Diffusion Models)
+* 🧊 Sophisticated 3D Geometric Representations for complex scene understanding
+* ⏱️ Real-time Perception and Sensor Fusion
+* 🗺️ Visual-Inertial Odometry and SLAM techniques
+* 🤖 Building AI systems that learn and adapt with minimal human supervision and limited datasets [cite: 1]
 
 ---
 
 ### 🎓 Education
 
 **University of Illinois At Urbana-Champaign** | Champaign, IL
-* Bachelor of Science: Data Science And Information Science
-* Minors: Computer Science and Statistic
-* Expected Graduation: May 2026
-* Honors: UIUC James Scholar, UIUC Dean's List
+*(Expected Graduation: May 2026)*
+* **Degree:** Bachelor of Science in Data Science & Information Science [cite: 1]
+* **Minors:** Computer Science and Statistics [cite: 1]
+* **🏅 Honors & Awards:**
+    * UIUC James Scholar [cite: 1]
+    * UIUC Dean's List [cite: 1]
+* **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher [cite: 1]
 
 ---
 
 ### 💼 Professional Experience & Research
 
-**Undergraduate Research Assistant** | Computer Vision and Machine Learning Group - Champaign, IL
-*(05/2025-Current)*
-* Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images
-* Conducted experiments on real-time perception, 3D reconstruction, and visual-inertial odometry
-* Aiming to submit to International Conference on Learning Representations (ICLR 2026)
+**Undergraduate Research Assistant** | <em>Computer Vision and Machine Learning Group - Champaign, IL</em>
+*(05/2025 - Current)* [cite: 4]
+* Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images. [cite: 4]
+* Conducted experiments on real-time perception, 3D reconstruction, and visual-inertial odometry. [cite: 4]
+* 🎯 Aiming to submit to International Conference on Learning Representations (ICLR 2026). [cite: 4, 5]
 
-**Data Analyst** | UIUC Student Affairs WRC Department - Champaign, IL
-*(08/2024-12/2024)*
-* Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program
-* Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs
-* Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness
+**Data Analyst** | <em>UIUC Student Affairs WRC Department - Champaign, IL</em>
+*(08/2024 - 12/2024)* [cite: 3, 4]
+* Conducted rigorous statistical analysis of student performance metrics and survey responses among 19,800 students and implemented a comprehensive data analysis framework. [cite: 3, 4]
+* Leveraged complex institutional datasets to generate actionable insights, enhancing strategic planning and contributing to a 6.5% improvement in resource allocation for student success programs. [cite: 4]
+* Designed and implemented comprehensive program evaluation frameworks for key educational initiatives using mixed-methods research. [cite: 4]
 
-**Data Engineer** | CPC Brooklyn Community Center - Brooklyn, NY
-*(06/2023-08/2023)*
-* Analyzed over 4GB workforce management data to identify customer usage patterns and conducted exploratory data analysis
-* Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance
-* Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences
+**Data Engineer** | <em>CPC Brooklyn Community Center - Brooklyn, NY</em>
+*(06/2023 - 08/2023)* [cite: 5]
+* Analyzed over 4GB workforce management data to identify customer usage patterns and conducted exploratory data analysis. [cite: 5]
+* Streamlined complex workflows by breaking them down into manageable components. [cite: 5]
+* Effectively communicated complex concepts to diverse audiences. [cite: 5]
 
-**BCI Neuroengineering Researcher** | Wake Forest University Summer Immersion Program - Winston-Salem, NC
-*(05/2021-09/2021)*
-* Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect collect brain waves and evaluate the specific brainwave bands
-* Designed and conducted experiments on the delivery of neurostimulation strategies
-* Created programs for amyotrophic lateral sclerosis to live independently by notifying nursing assistants of aids such as wiping mouths, eating snacks, and flipping newspapers
+**BCI Neuroengineering Researcher** | <em>Wake Forest University Summer Immersion Program - Winston-Salem, NC</em>
+*(05/2021 - 09/2021)* [cite: 3]
+* Assisted in Brain-Computer Interface research, developing an Arduino model to collect brain waves and evaluate specific brainwave bands. [cite: 3]
+* Designed and conducted experiments on neurostimulation strategies. [cite: 3]
+* Created programs to aid individuals with amyotrophic lateral sclerosis (ALS) in living more independently. [cite: 3]
 
 ---
 
 ### 🤝 Open Source & Community Involvement
 
-* **Course Assistant (CS 107: Discovery Data Science @ UIUC):** *(Aug 2023 - Present)*
-    * Facilitated weekly office hours and lab sections for over 2000 students, providing technical assistance and fostering understanding of data science concepts.
-    * Authored informative content for DISCOVERY's Guides (Python libraries) and developed assignments for the Mastery Platform.
-* * ---
+**Course Assistant (CS 107: Discovery Data Science @ UIUC)**
+*(Aug 2023 - Present)* [cite: 5]
+* 📚 Facilitated weekly office hours and lab sections for over 2000 students, providing technical assistance. [cite: 5]
+* ✍️ Authored informative content for DISCOVERY's Guides (Python libraries) and developed assignments/autograders for the Mastery Platform. [cite: 5, 6]
+
+**Student Government (iSchool Student Representative @ UIUC)**
+*(Sep 2022 - Sep 2023)* [cite: 6]
+* 🗣️ Supervised iSchool community forums and handled student concerns. [cite: 6]
+* 🎙️ Facilitated interactions with university stakeholders, prospective students, and parents. [cite: 6]
+
+---
 
 ### 💡 Showcase Projects
 
-**Kyoto Restaurants Explorer** | [🚀 Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
+**Kyoto Restaurants Explorer** | [🚀 Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/) [cite: 3]
 * An interactive R Shiny web app for discovering and visualizing Kyoto restaurant data. Features dynamic filtering, mapping, and detailed views.
 * *Tech: R, Shiny*
 
-**Anime Statistics and Analysis Platform** | [🚀 Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
+**Anime Statistics and Analysis Platform** | [🚀 Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/) [cite: 3]
 * A data-centric R Shiny platform offering insights and visualizations on anime statistics, trends, ratings, and genre distributions.
 * *Tech: R, Shiny*
 
-**Text-to-3D Generation Enhancement** (Ongoing Research)
+**Text-to-3D Generation Enhancement** (Ongoing Research) [cite: 4]
 * Focused on advancing text-to-3D synthesis by refining diffusion models to improve 3D consistency and address generation failure modes.
 * *Tech: Python, PyTorch/TensorFlow (implied), Machine Learning, Diffusion Models, 3D Computer Vision*
+
+---
+### 🌐 Languages I Speak
+
+* **🇺🇸 English:** Native / Bilingual Proficiency [cite: 2]
+* **🇨🇳 Mandarin:** Native / Bilingual Proficiency [cite: 2]
+* **🇪🇸 Spanish:** Elementary Proficiency [cite: 2]
 
 ---
 
@@ -168,10 +199,10 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <a href="mailto:qiranhu8@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
-</p>
+  </p>
 
 ---
 
 <p align="center">
-  Thanks for visiting my profile!
+  Thanks for visiting my profile! 👋
 </p>
