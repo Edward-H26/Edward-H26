@@ -185,21 +185,16 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ### 💡 Showcase Projects
 
 ---
-**Kyoto Restaurants Explorer**
+**Kyoto Restaurants Explorer** [🚀 View Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
 * An interactive R Shiny web application designed to help users discover and explore comprehensive restaurant data across Kyoto, featuring dynamic filtering, interactive mapping, and detailed profile views. This project demonstrates practical application of R for web-based data interaction and UI/UX development with Shiny.
-* **Tech Stack:** `R`, `Shiny`, `dplyr`, `leaflet` (You can add more specifics like `DT`, `ggplot2` if used)
-* [🚀 View Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
 
 ---
-**Anime Statistics and Analysis Platform**
+**Anime Statistics and Analysis Platform** [🚀 View Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
 * A data-centric R Shiny application providing a platform for exploring and analyzing extensive anime statistics. It offers insights into trends, ratings, and genre distributions through dynamic charts and interactive visualizations, showcasing skills in building analytical web tools.
-* **Tech Stack:** `R`, `Shiny`, `tidyverse`, `plotly` (You can add more specifics if used)
-* [🚀 View Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
 
 ---
 **Text-to-3D Generation Enhancement** (Ongoing Research)
-* This research focuses on significantly advancing text-to-3D generation pipelines by refining diffusion models.
-* Key goals include improving 3D consistency in generated assets, addressing critical failure modes, and enhancing the photorealism and utility of synthesized 3D content.
+* This research focuses on significantly advancing text-to-3D generation pipelines by refining diffusion models. The key goals include improving 3D consistency in generated assets, addressing critical failure modes, and enhancing the photorealism and utility of synthesized 3D content.
 * The work is aimed for submission to the International Conference on Learning Representations (ICLR 2026).
 * [📄 Learn More (Research Details)](LINK_TO_YOUR_RESEARCH_ABSTRACT_PAPER_OR_PROJECT_PAGE) 
 
