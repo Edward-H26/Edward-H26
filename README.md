@@ -125,15 +125,18 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ### 🎓 Education
 
 **University of Illinois At Urbana-Champaign** | Champaign, IL
+*(Expected Graduation: May 2026)*
 * **Degree:** Bachelor of Science in Data Science & Information Science
 * **Minors:** Computer Science and Statistics
 * **🏅 Honors & Awards:**
     * UIUC James Scholar
     * UIUC Dean's List
-* **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher
-    ** discover how computer vision and machine learning can work together to create more advanced intelligent visual systems
-    ** explore advanced generative modeling approaches to synthesize realistic data and enhance learning processes, which extends to the construction and utilization of sophisticated 3D geometric representations for understanding complex scenes
-    ** aim to create systems that can learn and adapt over time with minimal human supervision and limited datasets
+* 🔬 **Research Group:**
+    * UIUC Computer Vision and Machine Learning Group Researcher
+        * Discover how computer vision and machine learning can work together to create more advanced intelligent visual systems.
+        * Explore advanced generative modeling approaches to synthesize realistic data and enhance learning processes, which extends to the construction and utilization of sophisticated 3D geometric representations for understanding complex scenes.
+        * Aim to create systems that can learn and adapt over time with minimal human supervision and limited datasets.
+
 ---
 
 ### 💼 Professional Experience & Research
