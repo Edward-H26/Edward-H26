@@ -50,7 +50,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=2" alt="Qiran's Top Languages" />
 </p>
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Repositories" alt="GitHub Trophies - Repositories" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories" alt="GitHub Trophies - Commits, Experience, Repositories" />
 </p>
 ---
 
