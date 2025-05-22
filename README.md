@@ -42,15 +42,12 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ---
 
-### 📊 My GitHub Stats & Coding Activity</h3>
+<div align="center">
+  <h3 align="center">📊 My GitHub Stats & Coding Activity</h3>
 
-  <p align="center">
-    <img src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
-  </p>
+  <img style="display: block; margin-left: auto; margin-right: auto;" src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
 
-  <p align="center">
-    <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
-  </p>
+  <br/> <img style="display: block; margin-left: auto; margin-right: auto;" src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
 </div>
 
 ---
