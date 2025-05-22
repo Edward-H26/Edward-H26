@@ -30,15 +30,15 @@
 
 ---
 
-### 🚀 About Me & Current Focus
+### 🚀 About Me
 
-I'm deeply fascinated by the potential of AI to understand and interact with the world visually. My journey in Data Science and Information Science is fueled by a desire to build intelligent systems that can learn, adapt, and generate novel insights from complex data.
+My name is Qiran Hu and I have a degree of Bachelor of Science in Data Science and Information Science with minors in Computer Science and Statistics at the University of Illinois At Urbana-Champaign. I am passionate about the intersection of data science, machine learning, and computer vision.
 
-* 🎯 **My Mission:** To leverage cutting-edge AI to develop innovative solutions for complex challenges and contribute to advancements in intelligent visual systems.
-* 🔭 **Currently engrossed in research:** Enhancing text-to-3D generation pipelines, tackling challenges in 3D consistency and exploring diffusion models. My work aims for contribution to ICLR 2026.
-* 🌱 **Always learning & exploring:** Advanced generative modeling, the nuances of 3D geometric representations, real-time perception, and visual-inertial odometry.
-* 🤝 **Open to collaboration on:** Projects involving computer vision, applied machine learning, data-driven solutions, or anything at the intersection of AI and 3D technology.
-* ⚡ **Fun Fact:** I enjoy breaking down seemingly complex concepts into easily digestible pieces for both technical and non-technical audiences!
+I aim to contribute to creating robust systems that learn and adapt efficiently with minimal human supervision and limited datasets by developing and applying advanced machine learning and generative models to address a range of complex tasks. These include the synthesis of realistic data, enhancing 3D scene understanding by computational systems, and extracting actionable insights from diverse datasets.
+
+I am eager to apply these skills and enhance my knowledge through impactful internships and research opportunities. Based on my experiences in artificial intelligence, 3D image reconstruction, data analysis techniques, I am excited applying these skills to innovative areas such as using machine learning to make systems smarter and more adaptive, utilizing data analysis to find those really impactful insights, and exploring how computer vision can help create more intelligent and interactive 3D worlds.
+
+Please do not be hesitant to get in touch with me at your earliest convenience if you have any inquiries or comments. I am happy to connect via [LinkedIn](https://www.linkedin.com/in/qiran-hu-ba713b250/) and email at [qiranhu8@gmail.com](mailto:qiranhu8@gmail.com).
 
 ---
 
