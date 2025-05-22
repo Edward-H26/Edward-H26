@@ -92,29 +92,29 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 * 🧠 **Machine Learning & Deep Learning:**
     * Developing and applying models for complex data interpretation, pattern recognition, and predictive analytics.
-    * Focused on creating systems that can learn and adapt over time with minimal human supervision, even from limited datasets.
-    * Proficient in Python and core Machine Learning/Deep Learning frameworks (e.g., PyTorch, TensorFlow, scikit-learn).
+    * Focused on creating models that can learn and adapt over time with minimal human supervision and limited datasets.
+    * Proficient in Python and core Machine Learning/Deep Learning frameworks such as PyTorch, TensorFlow, scikit-learn.
 
-* 👁️ **Computer Vision & 3D Perception:**
-    * Actively researching 3D scene understanding, including multi-modal 3D reconstruction (e.g., from text and images).
-    * Hands-on experience with real-time perception, visual-inertial odometry, and the construction of sophisticated 3D geometric representations for complex scenes.
-    * Aiming to contribute to the development of more advanced intelligent visual systems.
+* 👁️ **Computer Vision & 3D Reconstruction:**
+    * Actively working on 3D reconstruction and understanding.
+    * Experience with real time perception, visual inertial odometry, and the construction of sophisticated 3D geometric representations for complex scenes.
+    * Aiming to contribute to the development of more advanced intelligent visual models.
 
-* ✨ **Generative AI (esp. Diffusion Models & Text-to-3D Synthesis):**
-    * Specializing in advanced generative modeling, with a deep research focus on Diffusion Models, particularly for Text-to-3D generation.
-    * Actively working on improving generation pipelines by addressing key failure modes, enhancing 3D consistency, and synthesizing realistic data.
+* ✨ **Generative AI:**
+    * Specializing in generative modeling such as Diffusion Models for Text-to-3D generation.
+    * Actively working on improving generation pipelines by addressing key failure cases, enhancing 3D consistency, and synthesizing realistic data.
     * Exploring these models to enhance learning processes and create novel visual content.
 
-* 📊 **Data Analysis, Visualization & Insight Generation:**
-    * Conducting rigorous statistical analysis and exploratory data analysis (EDA) on diverse and large-scale datasets (e.g., 4GB+ workforce data, 19,800+ student records).
-    * Experienced in designing and implementing comprehensive data analysis frameworks and program evaluation strategies to drive decision-making.
-    * Skilled in creating interactive data visualizations (e.g., using R/Shiny) and effectively communicating complex findings and actionable insights to both technical and non-technical audiences.
+* 📊 **Data Analysis & Visualization:**
+    * Conducted rigorous statistical analysis and exploratory data analysis on diverse and large-scale datasets.
+    * Designed and implemented comprehensive data analysis frameworks and program evaluation strategies.
+    * Creating interactive data visualizations through Shiny and effectively communicating complex findings and actionable insights to both technical and non-technical audiences.
 
 ---
 
-### 🌱 Tech I'm Excited To Explore Further
+### 🌱 Current Research Focus
 
-* 🚀 Advanced Generative Modeling Approaches (e.g., GANs, VAEs, advanced Diffusion Models)
+* 🚀 Advanced Generative Modeling Approaches, such as GANs, GNNs, VAEs, Diffusion Models, and ControlNet
 * 🧊 Sophisticated 3D Geometric Representations for complex scene understanding
 * ⏱️ Real-time Perception and Sensor Fusion
 * 🗺️ Visual-Inertial Odometry and SLAM techniques
@@ -125,14 +125,15 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ### 🎓 Education
 
 **University of Illinois At Urbana-Champaign** | Champaign, IL
-*(Expected Graduation: May 2026)*
 * **Degree:** Bachelor of Science in Data Science & Information Science
 * **Minors:** Computer Science and Statistics
 * **🏅 Honors & Awards:**
     * UIUC James Scholar
     * UIUC Dean's List
 * **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher
-
+    ** discover how computer vision and machine learning can work together to create more advanced intelligent visual systems
+    ** explore advanced generative modeling approaches to synthesize realistic data and enhance learning processes, which extends to the construction and utilization of sophisticated 3D geometric representations for understanding complex scenes
+    ** aim to create systems that can learn and adapt over time with minimal human supervision and limited datasets
 ---
 
 ### 💼 Professional Experience & Research
