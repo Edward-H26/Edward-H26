@@ -45,7 +45,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ### 📊 My GitHub Stats & Coding Activity
 
 <p align="center">
-  <em>My focus is on consistent contributions and growing my body of work. (Dynamic commit statistics are temporarily unavailable.)</em>
+  <img src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak Stats"/>
 </p>
 
 <p align="center">
@@ -135,8 +135,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 * Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
 * Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences.
 
-**BCI Neuroengineering Researcher** | <em>Wake
-Forest University Summer Immersion Program - Winston-Salem, NC</em>
+**BCI Neuroengineering Researcher** | <em>Wake Forest University Summer Immersion Program - Winston-Salem, NC</em>
 *(05/2021-09/2021)*
 * Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect brain waves and evaluate the specific brainwave bands.
 * Designed and conducted experiments on the delivery of neurostimulation strategies.
