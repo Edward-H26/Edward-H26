@@ -46,7 +46,6 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 <p align="center">
   <img width="55%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
-  <img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=8&card_width=320" alt="Top Languages" />
 </p>
 
 <p align="center">
@@ -122,7 +121,8 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ---
 
-### 💼 Professional Experience & Research 
+### 💼 Professional Experience & Research
+
 **Undergraduate Research Assistant** | <em>Computer Vision and Machine Learning Group - Champaign, IL</em>
 *(05/2025-Current)*
 * Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images.
@@ -150,6 +150,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ---
 
 ### 🌟 Leadership & Involvement
+
 **Course Assistant** | <em>University of Illinois Urbana-Champaign DISCOVERY DATA SCIENCE CS 107</em>
 *(August 2023 - Present)*
 * Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
