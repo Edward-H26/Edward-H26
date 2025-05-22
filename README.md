@@ -7,7 +7,7 @@
   <em>
     Data Science & Information Science Student @ University of Illinois Urbana-Champaign (Expected May 2026) <br>
     Minors in Computer Science & Statistics <br>
-    Driven by the power of Computer Vision, Machine Learning, and Generative AI to solve real-world challenges.
+    Passionate about the intersection of Computer Vision, Machine Learning, and Generative AI.
   </em>
 </p>
 
@@ -33,25 +33,25 @@
 
 I'm deeply fascinated by the potential of AI to understand and interact with the world visually. My journey in Data Science and Information Science is fueled by a desire to build intelligent systems that can learn, adapt, and generate novel insights from complex data.
 
+* 🎯 **My Mission:** To leverage cutting-edge AI to develop innovative solutions for complex challenges and contribute to advancements in intelligent visual systems.
 * 🔭 **Currently engrossed in research:** Enhancing text-to-3D generation pipelines, tackling challenges in 3D consistency and exploring diffusion models. My work aims for contribution to ICLR 2026.
 * 🌱 **Always learning & exploring:** Advanced generative modeling, the nuances of 3D geometric representations, real-time perception, and visual-inertial odometry.
-* 🎯 **Future Goals:** To contribute to cutting-edge projects that leverage AI for impactful applications, particularly in areas requiring sophisticated visual understanding and generation.
 * 👯 **Open to collaboration on:** Projects involving computer vision, applied machine learning, data-driven solutions, or anything at the intersection of AI and 3D technology.
-* 💬 **Ask me about:** Data Science methodologies, Python for ML, computer vision fundamentals, my research, or even my favorite anime (as per one of my projects!).
-* 📫 **Let's connect:** Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/qiran-hu-ba713b250/) or [Email](mailto:qiranhu8@gmail.com).
 * ⚡ **Fun Fact:** I enjoy breaking down seemingly complex concepts into easily digestible pieces for both technical and non-technical audiences!
 
 ---
 
-### 📊 My GitHub Stats & Trophies
+### 📊 My GitHub Stats & Coding Activity
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="Qiran's GitHub Stats" />
   <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&langs_count=2" alt="Qiran's Top Languages" />
 </p>
+
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories" alt="GitHub Trophies - Commits, Experience, Repositories" />
 </p>
+
 ---
 
 ### 🛠️ My Tech Stack & Skills
@@ -69,7 +69,8 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C">
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" alt="Django">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  <img src="https://img.shields.io/badge/Shiny-1E90FF?style=for-the-badge&logo=rstudio&logoColor=white" alt="Shiny for R"> <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
+  <img src="https://img.shields.io/badge/Shiny-1E90FF?style=for-the-badge&logo=rstudio&logoColor=white" alt="Shiny for R">
+  <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
   <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
   <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" alt="Microsoft Office">
@@ -81,6 +82,16 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 * **Professional Working Proficiency:** C#, C, SAS, React, Git.
 * **Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO.
 * **Key Areas:** Machine Learning, Computer Vision, Generative Models (Diffusion Models), Data Analysis & Visualization, 3D Reconstruction.
+
+---
+
+### 🌱 Tech I'm Excited To Explore Further
+
+* Advanced Generative Modeling Approaches (e.g., GANs, VAEs, advanced Diffusion Models)
+* Sophisticated 3D Geometric Representations for complex scene understanding
+* Real-time Perception and Sensor Fusion
+* Visual-Inertial Odometry and SLAM techniques
+* Building AI systems that learn and adapt with minimal human supervision and limited datasets
 
 ---
 
@@ -122,6 +133,13 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ---
 
+### 🤝 Open Source & Community Involvement
+
+* **Course Assistant (CS 107: Discovery Data Science @ UIUC):** *(Aug 2023 - Present)*
+    * Facilitated weekly office hours and lab sections for over 2000 students, providing technical assistance and fostering understanding of data science concepts.
+    * Authored informative content for DISCOVERY's Guides (Python libraries) and developed assignments for the Mastery Platform.
+* * ---
+
 ### 💡 Showcase Projects
 
 **Kyoto Restaurants Explorer** | [🚀 Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
@@ -138,6 +156,23 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ---
 
+### 💬 Let's Connect!
+
 <p align="center">
-  Thanks for visiting my profile! Let's innovate and build something amazing.
+  I'm always excited to discuss new technologies, research ideas, or potential collaborations. <br>
+  Feel free to reach out!
+</p>
+<p align="center">
+  <a href="https://www.linkedin.com/in/qiran-hu-ba713b250/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Connect">
+  </a>
+  <a href="mailto:qiranhu8@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+</p>
+
+---
+
+<p align="center">
+  Thanks for visiting my profile!
 </p>
