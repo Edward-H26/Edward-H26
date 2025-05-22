@@ -47,7 +47,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
   <img style="display: block; margin-left: auto; margin-right: auto;" src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
 
-  <br/> <img style="display: block; margin-left: auto; margin-right: auto;" src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Stars,Followers,PR,Repositories,Issues,Contribs" alt="GitHub Trophies" />
+  <br/> <img style="display: block; margin-left: auto; margin-right: auto;" src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Stars,Followers,PR,Repositories,Issues,Contribs,Reviews" alt="GitHub Trophies" />
 </div>
 
 ---
@@ -67,8 +67,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C">
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" alt="Django">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  <img src="https
-://img.shields.io/badge/Shiny-1E90FF?style=for-the-badge&logo=rstudio&logoColor=white" alt="Shiny for R">
+  <img src="https://img.shields.io/badge/Shiny-1E90FF?style=for-the-badge&logo=rstudio&logoColor=white" alt="Shiny for R">
   <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
   <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
@@ -192,13 +191,4 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
   <a href="https://www.linkedin.com/in/qiran-hu-ba713b250/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Connect">
   </a>
-  <a href="mailto:qiranhu8@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-  </a>
-</p>
-
----
-
-<p align="center">
-  Thanks for visiting my profile! 👋
-</p>
+  <a href="mailto:qiranhu8
