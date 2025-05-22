@@ -171,8 +171,8 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 **Course Assistant** | <em>University of Illinois Urbana-Champaign DISCOVERY DATA SCIENCE CS 107</em>
 *(August 2023 - Present)*
 * Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
-* Created informative and intriguing contents for DISCOVERY's Guides to explain data science concepts through practical applications of Python libraries - [https://discovery.cs.illinois.edu/guides/](https://discovery.cs.illinois.edu/guides/).
-* Developed difficult homework assignments, exam questions, test suites, and autograder scripts, for DISCOVERY's Mastery Platform - [https://mastery.cs.illinois.edu/](https://mastery.cs.illinois.edu/).
+* Created informative and intriguing contents for DISCOVERY's Guides to explain data science concepts through practical applications of Python libraries - [📚 View Guides](https://discovery.cs.illinois.edu/guides/).
+* Developed difficult homework assignments, exam questions, test suites, and autograder scripts, for DISCOVERY's Mastery Platform - [💻 Access Platform](https://mastery.cs.illinois.edu/).
 
 **Student Government** | <em>University of Illinois Urbana-Champaign iSchool Student Representative</em>
 *(September 2022 - September 2023)*
