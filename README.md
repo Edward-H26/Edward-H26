@@ -125,7 +125,6 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 ### 🎓 Education
 
 **University of Illinois At Urbana-Champaign** | Champaign, IL
-*(Expected Graduation: May 2026)*
 * **Degree:** Bachelor of Science in Data Science & Information Science
 * **Minors:** Computer Science and Statistics
 * **🏅 Honors & Awards:**
