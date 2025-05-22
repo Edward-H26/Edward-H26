@@ -84,16 +84,31 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 </p>
 
 **Detailed Proficiency:**
-* **🖥️ Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite. [cite: 2]
-* **💻 Professional Working Proficiency:** C#, C, SAS, React, Git. [cite: 2]
-* **⌨️ Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO. [cite: 2]
+* **🖥️ Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite.
+* **💻 Professional Working Proficiency:** C#, C, SAS, React, Git.
+* **⌨️ Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO.
 
 **Key Areas of Expertise:**
-* 🧠 Machine Learning & Deep Learning
-* 👁️ Computer Vision (3D Reconstruction, Real-time Perception)
-* ✨ Generative Models (Diffusion Models, GANs)
-* 📊 Data Analysis, Visualization & Storytelling
-* 🏗️ Text-to-3D Generation Pipelines
+
+* 🧠 **Machine Learning & Deep Learning:**
+    * Developing and applying models for complex data interpretation, pattern recognition, and predictive analytics.
+    * Focused on creating systems that can learn and adapt over time with minimal human supervision, even from limited datasets.
+    * Proficient in Python and core Machine Learning/Deep Learning frameworks (e.g., PyTorch, TensorFlow, scikit-learn).
+
+* 👁️ **Computer Vision & 3D Perception:**
+    * Actively researching 3D scene understanding, including multi-modal 3D reconstruction (e.g., from text and images).
+    * Hands-on experience with real-time perception, visual-inertial odometry, and the construction of sophisticated 3D geometric representations for complex scenes.
+    * Aiming to contribute to the development of more advanced intelligent visual systems.
+
+* ✨ **Generative AI (esp. Diffusion Models & Text-to-3D Synthesis):**
+    * Specializing in advanced generative modeling, with a deep research focus on Diffusion Models, particularly for Text-to-3D generation.
+    * Actively working on improving generation pipelines by addressing key failure modes, enhancing 3D consistency, and synthesizing realistic data.
+    * Exploring these models to enhance learning processes and create novel visual content.
+
+* 📊 **Data Analysis, Visualization & Insight Generation:**
+    * Conducting rigorous statistical analysis and exploratory data analysis (EDA) on diverse and large-scale datasets (e.g., 4GB+ workforce data, 19,800+ student records).
+    * Experienced in designing and implementing comprehensive data analysis frameworks and program evaluation strategies to drive decision-making.
+    * Skilled in creating interactive data visualizations (e.g., using R/Shiny) and effectively communicating complex findings and actionable insights to both technical and non-technical audiences.
 
 ---
 
@@ -114,97 +129,12 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 * **Degree:** Bachelor of Science in Data Science & Information Science
 * **Minors:** Computer Science and Statistics
 * **🏅 Honors & Awards:**
-    * UIUC James Scholar [cite: 1]
-    * UIUC Dean's List [cite: 1]
-* **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher [cite: 1]
+    * UIUC James Scholar
+    * UIUC Dean's List
+* **Research Group:** UIUC Computer Vision and Machine Learning Group Researcher
 
 ---
 
 ### 💼 Professional Experience & Research
 
-**Undergraduate Research Assistant** | <em>Computer Vision and Machine Learning Group - Champaign, IL</em>
-*(05/2025-Current)*
-* Improving text-to-3D generation pipeline on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024) by addressing key failure modes and enhancing 3D consistency in generated images. [cite: 4]
-* Conducted experiments on real-time perception, 3D reconstruction, and visual-inertial odometry. [cite: 4]
-* Aiming to submit to International Conference on Learning Representations (ICLR 2026). [cite: 4, 5]
-
-**Data Analyst** | <em>UIUC Student Affairs WRC Department - Champaign, IL</em>
-*(08/2024-12/2024)*
-* Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program. [cite: 3, 4]
-* Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs. [cite: 4]
-* Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness. [cite: 4]
-
-**Data Engineer** | <em>CPC Brooklyn Community Center - Brooklyn, NY</em>
-*(06/2023-08/2023)*
-* Analyzed over 4GB workforce management data to identify customer usage patterns and conducted exploratory data analysis. [cite: 5]
-* Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance. [cite: 5]
-* Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences. [cite: 5]
-
-**BCI Neuroengineering Researcher** | <em>Wake Forest University Summer Immersion Program - Winston-Salem, NC</em>
-*(05/2021-09/2021)*
-* Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect brain waves and evaluate the specific brainwave bands. [cite: 3]
-* Designed and conducted experiments on the delivery of neurostimulation strategies. [cite: 3]
-* Created programs for amyotrophic lateral sclerosis to live independently by notifying nursing assistants of aids such as wiping mouths, eating snacks, and flipping newspapers. [cite: 3]
-
----
-
-### 🌟 Leadership & Involvement
-
-**Course Assistant** | <em>University of Illinois Urbana-Champaign DISCOVERY DATA SCIENCE CS 107</em>
-*(August 2023 - Present)*
-* Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students. [cite: 5]
-* Created informative and intriguing contents for DISCOVERY's Guides to explain data science concepts through practical applications of Python libraries - [https://discovery.cs.illinois.edu/guides/](https://discovery.cs.illinois.edu/guides/). [cite: 5, 6]
-* Developed difficult homework assignments, exam questions, test suites, and autograder scripts, for DISCOVERY's Mastery Platform - [https://mastery.cs.illinois.edu/](https://mastery.cs.illinois.edu/). [cite: 6]
-
-**Student Government** | <em>University of Illinois Urbana-Champaign iSchool Student Representative</em>
-*(September 2022 - September 2023)*
-* Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines. [cite: 6]
-* Facilitated with university and prospective students and parents during campus tours, answering questions, and providing insight. [cite: 6]
-* Obtained approval for modifications to existing and new activities from students' feedback. [cite: 6]
-
----
-
-### 💡 Showcase Projects
-
-**Kyoto Restaurants Explorer** | [🚀 Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
-* An interactive R Shiny web app for discovering and visualizing Kyoto restaurant data. Features dynamic filtering, mapping, and detailed views.
-* *Tech: R, Shiny*
-
-**Anime Statistics and Analysis Platform** | [🚀 Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
-* A data-centric R Shiny platform offering insights and visualizations on anime statistics, trends, ratings, and genre distributions.
-* *Tech: R, Shiny*
-
-**Text-to-3D Generation Enhancement** (Ongoing Research)
-* Focused on advancing text-to-3D synthesis by refining diffusion models to improve 3D consistency and address generation failure modes.
-* *Tech: Python, PyTorch/TensorFlow (implied), Machine Learning, Diffusion Models, 3D Computer Vision*
-
----
-
-### 🌐 Languages I Speak
-
-* **🇺🇸 English:** Native / Bilingual Proficiency [cite: 2]
-* **🇨🇳 Mandarin:** Native / Bilingual Proficiency [cite: 2]
-* **🇪🇸 Spanish:** Elementary Proficiency [cite: 2]
-
----
-
-### 💬 Let's Connect!
-
-<p align="center">
-  I'm always excited to discuss new technologies, research ideas, or potential collaborations. <br>
-  Feel free to reach out!
-</p>
-<p align="center">
-  <a href="https://www.linkedin.com/in/qiran-hu-ba713b250/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Connect">
-  </a>
-  <a href="mailto:qiranhu8@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-  </a>
-</p>
-
----
-
-<p align="center">
-  Thanks for visiting my profile! 👋
-</p>
+**Undergraduate Research Assistant** | <em>Computer Vision and Machine Learning Group - Champaign,
