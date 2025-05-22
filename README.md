@@ -42,15 +42,17 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 
 ---
 
-### 📊 My GitHub Stats & Coding Activity
+<div align="center">
+  <h3 align="center">📊 My GitHub Stats & Coding Activity</h3>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
-</p>
+  <p align="center">
+    <img src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&hide_longest_streak=true&hide_current_streak=true" alt="GitHub Total Contributions"/>
+  </p>
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
-</p>
+  <p align="center">
+    <img src="https://github-profile-trophy.vercel.app/?username=Edward-H26&theme=radical&no-frame=true&no-bg=false&margin-w=4&title=Commits,Experience,Repositories,Stars,Followers" alt="GitHub Trophies" />
+  </p>
+</div>
 
 ---
 
@@ -151,7 +153,7 @@ I'm deeply fascinated by the potential of AI to understand and interact with the
 * Created informative and intriguing contents for DISCOVERY's Guides to explain data science concepts through practical applications of Python libraries - [https://discovery.cs.illinois.edu/guides/](https://discovery.cs.illinois.edu/guides/).
 * Developed difficult homework assignments, exam questions, test suites, and autograder scripts, for DISCOVERY's Mastery Platform - [https://mastery.cs.illinois.edu/](https://mastery.cs.illinois.edu/).
 
-**Student Government** | <em>University of Illinois Urbana- Champaign iSchool Student Representative</em>
+**Student Government** | <em>University of Illinois Urbana-Champaign iSchool Student Representative</em>
 *(September 2022 - September 2023)*
 * Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
 * Facilitated with university and prospective students and parents during campus tours, answering questions, and providing insight.
