@@ -178,13 +178,37 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
 
 ### 💡 Showcase Projects
 
----
-**Kyoto Restaurants Explorer** [🚀 View Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
-* An interactive R Shiny web application designed to help users discover and explore comprehensive restaurant data across Kyoto, featuring dynamic filtering, interactive mapping, and detailed profile views. This project demonstrates practical application of R for web-based data interaction and UI/UX development with Shiny.
+### 💡 Showcase Projects
 
 ---
-**Anime Statistics and Analysis Platform** [🚀 View Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
-* A data-centric R Shiny application providing a platform for exploring and analyzing extensive anime statistics. It offers insights into trends, ratings, and genre distributions through dynamic charts and interactive visualizations, showcasing skills in building analytical web tools.
+**Realistic Neural Style Transfer Architecture**
+* **Repository:** [Edward-H26/Realistic-Neural-Style-Transfer-Architecture](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
+* **Summary:** This project explores advanced techniques in Neural Style Transfer (NST) with a focus on generating more realistic and coherent stylized images. It implements and evaluates a PhotoRealistic-Style-Transfer model, likely based on the paper "Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network." The repository contains Jupyter notebooks demonstrating the application of NST, including loading VGG19 for feature extraction, defining content and style losses, and processing images. The core idea is to apply the stylistic features of one image to the content of another while aiming to preserve photorealism. This research-oriented project delves into the intricacies of loss functions and deep convolutional neural networks (CNNs) for high-quality style transfer.
+* **Technologies Used:** Python, Jupyter Notebooks, TensorFlow (specifically `tf.keras` for model building and VGG19), NumPy, Matplotlib (for image display), PIL (Pillow for image manipulation), `functools.partial` (for function customization).
+
+---
+**Kyoto Restaurants Explorer** [🚀 View Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
+* **Repository:** [Edward-H26/Kyoto-Restaurants-Explorer](https://github.com/Edward-H26/Kyoto-Restaurants-Explorer)
+* **Summary:** This project is an interactive web application built with R and Shiny, designed to help users explore restaurants in Kyoto. It features dynamic filtering options based on criteria such as cuisine type, price range, and ratings from sources like Tabelog and TripAdvisor. Users can view restaurant locations on an interactive map (Leaflet) and access detailed profiles, including images and opening hours. The application demonstrates skills in data manipulation, UI/UX design using Shiny (with `shinydashboard` for layout and `shinythemes` for appearance), and deploying R-based web applications. The dataset includes comprehensive information about Kyoto restaurants, which is processed and presented in a user-friendly interface with features like word clouds and dynamic tables (DT package).
+* **Technologies Used:** R, Shiny (specifically `shiny`, `shinydashboard`, `shinythemes`, `shinycssloaders`), Leaflet (for interactive maps), dplyr (for data manipulation), readr (for data import), ggplot2 (for plotting, though Leaflet is primary for maps), DT (for interactive tables), wordcloud2, purrr, stringr, jsonlite, httr. The UI is defined in `ui.R` and server logic in `server.R`.
+
+---
+**Anime Statistics and Analysis Platform (ASAP)** [🚀 View Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
+* **Repository:** [Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP-](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP-)
+* **Summary:** ASAP is a data-centric web application developed using R and Shiny that allows users to explore and analyze an extensive dataset of anime statistics, likely sourced from MyAnimeList. The platform provides insights into trends, ratings, genre popularity, episode counts, and airing dates through interactive charts (Plotly), tables (DT), and visualizations. Users can filter and sort data to uncover patterns and relationships within the anime industry. This project showcases proficiency in building analytical web tools, data processing, and creating engaging visualizations to communicate complex information effectively.
+* **Technologies Used:** R, Shiny (specifically `shiny`, `shinydashboard`, `shinythemes`, `shinyjs`), Plotly (for interactive charts), dplyr (for data manipulation), readr (for data import), DT (for interactive data tables), lubridate (for date manipulation), stringr (for string manipulation), scales (for plot scaling), tidyr (for data tidying). The application structure uses `ui.R` and `server.R`.
+
+---
+**Anime Culture And Its Influence**
+* **Repository:** [Edward-H26/Anime-Culture-And-Its-Influence](https://github.com/Edward-H26/Anime-Culture-And-Its-Influence)
+* **Summary:** This research project investigates the cultural impact and global influence of anime through a data-driven approach. It involves collecting, processing, and analyzing data related to anime productions, genres, ratings, and viewership. The project uses **Python** for data manipulation and analysis, likely employing libraries such as Pandas for data handling, and visualization libraries (like Matplotlib or Seaborn) to uncover trends and patterns. **SQL** is potentially used for database management, querying, and extracting relevant datasets for the analysis, indicating an ability to work with structured data sources to explore the nuances of anime's reach and characteristics.
+* **Technologies Used:** Python, SQL, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebooks (potentially other relevant Python data science libraries).
+
+---
+**Machine Learning Research**
+* **Repository:** [Edward-H26/Machine-Learning-Research](https://github.com/Edward-H26/Machine-Learning-Research)
+* **Summary:** This project, focusing on "Fake News Detection," meticulously executes a natural language processing pipeline. The initial **data preprocessing** phase involves crucial text cleaning steps to standardize the input and tokenization to break down text into individual units. Following this, **feature extraction** is performed using the Term Frequency-Inverse Document Frequency (TF-IDF) method, which converts the textual data into a numerical format that highlights the importance of words relevant to specific documents within the corpus. The core of the project lies in the **implementation and evaluation of a diverse set of machine learning classifiers**. These include Logistic Regression, Naive Bayes, Decision Trees, Random Forest, Gradient Boosting, XGBoost, LightGBM, Support Vector Machines (SVM), and K-Nearest Neighbors. Each classifier's performance is systematically assessed to determine its effectiveness in distinguishing fake news.
+* **Technologies Used:** Python, Jupyter Notebooks, Pandas (for data manipulation), NumPy (for numerical operations), scikit-learn (for TF-IDF, various classifiers, model evaluation metrics like accuracy, precision, recall, F1-score, confusion matrix, classification report), NLTK (for natural language processing tasks like tokenization, stop word removal, stemming/lemmatization), Matplotlib & Seaborn (for plotting and visualization), XGBoost, LightGBM. The project includes dataset loading (`.csv` files) and model training/evaluation pipelines.
 
 ---
 **Text-to-3D Generation Enhancement** (Ongoing Research)
