@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://github.com/github/docs/blob/main/assets/images/octocat-wave.gif?raw=true" width="180px" alt="Test Welcome Banner"/>
+</p>
 
 <h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
 
