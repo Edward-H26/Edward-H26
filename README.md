@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="welcome-banner.gif" width="200px" alt="Animated Welcome Banner"/>
+  <a href="https://github.com/Edward-H26">
+    <img src="https://github.com/github/docs/blob/main/assets/images/octocat-wave.gif?raw=true" width="180px" alt="Hi from Octocat! Welcome to my profile!"/>
+  </a>
 </p>
 
 <h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
