@@ -32,7 +32,7 @@ My name is Qiran Hu and I have a degree of Bachelor of Science in Data Science a
 
 I am eager to apply these skills and enhance my knowledge through impactful internships and research opportunities. Based on my experiences in artificial intelligence, 3D image reconstruction, data analysis techniques, I am excited applying these skills to innovative areas such as using machine learning to make systems smarter and more adaptive, utilizing data analysis to find those really impactful insights, and exploring how computer vision can help create more intelligent and interactive 3D worlds. 
 
-Please do not be hesitant to get in touch with me at your earliest convenience if you have any inquiries or comments. I am happy to connect via [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/qiran-hu-ba713b250/) and [![Email](https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:qiranhu8@gmail.com).
+Please do not be hesitant to get in touch with me at your earliest convenience if you have any inquiries or comments. I am happy to connect via [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/qiran-hu-ba713b250/)[![Email](https://img.shields.io/badge/Email-Say%20Hi-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:qiranhu8@gmail.com).
 
 ---
 
