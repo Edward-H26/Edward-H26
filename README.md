@@ -183,45 +183,38 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
 **Realistic Neural Style Transfer Architecture**
 
 * **Repository:** [Edward-H26/Realistic-Neural-Style-Transfer-Architecture](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
-* **Summary:** This project implements Neural Style Transfer using a pre-trained VGG19 model to artistically blend the content of one image with the style of another. The implementation defines content loss to preserve structural features and style loss using Gram matrices to capture texture patterns. Through iterative optimization with weighted loss functions, it generates stylized images that maintain the original content while adopting the artistic style.
-* **Technologies Used:** Python, Jupyter Notebooks, TensorFlow (tf.keras), VGG19, NumPy, Matplotlib, PIL (Pillow).
+* **Summary:** This project improves traditional Neural Style Transfer that uses a pre-trained VGG19 model to artistically blend the content of one image with the style of another. The implementation defines content loss to preserve structural features and style loss using Gram matrices to capture texture patterns. Through iterative optimization with various proposed methods, it generates stylized images that maintain the original content while adopting the artistic style.
 
 ---
 
 **Kyoto Restaurants Explorer** [🚀 View Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
 
 * **Repository:** [Edward-H26/Kyoto-Restaurants-Explorer](https://github.com/Edward-H26/Kyoto-Restaurants-Explorer)
-* **Summary:** An interactive R Shiny web application for exploring restaurants in Kyoto. Users can filter restaurants by ward, cuisine type, price range, and ratings from Tabelog and TripAdvisor. The app features an interactive Leaflet map, restaurant details with images and opening hours, word cloud visualization, and sortable data tables.
-* **Technologies Used:** R, Shiny (shiny, shinydashboard, shinythemes, shinycssloaders), Leaflet, dplyr, readr, ggplot2, DT, wordcloud2, purrr, stringr, jsonlite, httr.
+* **Summary:** An interactive R Shiny web application for exploring restaurants in Kyoto. Users can filter restaurants by ward, cuisine type, price range, and ratings from Tabelog and TripAdvisor. 
 
 ---
 
 **Anime Statistics and Analysis Platform (ASAP)** [🚀 View Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
 
 * **Repository:** [Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP-](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP-)
-* **Summary:** A comprehensive R Shiny dashboard for analyzing anime statistics from MyAnimeList data. The platform offers multiple analysis views including genre analysis, rating vs popularity comparisons, top anime rankings, and airing trends. Features interactive Plotly visualizations with various chart types and dynamic filtering options.
-* **Technologies Used:** R, Shiny (shiny, shinydashboard, shinythemes, shinyjs), Plotly, dplyr, readr, DT, lubridate, stringr, scales, tidyr.
+* **Summary:** A comprehensive R Shiny dashboard for analyzing anime statistics from MyAnimeList data. The platform offers multiple analysis views with interactive visualizations and dynamic filtering options.
 
 ---
 
 **Anime Culture And Its Influence**
 
 * **Repository:** [Edward-H26/Anime-Culture-And-Its-Influence](https://github.com/Edward-H26/Anime-Culture-And-Its-Influence)
-* **Summary:** An exploratory data analysis project examining anime datasets through a Jupyter Notebook. The analysis includes data cleaning, handling missing values, and creating visualizations to explore distributions of anime types, sources, scores, and episode counts. It investigates relationships between popularity metrics and tracks anime production trends over time.
-* **Technologies Used:** Python, Jupyter Notebooks, Pandas, NumPy, Matplotlib, Seaborn.
+* **Summary:** An exploratory data analysis project examining anime datasets through an automated workflow in snakemake. The analysis includes data cleaning, handling missing values, and creating visualizations to explore distributions of anime types, sources, scores, and episode counts. It investigates relationships between popularity metrics and tracks anime production trends over time.
 
 ---
 
 **Machine Learning Research**
 
 * **Repository:** [Edward-H26/Machine-Learning-Research](https://github.com/Edward-H26/Machine-Learning-Research)
-* **Summary:** A fake news detection project implementing multiple machine learning classifiers. The pipeline includes text preprocessing (cleaning, tokenization), TF-IDF feature extraction, and evaluation of ten different classifiers including Logistic Regression, Naive Bayes, Random Forest, XGBoost, and SVM. Performance is measured using accuracy, precision, recall, F1-score, and confusion matrices.
-* **Technologies Used:** Python, Jupyter Notebooks, Pandas, NumPy, scikit-learn, NLTK, Matplotlib, Seaborn, XGBoost, LightGBM.
+* **Summary:** Various projects with different classic machine learning algorithms. The pipeline includes data preprocessing, feature extraction, and evaluating different algorithms such as Logistic Regression, Naive Bayes, Random Forest, XGBoost, and SVM. These projects focus on applying these techniques to diverse datasets and problems with performance rigorously assessed using metrics like accuracy, precision, recall, F1-score, and confusion matrices to compare their effectiveness.
 
 ---
-
----
-**Text-to-3D Generation Enhancement** (Ongoing Research)
+**Text-to-3D Generation Enhancement** (Current Research)
 * This research focuses on significantly advancing text-to-3D generation pipelines by refining diffusion models. The key goals include improving 3D consistency in generated assets, addressing critical failure modes, and enhancing the photorealism and utility of synthesized 3D content.
 * The work is aimed for submission to the International Conference on Learning Representations (ICLR 2026).
 * [📄 Learn More (Research Details)](LINK_TO_YOUR_RESEARCH_ABSTRACT_PAPER_OR_PROJECT_PAGE) 
