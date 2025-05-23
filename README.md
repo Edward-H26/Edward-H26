@@ -178,8 +178,6 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
 
 ### 💡 Showcase Projects
 
-### 💡 Showcase Projects
-
 ---
 **Realistic Neural Style Transfer Architecture**
 * **Repository:** [Edward-H26/Realistic-Neural-Style-Transfer-Architecture](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
