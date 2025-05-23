@@ -179,36 +179,47 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
 ### 💡 Showcase Projects
 
 ---
+
 **Realistic Neural Style Transfer Architecture**
+
 * **Repository:** [Edward-H26/Realistic-Neural-Style-Transfer-Architecture](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
-* **Summary:** This project implements Neural Style Transfer, a technique that separates and recombines the image content and style from different images. It utilizes a pre-trained VGG19 model to extract content and style features. The core idea, as described in the repository, involves defining content loss (to preserve the content image's features) and style loss (to capture the style image's texture and patterns by comparing Gram matrices of feature maps). The total loss is a weighted sum of these two, which is then minimized through optimization (like Adam optimizer) to generate the stylized image. The process includes loading images, preprocessing them for the VGG19 model, building the model with intermediate layer outputs, calculating losses, and iteratively updating the generated image.
-* **Technologies Used:** Python, Jupyter Notebooks, TensorFlow (specifically `tf.keras` for model building and VGG19), NumPy, Matplotlib, PIL (Pillow). (This aligns with the README's code demonstration).
+* **Summary:** This project implements Neural Style Transfer using a pre-trained VGG19 model to artistically blend the content of one image with the style of another. The implementation defines content loss to preserve structural features and style loss using Gram matrices to capture texture patterns. Through iterative optimization with weighted loss functions, it generates stylized images that maintain the original content while adopting the artistic style.
+* **Technologies Used:** Python, Jupyter Notebooks, TensorFlow (tf.keras), VGG19, NumPy, Matplotlib, PIL (Pillow).
 
 ---
+
 **Kyoto Restaurants Explorer** [🚀 View Live App](https://qiranhu.shinyapps.io/Kyoto_Restaurants_Explorer/)
+
 * **Repository:** [Edward-H26/Kyoto-Restaurants-Explorer](https://github.com/Edward-H26/Kyoto-Restaurants-Explorer)
-* **Summary:** The README for this repository primarily contains the R Shiny application code itself and instructions to run it. The application, as evidenced by the code and its deployment, allows users to explore Kyoto restaurants. Key features derived from the UI code (`ui.R`) include filtering by ward (区), food genre, price range (dinner and lunch), and restaurant ratings (Tabelog and TripAdvisor). It displays restaurant details such as name, address, opening hours, images, and provides an interactive map (using Leaflet) for location visualization, along with a word cloud and data table views.
-* **Technologies Used:** R, Shiny (specifically `shiny`, `shinydashboard`, `shinythemes`, `shinycssloaders`), Leaflet, dplyr, readr, ggplot2, DT, wordcloud2, purrr, stringr, jsonlite, httr. (Derived from the `ui.R`, `server.R`, and `global.R` files in the repository).
+* **Summary:** An interactive R Shiny web application for exploring restaurants in Kyoto. Users can filter restaurants by ward, cuisine type, price range, and ratings from Tabelog and TripAdvisor. The app features an interactive Leaflet map, restaurant details with images and opening hours, word cloud visualization, and sortable data tables.
+* **Technologies Used:** R, Shiny (shiny, shinydashboard, shinythemes, shinycssloaders), Leaflet, dplyr, readr, ggplot2, DT, wordcloud2, purrr, stringr, jsonlite, httr.
 
 ---
+
 **Anime Statistics and Analysis Platform (ASAP)** [🚀 View Live App](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
+
 * **Repository:** [Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP-](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP-)
-* **Summary:** The README for this project is minimal and mainly points to the live application. The R Shiny application itself, as inferred from the code (`ui.R`, `server.R`, `global.R`), provides a platform for exploring and analyzing anime statistics from a dataset (likely MyAnimeList). Users can navigate through different tabs like "Overview," "Genre Analysis," "Rating vs Popularity," "Top Anime Series," and "Airing Trend." It features interactive elements like data tables (using DT), plots (using Plotly for various charts such as scatter plots, bar charts, histograms, and box plots), and dynamic filtering based on anime type, score, rank, and year.
-* **Technologies Used:** R, Shiny (specifically `shiny`, `shinydashboard`, `shinythemes`, `shinyjs`), Plotly, dplyr, readr, DT, lubridate, stringr, scales, tidyr. (Derived from the R script files in the repository).
+* **Summary:** A comprehensive R Shiny dashboard for analyzing anime statistics from MyAnimeList data. The platform offers multiple analysis views including genre analysis, rating vs popularity comparisons, top anime rankings, and airing trends. Features interactive Plotly visualizations with various chart types and dynamic filtering options.
+* **Technologies Used:** R, Shiny (shiny, shinydashboard, shinythemes, shinyjs), Plotly, dplyr, readr, DT, lubridate, stringr, scales, tidyr.
 
 ---
+
 **Anime Culture And Its Influence**
+
 * **Repository:** [Edward-H26/Anime-Culture-And-Its-Influence](https://github.com/Edward-H26/Anime-Culture-And-Its-Influence)
-* **Summary:** The README for this repository is not present. Based on the file `Anime.ipynb` within the repository, this project involves an exploratory data analysis of an anime dataset. The Jupyter Notebook shows data loading, cleaning (handling missing values, correcting data types), and visualization. Analyses include distributions of anime types, sources, scores, episode counts, and relationships between variables like score and popularity, members, and favorites. It also explores trends in anime production over years and top anime by various metrics.
-* **Technologies Used:** Python, Jupyter Notebooks, Pandas, NumPy, Matplotlib, Seaborn. (Derived from the import statements and operations within the `Anime.ipynb` file).
+* **Summary:** An exploratory data analysis project examining anime datasets through a Jupyter Notebook. The analysis includes data cleaning, handling missing values, and creating visualizations to explore distributions of anime types, sources, scores, and episode counts. It investigates relationships between popularity metrics and tracks anime production trends over time.
+* **Technologies Used:** Python, Jupyter Notebooks, Pandas, NumPy, Matplotlib, Seaborn.
 
 ---
+
 **Machine Learning Research**
+
 * **Repository:** [Edward-H26/Machine-Learning-Research](https://github.com/Edward-H26/Machine-Learning-Research)
-* **Summary:** The README for this repository is not present. The project, as indicated by the "Fake News Detection" Jupyter Notebook (`Fake News Detection.ipynb`), focuses on building and evaluating classifiers for identifying fake news. The notebook details a pipeline that includes: **data preprocessing** (loading data, text cleaning such as removing punctuation, converting to lowercase, and tokenization), **feature extraction** using TF-IDF vectorization, and the **implementation and evaluation of multiple machine learning classifiers**. These classifiers are Logistic Regression, Multinomial Naive Bayes, Passive Aggressive Classifier, Decision Tree, Random Forest, Gradient Boosting, XGBoost, LightGBM, SVM, and K-Nearest Neighbors. Performance is assessed using metrics like accuracy, precision, recall, F1-score, and confusion matrices.
-* **Technologies Used:** Python, Jupyter Notebooks, Pandas, NumPy, scikit-learn (for TF-IDF, various classifiers, model evaluation metrics), NLTK (for stopwords, potentially tokenization if not using scikit-learn's directly for all steps), Matplotlib, Seaborn, XGBoost, LightGBM. (Derived from the import statements and operations within the `Fake News Detection.ipynb` file).
+* **Summary:** A fake news detection project implementing multiple machine learning classifiers. The pipeline includes text preprocessing (cleaning, tokenization), TF-IDF feature extraction, and evaluation of ten different classifiers including Logistic Regression, Naive Bayes, Random Forest, XGBoost, and SVM. Performance is measured using accuracy, precision, recall, F1-score, and confusion matrices.
+* **Technologies Used:** Python, Jupyter Notebooks, Pandas, NumPy, scikit-learn, NLTK, Matplotlib, Seaborn, XGBoost, LightGBM.
 
 ---
+
 ---
 **Text-to-3D Generation Enhancement** (Ongoing Research)
 * This research focuses on significantly advancing text-to-3D generation pipelines by refining diffusion models. The key goals include improving 3D consistency in generated assets, addressing critical failure modes, and enhancing the photorealism and utility of synthesized 3D content.
