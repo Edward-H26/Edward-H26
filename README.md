@@ -1,6 +1,40 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/main/assets/welcome_banner.gif" width="200px" alt="Welcome Banner"/>
-</p>
+<style>
+.animated-banner {
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 28px;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  border-right: .15em solid orange;
+  animation:
+    typing 3.0s steps(28, end),
+    blink-caret .75s step-end infinite;
+  width: max-content;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+@media (max-width: 768px) {
+  .animated-banner {
+    font-size: 20px;
+    letter-spacing: .1em;
+  }
+}
+</style>
+
+<div class="animated-banner">Welcome to Qiran's Profile!</div>
 
 <h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
 
