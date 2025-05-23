@@ -1,10 +1,10 @@
-<h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
+<h1 align="center">Hi! I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
 
 <p align="center">
   <em>
-    🎓 Data Science & Information Science Student @ University of Illinois Urbana-Champaign (Expected May 2026) <br>
+    🎓 Data Science & Information Science Student @ University of Illinois Urbana-Champaign <br>
     🔬 Minors in Computer Science & Statistics <br>
-    💡 Driven by the power of Computer Vision, Machine Learning, and Generative AI to solve real-world challenges.
+    💡 Passionate about machine learning, computer vision, and data science
   </em>
 </p>
 
