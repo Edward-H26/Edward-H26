@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGg2Z3VwZzVjeXNrZ3lobnZpdmV2NTR0Z3JkYmJjYTV0bHNqZmFhayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bGgsc5hKშირawaited/giphy.gif" width="200px" alt="Animated Welcome Banner"/>
+  <img src="https://media.giphy.com/media/fPzDc32cOOKjG2sotX/giphy.gif" width="200px" alt="Animated Welcome Banner"/>
 </p>
 
 <h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
