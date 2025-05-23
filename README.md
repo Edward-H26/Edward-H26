@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/main/assets/welcome-banner.gif" width="200px" alt="Animated Welcome Banner"/>
+  <img src="welcome-banner.gif" width="200px" alt="Animated Welcome Banner"/>
 </p>
 
 <h1 align="center">Hi there, I'm Qiran Hu <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></h1>
