@@ -51,36 +51,34 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
 
 <p align="center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++">
   <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="R">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/SQL-025E8C?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
+  <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
+  <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
-  <img src="https://img.shields.io/badge/SQL-025E8C?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
-  <img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white" alt="C#">
-  <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C">
-  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" alt="Django">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  <img src="https://img.shields.io/badge/Shiny-1E90FF?style=for-the-badge&logo=rstudio&logoColor=white" alt="Shiny for R">
-  <img src="https://img.shields.io/badge/NoSQL-A80000?style=for-the-badge&logo=mongodb&logoColor=white" alt="NoSQL">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-  <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
-  <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" alt="Ruby">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
   <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" alt="Ruby">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Cloud_DevOps-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Cloud DevOps">
   <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
+  <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
+  <img src="https.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
   <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" alt="Canva">
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
   <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" alt="Microsoft Office">
   <img src="https://img.shields.io/badge/Adobe_Creative_Suite-FF0000?style=for-the-badge&logo=adobecreativesuite&logoColor=white" alt="Adobe Creative Suite">
 </p>
 
 **Detailed Proficiency:**
-* **🖥️ Full Professional Proficiency:** Java, C++, Python, HTML, CSS, Javascript, R, SQL, NOSQL, Django, Microsoft Suites, Adobe Creative Suite.
-* **💻 Professional Working Proficiency:** C#, C, SAS, React, Git.
-* **⌨️ Limited Working Proficiency:** Go, Ruby, PHP, Figma, Canva, Unity, Arduino UNO.
+* **🖥️ Full Professional Proficiency:** Python, C++, R, SQL, NoSQL, GraphQL, HTML, CSS, Javascript, Microsoft Suites, and Adobe Creative Suite.
+* **💻 Professional Working Proficiency:** React JS, Node JS, Angular, PHP, and Ruby.
+* **⌨️ Limited Working Proficiency:** Java, Cloud DevOps, Unity, SAS, Figma, Canva, and Arduino UNO.
 
 **Key Areas of Expertise:**
 
