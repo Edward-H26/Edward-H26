@@ -68,7 +68,7 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
   <img src="https://img.shields.io/badge/Cloud_DevOps-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Cloud DevOps">
   <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
   <img src="https://img.shields.io/badge/SAS-0078B9?style=for-the-badge&logo=sas&logoColor=white" alt="SAS">
-  <img src="https.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
   <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" alt="Canva">
   <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
   <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" alt="Microsoft Office">
