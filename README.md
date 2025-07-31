@@ -150,12 +150,6 @@ Please do not be hesitant to get in touch with me at your earliest convenience i
 * Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
 * Communicated seemingly complex concepts into easily digestible pieces to technical and non-technical audiences.
 
-**BCI Neuroengineering Researcher** | <em>Wake Forest University Summer Immersion Program - Winston-Salem, NC</em>
-*(05/2021-09/2021)*
-* Assisted a research program in Brain Computer Interface and developed a new Arduino model using different codes to collect brain waves and evaluate the specific brainwave bands.
-* Designed and conducted experiments on the delivery of neurostimulation strategies.
-* Created programs for amyotrophic lateral sclerosis to live independently by notifying nursing assistants of aids such as wiping mouths, eating snacks, and flipping newspapers.
-
 ---
 
 ### 🌟 Leadership & Involvement
