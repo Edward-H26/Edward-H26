@@ -4,7 +4,7 @@
 <!-- Typing SVG -->
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&repeat=true&width=800&height=100&lines=Advancing+Human-Centered+Intelligence" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&repeat=true&width=800&height=100&lines=Advancing+HCI" alt="Typing SVG" />
   </a>
 </p>
 
@@ -66,7 +66,7 @@
   <strong>UIUC Computer Vision and Machine Learning Group</strong><br/>
   <em>Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)</em><br/><br/>
   <a href="https://vision.ischool.illinois.edu/people/">
-    <img src="https://img.shields.io/badge/Lab_Page-4285F4?style=flat-square&logo=readthedocs&logoColor=white" alt="Lab"/>
+    <img src="https://img.shields.io/badge/Lab-4285F4?style=flat-square&logo=readthedocs&logoColor=white" alt="Lab"/>
   </a>
 </p>
 
@@ -80,7 +80,7 @@
   <strong>UIUC Social Computing System Lab</strong><br/>
   <em>Undergraduate Researcher</em><br/><br/>
   <a href="https://socialcomputing.web.illinois.edu/">
-    <img src="https://img.shields.io/badge/Lab_Page-4285F4?style=flat-square&logo=readthedocs&logoColor=white" alt="Lab"/>
+    <img src="https://img.shields.io/badge/Lab-4285F4?style=flat-square&logo=readthedocs&logoColor=white" alt="Lab"/>
   </a>
 </p>
 
@@ -159,7 +159,7 @@
   <strong>Multi-agent HCI Research Synthesis Engine</strong><br/>
   <em>Systems Architect | 2025.11-Present</em><br/><br/>
   <a href="https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/">
-    <img src="https://img.shields.io/badge/Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Demo"/>
+    <img src="https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Demo"/>
   </a>
 </p>
 
@@ -187,7 +187,7 @@
   <strong>Anime Statistics and Analysis Platform</strong><br/>
   <em>Project Lead | 2025.02-2025.06</em><br/><br/>
   <a href="https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/">
-    <img src="https://img.shields.io/badge/Live_App-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="Shiny App"/>
+    <img src="https://img.shields.io/badge/Demo-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="Demo"/>
   </a>
 </p>
 
@@ -284,49 +284,42 @@
 - Minors: Computer Science and Statistics
 - 2022.08 - 2026.05
 
----
-
 <div align="center">
-  <p align="center">
-    <a href="https://github.com/Edward-H26">
-      <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/main/assets/icon-github.svg" width="52" height="52" alt="GitHub"/>
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://www.linkedin.com/in/qiranhu/">
-      <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/main/assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/>
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://x.com/eduardohuuu">
-      <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/main/assets/icon-x.svg" width="52" height="52" alt="X"/>
-    </a>
-    &nbsp;&nbsp;
-    <a href="mailto:qiranhu8@gmail.com">
-      <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/main/assets/icon-email.svg" width="52" height="52" alt="Email"/>
-    </a>
-  </p>
-</div>
+  <h2>My Contribution</h2>
 
----
-
-<div align="center">
-  <h2>📊 GitHub Stats</h2>
-
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9">
-    <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9" alt="GitHub Stats"/>
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F">
-    <img width="49%" src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak"/>
-  </picture>
+  <table>
+    <tr>
+      <td>
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9">
+          <img width="420" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9" alt="GitHub Stats"/>
+        </picture>
+      </td>
+      <td>
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F">
+          <img width="420" src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak"/>
+        </picture>
+      </td>
+    </tr>
+  </table>
 
   <br/>
 
-  <!-- Top Languages -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9">
-    <img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
-  </picture>
+  <table>
+    <tr>
+      <td>
+        <!-- Top Languages -->
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9">
+          <img width="360" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
+        </picture>
+      </td>
+      <td>
+        <img width="420" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Edward-H26&theme=github_dark" alt="Contribution Summary"/>
+      </td>
+    </tr>
+  </table>
 
   <br/>
 
@@ -336,10 +329,6 @@
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-green-animate.svg">
     <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D Contribution Calendar"/>
   </picture>
-
-  <br/>
-
-  <img width="60%" src="https://github-readme-activity-graph.vercel.app/graph?username=Edward-H26&theme=react-dark&hide_border=true&bg_color=0D1117&color=F85D7F&line=F8D866&point=F85D7F" alt="Activity Graph"/>
 </div>
 
 <!-- Snake Animation -->
@@ -348,6 +337,28 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
 </picture>
+
+---
+
+<div align="center">
+  <p align="center">
+    <a href="https://github.com/Edward-H26">
+      <img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/>
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/qiranhu/">
+      <img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/>
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://x.com/eduardohuuu">
+      <img src="assets/icon-x.svg" width="52" height="52" alt="X"/>
+    </a>
+    &nbsp;&nbsp;
+    <a href="mailto:qiranhu8@gmail.com">
+      <img src="assets/icon-email.svg" width="52" height="52" alt="Email"/>
+    </a>
+  </p>
+</div>
 
 <!-- Footer -->
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"/>
