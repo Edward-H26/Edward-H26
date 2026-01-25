@@ -66,28 +66,24 @@
 ## Research
 
 ### UIUC Computer Vision and Machine Learning Group
-*Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)*
+*Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)* | **2024.08-Present**
 
 - Develop 3D-consistent generative models for world understanding and embodied AI, and implement diffusion-based approaches for spatially coherent scene synthesis with applications in interactive simulation.
 - Investigate real-time 3D reconstruction methods for interactive experiences and integrate neural rendering with depth estimation for embodied agent perception systems
 - Train large-scale vision transformers on TB-level image datasets using a high-performance computing cluster in parallel at National Artificial Intelligence Research Resource (NAIRR) Pilot and experiment with spatial tokenization and multi-view consistency for 3D scene generation.
 
-<a href="https://vision.ischool.illinois.edu/people/">
-  <img src="https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lab Page"/>
-</a>
+[![Lab Page](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://vision.ischool.illinois.edu/people/)
 
 ---
 
 ### UIUC Social Computing System Lab
-*Undergraduate Researcher*
+*Undergraduate Researcher* | **2024.05-Present**
 
 - Implement the SOAP.AI clinical video analysis platform using multimodal LLM pipelines for automated note generation and develop affective signal extraction through facial expressions and body language from therapist-patient interactions to assist clinical documentation and therapeutic assessment.
 - Design a context fluidity framework for personalized AI adaptation, advancing from static prompt engineering toward dynamic context engineering that models individual communication preferences and emotional states across conversation sessions.
 - Experiment with multimodal generation pipelines by applying supervised fine-tuning and prompt optimization techniques, including few-shot learning and chain-of-thought prompting for domain-specific model adaptation.
 
-<a href="https://socialcomputing.web.illinois.edu/">
-  <img src="https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lab Page"/>
-</a>
+[![Lab Page](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://socialcomputing.web.illinois.edu/)
 
 ---
 
@@ -126,12 +122,8 @@
 - Created informative and intriguing content for DISCOVERY's Guides to explain data science concepts through practical applications of Python.
 - Developed difficult homework assignments, exam questions, test suites, and autograder scripts for DISCOVERY's Mastery Platform.
 
-<a href="https://discovery.cs.illinois.edu/guides/">
-  <img src="https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guides"/>
-</a>
-<a href="https://mastery.cs.illinois.edu/">
-  <img src="https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Mastery"/>
-</a>
+[![Guides](https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://discovery.cs.illinois.edu/guides/)
+[![Mastery](https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mastery.cs.illinois.edu/)
 
 ---
 
@@ -153,9 +145,7 @@
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
 - Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency by 40% from 8.2s to 4.9s production-ready approaches during API failures and other issues.
 
-<a href="https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/">
-  <img src="https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Demo"/>
-</a>
+[![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
 
 ---
 
@@ -166,9 +156,7 @@
 - Implemented a multi-agent workflow featuring a self-evolving Long-Term Memory Architecture that mimics human memory processes to enable personalized and accurate responses, overcoming limitations of traditional FIFO memory structures and ensuring critical information is retained and utilized effectively.
 - Deployed to 2 partner institutions and iterated through 6 development cycles incorporating user feedback to refine interface design and response quality based on student engagement data.
 
-<a href="https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-</a>
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA)
 
 ---
 
@@ -177,9 +165,7 @@
 
 - Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
 
-<a href="https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/">
-  <img src="https://img.shields.io/badge/Demo-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="Demo"/>
-</a>
+[![Demo](https://img.shields.io/badge/Demo-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
 
 ---
 
@@ -188,9 +174,7 @@
 
 - Proposed a refined neural style transfer architecture, particularly when applying abstract art styles to photographic content, which emphasizes preserving the global structure and edges of the content image, transferring the high-level artistic tone and color distribution of the style image, and reducing distortions common in patch-based or single-layer loss models.
 
-<a href="https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-</a>
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
 
 ---
 
