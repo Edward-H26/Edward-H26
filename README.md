@@ -244,16 +244,57 @@
 
 ### Technical Skills
 
-- Languages: Python, C++, Java, Go, R, Ruby, Kotlin, PHP
-- AI/ML Frameworks: PyTorch, JAX, TensorFlow, OpenCV, LangChain, LangGraph, LangSmith
-- Large Model Training: Distributed Training, RLHF, SFT, CUDA
-- Computer Vision & 3D: Diffusion Models, NeRF, Spatial Representations, World Models, 3D Annotation Systems
-- Multi-agent Systems: MCP (Model Context Protocol), Tool Calling, Function Chaining, Agent Orchestration, Multi-turn Reasoning
-- Full-stack Development: React.js, Next.js, Vue.js, Angular.js, Node.js, TypeScript, JavaScript, HTML5, Tailwind CSS
-- Databases: PostgreSQL, Neo4j, MongoDB
-- Infrastructure: Docker, Kubernetes, AWS, Cloud DevOps
-- Design and Office Tools: Figma, Canva, Microsoft Office Suites, Adobe Creative Suite
-- Other Tools: Unity, SAS, Arduino UNO
+<div align="center">
+
+#### AI/ML & Deep Learning
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow&theme=dark" alt="AI/ML"/>
+<br/>
+<img src="https://img.shields.io/badge/JAX-A435F0?style=flat-square&logo=jax&logoColor=white" alt="JAX"/>
+<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV"/>
+<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain"/>
+<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logoColor=white" alt="LangGraph"/>
+<img src="https://img.shields.io/badge/LangSmith-1C3C3C?style=flat-square&logoColor=white" alt="LangSmith"/>
+
+#### Large Model Training
+<img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
+<img src="https://img.shields.io/badge/Distributed_Training-FF6F00?style=flat-square&logoColor=white" alt="Distributed Training"/>
+<img src="https://img.shields.io/badge/RLHF-8B5CF6?style=flat-square&logoColor=white" alt="RLHF"/>
+<img src="https://img.shields.io/badge/SFT-6366F1?style=flat-square&logoColor=white" alt="SFT"/>
+
+#### Computer Vision & 3D
+<img src="https://img.shields.io/badge/Diffusion_Models-EC4899?style=flat-square&logoColor=white" alt="Diffusion Models"/>
+<img src="https://img.shields.io/badge/NeRF-A855F7?style=flat-square&logoColor=white" alt="NeRF"/>
+<img src="https://img.shields.io/badge/Spatial_Representations-C084FC?style=flat-square&logoColor=white" alt="Spatial Representations"/>
+<img src="https://img.shields.io/badge/World_Models-D946EF?style=flat-square&logoColor=white" alt="World Models"/>
+<img src="https://img.shields.io/badge/3D_Annotation_Systems-F472B6?style=flat-square&logoColor=white" alt="3D Annotation Systems"/>
+
+#### Multi-agent Systems
+<img src="https://img.shields.io/badge/MCP-6366F1?style=flat-square&logoColor=white" alt="MCP"/>
+<img src="https://img.shields.io/badge/Tool_Calling-8B5CF6?style=flat-square&logoColor=white" alt="Tool Calling"/>
+<img src="https://img.shields.io/badge/Function_Chaining-A855F7?style=flat-square&logoColor=white" alt="Function Chaining"/>
+<img src="https://img.shields.io/badge/Agent_Orchestration-C084FC?style=flat-square&logoColor=white" alt="Agent Orchestration"/>
+<img src="https://img.shields.io/badge/Multi--turn_Reasoning-D946EF?style=flat-square&logoColor=white" alt="Multi-turn Reasoning"/>
+
+#### Full-Stack Development
+<img src="https://skillicons.dev/icons?i=react,nextjs,vue,angular,nodejs,ts,js,html,tailwind&theme=dark" alt="Full-Stack"/>
+
+#### Languages
+<img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
+
+#### Databases & Infrastructure
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
+<br/>
+<img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white" alt="Neo4j"/>
+
+#### Tools & Design
+<img src="https://skillicons.dev/icons?i=figma,unity&theme=dark" alt="Tools"/>
+<br/>
+<img src="https://img.shields.io/badge/Adobe_Suite-FF0000?style=flat-square&logo=adobe&logoColor=white" alt="Adobe"/>
+<img src="https://img.shields.io/badge/Canva-00C4CC?style=flat-square&logo=canva&logoColor=white" alt="Canva"/>
+<img src="https://img.shields.io/badge/SAS-0067B1?style=flat-square&logo=sas&logoColor=white" alt="SAS"/>
+<img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white" alt="Arduino"/>
+
+</div>
 
 ### Languages
 
@@ -306,20 +347,11 @@
 
   <br/>
 
-  <table>
-    <tr>
-      <td>
-        <!-- Top Languages -->
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9">
-          <img width="360" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
-        </picture>
-      </td>
-      <td>
-        <img width="420" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Edward-H26&theme=github_dark" alt="Contribution Summary"/>
-      </td>
-    </tr>
-  </table>
+  <!-- Top Languages -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9">
+    <img width="360" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
+  </picture>
 
   <br/>
 
