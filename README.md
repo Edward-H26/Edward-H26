@@ -4,13 +4,13 @@
 <!-- Typing SVG -->
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&repeat=true&width=800&height=100&lines=Advancing+HCI" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&repeat=false&width=1000&height=100&lines=Advancing+Human%E2%80%91Centered+Intelligence" alt="Typing SVG" />
   </a>
 </p>
 
 <!-- Announcement Banner -->
 <div align="center">
-  <img src="https://img.shields.io/badge/🔔_I_am_actively_looking_for_research_opportunities_and_collaborations_in_agentic_system_and_computer_vision._Feel_free_to_reach_out_if_you_are_interested_in_working_together%21-FF6B6B?style=for-the-badge&labelColor=1a1a2e" alt="Announcement"/>
+  <img height="50" src="https://img.shields.io/badge/🔔_I_am_actively_looking_for_research_opportunities_and_collaborations_in_agentic_system_and_computer_vision._Feel_free_to_reach_out_if_you_are_interested_in_working_together%21-FF6B6B?style=for-the-badge&labelColor=1a1a2e" alt="Announcement"/>
 </div>
 
 <p align="center">
@@ -32,10 +32,10 @@
 
 <div align="center">
   <p>
-    I am an undergraduate research assistant in <strong>Computer Vision and Machine Learning Group</strong> at <strong>University of Illinois Urbana-Champaign</strong>. I am also affiliated with the <strong>National Center for Supercomputing Applications</strong> and <strong>National Artificial Intelligence Research Resource Pilot</strong>.
+    I am an undergraduate research assistant in <strong><a href="https://vision.ischool.illinois.edu/index.html">Computer Vision and Machine Learning Group</a></strong> at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>. I am also affiliated with the <strong><a href="https://www.ncsa.illinois.edu/">National Center for Supercomputing Applications</a></strong> and <strong><a href="https://nairrpilot.org/">National Artificial Intelligence Research Resource Pilot</a></strong>.
   </p>
   <p>
-    Previously, I received my B.S. in Data Science and Information Science with minors in Computer Science and Statistics at <strong>University of Illinois Urbana-Champaign</strong>.
+    Previously, I received my B.S. in Data Science and Information Science with minors in Computer Science and Statistics at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>.
   </p>
   <p>
     I am an applied AI researcher and full-stack software engineer working at the intersection of multi-agent systems and computer vision to build AI that understands, reasons, and coordinates actions in complex visual environments. My research interests include self-evolving multi-agent architectures, context-aware memory systems, multimodal AI reasoning abilities, novel human-AI interfaces, generative world models, spatial intelligence, and evaluation for agentic systems.
@@ -45,17 +45,17 @@
 ## Research Interests
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Agentic_Systems_and_Tool_Use-6366F1?style=for-the-badge&logoColor=white" alt="Agentic Systems and Tool Use"/>
-  <img src="https://img.shields.io/badge/Multi_Agent_Architectures_and_Coordination-8B5CF6?style=for-the-badge&logoColor=white" alt="Multi Agent Architectures and Coordination"/>
-  <img src="https://img.shields.io/badge/Multimodal_Language_Models-A855F7?style=for-the-badge&logoColor=white" alt="Multimodal Language Models"/>
-  <img src="https://img.shields.io/badge/World_Models_for_3D_Environments-C084FC?style=for-the-badge&logoColor=white" alt="World Models for 3D Environments"/>
-  <img src="https://img.shields.io/badge/Spatial_Intelligence_and_3D_Reasoning-D946EF?style=for-the-badge&logoColor=white" alt="Spatial Intelligence and 3D Reasoning"/>
-  <img src="https://img.shields.io/badge/Generative_Video_and_Audio_Models-EC4899?style=flat-square&logoColor=white" alt="Generative Video and Audio Models"/>
-  <img src="https://img.shields.io/badge/Embodied_AI_and_Simulation-F472B6?style=for-the-badge&logoColor=white" alt="Embodied AI and Simulation"/>
-  <img src="https://img.shields.io/badge/Human_AI_Interaction_and_Interface_Prototyping-FB7185?style=for-the-badge&logoColor=white" alt="Human AI Interaction and Interface Prototyping"/>
-  <img src="https://img.shields.io/badge/Evaluation_and_Safety_for_Agentic_Systems-F87171?style=for-the-badge&logoColor=white" alt="Evaluation and Safety for Agentic Systems"/>
-  <img src="https://img.shields.io/badge/Alignment,_Interpretability,_and_Model_Behavior-EF4444?style=for-the-badge&logoColor=white" alt="Alignment, Interpretability, and Model Behavior"/>
-  <img src="https://img.shields.io/badge/Large_Scale_Training_and_Data_Systems-DC2626?style=for-the-badge&logoColor=white" alt="Large Scale Training and Data Systems"/>
+  <img src="https://img.shields.io/badge/Agentic_Systems_and_Tool_Use-E84A27?style=for-the-badge&logoColor=white" alt="Agentic Systems and Tool Use"/>
+  <img src="https://img.shields.io/badge/Multi_Agent_Architectures_and_Coordination-E84A27?style=for-the-badge&logoColor=white" alt="Multi Agent Architectures and Coordination"/>
+  <img src="https://img.shields.io/badge/Multimodal_Language_Models-E84A27?style=for-the-badge&logoColor=white" alt="Multimodal Language Models"/>
+  <img src="https://img.shields.io/badge/World_Models_for_3D_Environments-E84A27?style=for-the-badge&logoColor=white" alt="World Models for 3D Environments"/>
+  <img src="https://img.shields.io/badge/Spatial_Intelligence_and_3D_Reasoning-E84A27?style=for-the-badge&logoColor=white" alt="Spatial Intelligence and 3D Reasoning"/>
+  <img src="https://img.shields.io/badge/Generative_Video_and_Audio_Models-E84A27?style=for-the-badge&logoColor=white" alt="Generative Video and Audio Models"/>
+  <img src="https://img.shields.io/badge/Embodied_AI_and_Simulation-E84A27?style=for-the-badge&logoColor=white" alt="Embodied AI and Simulation"/>
+  <img src="https://img.shields.io/badge/Human_AI_Interaction_and_Interface_Prototyping-E84A27?style=for-the-badge&logoColor=white" alt="Human AI Interaction and Interface Prototyping"/>
+  <img src="https://img.shields.io/badge/Evaluation_and_Safety_for_Agentic_Systems-E84A27?style=for-the-badge&logoColor=white" alt="Evaluation and Safety for Agentic Systems"/>
+  <img src="https://img.shields.io/badge/Alignment,_Interpretability,_and_Model_Behavior-E84A27?style=for-the-badge&logoColor=white" alt="Alignment, Interpretability, and Model Behavior"/>
+  <img src="https://img.shields.io/badge/Large_Scale_Training_and_Data_Systems-E84A27?style=for-the-badge&logoColor=white" alt="Large Scale Training and Data Systems"/>
 </p>
 
 ---
