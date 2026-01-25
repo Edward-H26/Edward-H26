@@ -1,17 +1,18 @@
 <!-- Animated Header -->
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Undergraduate%20Research%20Assistant%20%7C%20University%20of%20Illinois%20Urbana-Champaign&descAlignY=52&descSize=18"/>
 
-<!-- Typing SVG -->
-<p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&repeat=false&width=1000&height=100&lines=Advancing+Human%E2%80%91Centered+Intelligence" alt="Typing SVG" />
-  </a>
-</p>
-
-<!-- Announcement Banner -->
+<!-- Tagline -->
 <div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=120&lines=%E2%9C%A8+Advancing+Human-Centered+Intelligence;%F0%9F%A4%96+Building+Agentic+Systems+%26+Computer+Vision;%F0%9F%8C%8D+Creating+AI+That+Understands+the+World" alt="Typing SVG" />
+  </a>
+</div>
+
+<!-- Status Banner -->
+<div align="center">
+  <br/>
   <a href="mailto:qiranhu8@gmail.com">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=18&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%F0%9F%94%94+Actively+seeking+research+opportunities+and+collaborations;in+agentic+systems+and+computer+vision.+Let's+connect!" alt="Announcement"/>
+    <img src="https://img.shields.io/badge/🔔_Open_to_Research_Collaborations-Let's_Connect!-E84A27?style=for-the-badge&labelColor=13294B" alt="Open to Collaborations"/>
   </a>
 </div>
 
@@ -64,60 +65,36 @@
 
 ## Research
 
-<table width="100%">
-  <tr>
-    <td><h3>UIUC Computer Vision and Machine Learning Group</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)</em>&nbsp;
-      <a href="https://vision.ischool.illinois.edu/people/">
-        <img src="https://img.shields.io/badge/Lab-Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lab Page"/>
-      </a>
-    </td>
-    <td align="right"></td>
-  </tr>
-</table>
+### UIUC Computer Vision and Machine Learning Group
+*Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)*
 
 - Develop 3D-consistent generative models for world understanding and embodied AI, and implement diffusion-based approaches for spatially coherent scene synthesis with applications in interactive simulation.
 - Investigate real-time 3D reconstruction methods for interactive experiences and integrate neural rendering with depth estimation for embodied agent perception systems
 - Train large-scale vision transformers on TB-level image datasets using a high-performance computing cluster in parallel at National Artificial Intelligence Research Resource (NAIRR) Pilot and experiment with spatial tokenization and multi-view consistency for 3D scene generation.
 
+<a href="https://vision.ischool.illinois.edu/people/">
+  <img src="https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lab Page"/>
+</a>
+
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>UIUC Social Computing System Lab</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Undergraduate Researcher</em>&nbsp;
-      <a href="https://socialcomputing.web.illinois.edu/">
-        <img src="https://img.shields.io/badge/Lab-Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lab Page"/>
-      </a>
-    </td>
-    <td align="right"></td>
-  </tr>
-</table>
+### UIUC Social Computing System Lab
+*Undergraduate Researcher*
 
 - Implement the SOAP.AI clinical video analysis platform using multimodal LLM pipelines for automated note generation and develop affective signal extraction through facial expressions and body language from therapist-patient interactions to assist clinical documentation and therapeutic assessment.
 - Design a context fluidity framework for personalized AI adaptation, advancing from static prompt engineering toward dynamic context engineering that models individual communication preferences and emotional states across conversation sessions.
 - Experiment with multimodal generation pipelines by applying supervised fine-tuning and prompt optimization techniques, including few-shot learning and chain-of-thought prompting for domain-specific model adaptation.
 
+<a href="https://socialcomputing.web.illinois.edu/">
+  <img src="https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lab Page"/>
+</a>
+
+---
+
 ## Experience
 
-<table width="100%">
-  <tr>
-    <td><h3>Computer Vision and Machine Learning Group</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>Undergraduate Research Assistant</em></td>
-    <td align="right"><strong>2025.05-Present</strong></td>
-  </tr>
-</table>
+### Computer Vision and Machine Learning Group
+*Undergraduate Research Assistant* | **2025.05-Present**
 
 - Advance text-to-3D generation research building on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024), addressing multi-view consistency failures through improved depth estimation and 3D-aware diffusion conditioning.
 - Conduct experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception and evaluating spatial intelligence metrics for world model applications.
@@ -125,16 +102,8 @@
 
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>UIUC Student Affairs, WRC Department</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>Data Analyst</em></td>
-    <td align="right"><strong>2024.08-2024.12</strong></td>
-  </tr>
-</table>
+### UIUC Student Affairs, WRC Department
+*Data Analyst* | **2024.08-2024.12**
 
 - Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program.
 - Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
@@ -142,57 +111,32 @@
 
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>CPC Brooklyn Community Center</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>Data Engineer</em></td>
-    <td align="right"><strong>2023.06-2023.08</strong></td>
-  </tr>
-</table>
+### CPC Brooklyn Community Center
+*Data Engineer* | **2023.06-2023.08**
 
 - Analyzed over 4GB of workforce management data to identify customer usage patterns and conducted exploratory data analysis.
 - Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
 
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Teaching Assistant</em>&nbsp;
-      <a href="https://discovery.cs.illinois.edu/guides/">
-        <img src="https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guides"/>
-      </a>
-      <a href="https://mastery.cs.illinois.edu/">
-        <img src="https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Mastery"/>
-      </a>
-    </td>
-    <td align="right"><strong>2023.08-Present</strong></td>
-  </tr>
-</table>
+### CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign
+*Teaching Assistant* | **2023.08-Present**
 
 - Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
 - Created informative and intriguing content for DISCOVERY's Guides to explain data science concepts through practical applications of Python.
 - Developed difficult homework assignments, exam questions, test suites, and autograder scripts for DISCOVERY's Mastery Platform.
 
+<a href="https://discovery.cs.illinois.edu/guides/">
+  <img src="https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guides"/>
+</a>
+<a href="https://mastery.cs.illinois.edu/">
+  <img src="https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Mastery"/>
+</a>
+
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>Student Government, University of Illinois at Urbana-Champaign</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>iSchool Student Representative</em></td>
-    <td align="right"><strong>2022.09-2023.09</strong></td>
-  </tr>
-</table>
+### Student Government, University of Illinois at Urbana-Champaign
+*iSchool Student Representative* | **2022.09-2023.09**
 
 - Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
 - Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
@@ -202,116 +146,64 @@
 
 ## Projects
 
-<table width="100%">
-  <tr>
-    <td><h3>Multi-agent HCI Research Synthesis Engine</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Systems Architect</em>&nbsp;
-      <a href="https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/">
-        <img src="https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Demo"/>
-      </a>
-    </td>
-    <td align="right"><strong>2025.11-Present</strong></td>
-  </tr>
-</table>
+### Multi-agent HCI Research Synthesis Engine
+*Systems Architect* | **2025.11-Present**
 
 - Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
 - Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency by 40% from 8.2s to 4.9s production-ready approaches during API failures and other issues.
 
+<a href="https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/">
+  <img src="https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Demo"/>
+</a>
+
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>Node Optimized Orchestration Design for Educational Intelligence Architecture</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Full Stack Developer</em>&nbsp;
-      <a href="https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-      </a>
-    </td>
-    <td align="right"><strong>2025.08-Present</strong></td>
-  </tr>
-</table>
+### Node Optimized Orchestration Design for Educational Intelligence Architecture
+*Full Stack Developer* | **2025.08-Present**
 
 - Built a K-12 intelligent tutoring platform integrating multi-agent orchestration with memory-enhanced GraphRAG and designed an adaptive learning system that personalizes responses beyond static Q&A.
 - Implemented a multi-agent workflow featuring a self-evolving Long-Term Memory Architecture that mimics human memory processes to enable personalized and accurate responses, overcoming limitations of traditional FIFO memory structures and ensuring critical information is retained and utilized effectively.
 - Deployed to 2 partner institutions and iterated through 6 development cycles incorporating user feedback to refine interface design and response quality based on student engagement data.
 
+<a href="https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>Anime Statistics and Analysis Platform</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Project Lead</em>&nbsp;
-      <a href="https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/">
-        <img src="https://img.shields.io/badge/Demo-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="Demo"/>
-      </a>
-    </td>
-    <td align="right"><strong>2025.02-2025.06</strong></td>
-  </tr>
-</table>
+### Anime Statistics and Analysis Platform
+*Project Lead* | **2025.02-2025.06**
 
 - Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
 
+<a href="https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/">
+  <img src="https://img.shields.io/badge/Demo-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="Demo"/>
+</a>
+
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>Realistic Neural Style Transfer Architecture</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td>
-      <em>Independent Researcher</em>&nbsp;
-      <a href="https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-      </a>
-    </td>
-    <td align="right"><strong>2025.01-2025.08</strong></td>
-  </tr>
-</table>
+### Realistic Neural Style Transfer Architecture
+*Independent Researcher* | **2025.01-2025.08**
 
 - Proposed a refined neural style transfer architecture, particularly when applying abstract art styles to photographic content, which emphasizes preserving the global structure and edges of the content image, transferring the high-level artistic tone and color distribution of the style image, and reducing distortions common in patch-based or single-layer loss models.
 
+<a href="https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>Technology and System of Spatial-Temporal Multi-Modal Large Language Model</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>Project Researcher, Chinese Academy of Sciences</em></td>
-    <td align="right"><strong>2024.06-2024.08</strong></td>
-  </tr>
-</table>
+### Technology and System of Spatial-Temporal Multi-Modal Large Language Model
+*Project Researcher, Chinese Academy of Sciences* | **2024.06-2024.08**
 
 - Designed data modeling algorithm for heterogeneous spatial-temporal data from multi-sensor sources, transforming multimodal understanding into unified global modeling framework with improved efficiency.
 - Participated in the research of ST-XFormer, the Spatial-Temporal Transformer system, including the extraction of semantic events from spatial-temporal data sequences, the feature alignment methods for spatial-temporal data, the spatial-temporal-based logical calculus methods and semantic reasoning methods.
 
 ---
 
-<table width="100%">
-  <tr>
-    <td><h3>A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>Project Researcher, Chinese Academy of Sciences</em></td>
-    <td align="right"><strong>2024.05-2024.06</strong></td>
-  </tr>
-</table>
+### A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning
+*Project Researcher, Chinese Academy of Sciences* | **2024.05-2024.06**
 
 - Developed an emergency evacuation framework that integrates spatio-temporal perception data, streamlined the entire process of decision-making for the global optimal path planning by incorporating the real-time dynamic spatio-temporal perception data provided by drones.
 - Proposed and compared multiple algorithms, including the Individual-based Search Method (IBSM), the Global Optimal Sparse Route Planning Query Method (GOSRPQM), and the Improved GOSRPQM algorithm (IGOSRPQM) that incorporates pruning strategies and refinement operations. Implemented and verified these algorithms using tools such as Python and PostgreSQL on real road network data (San Joaquin County, New York, Beijing).
@@ -404,20 +296,10 @@
 
 ### Education
 
-<table width="100%">
-  <tr>
-    <td><h3>University of Illinois at Urbana-Champaign</h3></td>
-    <td align="right"></td>
-  </tr>
-  <tr>
-    <td><em>BS in Data Science and Information Science</em></td>
-    <td align="right"><strong>2022.08 - 2026.05</strong></td>
-  </tr>
-  <tr>
-    <td><em>Minors: Computer Science and Statistics</em></td>
-    <td align="right"></td>
-  </tr>
-</table>
+### University of Illinois at Urbana-Champaign
+*BS in Data Science and Information Science* | **2022.08 - 2026.05**
+
+*Minors: Computer Science and Statistics*
 
 <div align="center">
   <h2>My Contribution</h2>
@@ -466,26 +348,13 @@
 
 ---
 
-<div align="center">
-  <p align="center">
-    <a href="https://github.com/Edward-H26">
-      <img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/>
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://www.linkedin.com/in/qiranhu/">
-      <img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/>
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://x.com/eduardohuuu">
-      <img src="assets/icon-x.svg" width="52" height="52" alt="X"/>
-    </a>
-    &nbsp;&nbsp;
-    <a href="mailto:qiranhu8@gmail.com">
-      <img src="assets/icon-email.svg" width="52" height="52" alt="Email"/>
-    </a>
-  </p>
-  <p align="center"><strong>Feel free to contact me!</strong></p>
-</div>
+<p align="center">
+  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a> 
+  <a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a> 
+  <a href="https://x.com/eduardohuuu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a> 
+  <a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
+</p>
+<p align="center"><strong>Feel free to contact me!</strong></p>
 
 <!-- Footer -->
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"/>
