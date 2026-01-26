@@ -4,7 +4,7 @@
 <!-- Tagline -->
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=120&lines=%E2%9C%A8+Advancing+Human-Centered+Intelligence;%F0%9F%A4%96+Building+Agentic+Systems+%26+Computer+Vision;%F0%9F%8C%8D+Creating+AI+That+Understands+the+World" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=%E2%9C%A8+Advancing+Human-Centered+Intelligence;%F0%9F%A4%96+Building+Agentic+Systems+%26+Computer+Vision;%F0%9F%8C%8D+Creating+AI+That+Understands+the+World" alt="Typing SVG" />
   </a>
 </div>
 
@@ -65,8 +65,10 @@
 
 ## Research
 
-### UIUC Computer Vision and Machine Learning Group
-*Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)* | **2024.08-Present**
+| **UIUC Computer Vision and Machine Learning Group** | **2024.08-Present** |
+| :--- | ---: |
+
+*Undergraduate Researcher (National Center for Supercomputing Applications (NCSA) affiliated)*
 
 - Develop 3D-consistent generative models for world understanding and embodied AI, and implement diffusion-based approaches for spatially coherent scene synthesis with applications in interactive simulation.
 - Investigate real-time 3D reconstruction methods for interactive experiences and integrate neural rendering with depth estimation for embodied agent perception systems
@@ -76,8 +78,10 @@
 
 ---
 
-### UIUC Social Computing System Lab
-*Undergraduate Researcher* | **2024.05-Present**
+| **UIUC Social Computing System Lab** | **2024.05-Present** |
+| :--- | ---: |
+
+*Undergraduate Researcher*
 
 - Implement the SOAP.AI clinical video analysis platform using multimodal LLM pipelines for automated note generation and develop affective signal extraction through facial expressions and body language from therapist-patient interactions to assist clinical documentation and therapeutic assessment.
 - Design a context fluidity framework for personalized AI adaptation, advancing from static prompt engineering toward dynamic context engineering that models individual communication preferences and emotional states across conversation sessions.
@@ -89,8 +93,10 @@
 
 ## Experience
 
-### Computer Vision and Machine Learning Group
-*Undergraduate Research Assistant* | **2025.05-Present**
+| **Computer Vision and Machine Learning Group** | **2025.05-Present** |
+| :--- | ---: |
+
+*Undergraduate Research Assistant*
 
 - Advance text-to-3D generation research building on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024), addressing multi-view consistency failures through improved depth estimation and 3D-aware diffusion conditioning.
 - Conduct experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception and evaluating spatial intelligence metrics for world model applications.
@@ -98,8 +104,10 @@
 
 ---
 
-### UIUC Student Affairs, WRC Department
-*Data Analyst* | **2024.08-2024.12**
+| **UIUC Student Affairs, WRC Department** | **2024.08-2024.12** |
+| :--- | ---: |
+
+*Data Analyst*
 
 - Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program.
 - Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
@@ -107,16 +115,20 @@
 
 ---
 
-### CPC Brooklyn Community Center
-*Data Engineer* | **2023.06-2023.08**
+| **CPC Brooklyn Community Center** | **2023.06-2023.08** |
+| :--- | ---: |
+
+*Data Engineer*
 
 - Analyzed over 4GB of workforce management data to identify customer usage patterns and conducted exploratory data analysis.
 - Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
 
 ---
 
-### CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign
-*Teaching Assistant* | **2023.08-Present**
+| **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign** | **2023.08-Present** |
+| :--- | ---: |
+
+*Teaching Assistant*
 
 - Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
 - Created informative and intriguing content for DISCOVERY's Guides to explain data science concepts through practical applications of Python.
@@ -127,8 +139,10 @@
 
 ---
 
-### Student Government, University of Illinois at Urbana-Champaign
-*iSchool Student Representative* | **2022.09-2023.09**
+| **Student Government, University of Illinois at Urbana-Champaign** | **2022.09-2023.09** |
+| :--- | ---: |
+
+*iSchool Student Representative*
 
 - Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
 - Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
@@ -138,8 +152,10 @@
 
 ## Projects
 
-### Multi-agent HCI Research Synthesis Engine
-*Systems Architect* | **2025.11-Present**
+| **Multi-agent HCI Research Synthesis Engine** | **2025.11-Present** |
+| :--- | ---: |
+
+*Systems Architect*
 
 - Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
@@ -149,8 +165,10 @@
 
 ---
 
-### Node Optimized Orchestration Design for Educational Intelligence Architecture
-*Full Stack Developer* | **2025.08-Present**
+| **Node Optimized Orchestration Design for Educational Intelligence Architecture** | **2025.08-Present** |
+| :--- | ---: |
+
+*Full Stack Developer*
 
 - Built a K-12 intelligent tutoring platform integrating multi-agent orchestration with memory-enhanced GraphRAG and designed an adaptive learning system that personalizes responses beyond static Q&A.
 - Implemented a multi-agent workflow featuring a self-evolving Long-Term Memory Architecture that mimics human memory processes to enable personalized and accurate responses, overcoming limitations of traditional FIFO memory structures and ensuring critical information is retained and utilized effectively.
@@ -160,8 +178,10 @@
 
 ---
 
-### Anime Statistics and Analysis Platform
-*Project Lead* | **2025.02-2025.06**
+| **Anime Statistics and Analysis Platform** | **2025.02-2025.06** |
+| :--- | ---: |
+
+*Project Lead*
 
 - Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
 
@@ -169,8 +189,10 @@
 
 ---
 
-### Realistic Neural Style Transfer Architecture
-*Independent Researcher* | **2025.01-2025.08**
+| **Realistic Neural Style Transfer Architecture** | **2025.01-2025.08** |
+| :--- | ---: |
+
+*Independent Researcher*
 
 - Proposed a refined neural style transfer architecture, particularly when applying abstract art styles to photographic content, which emphasizes preserving the global structure and edges of the content image, transferring the high-level artistic tone and color distribution of the style image, and reducing distortions common in patch-based or single-layer loss models.
 
@@ -178,16 +200,20 @@
 
 ---
 
-### Technology and System of Spatial-Temporal Multi-Modal Large Language Model
-*Project Researcher, Chinese Academy of Sciences* | **2024.06-2024.08**
+| **Technology and System of Spatial-Temporal Multi-Modal Large Language Model** | **2024.06-2024.08** |
+| :--- | ---: |
+
+*Project Researcher, Chinese Academy of Sciences*
 
 - Designed data modeling algorithm for heterogeneous spatial-temporal data from multi-sensor sources, transforming multimodal understanding into unified global modeling framework with improved efficiency.
 - Participated in the research of ST-XFormer, the Spatial-Temporal Transformer system, including the extraction of semantic events from spatial-temporal data sequences, the feature alignment methods for spatial-temporal data, the spatial-temporal-based logical calculus methods and semantic reasoning methods.
 
 ---
 
-### A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning
-*Project Researcher, Chinese Academy of Sciences* | **2024.05-2024.06**
+| **A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning** | **2024.05-2024.06** |
+| :--- | ---: |
+
+*Project Researcher, Chinese Academy of Sciences*
 
 - Developed an emergency evacuation framework that integrates spatio-temporal perception data, streamlined the entire process of decision-making for the global optimal path planning by incorporating the real-time dynamic spatio-temporal perception data provided by drones.
 - Proposed and compared multiple algorithms, including the Individual-based Search Method (IBSM), the Global Optimal Sparse Route Planning Query Method (GOSRPQM), and the Improved GOSRPQM algorithm (IGOSRPQM) that incorporates pruning strategies and refinement operations. Implemented and verified these algorithms using tools such as Python and PostgreSQL on real road network data (San Joaquin County, New York, Beijing).
@@ -280,8 +306,10 @@
 
 ### Education
 
-### University of Illinois at Urbana-Champaign
-*BS in Data Science and Information Science* | **2022.08 - 2026.05**
+| **University of Illinois at Urbana-Champaign** | **2022.08 - 2026.05** |
+| :--- | ---: |
+
+*BS in Data Science and Information Science*
 
 *Minors: Computer Science and Statistics*
 
@@ -298,8 +326,8 @@
       </td>
       <td>
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F">
-          <img width="420" src="https://streak-stats.demolab.com/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak"/>
+          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats-eight.vercel.app/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F">
+          <img width="420" src="https://github-readme-streak-stats-eight.vercel.app/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak"/>
         </picture>
       </td>
     </tr>
