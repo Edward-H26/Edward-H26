@@ -65,42 +65,16 @@
 
 ## Education
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>University of Illinois at Urbana-Champaign</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>BS in Data Science and Information Science</em><br>
-      <em>Minors: Computer Science and Statistics</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Aug 2022 - May 2026
-    </td>
-  </tr>
-</table>
+### **University of Illinois at Urbana-Champaign**
+**BS in Data Science and Information Science** ∙ *Aug 2022 - May 2026*
+*Minors: Computer Science and Statistics*
 
 ---
 
 ## Research
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>UIUC Computer Vision and Machine Learning Group</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Undergraduate Researcher (NCSA affiliated)</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Aug 2024 - Present
-    </td>
-  </tr>
-</table>
+### **UIUC Computer Vision and Machine Learning Group**
+**Undergraduate Researcher (NCSA affiliated)** ∙ *Aug 2024 - Present*
 
 - Develop 3D-consistent generative models for world understanding and embodied AI, and implement diffusion-based approaches for spatially coherent scene synthesis with applications in interactive simulation.
 - Investigate real-time 3D reconstruction methods for interactive experiences and integrate neural rendering with depth estimation for embodied agent perception systems.
@@ -110,21 +84,8 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>UIUC Social Computing System Lab</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Undergraduate Researcher</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      May 2024 - Present
-    </td>
-  </tr>
-</table>
+### **UIUC Social Computing System Lab**
+**Undergraduate Researcher** ∙ *May 2024 - Present*
 
 - Implement the SOAP.AI clinical video analysis platform using multimodal LLM pipelines for automated note generation and develop affective signal extraction through facial expressions and body language from therapist-patient interactions to assist clinical documentation and therapeutic assessment.
 - Design a context fluidity framework for personalized AI adaptation, advancing from static prompt engineering toward dynamic context engineering that models individual communication preferences and emotional states across conversation sessions.
@@ -136,21 +97,8 @@
 
 ## Experience
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Computer Vision and Machine Learning Group</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Undergraduate Research Assistant</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      May 2025 - Present
-    </td>
-  </tr>
-</table>
+### **Computer Vision and Machine Learning Group**
+**Undergraduate Research Assistant** ∙ *May 2025 - Present*
 
 - Advance text-to-3D generation research building on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024), addressing multi-view consistency failures through improved depth estimation and 3D-aware diffusion conditioning.
 - Conduct experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception and evaluating spatial intelligence metrics for world model applications.
@@ -158,21 +106,8 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>UIUC Student Affairs, WRC Department</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Data Analyst</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Aug 2024 - Dec 2024
-    </td>
-  </tr>
-</table>
+### **UIUC Student Affairs, WRC Department**
+**Data Analyst** ∙ *Aug 2024 - Dec 2024*
 
 - Conducted rigorous statistical analysis of student performance metrics and survey responses among 19,800 students and implemented a comprehensive data analysis framework for the program.
 - Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
@@ -180,42 +115,16 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>CPC Brooklyn Community Center</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Data Engineer</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Jun 2023 - Aug 2023
-    </td>
-  </tr>
-</table>
+### **CPC Brooklyn Community Center**
+**Data Engineer** ∙ *Jun 2023 - Aug 2023*
 
 - Analyzed over 4GB of workforce management data to identify customer usage patterns and conducted exploratory data analysis.
 - Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Teaching Assistant</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Aug 2023 - Present
-    </td>
-  </tr>
-</table>
+### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign**
+**Teaching Assistant** ∙ *Aug 2023 - Present*
 
 - Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
 - Created informative and intriguing content for DISCOVERY's Guides to explain data science concepts through practical applications of Python.
@@ -226,21 +135,8 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Student Government, University of Illinois at Urbana-Champaign</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>iSchool Student Representative</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Sep 2022 - Sep 2023
-    </td>
-  </tr>
-</table>
+### **Student Government, University of Illinois at Urbana-Champaign**
+**iSchool Student Representative** ∙ *Sep 2022 - Sep 2023*
 
 - Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
 - Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
@@ -250,21 +146,8 @@
 
 ## Projects
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Multi-agent HCI Research Synthesis Engine</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Systems Architect</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Nov 2025 - Present
-    </td>
-  </tr>
-</table>
+### **Multi-agent HCI Research Synthesis Engine**
+**Systems Architect** ∙ *Nov 2025 - Present*
 
 - Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
@@ -274,21 +157,8 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Node Optimized Orchestration Design for Educational Intelligence Architecture</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Full Stack Developer</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Aug 2025 - Present
-    </td>
-  </tr>
-</table>
+### **Node Optimized Orchestration Design for Educational Intelligence Architecture**
+**Full Stack Developer** ∙ *Aug 2025 - Present*
 
 - Built a K-12 intelligent tutoring platform integrating multi-agent orchestration with memory-enhanced GraphRAG and designed an adaptive learning system that personalizes responses beyond static Q&A.
 - Implemented a multi-agent workflow featuring a self-evolving Long-Term Memory Architecture that mimics human memory processes to enable personalized and accurate responses, overcoming limitations of traditional FIFO memory structures and ensuring critical information is retained and utilized effectively.
@@ -298,21 +168,8 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Anime Statistics and Analysis Platform</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Project Lead</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Feb 2025 - Jun 2025
-    </td>
-  </tr>
-</table>
+### **Anime Statistics and Analysis Platform**
+**Project Lead** ∙ *Feb 2025 - Jun 2025*
 
 - Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
 
@@ -320,21 +177,8 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Realistic Neural Style Transfer Architecture</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Independent Researcher</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Jan 2025 - Aug 2025
-    </td>
-  </tr>
-</table>
+### **Realistic Neural Style Transfer Architecture**
+**Independent Researcher** ∙ *Jan 2025 - Aug 2025*
 
 - Proposed a refined neural style transfer architecture, particularly when applying abstract art styles to photographic content, which emphasizes preserving the global structure and edges of the content image, transferring the high-level artistic tone and color distribution of the style image, and reducing distortions common in patch-based or single-layer loss models.
 
@@ -342,42 +186,16 @@
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>Technology and System of Spatial-Temporal Multi-Modal Large Language Model</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Project Researcher, Chinese Academy of Sciences</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      Jun 2024 - Aug 2024
-    </td>
-  </tr>
-</table>
+### **Technology and System of Spatial-Temporal Multi-Modal Large Language Model**
+**Project Researcher, Chinese Academy of Sciences** ∙ *Jun 2024 - Aug 2024*
 
 - Designed data modeling algorithm for heterogeneous spatial-temporal data from multi-sensor sources, transforming multimodal understanding into unified global modeling framework with improved efficiency.
 - Participated in the research of ST-XFormer, the Spatial-Temporal Transformer system, including the extraction of semantic events from spatial-temporal data sequences, the feature alignment methods for spatial-temporal data, the spatial-temporal-based logical calculus methods and semantic reasoning methods.
 
 <br>
 
-<table width="100%" border="0">
-  <tr>
-    <td colspan="2">
-      <h3>A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning</h3>
-    </td>
-  </tr>
-  <tr>
-    <td width="70%" valign="top">
-      <em>Project Researcher, Chinese Academy of Sciences</em>
-    </td>
-    <td width="30%" valign="top" align="right">
-      May 2024 - Jun 2024
-    </td>
-  </tr>
-</table>
+### **A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning**
+**Project Researcher, Chinese Academy of Sciences** ∙ *May 2024 - Jun 2024*
 
 - Developed an emergency evacuation framework that integrates spatio-temporal perception data, streamlined the entire process of decision-making for the global optimal path planning by incorporating the real-time dynamic spatio-temporal perception data provided by drones.
 - Proposed and compared multiple algorithms, including the Individual-based Search Method (IBSM), the Global Optimal Sparse Route Planning Query Method (GOSRPQM), and the Improved GOSRPQM algorithm (IGOSRPQM) that incorporates pruning strategies and refinement operations. Implemented and verified these algorithms using tools such as Python and PostgreSQL on real road network data (San Joaquin County, New York, Beijing).
@@ -401,12 +219,9 @@
 
 #### AI/ML & Deep Learning
 <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<br/>
-<img src="https://img.shields.io/badge/JAX-A435F0?style=flat-square&logo=jax&logoColor=white" alt="JAX"/>
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV"/>
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain"/>
-<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logoColor=white" alt="LangGraph"/>
-<img src="https://img.shields.io/badge/LangSmith-1C3C3C?style=flat-square&logoColor=white" alt="LangSmith"/>
+<img src="https://cdn.simpleicons.org/jax/white" height="40" alt="jax logo"  />
+<img src="https://cdn.simpleicons.org/opencv/white" height="40" alt="opencv logo"  />
+<img src="https://cdn.simpleicons.org/langchain/white" height="40" alt="langchain logo"  />
 
 #### Large Model Training
 <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
@@ -429,22 +244,27 @@
 <img src="https://img.shields.io/badge/Multi--turn_Reasoning-D946EF?style=flat-square&logoColor=white" alt="Multi-turn Reasoning"/>
 
 #### Full-Stack Development
-<img src="https://skillicons.dev/icons?i=react,nextjs,vue,angular,nodejs,ts,js,html,tailwind&theme=dark" alt="Full-Stack"/>
+<img src="https://cdn.simpleicons.org/react/61DAFB" height="40" alt="react logo"  />
+<img src="https://cdn.simpleicons.org/nextdotjs/white" height="40" alt="nextjs logo"  />
+<img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" height="40" alt="vuejs logo"  />
+<img src="https://cdn.simpleicons.org/angular/DD0031" height="40" alt="angular logo"  />
+<img src="https://cdn.simpleicons.org/nodedotjs/339933" height="40" alt="nodejs logo"  />
+<img src="https://cdn.simpleicons.org/typescript/3178C6" height="40" alt="typescript logo"  />
+<img src="https://cdn.simpleicons.org/javascript/F7DF1E" height="40" alt="javascript logo"  />
+<img src="https://cdn.simpleicons.org/html5/E34F26" height="40" alt="html5 logo"  />
+<img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="40" alt="tailwindcss logo"  />
 
 #### Languages
 <img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
 
 #### Databases & Infrastructure
 <img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg" height="40" alt="neo4j logo"  />
+<img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j" />
 
 #### Tools & Design
-<img src="https://skillicons.dev/icons?i=figma,unity&theme=dark" alt="Tools"/>
-<br/>
-<img src="https://img.shields.io/badge/Adobe_Suite-FF0000?style=flat-square&logo=adobe&logoColor=white" alt="Adobe"/>
-<img src="https://img.shields.io/badge/Canva-00C4CC?style=flat-square&logo=canva&logoColor=white" alt="Canva"/>
-<img src="https://img.shields.io/badge/SAS-0067B1?style=flat-square&logo=sas&logoColor=white" alt="SAS"/>
-<img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white" alt="Arduino"/>
+<img src="https://skillicons.dev/icons?i=figma,unity,arduino,canva&theme=dark" alt="Tools"/>
+<img src="https://cdn.simpleicons.org/adobe/white" height="40" alt="adobe logo"  />
+<img src="https://cdn.simpleicons.org/sas/white" height="40" alt="sas logo"  />
 
 </div>
 
@@ -473,7 +293,7 @@
   <table>
     <tr>
       <td>
-        <img width="420" src="https://github-readme-stats.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9" alt="GitHub Stats"/>
+        <img width="420" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9" alt="GitHub Stats"/>
       </td>
       <td>
         <picture>
