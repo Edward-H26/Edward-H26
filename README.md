@@ -4,7 +4,7 @@
 <!-- Tagline -->
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=1500&pause=500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" alt="Typing SVG" />
   </a>
 </div>
 
@@ -17,18 +17,7 @@
 </div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/qiranhu/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="mailto:qiranhu8@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-  </a>
-  <a href="https://github.com/Edward-H26">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  <a href="https://x.com/eduardohuuu">
-    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/>
-  </a>
+  <a href="https://www.linkedin.com/in/qiranhu/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a><a href="mailto:qiranhu8@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a><a href="https://github.com/Edward-H26"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a><a href="https://x.com/eduardohuuu"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a>
 </p>
 
 <br/>
@@ -73,9 +62,6 @@
 - Train large-scale vision transformers on TB-level image datasets using a high-performance computing cluster in parallel at National Artificial Intelligence Research Resource (NAIRR) Pilot and experiment with spatial tokenization and multi-view consistency for 3D scene generation.
 
 [![Lab Page](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://vision.ischool.illinois.edu/people/)
-
-<br>
-
 ### **UIUC Social Computing System Lab**
 **Undergraduate Researcher** <div style="float: right">_May 2024 - Present_</div>
 
@@ -95,26 +81,17 @@
 - Advance text-to-3D generation research building on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024), addressing multi-view consistency failures through improved depth estimation and 3D-aware diffusion conditioning.
 - Conduct experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception and evaluating spatial intelligence metrics for world model applications.
 - Targeting submission to the International Conference on Machine Learning (ICML 2026) with novel contributions to 3D-consistent image generation and spatial representation learning.
-
-<br>
-
 ### **UIUC Student Affairs, WRC Department**
 **Data Analyst** <div style="float: right">_Aug 2024 - Dec 2024_</div>
 
 - Conducted rigorous statistical analysis of student performance metrics and survey responses among 19,800 students and implemented a comprehensive data analysis framework for the program.
 - Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
 - Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
-
-<br>
-
 ### **CPC Brooklyn Community Center**
 **Data Engineer** <div style="float: right">_Jun 2023 - Aug 2023_</div>
 
 - Analyzed over 4GB of workforce management data to identify customer usage patterns and conducted exploratory data analysis.
 - Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
-
-<br>
-
 ### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign**
 **Teaching Assistant** <div style="float: right">_Aug 2023 - Present_</div>
 
@@ -124,9 +101,6 @@
 
 [![Guides](https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://discovery.cs.illinois.edu/guides/)
 [![Mastery](https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mastery.cs.illinois.edu/)
-
-<br>
-
 ### **Student Government, University of Illinois at Urbana-Champaign**
 **iSchool Student Representative** <div style="float: right">_Sep 2022 - Sep 2023_</div>
 
@@ -146,9 +120,6 @@
 - Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency by 40% from 8.2s to 4.9s production-ready approaches during API failures and other issues.
 
 [![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
-
-<br>
-
 ### **Node Optimized Orchestration Design for Educational Intelligence Architecture**
 **Full Stack Developer** <div style="float: right">_Aug 2025 - Present_</div>
 
@@ -157,35 +128,23 @@
 - Deployed to 2 partner institutions and iterated through 6 development cycles incorporating user feedback to refine interface design and response quality based on student engagement data.
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA)
-
-<br>
-
 ### **Anime Statistics and Analysis Platform**
 **Project Lead** <div style="float: right">_Feb 2025 - Jun 2025_</div>
 
 - Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
 
 [![Demo](https://img.shields.io/badge/Demo-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://qiranhu.shinyapps.io/AnimeStatisticsandAnalysisPlatform/)
-
-<br>
-
 ### **Realistic Neural Style Transfer Architecture**
 **Independent Researcher** <div style="float: right">_Jan 2025 - Aug 2025_</div>
 
 - Proposed a refined neural style transfer architecture, particularly when applying abstract art styles to photographic content, which emphasizes preserving the global structure and edges of the content image, transferring the high-level artistic tone and color distribution of the style image, and reducing distortions common in patch-based or single-layer loss models.
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
-
-<br>
-
 ### **Technology and System of Spatial-Temporal Multi-Modal Large Language Model**
 **Project Researcher, Chinese Academy of Sciences** <div style="float: right">_Jun 2024 - Aug 2024_</div>
 
 - Designed data modeling algorithm for heterogeneous spatial-temporal data from multi-sensor sources, transforming multimodal understanding into unified global modeling framework with improved efficiency.
 - Participated in the research of ST-XFormer, the Spatial-Temporal Transformer system, including the extraction of semantic events from spatial-temporal data sequences, the feature alignment methods for spatial-temporal data, the spatial-temporal-based logical calculus methods and semantic reasoning methods.
-
-<br>
-
 ### **A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning**
 **Project Researcher, Chinese Academy of Sciences** <div style="float: right">_May 2024 - Jun 2024_</div>
 
@@ -250,10 +209,16 @@
 <img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
 
 #### Databases & Infrastructure
-<img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws,neo4j&theme=dark" alt="Databases"/>
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
+<img src="assets/neo4j_logo.svg" height="40" alt="neo4j logo" />
 
 #### Tools & Design
-<img src="https://skillicons.dev/icons?i=figma,unity,arduino,canva,adobe,sas&theme=dark" alt="Tools"/>
+<img src="https://cdn.simpleicons.org/figma/white" height="40" alt="figma logo" />
+<img src="https://cdn.simpleicons.org/unity/white" height="40" alt="unity logo" />
+<img src="https://cdn.simpleicons.org/arduino/white" height="40" alt="arduino logo" />
+<img src="assets/canva_logo.svg" height="40" alt="canva logo" />
+<img src="assets/adobe_logo.svg" height="40" alt="adobe logo" />
+<img src="assets/sas_logo.svg" height="40" alt="sas logo" />
 
 </div>
 
@@ -331,10 +296,7 @@
 ---
 
 <p align="center">
-  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a> 
-  <a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a> 
-  <a href="https://x.com/eduardohuuu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a> 
-  <a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
+  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a><a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a><a href="https://x.com/eduardohuuu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a><a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
 </p>
 <p align="center"><strong>Feel free to contact me!</strong></p>
 
