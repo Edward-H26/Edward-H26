@@ -219,7 +219,7 @@
 
 #### AI/ML & Deep Learning
 <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<img src="https://cdn.simpleicons.org/jax/white" height="40" alt="jax logo"  />
+<img src="assets/jax_logo.svg" height="40" alt="jax logo"  />
 <img src="https://cdn.simpleicons.org/opencv/white" height="40" alt="opencv logo"  />
 <img src="https://cdn.simpleicons.org/langchain/white" height="40" alt="langchain logo"  />
 
@@ -259,12 +259,15 @@
 
 #### Databases & Infrastructure
 <img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
-<img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j" />
+<img src="assets/neo4j_logo.png" height="40" alt="neo4j logo" />
 
 #### Tools & Design
-<img src="https://skillicons.dev/icons?i=figma,unity,arduino,canva&theme=dark" alt="Tools"/>
-<img src="https://cdn.simpleicons.org/adobe/white" height="40" alt="adobe logo"  />
-<img src="https://cdn.simpleicons.org/sas/white" height="40" alt="sas logo"  />
+<img src="https://cdn.simpleicons.org/figma/white" height="40" alt="figma logo" />
+<img src="https://cdn.simpleicons.org/unity/white" height="40" alt="unity logo" />
+<img src="https://cdn.simpleicons.org/arduino/white" height="40" alt="arduino logo" />
+<img src="assets/canva_logo.svg" height="40" alt="canva logo" />
+<img src="assets/adobe_logo.svg" height="40" alt="adobe logo" />
+<img src="assets/sas_logo.svg" height="40" alt="sas logo" />
 
 </div>
 
