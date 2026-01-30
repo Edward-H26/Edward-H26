@@ -63,18 +63,10 @@
 
 ---
 
-## Education
-
-### **University of Illinois at Urbana-Champaign**
-**BS in Data Science and Information Science** ∙ *Aug 2022 - May 2026*
-*Minors: Computer Science and Statistics*
-
----
-
 ## Research
 
 ### **UIUC Computer Vision and Machine Learning Group**
-**Undergraduate Researcher (NCSA affiliated)** ∙ *Aug 2024 - Present*
+**Undergraduate Researcher (NCSA affiliated)** <div style="float: right">_Aug 2024 - Present_</div>
 
 - Develop 3D-consistent generative models for world understanding and embodied AI, and implement diffusion-based approaches for spatially coherent scene synthesis with applications in interactive simulation.
 - Investigate real-time 3D reconstruction methods for interactive experiences and integrate neural rendering with depth estimation for embodied agent perception systems.
@@ -85,7 +77,7 @@
 <br>
 
 ### **UIUC Social Computing System Lab**
-**Undergraduate Researcher** ∙ *May 2024 - Present*
+**Undergraduate Researcher** <div style="float: right">_May 2024 - Present_</div>
 
 - Implement the SOAP.AI clinical video analysis platform using multimodal LLM pipelines for automated note generation and develop affective signal extraction through facial expressions and body language from therapist-patient interactions to assist clinical documentation and therapeutic assessment.
 - Design a context fluidity framework for personalized AI adaptation, advancing from static prompt engineering toward dynamic context engineering that models individual communication preferences and emotional states across conversation sessions.
@@ -98,7 +90,7 @@
 ## Experience
 
 ### **Computer Vision and Machine Learning Group**
-**Undergraduate Research Assistant** ∙ *May 2025 - Present*
+**Undergraduate Research Assistant** <div style="float: right">_May 2025 - Present_</div>
 
 - Advance text-to-3D generation research building on "Generating Images with 3D Annotations Using Diffusion Models" (ICLR 2024), addressing multi-view consistency failures through improved depth estimation and 3D-aware diffusion conditioning.
 - Conduct experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception and evaluating spatial intelligence metrics for world model applications.
@@ -107,7 +99,7 @@
 <br>
 
 ### **UIUC Student Affairs, WRC Department**
-**Data Analyst** ∙ *Aug 2024 - Dec 2024*
+**Data Analyst** <div style="float: right">_Aug 2024 - Dec 2024_</div>
 
 - Conducted rigorous statistical analysis of student performance metrics and survey responses among 19,800 students and implemented a comprehensive data analysis framework for the program.
 - Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
@@ -116,7 +108,7 @@
 <br>
 
 ### **CPC Brooklyn Community Center**
-**Data Engineer** ∙ *Jun 2023 - Aug 2023*
+**Data Engineer** <div style="float: right">_Jun 2023 - Aug 2023_</div>
 
 - Analyzed over 4GB of workforce management data to identify customer usage patterns and conducted exploratory data analysis.
 - Streamlined complex workflows by breaking them down into manageable components for easier implementation and maintenance.
@@ -124,7 +116,7 @@
 <br>
 
 ### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign**
-**Teaching Assistant** ∙ *Aug 2023 - Present*
+**Teaching Assistant** <div style="float: right">_Aug 2023 - Present_</div>
 
 - Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
 - Created informative and intriguing content for DISCOVERY's Guides to explain data science concepts through practical applications of Python.
@@ -136,7 +128,7 @@
 <br>
 
 ### **Student Government, University of Illinois at Urbana-Champaign**
-**iSchool Student Representative** ∙ *Sep 2022 - Sep 2023*
+**iSchool Student Representative** <div style="float: right">_Sep 2022 - Sep 2023_</div>
 
 - Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
 - Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
@@ -147,7 +139,7 @@
 ## Projects
 
 ### **Multi-agent HCI Research Synthesis Engine**
-**Systems Architect** ∙ *Nov 2025 - Present*
+**Systems Architect** <div style="float: right">_Nov 2025 - Present_</div>
 
 - Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
@@ -158,7 +150,7 @@
 <br>
 
 ### **Node Optimized Orchestration Design for Educational Intelligence Architecture**
-**Full Stack Developer** ∙ *Aug 2025 - Present*
+**Full Stack Developer** <div style="float: right">_Aug 2025 - Present_</div>
 
 - Built a K-12 intelligent tutoring platform integrating multi-agent orchestration with memory-enhanced GraphRAG and designed an adaptive learning system that personalizes responses beyond static Q&A.
 - Implemented a multi-agent workflow featuring a self-evolving Long-Term Memory Architecture that mimics human memory processes to enable personalized and accurate responses, overcoming limitations of traditional FIFO memory structures and ensuring critical information is retained and utilized effectively.
@@ -169,7 +161,7 @@
 <br>
 
 ### **Anime Statistics and Analysis Platform**
-**Project Lead** ∙ *Feb 2025 - Jun 2025*
+**Project Lead** <div style="float: right">_Feb 2025 - Jun 2025_</div>
 
 - Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
 
@@ -178,7 +170,7 @@
 <br>
 
 ### **Realistic Neural Style Transfer Architecture**
-**Independent Researcher** ∙ *Jan 2025 - Aug 2025*
+**Independent Researcher** <div style="float: right">_Jan 2025 - Aug 2025_</div>
 
 - Proposed a refined neural style transfer architecture, particularly when applying abstract art styles to photographic content, which emphasizes preserving the global structure and edges of the content image, transferring the high-level artistic tone and color distribution of the style image, and reducing distortions common in patch-based or single-layer loss models.
 
@@ -187,7 +179,7 @@
 <br>
 
 ### **Technology and System of Spatial-Temporal Multi-Modal Large Language Model**
-**Project Researcher, Chinese Academy of Sciences** ∙ *Jun 2024 - Aug 2024*
+**Project Researcher, Chinese Academy of Sciences** <div style="float: right">_Jun 2024 - Aug 2024_</div>
 
 - Designed data modeling algorithm for heterogeneous spatial-temporal data from multi-sensor sources, transforming multimodal understanding into unified global modeling framework with improved efficiency.
 - Participated in the research of ST-XFormer, the Spatial-Temporal Transformer system, including the extraction of semantic events from spatial-temporal data sequences, the feature alignment methods for spatial-temporal data, the spatial-temporal-based logical calculus methods and semantic reasoning methods.
@@ -195,7 +187,7 @@
 <br>
 
 ### **A Spatial-Temporal Awareness Data-Oriented Model for Emergency Crowd Evacuation Route Planning**
-**Project Researcher, Chinese Academy of Sciences** ∙ *May 2024 - Jun 2024*
+**Project Researcher, Chinese Academy of Sciences** <div style="float: right">_May 2024 - Jun 2024_</div>
 
 - Developed an emergency evacuation framework that integrates spatio-temporal perception data, streamlined the entire process of decision-making for the global optimal path planning by incorporating the real-time dynamic spatio-temporal perception data provided by drones.
 - Proposed and compared multiple algorithms, including the Individual-based Search Method (IBSM), the Global Optimal Sparse Route Planning Query Method (GOSRPQM), and the Improved GOSRPQM algorithm (IGOSRPQM) that incorporates pruning strategies and refinement operations. Implemented and verified these algorithms using tools such as Python and PostgreSQL on real road network data (San Joaquin County, New York, Beijing).
@@ -258,16 +250,10 @@
 <img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
 
 #### Databases & Infrastructure
-<img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
-<img src="assets/neo4j_logo.png" height="40" alt="neo4j logo" />
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws,neo4j&theme=dark" alt="Databases"/>
 
 #### Tools & Design
-<img src="https://cdn.simpleicons.org/figma/white" height="40" alt="figma logo" />
-<img src="https://cdn.simpleicons.org/unity/white" height="40" alt="unity logo" />
-<img src="https://cdn.simpleicons.org/arduino/white" height="40" alt="arduino logo" />
-<img src="assets/canva_logo.svg" height="40" alt="canva logo" />
-<img src="assets/adobe_logo.svg" height="40" alt="adobe logo" />
-<img src="assets/sas_logo.svg" height="40" alt="sas logo" />
+<img src="https://skillicons.dev/icons?i=figma,unity,arduino,canva,adobe,sas&theme=dark" alt="Tools"/>
 
 </div>
 
@@ -289,6 +275,16 @@
   </a>
 - UIUC Dean's List - 2023 Spring, 2024 Fall
 - UIUC James Scholar
+
+---
+
+## Education
+
+### **University of Illinois at Urbana-Champaign**
+**BS in Data Science and Information Science** <div style="float: right">_Aug 2022 - May 2026_</div>
+*Minors: Computer Science and Statistics*
+
+---
 
 <div align="center">
   <h2>My Contribution</h2>
