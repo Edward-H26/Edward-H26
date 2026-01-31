@@ -172,7 +172,8 @@
 <img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
 
 #### AI/ML Frameworks
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,jax,opencv,langchain&theme=dark" alt="AI/ML Frameworks"/>
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow&theme=dark" alt="AI/ML"/>
+<img src="https://skillicons.dev/icons?i=jax,opencv,langchain&theme=dark" alt="AI/ML tools"/>
 <img src="https://img.shields.io/badge/LangGraph-2D3748?style=flat-square&logoColor=white" alt="LangGraph"/>
 <img src="https://img.shields.io/badge/LangSmith-4A5568?style=flat-square&logoColor=white" alt="LangSmith"/>
 
