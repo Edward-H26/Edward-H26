@@ -172,7 +172,7 @@
 <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,jax,opencv,langchain&theme=dark" alt="AI/ML"/>
 
 #### Large Model Training
-<img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
+<img src="https://skillicons.dev/icons?i=cuda,nvidia&theme=dark" alt="Large Model Training"/>
 <img src="https://img.shields.io/badge/Distributed_Training-FF6F00?style=flat-square&logoColor=white" alt="Distributed Training"/>
 <img src="https://img.shields.io/badge/RLHF-8B5CF6?style=flat-square&logoColor=white" alt="RLHF"/>
 <img src="https://img.shields.io/badge/SFT-6366F1?style=flat-square&logoColor=white" alt="SFT"/>
@@ -192,15 +192,7 @@
 <img src="https://img.shields.io/badge/Multi--turn_Reasoning-D946EF?style=flat-square&logoColor=white" alt="Multi-turn Reasoning"/>
 
 #### Full-Stack Development
-<img src="https://cdn.simpleicons.org/react/61DAFB" height="40" alt="react logo"  />
-<img src="https://cdn.simpleicons.org/nextdotjs/white" height="40" alt="nextjs logo"  />
-<img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" height="40" alt="vuejs logo"  />
-<img src="https://cdn.simpleicons.org/angular/DD0031" height="40" alt="angular logo"  />
-<img src="https://cdn.simpleicons.org/nodedotjs/339933" height="40" alt="nodejs logo"  />
-<img src="https://cdn.simpleicons.org/typescript/3178C6" height="40" alt="typescript logo"  />
-<img src="https://cdn.simpleicons.org/javascript/F7DF1E" height="40" alt="javascript logo"  />
-<img src="https://cdn.simpleicons.org/html5/E34F26" height="40" alt="html5 logo"  />
-<img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="40" alt="tailwindcss logo"  />
+<img src="https://skillicons.dev/icons?i=react,nextjs,vue,angular,nodejs,ts,js,html,tailwind&theme=dark" alt="Full-Stack Development"/>
 
 #### Languages
 <img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
