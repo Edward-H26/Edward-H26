@@ -172,10 +172,7 @@
 <img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
 
 #### AI/ML Frameworks
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<img src="https://img.shields.io/badge/JAX-A855F7?style=flat-square&logo=google&logoColor=white" alt="JAX"/>
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV"/>
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain"/>
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,jax,opencv,langchain&theme=dark" alt="AI/ML Frameworks"/>
 <img src="https://img.shields.io/badge/LangGraph-2D3748?style=flat-square&logoColor=white" alt="LangGraph"/>
 <img src="https://img.shields.io/badge/LangSmith-4A5568?style=flat-square&logoColor=white" alt="LangSmith"/>
 
@@ -205,7 +202,7 @@
 
 #### Databases
 <img src="https://skillicons.dev/icons?i=postgres,mongodb&theme=dark" alt="Databases"/>
-<img src="assets/neo4j_logo.svg" height="40" alt="neo4j logo" />
+<img src="assets/neo4j_logo.svg" height="48" alt="neo4j logo" />
 
 #### Infrastructure
 <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws&theme=dark" alt="Infrastructure"/>
@@ -213,13 +210,13 @@
 
 #### Design & Office Tools
 <img src="https://skillicons.dev/icons?i=figma&theme=dark" alt="Figma"/>
-<img src="assets/canva_logo.svg" height="40" alt="canva logo" />
+<img src="assets/canva_logo.svg" height="48" alt="canva logo" />
 <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=flat-square&logo=microsoftoffice&logoColor=white" alt="Microsoft Office"/>
-<img src="assets/adobe_logo.svg" height="40" alt="adobe logo" />
+<img src="assets/adobe_logo.svg" height="48" alt="adobe logo" />
 
 #### Other Tools
 <img src="https://skillicons.dev/icons?i=unity,arduino&theme=dark" alt="Other Tools"/>
-<img src="assets/sas_logo.svg" height="40" alt="sas logo" />
+<img src="assets/sas_logo.svg" height="48" alt="sas logo" />
 
 </div>
 
