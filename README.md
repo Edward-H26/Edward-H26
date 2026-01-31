@@ -170,12 +170,11 @@
 
 #### AI/ML & Deep Learning
 <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<img src="assets/jax_logo.png" height="40" alt="jax logo"  />
-<img src="https://cdn.simpleicons.org/opencv/white" height="40" alt="opencv logo"  />
-<img src="https://cdn.simpleicons.org/langchain/white" height="40" alt="langchain logo"  />
+<img src="https://skillicons.dev/icons?i=jax,opencv,langchain&theme=dark" alt="AI/ML tools"/>
 
 #### Large Model Training
-<img src="https://skillicons.dev/icons?i=cuda,nvidia&theme=dark" alt="Large Model Training"/>
+<img src="assets/cuda_logo.svg" height="40" alt="cuda logo" />
+<img src="https://skillicons.dev/icons?i=nvidia&theme=dark" alt="nvidia logo"/>
 <img src="https://img.shields.io/badge/Distributed_Training-FF6F00?style=flat-square&logoColor=white" alt="Distributed Training"/>
 <img src="https://img.shields.io/badge/RLHF-8B5CF6?style=flat-square&logoColor=white" alt="RLHF"/>
 <img src="https://img.shields.io/badge/SFT-6366F1?style=flat-square&logoColor=white" alt="SFT"/>
@@ -202,15 +201,15 @@
 
 #### Databases & Infrastructure
 <img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
-<img src="assets/neo4j_logo.png" height="40" alt="neo4j logo" />
+<img src="assets/neo4j_logo.svg" height="40" alt="neo4j logo" />
 
 #### Tools & Design
-<img src="https://cdn.simpleicons.org/figma/white" height="40" alt="figma logo" />
-<img src="https://cdn.simpleicons.org/unity/white" height="40" alt="unity logo" />
-<img src="https://cdn.simpleicons.org/arduino/white" height="40" alt="arduino logo" />
-<img src="assets/canva_logo.svg" height="40" alt="canva logo" />
-<img src="assets/adobe_logo.svg" height="40" alt="adobe logo" />
-<img src="assets/sas_logo.svg" height="40" alt="sas logo" />
+<img src="https://cdn.simpleicons.org/figma" height="40" alt="figma logo" />
+<img src="https://cdn.simpleicons.org/unity" height="40" alt="unity logo" />
+<img src="https://cdn.simpleicons.org/arduino" height="40" alt="arduino logo" />
+<img src="https://cdn.simpleicons.org/canva" height="40" alt="canva logo" />
+<img src="https://cdn.simpleicons.org/adobe" height="40" alt="adobe logo" />
+<img src="https://cdn.simpleicons.org/sas" height="40" alt="sas logo" />
 
 </div>
 
