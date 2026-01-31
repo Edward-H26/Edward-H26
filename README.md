@@ -209,7 +209,7 @@
 
 #### Infrastructure
 <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws&theme=dark" alt="Infrastructure"/>
-<img src="https://img.shields.io/badge/Cloud_DevOps-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Cloud DevOps"/>
+<img src="https://img.shields.io/badge/Cloud_DevOps-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud DevOps"/>
 
 #### Design & Office Tools
 <img src="https://skillicons.dev/icons?i=figma&theme=dark" alt="Figma"/>
