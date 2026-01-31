@@ -199,7 +199,7 @@
 
 #### Databases & Infrastructure
 <img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,kubernetes,aws&theme=dark" alt="Databases"/>
-<img src="assets/neo4j_logo.svg" height="40" alt="neo4j logo" />
+<img src="assets/neo4j_logo.png" height="40" alt="neo4j logo" />
 
 #### Tools & Design
 <img src="https://skillicons.dev/icons?i=figma,unity,arduino,canva,adobe,sas&theme=dark" alt="Tools"/>
