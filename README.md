@@ -169,10 +169,7 @@
 <div align="center">
 
 #### AI/ML & Deep Learning
-<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<img src="assets/jax_logo.svg" height="40" alt="jax logo"  />
-<img src="https://cdn.simpleicons.org/opencv/white" height="40" alt="opencv logo"  />
-<img src="https://cdn.simpleicons.org/langchain/white" height="40" alt="langchain logo"  />
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,jax,opencv,langchain&theme=dark" alt="AI/ML"/>
 
 #### Large Model Training
 <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
@@ -213,12 +210,7 @@
 <img src="assets/neo4j_logo.svg" height="40" alt="neo4j logo" />
 
 #### Tools & Design
-<img src="https://cdn.simpleicons.org/figma/white" height="40" alt="figma logo" />
-<img src="https://cdn.simpleicons.org/unity/white" height="40" alt="unity logo" />
-<img src="https://cdn.simpleicons.org/arduino/white" height="40" alt="arduino logo" />
-<img src="assets/canva_logo.svg" height="40" alt="canva logo" />
-<img src="assets/adobe_logo.svg" height="40" alt="adobe logo" />
-<img src="assets/sas_logo.svg" height="40" alt="sas logo" />
+<img src="https://skillicons.dev/icons?i=figma,unity,arduino,canva,adobe,sas&theme=dark" alt="Tools"/>
 
 </div>
 
