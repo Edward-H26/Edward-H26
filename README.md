@@ -1,5 +1,8 @@
 <!-- Animated Header -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:13294b,50:1e3a5f,100:0a192f&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Undergraduate%20Research%20Assistant%20%7C%20University%20of%20Illinois%20Urbana-Champaign&descAlignY=52&descSize=18"/>
+<div align="center" style="background: linear-gradient(135deg, #0a192f 0%, #13294b 50%, #1e3a5f 100%); padding: 40px 20px; border-radius: 10px; margin-bottom: 20px;">
+  <h1 style="color: #ffffff; font-size: 42px; font-weight: bold; margin: 0; padding: 0;">Qiran Hu</h1>
+  <p style="color: #ffffff; font-size: 18px; margin: 10px 0 0 0; padding: 0;">Undergraduate Research Assistant | University of Illinois Urbana-Champaign</p>
+</div>
 
 <!-- Tagline -->
 <div align="center">
