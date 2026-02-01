@@ -173,7 +173,9 @@
 
 #### AI/ML Frameworks
 <img src="https://skillicons.dev/icons?i=pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<img src="https://skillicons.dev/icons?i=jax,opencv,langchain&theme=dark" alt="AI/ML tools"/>
+<img src="assets/jax_logo.svg" height="48" alt="jax logo" />
+<img src="https://skillicons.dev/icons?i=opencv&theme=dark" alt="OpenCV"/>
+<img src="assets/langchain_logo.svg" height="48" alt="langchain logo" />
 <img src="https://img.shields.io/badge/LangGraph-2D3748?style=flat-square&logoColor=white" alt="LangGraph"/>
 <img src="https://img.shields.io/badge/LangSmith-4A5568?style=flat-square&logoColor=white" alt="LangSmith"/>
 
