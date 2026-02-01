@@ -1,11 +1,13 @@
 <!-- Animated Header -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Undergraduate%20Research%20Assistant%20%7C%20University%20of%20Illinois%20Urbana-Champaign&descAlignY=52&descSize=18"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Undergraduate%20Research%20Assistant%20%7C%20University%20of%20Illinois%20Urbana-Champaign&descAlignY=52&descSize=18"/>
 
 <!-- Tagline -->
 <div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=1500&pause=500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" alt="Typing SVG" />
-  </a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=1500&pause=500&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=1500&pause=500&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=1500&pause=500&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" alt="Typing SVG" />
+  </picture>
 </div>
 
 <!-- Status Banner -->
