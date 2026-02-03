@@ -171,57 +171,117 @@
 <div align="center">
 
 #### Programming Languages
-<img src="https://skillicons.dev/icons?i=python,cpp,java,go,r,ruby,kotlin,php&theme=dark" alt="Languages"/>
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=python&theme=dark" width="48" height="48" alt="Python"/><br/><sub><b>Python</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=cpp&theme=dark" width="48" height="48" alt="C++"/><br/><sub><b>C++</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=java&theme=dark" width="48" height="48" alt="Java"/><br/><sub><b>Java</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=go&theme=dark" width="48" height="48" alt="Go"/><br/><sub><b>Go</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=r&theme=dark" width="48" height="48" alt="R"/><br/><sub><b>R</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=ruby&theme=dark" width="48" height="48" alt="Ruby"/><br/><sub><b>Ruby</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="48" height="48" alt="Kotlin"/><br/><sub><b>Kotlin</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=php&theme=dark" width="48" height="48" alt="PHP"/><br/><sub><b>PHP</b></sub></td>
+  </tr>
+</table>
 
 #### AI/ML Frameworks
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow&theme=dark" alt="AI/ML"/>
-<img src="assets/jax_logo.svg" height="48" alt="jax logo" />
-<img src="https://skillicons.dev/icons?i=opencv&theme=dark" alt="OpenCV"/>
-<img src="assets/langchain_logo.svg" height="48" alt="langchain logo" />
-<img src="https://img.shields.io/badge/LangGraph-2D3748?style=flat-square&logoColor=white" alt="LangGraph"/>
-<img src="https://img.shields.io/badge/LangSmith-4A5568?style=flat-square&logoColor=white" alt="LangSmith"/>
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=pytorch&theme=dark" width="48" height="48" alt="PyTorch"/><br/><sub><b>PyTorch</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" width="48" height="48" alt="TensorFlow"/><br/><sub><b>TensorFlow</b></sub></td>
+    <td align="center" width="80"><img src="assets/jax_logo.svg" width="48" height="48" alt="JAX"/><br/><sub><b>JAX</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=opencv&theme=dark" width="48" height="48" alt="OpenCV"/><br/><sub><b>OpenCV</b></sub></td>
+    <td align="center" width="80"><img src="assets/langchain_logo.svg" width="48" height="48" alt="LangChain"/><br/><sub><b>LangChain</b></sub></td>
+    <td align="center" width="80"><img src="https://img.shields.io/badge/LG-2D3748?style=flat-square&logoColor=white" height="48" alt="LangGraph"/><br/><sub><b>LangGraph</b></sub></td>
+    <td align="center" width="80"><img src="https://img.shields.io/badge/LS-4A5568?style=flat-square&logoColor=white" height="48" alt="LangSmith"/><br/><sub><b>LangSmith</b></sub></td>
+  </tr>
+</table>
 
 #### Large Model Training
-<img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
-<img src="https://img.shields.io/badge/Distributed_Training-FF6F00?style=flat-square&logoColor=white" alt="Distributed Training"/>
-<img src="https://img.shields.io/badge/RLHF-8B5CF6?style=flat-square&logoColor=white" alt="RLHF"/>
-<img src="https://img.shields.io/badge/SFT-6366F1?style=flat-square&logoColor=white" alt="SFT"/>
+<table>
+  <tr>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/><br/><sub><b>CUDA</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Distributed_Training-FF6F00?style=flat-square&logoColor=white" alt="Distributed Training"/><br/><sub><b>Distributed Training</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/RLHF-8B5CF6?style=flat-square&logoColor=white" alt="RLHF"/><br/><sub><b>RLHF</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/SFT-6366F1?style=flat-square&logoColor=white" alt="SFT"/><br/><sub><b>SFT</b></sub></td>
+  </tr>
+</table>
 
 #### 3D & Vision
-<img src="https://img.shields.io/badge/Diffusion_Models-EC4899?style=flat-square&logoColor=white" alt="Diffusion Models"/>
-<img src="https://img.shields.io/badge/NeRF-A855F7?style=flat-square&logoColor=white" alt="NeRF"/>
-<img src="https://img.shields.io/badge/Spatial_Representations-C084FC?style=flat-square&logoColor=white" alt="Spatial Representations"/>
-<img src="https://img.shields.io/badge/World_Models-D946EF?style=flat-square&logoColor=white" alt="World Models"/>
-<img src="https://img.shields.io/badge/3D_Annotation_Systems-F472B6?style=flat-square&logoColor=white" alt="3D Annotation Systems"/>
+<table>
+  <tr>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Diffusion_Models-8B5CF6?style=flat-square&logoColor=white" alt="Diffusion Models"/><br/><sub><b>Diffusion Models</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/NeRF-6366F1?style=flat-square&logoColor=white" alt="NeRF"/><br/><sub><b>NeRF</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Spatial_Representations-7C3AED?style=flat-square&logoColor=white" alt="Spatial Representations"/><br/><sub><b>Spatial Representations</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/World_Models-FF6F00?style=flat-square&logoColor=white" alt="World Models"/><br/><sub><b>World Models</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/3D_Annotation_Systems-76B900?style=flat-square&logoColor=white" alt="3D Annotation Systems"/><br/><sub><b>3D Annotation Systems</b></sub></td>
+  </tr>
+</table>
 
 #### Multi-agent & Agentic AI
-<img src="https://img.shields.io/badge/MCP-6366F1?style=flat-square&logoColor=white" alt="MCP"/>
-<img src="https://img.shields.io/badge/Tool_Calling-8B5CF6?style=flat-square&logoColor=white" alt="Tool Calling"/>
-<img src="https://img.shields.io/badge/Function_Chaining-A855F7?style=flat-square&logoColor=white" alt="Function Chaining"/>
-<img src="https://img.shields.io/badge/Agent_Orchestration-C084FC?style=flat-square&logoColor=white" alt="Agent Orchestration"/>
-<img src="https://img.shields.io/badge/Memory_Systems-9F7AEA?style=flat-square&logoColor=white" alt="Memory Systems"/>
-<img src="https://img.shields.io/badge/Multi--turn_Reasoning-D946EF?style=flat-square&logoColor=white" alt="Multi-turn Reasoning"/>
+<table>
+  <tr>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/MCP-6366F1?style=flat-square&logoColor=white" alt="MCP"/><br/><sub><b>MCP</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Tool_Calling-8B5CF6?style=flat-square&logoColor=white" alt="Tool Calling"/><br/><sub><b>Tool Calling</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Function_Chaining-7C3AED?style=flat-square&logoColor=white" alt="Function Chaining"/><br/><sub><b>Function Chaining</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Agent_Orchestration-FF6F00?style=flat-square&logoColor=white" alt="Agent Orchestration"/><br/><sub><b>Agent Orchestration</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Memory_Systems-76B900?style=flat-square&logoColor=white" alt="Memory Systems"/><br/><sub><b>Memory Systems</b></sub></td>
+    <td align="center" width="120"><img src="https://img.shields.io/badge/Multi--turn_Reasoning-0891B2?style=flat-square&logoColor=white" alt="Multi-turn Reasoning"/><br/><sub><b>Multi-turn Reasoning</b></sub></td>
+  </tr>
+</table>
 
 #### Full-Stack Development
-<img src="https://skillicons.dev/icons?i=react,nextjs,vue,angular,nodejs,ts,js,html,tailwind&theme=dark" alt="Full-Stack Development"/>
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=react&theme=dark" width="48" height="48" alt="React"/><br/><sub><b>React</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=nextjs&theme=dark" width="48" height="48" alt="Next.js"/><br/><sub><b>Next.js</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=vue&theme=dark" width="48" height="48" alt="Vue"/><br/><sub><b>Vue</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=angular&theme=dark" width="48" height="48" alt="Angular"/><br/><sub><b>Angular</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=nodejs&theme=dark" width="48" height="48" alt="Node.js"/><br/><sub><b>Node.js</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=ts&theme=dark" width="48" height="48" alt="TypeScript"/><br/><sub><b>TypeScript</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=js&theme=dark" width="48" height="48" alt="JavaScript"/><br/><sub><b>JavaScript</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=html&theme=dark" width="48" height="48" alt="HTML"/><br/><sub><b>HTML</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=tailwind&theme=dark" width="48" height="48" alt="Tailwind"/><br/><sub><b>Tailwind</b></sub></td>
+  </tr>
+</table>
 
 #### Databases
-<img src="https://skillicons.dev/icons?i=postgres,mongodb&theme=dark" alt="Databases"/>
-<img src="assets/neo4j_logo.svg" height="48" alt="neo4j logo" />
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=postgres&theme=dark" width="48" height="48" alt="PostgreSQL"/><br/><sub><b>PostgreSQL</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=mongodb&theme=dark" width="48" height="48" alt="MongoDB"/><br/><sub><b>MongoDB</b></sub></td>
+    <td align="center" width="80"><img src="assets/neo4j_logo.svg" width="48" height="48" alt="Neo4j"/><br/><sub><b>Neo4j</b></sub></td>
+  </tr>
+</table>
 
 #### Infrastructure
-<img src="https://skillicons.dev/icons?i=docker,kubernetes,aws&theme=dark" alt="Infrastructure"/>
-<img src="https://img.shields.io/badge/Cloud_DevOps-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud DevOps"/>
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=docker&theme=dark" width="48" height="48" alt="Docker"/><br/><sub><b>Docker</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" width="48" height="48" alt="Kubernetes"/><br/><sub><b>Kubernetes</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=aws&theme=dark" width="48" height="48" alt="AWS"/><br/><sub><b>AWS</b></sub></td>
+    <td align="center" width="100"><img src="https://img.shields.io/badge/Cloud_DevOps-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud DevOps"/><br/><sub><b>Cloud DevOps</b></sub></td>
+  </tr>
+</table>
 
 #### Design & Office Tools
-<img src="https://skillicons.dev/icons?i=figma&theme=dark" alt="Figma"/>
-<img src="assets/canva_logo.svg" height="48" alt="canva logo" />
-<img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=flat-square&logo=microsoftoffice&logoColor=white" alt="Microsoft Office"/>
-<img src="assets/adobe_logo.svg" height="48" alt="adobe logo" />
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=figma&theme=dark" width="48" height="48" alt="Figma"/><br/><sub><b>Figma</b></sub></td>
+    <td align="center" width="80"><img src="assets/canva_logo.svg" width="48" height="48" alt="Canva"/><br/><sub><b>Canva</b></sub></td>
+    <td align="center" width="100"><img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=flat-square&logo=microsoftoffice&logoColor=white" alt="Microsoft Office"/><br/><sub><b>Microsoft Office</b></sub></td>
+    <td align="center" width="80"><img src="assets/adobe_logo.svg" width="48" height="48" alt="Adobe"/><br/><sub><b>Adobe</b></sub></td>
+  </tr>
+</table>
 
 #### Other Tools
-<img src="https://skillicons.dev/icons?i=unity,arduino&theme=dark" alt="Other Tools"/>
-<img src="assets/sas_logo.svg" height="48" alt="sas logo" />
+<table>
+  <tr>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=unity&theme=dark" width="48" height="48" alt="Unity"/><br/><sub><b>Unity</b></sub></td>
+    <td align="center" width="80"><img src="https://skillicons.dev/icons?i=arduino&theme=dark" width="48" height="48" alt="Arduino"/><br/><sub><b>Arduino</b></sub></td>
+    <td align="center" width="80"><img src="assets/sas_logo.svg" width="48" height="48" alt="SAS"/><br/><sub><b>SAS</b></sub></td>
+  </tr>
+</table>
 
 </div>
 
