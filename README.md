@@ -269,10 +269,10 @@
 ## Education
 
 ### **Columbia University**
-**MS in Data Science and AI** <div style="float: right">_Sep 2026 - Sep 2028_</div>
+**Master of Science in Data Science** <div style="float: right">_Sep 2026 - Sep 2028_</div>
 
 ### **University of Illinois at Urbana-Champaign**
-**BS in Data Science and Information Science** <div style="float: right">_Aug 2022 - May 2026_</div>
+**Bachelor of Science in Data Science and Information Science** <div style="float: right">_Aug 2022 - May 2026_</div>
 *Minors: Computer Science and Statistics*
 
 ---
