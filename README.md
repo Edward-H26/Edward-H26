@@ -19,7 +19,7 @@
 </div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/qiranhu/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a><a href="mailto:qiranhu8@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a><a href="https://github.com/Edward-H26"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a><a href="https://x.com/eduardohuuu"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a>
+  <a href="https://www.linkedin.com/in/qiranhu/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a><a href="mailto:qiranhu8@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a><a href="https://github.com/Edward-H26"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a><a href="https://x.com/QiranHu"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a>
 </p>
 
 <br/>
@@ -268,6 +268,9 @@
 
 ## Education
 
+### **Columbia University**
+**MS in Data Science and AI** <div style="float: right">_Sep 2026 - Sep 2028_</div>
+
 ### **University of Illinois at Urbana-Champaign**
 **BS in Data Science and Information Science** <div style="float: right">_Aug 2022 - May 2026_</div>
 *Minors: Computer Science and Statistics*
@@ -319,7 +322,7 @@
 ---
 
 <p align="center">
-  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a><a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a><a href="https://x.com/eduardohuuu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a><a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
+  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a><a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a><a href="https://x.com/QiranHu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a><a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
 </p>
 <p align="center"><strong>Feel free to contact me!</strong></p>
 
