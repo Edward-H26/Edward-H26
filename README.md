@@ -1,23 +1,17 @@
 <!-- Animated Header -->
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Research%20Assistant%20%7C%20Columbia%20University%20%7C%20University%20of%20Illinois%20Urbana-Champaign&descAlignY=52&descSize=18"/>
 
-<p align="center">
-  <a href="https://www.engineering.columbia.edu/">
-    <img src="assets/columbia-logo.jpeg" width="72" height="72" alt="Columbia University crown logo"/>
-  </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://illinois.edu/">
-    <img src="assets/uiuc-logo.jpeg" width="72" height="72" alt="University of Illinois Urbana-Champaign Block I logo"/>
-  </a>
-</p>
-
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=850&height=120&lines=3D-Aware+Generative+Models;Continual+Multimodal+Learning;Multi-Agent+Research+Systems" />
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=850&height=120&lines=3D-Aware+Generative+Models;Continual+Multimodal+Learning;Multi-Agent+Research+Systems" />
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=850&height=120&lines=3D-Aware+Generative+Models;Continual+Multimodal+Learning;Multi-Agent+Research+Systems" alt="Typing SVG" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" alt="Typing SVG" />
   </picture>
 </div>
+
+<p align="center">
+  qiranhu8@gmail.com | +1 (347)-957-9176 | <a href="https://edward-h26.github.io/">https://edward-h26.github.io/</a>
+</p>
 
 <div align="center">
   <br/>
@@ -47,23 +41,36 @@
 
 ## Education
 
-### **Columbia University**
-**M.S. in Data Science**<br/>
-Fu Foundation School of Engineering and Applied Science<br/>
-_2026.08 - 2028.05_
+<p>
+  <a href="https://www.engineering.columbia.edu/">
+    <img src="assets/columbia-logo.jpeg" width="72" height="72" align="left" alt="Columbia University crown logo"/>
+  </a>
+  <strong>Columbia University</strong>, New York City, NY<br/>
+  <strong>MS in Data Science</strong><br/>
+  Fu Foundation School of Engineering and Applied Science<br/>
+  <em>2026.08 - 2028.05</em>
+</p>
+<br clear="left"/>
 
-### **University of Illinois at Urbana-Champaign**
-**B.S. in Data Science and Information Science**<br/>
-Minors: Computer Science and Statistics<br/>
-Siebel School of Computing and Data Science<br/>
-_2022.08 - 2026.05_
+<p>
+  <a href="https://illinois.edu/">
+    <img src="assets/uiuc-logo.jpeg" width="72" height="72" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
+  </a>
+  <strong>University of Illinois at Urbana-Champaign</strong>, Champaign, IL<br/>
+  <strong>BS in Data Science and Information Science</strong><br/>
+  Minors: Computer Science and Statistics<br/>
+  Siebel School of Computing and Data Science<br/>
+  Core Courses: Intro to Generative AI for Hum, Applied Machine Learning, Computational Photography, Linear Algebra with Computational Applications, Modeling and Learning in Data Science, Statistics Programming Methods, Data Science Programming Methods, Calculus for Business, and Statistics and Probability<br/>
+  <em>2022.08 - 2026.05</em>
+</p>
+<br clear="left"/>
 
 ## Papers
 
-1. Eric Ji, Qiran Hu, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, and Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** Under Review at European Conference on Computer Vision (ECCV).
-2. Hangyue Zhang, Qiran Hu, Ziyi Zhang, and Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review at ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW).
-3. Tuan Minh Nguyen, Qiran Hu, Banruo Liu, Khoa D Doan, Kok-Seng Wong, and Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review at Conference on Empirical Methods in Natural Language Processing (EMNLP).
-4. Sarthak Jain, Qiran Hu, Zhen Zhu, and Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review at Transactions on Machine Learning Research (TMLR).
+1. Eric Ji, Qiran Hu, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** Under Review at European Conference on Computer Vision (ECCV).
+2. Hangyue Zhang, Qiran Hu, Ziyi Zhang, Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review at ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW).
+3. Tuan Minh Nguyen, Qiran Hu, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review at Conference on Empirical Methods in Natural Language Processing (EMNLP).
+4. Sarthak Jain, Qiran Hu, Zhen Zhu, Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review at Transactions on Machine Learning Research (TMLR).
 
 ## Research Groups
 
@@ -91,53 +98,11 @@ _2022.08 - 2026.05_
 **Undergraduate Research Assistant**<br/>
 _2026.02 - Present_
 
-- Selected for the NVIDIA Academic Grant Program Award with 32000 A100 GPU-hours allocated on the Brev cloud platform to advance multimodal generative models that continuously incorporate new knowledge across text, image, and 3D data without catastrophic forgetting of previously learned cross-modal alignment.
+- Selected for the NVIDIA Academic Grant Program Award with 32,000 A100 GPU-hours allocated on the Brev cloud platform to advance multimodal generative models that continuously incorporate new knowledge across text, image, and 3D data without catastrophic forgetting of previously learned cross-modal alignment.
 - Scaled multimodal continual-learning experiments across audio, image, and text modalities through distributed training on the National Artificial Intelligence Research Resource (NAIRR), profiling throughput and memory trade-offs to enable post-hoc weight-space fusion.
 - Optimized parameter-efficient post-hoc fusion framework that learns to compose frozen checkpoints from different continual-learning strategies.
 
 [![NVIDIA Grant](https://img.shields.io/badge/NVIDIA_Grant-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
-
-## Experience
-
-### **Computer Vision and Machine Learning Group**
-**Undergraduate Research Assistant**<br/>
-_2025.05 - Present_
-
-- Designed a consistency-trajectory distillation framework that compresses multi-step 3D-aware diffusion teachers into single-step student samplers conditioned on 3D pose and depth.
-- Built a parameter-efficient continual-learning pipeline for billion-parameter large multimodal models, extending the partial-retraining methodology with Fisher-aware adapter routing.
-- Generalized weight-space interpolation from Euclidean linear combinations to Fisher-Rao geodesic interpolation across continual checkpoints.
-- Conducted experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception systems by evaluating spatial intelligence metrics for world model applications.
-
-### **UIUC Student Affairs, WRC Department**
-**Data Analyst**<br/>
-_2024.08 - 2024.12_
-
-- Conducted rigorous statistical analysis of student performance metrics and survey responses among 19800 students and implemented a comprehensive data analysis framework for the program.
-- Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
-- Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
-
-## Leadership
-
-### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign**
-**Teaching Assistant**<br/>
-_2023.08 - Present_
-
-- Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2000 students.
-- Authored instructional content for DISCOVERY's Guides explaining data science concepts through applied Python examples.
-- Designed advanced problem sets, exam questions, test suites, and autograder scripts for DISCOVERY's Mastery Platform.
-
-[![Guides](https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://discovery.cs.illinois.edu/guides/)
-[![Mastery](https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mastery.cs.illinois.edu/)
-
-### **Student Government, University of Illinois at Urbana-Champaign**
-**iSchool Student Representative**<br/>
-_2022.09 - 2023.09_
-
-- Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
-- Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
-- Secured approval for program modifications to existing and new activities from students' feedback.
-
-## Projects
 
 ### **Multi-agent HCI Research Synthesis Engine**
 **Systems Architect**<br/>
@@ -145,7 +110,7 @@ _2025.11 - Present_
 
 - Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
-- Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency 40% from 8.2s to 4.9s and adding production-grade fallback handling for API failures.
+- Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency 40% (8.2s to 4.9s) and adding production-grade fallback handling for API failures.
 
 [![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
 
@@ -158,6 +123,48 @@ _2025.08 - Present_
 - Deployed to 2 partner institutions and iterated through 6 development cycles incorporating user feedback to refine interface design and response quality based on student engagement data.
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA)
+
+## Professional Experience
+
+### **Computer Vision and Machine Learning Group, Champaign, IL**
+**Undergraduate Research Assistant**<br/>
+_2025.05 - Present_
+
+- Designed a consistency-trajectory distillation framework that compresses multi-step 3D-aware diffusion teachers into single-step student samplers conditioned on 3D pose and depth.
+- Built a parameter-efficient continual-learning pipeline for billion-parameter large multimodal models, extending the partial-retraining methodology with Fisher-aware adapter routing.
+- Generalized weight-space interpolation from Euclidean linear combinations to Fisher-Rao geodesic interpolation across continual checkpoints.
+- Conducted experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception systems by evaluating spatial intelligence metrics for world model applications.
+
+### **UIUC Student Affairs, WRC Department, Champaign, IL**
+**Data Analyst**<br/>
+_2024.08 - 2024.12_
+
+- Conducted rigorous statistical analysis of student performance metrics and survey responses among 19,800 students and implemented a comprehensive data analysis framework for the program.
+- Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
+- Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
+
+## Leadership Experience
+
+### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign, IL, United States**
+**Teaching Assistant**<br/>
+_2023.08 - Present_
+
+- Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2,000 students.
+- Authored instructional content for DISCOVERY's Guides explaining data science concepts through applied Python examples.
+- Designed advanced problem sets, exam questions, test suites, and autograder scripts for DISCOVERY's Mastery Platform.
+
+[![Guides](https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://discovery.cs.illinois.edu/guides/)
+[![Mastery](https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mastery.cs.illinois.edu/)
+
+### **Student Government, University of Illinois at Urbana-Champaign, IL, United States**
+**iSchool Student Representative**<br/>
+_2022.09 - 2023.09_
+
+- Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
+- Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
+- Secured approval for program modifications to existing and new activities from students' feedback.
+
+## Project Experience
 
 ### **Realistic Neural Style Transfer Architecture**
 **Independent Researcher**<br/>
@@ -185,8 +192,8 @@ _2025.02 - 2025.06_
 
 ## Skills
 
-**Technical Stacks:** Python, C++, PostgreSQL, Neo4j, MongoDB, React.js, TypeScript, Next.js, Angular.js, Vue.js, JavaScript, HTML5, Tailwind CSS, Ruby, Java, R, Kotlin, PHP, Cloud DevOps, Unity, SAS, Figma, Canva, Microsoft Office Suite, Adobe Creative Suite, Arduino UNO<br/>
-**Languages:** Chinese (Native), English (Native), Spanish (Elementary)
+**Technical Stacks:** Python, C++, PostgreSQL, Neo4j, MongoDB, React.js, Typescript.js, Next.js, Angular.js, Vue.js, Javascript, HTML5, Tailwind CSS, Ruby, Java, R, Kotlin, PHP, Cloud DevOps, Unity, SAS, Figma, Canva, Microsoft Office Suite, Adobe Creative Suite, and Arduino UNO<br/>
+**Language:** Chinese (native), English (native), Spanish (elementary)
 
 <div align="center">
   <h2>My Contribution</h2>
