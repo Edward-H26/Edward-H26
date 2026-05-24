@@ -41,29 +41,35 @@
 
 ## Education
 
-<p>
-  <a href="https://www.engineering.columbia.edu/">
-    <img src="assets/columbia-logo.jpeg" width="72" height="72" align="left" alt="Columbia University crown logo"/>
-  </a>
-  <strong>Columbia University</strong>, New York City, NY<br/>
-  <strong>MS in Data Science</strong><br/>
-  Fu Foundation School of Engineering and Applied Science<br/>
-  <em>2026.08 - 2028.05</em>
-</p>
-<br clear="left"/>
-
-<p>
-  <a href="https://illinois.edu/">
-    <img src="assets/uiuc-logo.jpeg" width="72" height="72" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
-  </a>
-  <strong>University of Illinois at Urbana-Champaign</strong>, Champaign, IL<br/>
-  <strong>BS in Data Science and Information Science</strong><br/>
-  Minors: Computer Science and Statistics<br/>
-  Siebel School of Computing and Data Science<br/>
-  Core Courses: Intro to Generative AI for Hum, Applied Machine Learning, Computational Photography, Linear Algebra with Computational Applications, Modeling and Learning in Data Science, Statistics Programming Methods, Data Science Programming Methods, Calculus for Business, and Statistics and Probability<br/>
-  <em>2022.08 - 2026.05</em>
-</p>
-<br clear="left"/>
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <a href="https://www.engineering.columbia.edu/">
+        <img src="assets/columbia-logo.jpeg" width="84" height="84" alt="Columbia University crown logo"/>
+      </a>
+      <h3>Columbia University</h3>
+      <p>
+        <strong>MS in Data Science</strong><br/>
+        Fu Foundation School of Engineering and Applied Science<br/>
+        New York City, NY<br/>
+        <em>2026.08 - 2028.05</em>
+      </p>
+    </td>
+    <td width="50%" valign="top" align="center">
+      <a href="https://illinois.edu/">
+        <img src="assets/uiuc-logo.jpeg" width="84" height="84" alt="University of Illinois Urbana-Champaign Block I logo"/>
+      </a>
+      <h3>University of Illinois at Urbana-Champaign</h3>
+      <p>
+        <strong>BS in Data Science and Information Science</strong><br/>
+        Minors: Computer Science and Statistics<br/>
+        Siebel School of Computing and Data Science<br/>
+        Champaign, IL<br/>
+        <em>2022.08 - 2026.05</em>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## Papers
 
