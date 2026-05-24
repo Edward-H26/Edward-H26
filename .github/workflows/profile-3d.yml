@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: profile-output-branch
+  cancel-in-progress: false
+
 jobs:
   build:
     permissions:
