@@ -1,5 +1,5 @@
 <!-- Animated Header -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Research%20Assistant%20%7C%20Columbia%20University%20%7C%20University%20of%20Illinois%20Urbana-Champaign&descAlignY=52&descSize=18"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Research%20Assistant&descAlignY=52&descSize=18"/>
 
 <div align="center">
   <picture>
@@ -41,35 +41,28 @@
 
 ## Education
 
-<table>
-  <tr>
-    <td width="50%" valign="top" align="center">
-      <a href="https://www.engineering.columbia.edu/">
-        <img src="assets/columbia-logo.jpeg" width="84" height="84" alt="Columbia University crown logo"/>
-      </a>
-      <h3>Columbia University</h3>
-      <p>
-        <strong>MS in Data Science</strong><br/>
-        Fu Foundation School of Engineering and Applied Science<br/>
-        New York City, NY<br/>
-        <em>2026.08 - 2028.05</em>
-      </p>
-    </td>
-    <td width="50%" valign="top" align="center">
-      <a href="https://illinois.edu/">
-        <img src="assets/uiuc-logo.jpeg" width="84" height="84" alt="University of Illinois Urbana-Champaign Block I logo"/>
-      </a>
-      <h3>University of Illinois at Urbana-Champaign</h3>
-      <p>
-        <strong>BS in Data Science and Information Science</strong><br/>
-        Minors: Computer Science and Statistics<br/>
-        Siebel School of Computing and Data Science<br/>
-        Champaign, IL<br/>
-        <em>2022.08 - 2026.05</em>
-      </p>
-    </td>
-  </tr>
-</table>
+<p>
+  <a href="https://www.engineering.columbia.edu/">
+    <img src="assets/columbia-logo.jpeg" width="76" height="76" align="left" alt="Columbia University crown logo"/>
+  </a>
+  <strong>Columbia University</strong>, New York City, NY<br/>
+  <strong>MS in Data Science</strong><br/>
+  Fu Foundation School of Engineering and Applied Science<br/>
+  <em>2026.08 - 2028.05</em>
+</p>
+<br clear="left"/>
+
+<p>
+  <a href="https://illinois.edu/">
+    <img src="assets/uiuc-logo.jpeg" width="76" height="76" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
+  </a>
+  <strong>University of Illinois at Urbana-Champaign</strong>, Champaign, IL<br/>
+  <strong>BS in Data Science and Information Science</strong><br/>
+  Minors: Computer Science and Statistics<br/>
+  Siebel School of Computing and Data Science<br/>
+  <em>2022.08 - 2026.05</em>
+</p>
+<br clear="left"/>
 
 ## Papers
 
@@ -217,10 +210,7 @@ _2025.02 - 2025.06_
     </tr>
   </table>
   <br/>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9">
-    <img width="360" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
-  </picture>
+  <img width="420" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&langs_count=10&card_width=420&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
   <br/>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg">
