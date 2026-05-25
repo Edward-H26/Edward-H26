@@ -43,7 +43,7 @@
 
 <p>
   <a href="https://www.engineering.columbia.edu/">
-    <img src="assets/columbia-logo.jpeg" width="76" height="76" align="left" alt="Columbia University crown logo"/>
+    <img src="assets/columbia-logo.jpeg" width="104" height="104" align="left" alt="Columbia University crown logo"/>
   </a>
   <strong>Columbia University</strong>, New York City, NY<br/>
   <strong>MS in Data Science</strong><br/>
@@ -54,7 +54,7 @@
 
 <p>
   <a href="https://illinois.edu/">
-    <img src="assets/uiuc-logo.jpeg" width="76" height="76" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
+    <img src="assets/uiuc-logo.jpeg" width="104" height="104" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
   </a>
   <strong>University of Illinois at Urbana-Champaign</strong>, Champaign, IL<br/>
   <strong>BS in Data Science and Information Science</strong><br/>
@@ -69,7 +69,7 @@
 1. Eric Ji, Qiran Hu, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** Under Review at European Conference on Computer Vision (ECCV).
 2. Hangyue Zhang, Qiran Hu, Ziyi Zhang, Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review at ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW).
 3. Tuan Minh Nguyen, Qiran Hu, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review at Conference on Empirical Methods in Natural Language Processing (EMNLP).
-4. Sarthak Jain, Qiran Hu, Zhen Zhu, Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review at Transactions on Machine Learning Research (TMLR).
+4. Sarthak Jain, Qiran Hu, Zhen Zhu, Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review.
 
 ## Research Groups
 
