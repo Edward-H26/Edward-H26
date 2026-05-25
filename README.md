@@ -66,9 +66,9 @@
 
 ## Papers
 
-1. Eric Ji, Qiran Hu, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** Under Review at European Conference on Computer Vision (ECCV).
-2. Hangyue Zhang, Qiran Hu, Ziyi Zhang, Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review at ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW).
-3. Tuan Minh Nguyen, Qiran Hu, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review at Conference on Empirical Methods in Natural Language Processing (EMNLP).
+1. Eric Ji, Qiran Hu, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** Under Review.
+2. Hangyue Zhang, Qiran Hu, Ziyi Zhang, Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review.
+3. Tuan Minh Nguyen, Qiran Hu, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review.
 4. Sarthak Jain, Qiran Hu, Zhen Zhu, Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review.
 
 ## Research Groups
