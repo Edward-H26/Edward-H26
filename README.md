@@ -41,10 +41,7 @@
 
 ## News
 
-- **[August 2026]** I started my M.S. in Data Science at [Columbia University](https://www.columbia.edu/).
-- **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to [ECCV 2026](https://eccv.ecva.net/).
-- **[May 2026]** I graduated from the [University of Illinois Urbana-Champaign](https://www.illinois.edu/) with a B.S. in Data Science and Information Science.
-- **[April 2026]** Our project was selected for the [NVIDIA Academic Grant Program](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program) with 32,000 A100 GPU-hours.
+- **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
 
 ## Education
 
@@ -73,7 +70,7 @@
 
 ## Papers
 
-1. Eric Ji, **Qiran Hu**, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** ECCV 2026.<br/>
+1. Eric Ji, **Qiran Hu**, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** European Conference on Computer Vision (ECCV) 2026.<br/>
    [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2606.31204)
    [![Project](https://img.shields.io/badge/Project-13294B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ac3s.cvmlgroup.web.illinois.edu/)
    [![Video](https://img.shields.io/badge/Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/3jOJaT2a8iQ)
