@@ -39,6 +39,13 @@
   </p>
 </div>
 
+## News
+
+- **[August 2026]** I started my M.S. in Data Science at [Columbia University](https://www.columbia.edu/).
+- **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to [ECCV 2026](https://eccv.ecva.net/).
+- **[May 2026]** I graduated from the [University of Illinois Urbana-Champaign](https://www.illinois.edu/) with a B.S. in Data Science and Information Science.
+- **[April 2026]** Our project was selected for the [NVIDIA Academic Grant Program](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program) with 32,000 A100 GPU-hours.
+
 ## Education
 
 <p>
