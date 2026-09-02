@@ -66,7 +66,10 @@
 
 ## Papers
 
-1. Eric Ji, **Qiran Hu**, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** ECCV 2026. [[arXiv]](https://arxiv.org/abs/2606.31204) [[Project]](https://ac3s.cvmlgroup.web.illinois.edu/)
+1. Eric Ji, **Qiran Hu**, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** ECCV 2026.<br/>
+   [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2606.31204)
+   [![Project](https://img.shields.io/badge/Project-13294B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ac3s.cvmlgroup.web.illinois.edu/)
+   [![Video](https://img.shields.io/badge/Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/3jOJaT2a8iQ)
 2. Hangyue Zhang, **Qiran Hu**, Ziyi Zhang, Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review.
 3. Tuan Minh Nguyen, **Qiran Hu**, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review.
 4. Sarthak Jain, **Qiran Hu**, Zhen Zhu, Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review.
