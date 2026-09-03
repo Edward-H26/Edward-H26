@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 96" width="1200" height="96" role="img" aria-labelledby="title" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="title">Footer</title>
+<defs></defs>
+<rect width="1200" height="96" fill="#ffffff"/>
+<path d="M0 54 q 75 -14 150 0 t 150 0 q 75 -14 150 0 t 150 0 q 75 -14 150 0 t 150 0 q 75 -14 150 0 t 150 0 q 75 -14 150 0 t 150 0 q 75 -14 150 0 t 150 0 V 96 H 0 Z" fill="#0969da" opacity="0.35"><animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="9s" repeatCount="indefinite"/></path><path d="M0 62 q 75 -18 150 0 t 150 0 q 75 -18 150 0 t 150 0 q 75 -18 150 0 t 150 0 q 75 -18 150 0 t 150 0 q 75 -18 150 0 t 150 0 q 75 -18 150 0 t 150 0 V 96 H 0 Z" fill="#8250df" opacity="0.3"><animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="13s" repeatCount="indefinite"/></path><path d="M0 70 q 75 -12 150 0 t 150 0 q 75 -12 150 0 t 150 0 q 75 -12 150 0 t 150 0 q 75 -12 150 0 t 150 0 q 75 -12 150 0 t 150 0 q 75 -12 150 0 t 150 0 V 96 H 0 Z" fill="#E84A27" opacity="0.5"><animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="7s" repeatCount="indefinite"/></path>
+</svg>
