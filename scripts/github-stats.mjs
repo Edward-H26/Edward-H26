@@ -29,7 +29,7 @@ const STATS_QUERY = `query($login: String!) {
 async function request(url, token, init = {}) {
   const response = await fetch(url, {
     ...init,
-    headers: { Authorization: `bearer ${token}`, "User-Agent": "profile-cards", Accept: "application/vnd.github+json", ...(init.headers ?? {}) }
+    headers: { Authorization: `bearer ${token}`, "User-Agent": "profile-assets", Accept: "application/vnd.github+json", ...(init.headers ?? {}) }
   })
   if (!response.ok) throw new Error(`${url} answered ${response.status}: ${(await response.text()).slice(0, 200)}`)
   return response.json()
@@ -39,7 +39,7 @@ export async function fetchGithub(login, token) {
   const graphql = await request("https://api.github.com/graphql", token, { method: "POST", body: JSON.stringify({ query: STATS_QUERY, variables: { login } }) })
   if (graphql.errors) throw new Error(`GraphQL: ${JSON.stringify(graphql.errors).slice(0, 300)}`)
   const events = await request(`https://api.github.com/users/${login}/events/public?per_page=40`, token)
-  return { user: graphql.data.user, events: events.map(slimEvent) }
+  return { capturedAt: new Date().toISOString(), user: graphql.data.user, events: events.map(slimEvent) }
 }
 
 // Only the fields the activity card needs are kept, so fixtures never store commit
@@ -153,7 +153,7 @@ export function summarize({ user, events }, now = new Date()) {
     reviews: contributions.totalPullRequestReviewContributions,
     total: contributions.contributionCalendar.totalContributions,
     streak: computeStreaks(days, today),
-    weeks: user.contributionsCollection.contributionCalendar.weeks.slice(-26).map((week) => week.contributionDays.map((day) => day.contributionCount)),
+    weeks: contributions.contributionCalendar.weeks.slice(-26).map((week) => week.contributionDays.map((day) => day.contributionCount)),
     languages: topLanguages(nodes),
     activity: summarizeEvents(events, now)
   }

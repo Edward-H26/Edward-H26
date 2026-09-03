@@ -1,8 +1,8 @@
 <!-- Generated cards live in assets/ (node scripts/render-assets.mjs) and on the output branch (GitHub Actions). -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg" />
+  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/hero-dark.svg" />
 </picture>
 
 <p align="center">
@@ -17,7 +17,11 @@
 </div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/qiranhu/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a><a href="mailto:qiranhu8@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a><a href="https://github.com/Edward-H26"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a><a href="https://x.com/QiranHu"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a><a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"/></a>
+  <a href="https://www.linkedin.com/in/qiranhu/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:qiranhu8@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+  <a href="https://github.com/Edward-H26"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+  <a href="https://x.com/QiranHu"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a>
+  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"/></a>
 </p>
 
 <div align="center">
@@ -39,9 +43,9 @@
 
 <a href="https://edward-h26.github.io/research/">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/research-orbit-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/research-orbit-light.svg">
-  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/research-orbit-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/research-orbit-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/research-orbit-light.svg" />
+  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/research-orbit-dark.svg" />
 </picture>
 </a>
 
@@ -49,9 +53,9 @@
 
 <a href="https://arxiv.org/abs/2606.31204">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/featured-paper-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/featured-paper-light.svg">
-  <img width="100%" alt="AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation, accepted to ECCV 2026." src="assets/featured-paper-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/featured-paper-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/featured-paper-light.svg" />
+  <img width="100%" alt="AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation, accepted to ECCV 2026." src="assets/featured-paper-dark.svg" />
 </picture>
 </a>
 
@@ -68,9 +72,9 @@
 ## Journey
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/timeline-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/timeline-light.svg">
-  <img width="100%" alt="Timeline: B.S. at UIUC from 2022, Teaching Assistant from 2023, Research Assistant from 2025, NVIDIA Academic Grant and ECCV 2026 acceptance in 2026, M.S. at Columbia University from 2026." src="assets/timeline-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/timeline-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/timeline-light.svg" />
+  <img width="100%" alt="Timeline: B.S. at UIUC from 2022, Teaching Assistant from 2023, Research Assistant from 2025, NVIDIA Academic Grant and ECCV 2026 acceptance in 2026, M.S. at Columbia University from 2026." src="assets/timeline-dark.svg" />
 </picture>
 
 ## Education
@@ -87,10 +91,10 @@
 <br clear="left"/>
 
 <p>
-  <a href="https://illinois.edu/">
+  <a href="https://www.illinois.edu/">
     <img src="assets/uiuc-logo.jpeg" width="104" height="104" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
   </a>
-  <strong>University of Illinois at Urbana-Champaign</strong>, Champaign, IL<br/>
+  <strong>University of Illinois Urbana-Champaign</strong>, Champaign, IL<br/>
   <strong>BS in Data Science and Information Science</strong><br/>
   Minors: Computer Science and Statistics<br/>
   Siebel School of Computing and Data Science<br/>
@@ -136,7 +140,7 @@ _2026.02 - Present_
 
 - Selected for the NVIDIA Academic Grant Program Award with 32,000 A100 GPU-hours allocated on the Brev cloud platform to advance multimodal generative models that continuously incorporate new knowledge across text, image, and 3D data without catastrophic forgetting of previously learned cross-modal alignment.
 - Scaled multimodal continual-learning experiments across audio, image, and text modalities through distributed training on the National Artificial Intelligence Research Resource (NAIRR), profiling throughput and memory trade-offs to enable post-hoc weight-space fusion.
-- Optimized parameter-efficient post-hoc fusion framework that learns to compose frozen checkpoints from different continual-learning strategies.
+- Optimized a parameter-efficient post-hoc fusion framework that learns to compose frozen checkpoints from different continual-learning strategies.
 
 [![NVIDIA Grant](https://img.shields.io/badge/NVIDIA_Grant-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
@@ -147,8 +151,6 @@ _2025.11 - Present_
 - Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
 - Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
 - Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency 40% (8.2s to 4.9s) and adding production-grade fallback handling for API failures.
-
-[![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
 
 ### **Node Optimized Orchestration Design for Educational Intelligence Architecture**
 **Full Stack Developer**<br/>
@@ -180,9 +182,9 @@ _2024.08 - 2024.12_
 - Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
 
 <details>
-<summary><strong>Leadership Experience</strong> (click to expand)</summary>
+<summary><strong>Leadership Experience</strong></summary>
 
-### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign, IL, United States**
+### **CS 107 Data Science Discovery, University of Illinois Urbana-Champaign, Champaign, IL**
 **Teaching Assistant**<br/>
 _2023.08 - Present_
 
@@ -193,18 +195,18 @@ _2023.08 - Present_
 [![Guides](https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://discovery.cs.illinois.edu/guides/)
 [![Mastery](https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mastery.cs.illinois.edu/)
 
-### **Student Government, University of Illinois at Urbana-Champaign, IL, United States**
+### **Student Government, University of Illinois Urbana-Champaign, Champaign, IL**
 **iSchool Student Representative**<br/>
 _2022.09 - 2023.09_
 
 - Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
-- Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
-- Secured approval for program modifications to existing and new activities from students' feedback.
+- Assisted the university with campus tours for prospective students and parents, answering questions and providing insight.
+- Secured approval for changes to existing and new activities based on student feedback.
 
 </details>
 
 <details>
-<summary><strong>Project Experience</strong> (click to expand)</summary>
+<summary><strong>Project Experience</strong></summary>
 
 ### **Realistic Neural Style Transfer Architecture**
 **Independent Researcher**<br/>
@@ -235,49 +237,52 @@ _2025.02 - 2025.06_
 ## Skills
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg">
-  <img width="100%" alt="Skills: PyTorch, JAX, TensorFlow, OpenCV, diffusion models, world models, 3D reconstruction, distributed training, CUDA, PEFT, LangGraph, LangChain, GraphRAG, MCP, Python, C++, TypeScript, React, Next.js, Node.js, R, PostgreSQL, Neo4j, MongoDB, Docker, Kubernetes, AWS, HPC, Unity." src="assets/skills-marquee-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg" />
+  <img width="100%" alt="Skills: PyTorch, JAX, TensorFlow, OpenCV, diffusion models, world models, 3D reconstruction, distributed training, CUDA, PEFT, LangGraph, LangChain, GraphRAG, MCP, Python, C++, TypeScript, React, Next.js, Node.js, R, PostgreSQL, Neo4j, MongoDB, Docker, Kubernetes, AWS, HPC, Unity." src="assets/skills-marquee-dark.svg" />
 </picture>
 
-**Technical Stacks:** Python, C++, PostgreSQL, Neo4j, MongoDB, React.js, Typescript.js, Next.js, Angular.js, Vue.js, Javascript, HTML5, Tailwind CSS, Ruby, Java, R, Kotlin, PHP, Cloud DevOps, Unity, SAS, Figma, Canva, Microsoft Office Suite, Adobe Creative Suite, and Arduino UNO<br/>
-**Language:** Chinese (native), English (native), Spanish (elementary)
+**Technical Stacks:** Python, C++, PostgreSQL, Neo4j, MongoDB, React.js, TypeScript, Next.js, Angular.js, Vue.js, JavaScript, HTML5, Tailwind CSS, Ruby, Java, R, Kotlin, PHP, Cloud DevOps, Unity, SAS, Figma, Canva, Microsoft Office Suite, Adobe Creative Suite, and Arduino UNO<br/>
+**Languages:** Chinese (native), English (native), Spanish (elementary)
 
 ## GitHub Activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-light.svg">
-  <img width="100%" alt="GitHub statistics of Edward-H26: contributions, streak, commits, pull requests, issues, stars, repositories, followers, top languages, and a 26 week contribution heatmap." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-light.svg" />
+  <img width="100%" alt="GitHub statistics of Edward-H26: contributions, streak, commits, pull requests, issues, stars, repositories, followers, top languages, and a 26 week contribution heatmap." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-light.svg">
-  <img width="100%" alt="Recent public GitHub activity of Edward-H26." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-light.svg" />
+  <img width="100%" alt="Recent public GitHub activity of Edward-H26." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg" />
 </picture>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-green-animate.svg">
-    <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D contribution calendar"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-green-animate.svg" />
+    <img width="100%" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D contribution calendar" />
   </picture>
 </div>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake.svg" />
-  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
+  <img width="100%" alt="Contribution snake animation" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
 </picture>
 
 <p align="center">
-  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a><a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a><a href="https://x.com/QiranHu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a><a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
+  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a>
+  <a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a>
+  <a href="https://x.com/QiranHu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a>
+  <a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
 </p>
 <p align="center"><strong>Feel free to contact me!</strong></p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg">
-  <img width="100%" alt="" src="assets/footer-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg" />
+  <img width="100%" alt="" src="assets/footer-dark.svg" />
 </picture>

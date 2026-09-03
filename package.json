@@ -10,6 +10,7 @@
     "render": "node scripts/render-assets.mjs",
     "render:dynamic": "node scripts/render-assets.mjs --dynamic",
     "preview:dynamic": "node scripts/render-assets.mjs --dynamic --fixture",
-    "test": "node --test scripts/render-assets.test.mjs"
+    "test": "node --test scripts/render-assets.test.mjs",
+    "fixture": "node scripts/render-assets.mjs --dynamic --save-fixture"
   }
 }

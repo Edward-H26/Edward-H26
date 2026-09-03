@@ -1,7 +1,7 @@
 // CLI. `node scripts/render-assets.mjs` writes the static cards into assets/.
 // `--dynamic` fetches GitHub data (GH_TOKEN) and writes the live cards into dist/;
 // add `--fixture` to render dist/ from scripts/fixtures instead of the network,
-// or `--save-fixture` to refresh those fixtures from the network.
+// or `--save-fixture` (npm run fixture) to refresh that fixture from the network.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
@@ -53,7 +53,7 @@ async function main(args) {
       console.log(`fixture saved to ${path.relative(ROOT, FIXTURE)}`)
     }
   }
-  const stats = summarize(data, args.includes("--fixture") ? new Date("2026-09-02T12:00:00Z") : new Date())
+  const stats = summarize(data, new Date(data.capturedAt))
   writeAll(path.join(ROOT, "dist"), renderDynamicAssets(stats))
 }
 
