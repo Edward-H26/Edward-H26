@@ -1,0 +1,66 @@
+name: Profile Assets
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+# A single workflow writes every generated file, so runs never compete for the output branch.
+concurrency:
+  group: profile-output-branch
+  cancel-in-progress: false
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Test renderers
+        run: npm test
+
+      - name: Render stats and activity cards
+        run: node scripts/render-assets.mjs --dynamic
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # The third-party generators may be down; the cards above still deploy when they are.
+      - name: Generate snake animation
+        continue-on-error: true
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Generate 3D contribution calendar
+        continue-on-error: true
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Collect calendar files
+        run: cp profile-3d-contrib/*.svg dist/ || echo "no calendar files this run"
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

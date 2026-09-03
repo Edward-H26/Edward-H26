@@ -1,0 +1,15 @@
+{
+  "name": "edward-h26-profile",
+  "private": true,
+  "type": "module",
+  "description": "Generated assets and workflows for the GitHub profile README of Qiran Hu",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "render": "node scripts/render-assets.mjs",
+    "render:dynamic": "node scripts/render-assets.mjs --dynamic",
+    "preview:dynamic": "node scripts/render-assets.mjs --dynamic --fixture",
+    "test": "node --test scripts/render-assets.test.mjs"
+  }
+}

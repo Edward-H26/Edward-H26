@@ -1,16 +1,12 @@
-<!-- Animated Header -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Qiran%20Hu&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Research%20Assistant&descAlignY=52&descSize=18"/>
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" />
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" />
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1200&color=13294B&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Advancing+Human-Centered+Intelligence;Building+Agentic+Systems+%26+Computer+Vision;Creating+AI+That+Understands+the+World" alt="Typing SVG" />
-  </picture>
-</div>
+<!-- Generated cards live in assets/ (node scripts/render-assets.mjs) and on the output branch (GitHub Actions). -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/hero-dark.svg">
+</picture>
 
 <p align="center">
-  qiranhu8@gmail.com | +1 (347)-957-9176 | <a href="https://edward-h26.github.io/">https://edward-h26.github.io/</a>
+  qiranhu8@gmail.com | +1 (347)-957-9176 | <a href="https://edward-h26.github.io/">https://edward-h26.github.io/</a> | <a href="https://edward-h26.github.io/PersonalWebsite/">3D Portfolio</a>
 </p>
 
 <div align="center">
@@ -39,9 +35,43 @@
   </p>
 </div>
 
+## Research Focus
+
+<a href="https://edward-h26.github.io/research/">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/research-orbit-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/research-orbit-light.svg">
+  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/research-orbit-dark.svg">
+</picture>
+</a>
+
+## Featured Paper
+
+<a href="https://arxiv.org/abs/2606.31204">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/featured-paper-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/featured-paper-light.svg">
+  <img width="100%" alt="AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation, accepted to ECCV 2026." src="assets/featured-paper-dark.svg">
+</picture>
+</a>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2606.31204"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv"/></a>
+  <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><img src="https://img.shields.io/badge/Project-13294B?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project page"/></a>
+  <a href="https://youtu.be/3jOJaT2a8iQ"><img src="https://img.shields.io/badge/Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo video"/></a>
+</p>
+
 ## News
 
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
+
+## Journey
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/timeline-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/timeline-light.svg">
+  <img width="100%" alt="Timeline: B.S. at UIUC from 2022, Teaching Assistant from 2023, Research Assistant from 2025, NVIDIA Academic Grant and ECCV 2026 acceptance in 2026, M.S. at Columbia University from 2026." src="assets/timeline-dark.svg">
+</picture>
 
 ## Education
 
@@ -149,7 +179,8 @@ _2024.08 - 2024.12_
 - Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
 - Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
 
-## Leadership Experience
+<details>
+<summary><strong>Leadership Experience</strong> (click to expand)</summary>
 
 ### **CS 107 Data Science Discovery, University of Illinois at Urbana-Champaign, IL, United States**
 **Teaching Assistant**<br/>
@@ -170,7 +201,10 @@ _2022.09 - 2023.09_
 - Facilitated with the university and prospective students and parents during campus tours, answering questions, and providing insight.
 - Secured approval for program modifications to existing and new activities from students' feedback.
 
-## Project Experience
+</details>
+
+<details>
+<summary><strong>Project Experience</strong> (click to expand)</summary>
 
 ### **Realistic Neural Style Transfer Architecture**
 **Independent Researcher**<br/>
@@ -189,6 +223,8 @@ _2025.02 - 2025.06_
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP)
 
+</details>
+
 ## Honors
 
 - [Neo4j Certified Professional](https://graphacademy.neo4j.com/c/2e386da7-2b30-4575-9fd0-b0b0918a6fe0/)
@@ -198,38 +234,41 @@ _2025.02 - 2025.06_
 
 ## Skills
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg">
+  <img width="100%" alt="Skills: PyTorch, JAX, TensorFlow, OpenCV, diffusion models, world models, 3D reconstruction, distributed training, CUDA, PEFT, LangGraph, LangChain, GraphRAG, MCP, Python, C++, TypeScript, React, Next.js, Node.js, R, PostgreSQL, Neo4j, MongoDB, Docker, Kubernetes, AWS, HPC, Unity." src="assets/skills-marquee-dark.svg">
+</picture>
+
 **Technical Stacks:** Python, C++, PostgreSQL, Neo4j, MongoDB, React.js, Typescript.js, Next.js, Angular.js, Vue.js, Javascript, HTML5, Tailwind CSS, Ruby, Java, R, Kotlin, PHP, Cloud DevOps, Unity, SAS, Figma, Canva, Microsoft Office Suite, Adobe Creative Suite, and Arduino UNO<br/>
 **Language:** Chinese (native), English (native), Spanish (elementary)
 
+## GitHub Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-light.svg">
+  <img width="100%" alt="GitHub statistics of Edward-H26: contributions, streak, commits, pull requests, issues, stars, repositories, followers, top languages, and a 26 week contribution heatmap." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-light.svg">
+  <img width="100%" alt="Recent public GitHub activity of Edward-H26." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg">
+</picture>
+
 <div align="center">
-  <h2>My Contribution</h2>
-  <table>
-    <tr>
-      <td>
-        <img width="420" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Edward-H26&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&ring_color=F85D7F&text_color=C9D1D9" alt="GitHub Stats"/>
-      </td>
-      <td>
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats-eight.vercel.app/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F">
-          <img width="420" src="https://github-readme-streak-stats-eight.vercel.app/?user=Edward-H26&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak"/>
-        </picture>
-      </td>
-    </tr>
-  </table>
-  <br/>
-  <img width="420" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Edward-H26&layout=compact&langs_count=10&card_width=420&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9" alt="Top Languages"/>
-  <br/>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-green-animate.svg">
-    <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D Contribution Calendar"/>
+    <img src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D contribution calendar"/>
   </picture>
 </div>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
+  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
 </picture>
 
 <p align="center">
@@ -237,4 +276,8 @@ _2025.02 - 2025.06_
 </p>
 <p align="center"><strong>Feel free to contact me!</strong></p>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg">
+  <img width="100%" alt="" src="assets/footer-dark.svg">
+</picture>
