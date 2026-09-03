@@ -6,11 +6,13 @@ import { fileURLToPath } from "node:url"
 import { computeStreaks, relativeTime, slimEvent, summarize, summarizeEvents, topLanguages } from "./github-stats.mjs"
 import { FEATURED_PAPER, FOCUS, PROFILE, SKILL_ROWS, TIMELINE } from "./profile-data.mjs"
 import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
-import { THEMES, escape } from "./svg.mjs"
+import { THEMES, escapeXml } from "./svg.mjs"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const fixture = JSON.parse(readFileSync(path.join(ROOT, "scripts/fixtures/github.json"), "utf8"))
-const NOW = new Date("2026-09-02T12:00:00Z")
+const CAPTURED_AT = new Date(fixture.capturedAt)
+// Hand-written event cases use a fixed clock so refreshing the fixture cannot change them.
+const FIXED_NOW = new Date("2026-09-02T12:00:00Z")
 
 // Minimal well-formedness check: every opened tag is closed in order and attribute quotes balance.
 function assertWellFormed(svg, name) {
@@ -37,7 +39,7 @@ function assertSelfContained(svg, name) {
   const namespaces = ["http://www.w3.org/2000/svg", "http://www.w3.org/1999/xlink"]
   assert.ok(urls.every((url) => namespaces.includes(url)), `${name} must not reference external resources`)
   assert.ok(svg.startsWith('<svg xmlns="http://www.w3.org/2000/svg"'))
-  assert.match(svg, /<title id="title">/)
+  assert.match(svg, /aria-labelledby="([a-z-]+)-title"[\s\S]*<title id="\1-title">/)
   assert.ok(!svg.includes("undefined") && !svg.includes("NaN"), `${name} leaked undefined or NaN`)
 }
 
@@ -54,17 +56,17 @@ describe("static assets", () => {
   })
 
   it("puts the profile content into the cards", () => {
-    assert.ok(files["hero-dark.svg"].includes(escape(PROFILE.name)))
-    for (const line of PROFILE.taglines) assert.ok(files["hero-dark.svg"].includes(escape(line)))
-    for (const item of FOCUS) assert.ok(files["research-orbit-light.svg"].includes(escape(item.label)))
+    assert.ok(files["hero-dark.svg"].includes(escapeXml(PROFILE.name)))
+    for (const line of PROFILE.taglines) assert.ok(files["hero-dark.svg"].includes(escapeXml(line)))
+    for (const item of FOCUS) assert.ok(files["research-orbit-light.svg"].includes(escapeXml(item.label)))
     assert.ok(files["featured-paper-dark.svg"].includes("ECCV"))
-    assert.ok(files["featured-paper-dark.svg"].includes(escape(FEATURED_PAPER.arxiv)))
+    assert.ok(files["featured-paper-dark.svg"].includes(escapeXml(FEATURED_PAPER.arxiv)))
     const timelineText = [...files["timeline-dark.svg"].matchAll(/<text[^>]*>([^<]*)<\/text>/g)].map((m) => m[1]).join(" ").replace(/\s+/g, "")
     for (const item of TIMELINE) {
-      assert.ok(timelineText.includes(escape(item.label).replace(/\s+/g, "")), item.label)
-      assert.ok(timelineText.includes(escape(item.detail).replace(/\s+/g, "")), item.detail)
+      assert.ok(timelineText.includes(escapeXml(item.label).replace(/\s+/g, "")), item.label)
+      assert.ok(timelineText.includes(escapeXml(item.detail).replace(/\s+/g, "")), item.detail)
     }
-    for (const [label] of SKILL_ROWS.flat()) assert.ok(files["skills-marquee-light.svg"].includes(escape(label)))
+    for (const [label] of SKILL_ROWS.flat()) assert.ok(files["skills-marquee-light.svg"].includes(escapeXml(label)))
   })
 
   it("differs between dark and light and is deterministic", () => {
@@ -111,12 +113,12 @@ describe("github stats", () => {
       { type: "UnknownEvent", repo: { name: "x/y" }, created_at: "2026-09-01T12:00:00Z", payload: {} },
       { type: "PullRequestEvent", repo: { name: "a/b" }, created_at: "2026-08-20T12:00:00Z", payload: { action: "closed", pull_request: { merged: true } } }
     ]
-    assert.deepEqual(summarizeEvents(events, NOW), [
+    assert.deepEqual(summarizeEvents(events, FIXED_NOW), [
       { type: "PushEvent", text: "Pushed to", repo: "Edward-H26/PersonalWebsite", when: "30 min ago" },
       { type: "WatchEvent", text: "Starred", repo: "Platane/snk", when: "1 d ago" },
       { type: "PullRequestEvent", text: "Merged a pull request in", repo: "a/b", when: "13 d ago" }
     ])
-    assert.equal(relativeTime("2026-03-02T12:00:00Z", NOW), "6 mo ago")
+    assert.equal(relativeTime("2026-03-02T12:00:00Z", FIXED_NOW), "6 mo ago")
   })
 
   it("keeps only the event fields the cards use", () => {
@@ -127,18 +129,18 @@ describe("github stats", () => {
   })
 
   it("summarizes the recorded fixture into card numbers", () => {
-    const stats = summarize(fixture, NOW)
+    const stats = summarize(fixture, CAPTURED_AT)
     assert.equal(stats.login, PROFILE.handle)
     assert.ok(stats.total > 0 && stats.commits > 0 && stats.repos > 0)
     assert.equal(stats.weeks.length, 26)
     assert.ok(stats.languages.length >= 3 && stats.languages.length <= 6)
     assert.ok(stats.activity.length > 0)
-    assert.equal(stats.updated, "2026-09-02")
+    assert.equal(stats.updated, fixture.capturedAt.slice(0, 10))
   })
 })
 
 describe("dynamic assets", () => {
-  const stats = summarize(fixture, NOW)
+  const stats = summarize(fixture, CAPTURED_AT)
   const files = renderDynamicAssets(stats)
 
   it("renders stats and activity cards for both themes", () => {
@@ -149,7 +151,7 @@ describe("dynamic assets", () => {
     }
     assert.ok(files["stats-dark.svg"].includes(`@${PROFILE.handle}`))
     assert.ok(files["stats-dark.svg"].includes(stats.languages[0].name))
-    for (const item of stats.activity) assert.ok(files["activity-light.svg"].includes(escape(item.repo)))
+    for (const item of stats.activity) assert.ok(files["activity-light.svg"].includes(escapeXml(item.repo)))
   })
 
   it("escapes repository names and copes with an empty activity feed", () => {

@@ -1,5 +1,5 @@
-// Small helpers shared by every generated SVG: themes, escaping, a seeded random source
-// (so re-rendering never changes committed files), and rough text measurement.
+// Helpers shared by every generated SVG: themes, escaping, a seeded random source (so re-rendering
+// never changes committed files), rough text measurement, and the document and card frames.
 export const THEMES = {
   dark: {
     name: "dark",
@@ -38,11 +38,11 @@ export const THEMES = {
 export const FONT = "ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
 export const MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 
-export function escape(value) {
+export function escapeXml(value) {
   return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
 }
 
-// mulberry32: deterministic pseudo random numbers from a seed.
+// mulberry32.
 export function rng(seed) {
   let state = seed >>> 0
   return () => {
@@ -64,10 +64,10 @@ export function round(value) {
   return Math.round(value * 100) / 100
 }
 
-export function svgDocument({ width, height, title, theme, defs = "", body }) {
+export function svgDocument({ id, width, height, title, theme, defs = "", body }) {
   return [
-    `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-labelledby="title" font-family="${FONT}">`,
-    `<title id="title">${escape(title)}</title>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-labelledby="${id}-title" font-family="${FONT}">`,
+    `<title id="${id}-title">${escapeXml(title)}</title>`,
     `<defs>${defs}</defs>`,
     `<rect width="${width}" height="${height}" fill="${theme.bg}"/>`,
     body,
@@ -76,10 +76,10 @@ export function svgDocument({ width, height, title, theme, defs = "", body }) {
 }
 
 export function cardFrame(theme, { x, y, width, height, radius = 18, id }) {
-  return [
-    `<linearGradient id="${id}-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${theme.cardTop}"/><stop offset="1" stop-color="${theme.card}"/></linearGradient>`,
-    `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="url(#${id}-fill)" stroke="${theme.border}"/>`
-  ]
+  return {
+    defs: `<linearGradient id="${id}-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${theme.cardTop}"/><stop offset="1" stop-color="${theme.card}"/></linearGradient>`,
+    rect: `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="url(#${id}-fill)" stroke="${theme.border}"/>`
+  }
 }
 
 export function chip(theme, { x, y, label, color, size = 15 }) {
@@ -88,6 +88,6 @@ export function chip(theme, { x, y, label, color, size = 15 }) {
   const height = size + 16
   return {
     width,
-    svg: `<g transform="translate(${round(x)} ${round(y)})"><rect width="${width}" height="${height}" rx="${height / 2}" fill="${color}" fill-opacity="0.16" stroke="${color}" stroke-opacity="0.55"/><text x="${width / 2}" y="${height / 2 + size * 0.36}" text-anchor="middle" font-size="${size}" font-weight="600" fill="${theme.text}">${escape(label)}</text></g>`
+    svg: `<g transform="translate(${round(x)} ${round(y)})"><rect width="${width}" height="${height}" rx="${height / 2}" fill="${color}" fill-opacity="0.16" stroke="${color}" stroke-opacity="0.55"/><text x="${width / 2}" y="${height / 2 + size * 0.36}" text-anchor="middle" font-size="${size}" font-weight="600" fill="${theme.text}">${escapeXml(label)}</text></g>`
   }
 }

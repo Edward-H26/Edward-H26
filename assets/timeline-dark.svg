@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="title" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
-<title id="title">Journey of Qiran Hu</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="timeline-title" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="timeline-title">Journey of Qiran Hu</title>
 <defs><linearGradient id="timeline-line" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="0.6" stop-color="#ff7a4d"/><stop offset="1" stop-color="#d2a8ff"/></linearGradient></defs>
 <rect width="1200" height="360" fill="#0d1117"/>
 <line x1="80" y1="182" x2="1120" y2="182" stroke="rgba(255,255,255,0.12)" stroke-width="2"/><line x1="80" y1="182" x2="1120" y2="182" stroke="url(#timeline-line)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1040" stroke-dashoffset="1040"><animate attributeName="stroke-dashoffset" from="1040" to="0" dur="2.6s" fill="freeze"/></line>

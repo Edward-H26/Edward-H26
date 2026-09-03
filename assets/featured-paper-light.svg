@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 230" width="1200" height="230" role="img" aria-labelledby="title" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
-<title id="title">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 230" width="1200" height="230" role="img" aria-labelledby="featured-paper-title" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="featured-paper-title">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</title>
 <defs><linearGradient id="paper-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf0fa"/><stop offset="1" stop-color="#f6f8fa"/></linearGradient><clipPath id="paper-clip"><rect x="20" y="14" width="1160" height="202" rx="20"/></clipPath><linearGradient id="paper-shimmer" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>
 <rect width="1200" height="230" fill="#ffffff"/>
 <rect x="20" y="14" width="1160" height="202" rx="20" fill="url(#paper-fill)" stroke="rgba(19,41,75,0.16)"/>

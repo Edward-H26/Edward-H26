@@ -1,7 +1,7 @@
 // Hand-designed, animated SVG cards for the profile README. Everything is plain SVG with SMIL
 // animation, so GitHub's image proxy can serve it and no external service is involved.
 import { FEATURED_PAPER, FOCUS, PROFILE, SKILL_COLORS, SKILL_ROWS, TIMELINE } from "./profile-data.mjs"
-import { MONO, cardFrame, chip, escape, rng, round, svgDocument, textWidth } from "./svg.mjs"
+import { MONO, cardFrame, chip, escapeXml, rng, round, svgDocument, textWidth } from "./svg.mjs"
 
 export const WIDTH = 1200
 
@@ -59,7 +59,7 @@ export function renderHero(theme) {
   const taglines = PROFILE.taglines
     .map((line, i) => {
       const cycle = fadeCycle(i, PROFILE.taglines.length, 13.5)
-      return `<g opacity="0">${cycle.opacity}<text x="60" y="308" font-size="21" font-weight="600" fill="${theme.accent2}">${escape(line)}${cycle.slide}</text></g>`
+      return `<g opacity="0">${cycle.opacity}<text x="60" y="308" font-size="21" font-weight="600" fill="${theme.accent2}">${escapeXml(line)}${cycle.slide}</text></g>`
     })
     .join("")
   const body = [
@@ -68,10 +68,10 @@ export function renderHero(theme) {
     particles,
     rings,
     core,
-    `<text x="60" y="140" font-size="66" font-weight="800" letter-spacing="-1.5" fill="${theme.text}">${escape(PROFILE.name)}</text>`,
-    `<text x="60" y="190" font-size="26" font-weight="700" fill="${theme.accent}">${escape(PROFILE.role)}</text>`,
-    ...PROFILE.affiliations.map((line, i) => `<text x="60" y="${226 + i * 26}" font-size="17" fill="${theme.muted}">${escape(line)}</text>`),
-    `<text x="60" y="282" font-size="13" font-family="${MONO}" fill="${theme.faint}">$ echo ${escape("$FOCUS")}</text>`,
+    `<text x="60" y="140" font-size="66" font-weight="800" letter-spacing="-1.5" fill="${theme.text}">${escapeXml(PROFILE.name)}</text>`,
+    `<text x="60" y="190" font-size="26" font-weight="700" fill="${theme.accent}">${escapeXml(PROFILE.role)}</text>`,
+    ...PROFILE.affiliations.map((line, i) => `<text x="60" y="${226 + i * 26}" font-size="17" fill="${theme.muted}">${escapeXml(line)}</text>`),
+    `<text x="60" y="282" font-size="13" font-family="${MONO}" fill="${theme.faint}">$ echo ${escapeXml("$FOCUS")}</text>`,
     taglines
   ].join("\n")
   const defs = [
@@ -79,13 +79,13 @@ export function renderHero(theme) {
     `<radialGradient id="hero-core"><stop offset="0" stop-color="#ffffff"/><stop offset="0.35" stop-color="${theme.accent}"/><stop offset="1" stop-color="${theme.glow}"/></radialGradient>`,
     `<pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="${theme.grid}"/></pattern>`
   ].join("")
-  return svgDocument({ width: WIDTH, height, title: `${PROFILE.name}, ${PROFILE.role}`, theme, defs, body })
+  return svgDocument({ id: "hero", width: WIDTH, height, title: `${PROFILE.name}, ${PROFILE.role}`, theme, defs, body })
 }
 
 // Nodes travel along two ellipses (animateMotion) instead of rotating a group, so the chips stay
 // upright and the inner and outer rings never cross: the inner chips always sit inside the band
 // the outer chips move in.
-export function renderOrbit(theme) {
+export function renderResearchOrbit(theme) {
   const height = 560
   const cx = 600
   const cy = 262
@@ -106,34 +106,34 @@ export function renderOrbit(theme) {
       .join("")
     return `<g transform="translate(${cx} ${cy})"><use xlink:href="#orbit-ring-${ringIndex}" fill="none" stroke="${ring.color}" stroke-opacity="0.3" stroke-dasharray="2 6"/>${nodes}</g>`
   })
-  const core = `<g transform="translate(${cx} ${cy})"><circle r="70" fill="${theme.accent}" opacity="0.18"><animate attributeName="r" values="62;84;62" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.22;0.06;0.22" dur="5s" repeatCount="indefinite"/></circle><circle r="52" fill="url(#orbit-core)" stroke="${theme.border}"/><text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">${escape(PROFILE.name)}</text><text y="16" text-anchor="middle" font-size="11" font-weight="600" letter-spacing="1.5" fill="#ffffff">RESEARCH</text></g>`
+  const core = `<g transform="translate(${cx} ${cy})"><circle r="70" fill="${theme.accent}" opacity="0.18"><animate attributeName="r" values="62;84;62" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.22;0.06;0.22" dur="5s" repeatCount="indefinite"/></circle><circle r="52" fill="url(#orbit-core)" stroke="${theme.border}"/><text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">${escapeXml(PROFILE.name)}</text><text y="16" text-anchor="middle" font-size="11" font-weight="600" letter-spacing="1.5" fill="#ffffff">RESEARCH</text></g>`
   const caption = `<text x="${cx}" y="${height - 16}" text-anchor="middle" font-size="14" fill="${theme.muted}">Generative models, world models, and agents that understand 3D space and people.</text>`
   const defs = [
     `<radialGradient id="orbit-core"><stop offset="0" stop-color="#e2562b"/><stop offset="1" stop-color="#9a3115"/></radialGradient>`,
     ...[1, 2].map((ringIndex) => `<path id="orbit-ring-${ringIndex}" d="${ringPath(rings[ringIndex])}"/>`)
   ].join("")
-  return svgDocument({ width: WIDTH, height, title: "Research focus of Qiran Hu", theme, defs, body: [...groups, core, caption].join("\n") })
+  return svgDocument({ id: "research-orbit", width: WIDTH, height, title: "Research focus of Qiran Hu", theme, defs, body: [...groups, core, caption].join("\n") })
 }
 
-export function renderPaper(theme) {
+export function renderFeaturedPaper(theme) {
   const height = 230
   const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "paper" })
   const titleLines = wrap(FEATURED_PAPER.title, 46)
   const badge = `<g transform="translate(52 48)"><rect width="150" height="112" rx="16" fill="${theme.accent}" opacity="0.14"/><rect width="150" height="112" rx="16" fill="none" stroke="${theme.accent}" stroke-opacity="0.6"><animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></rect><text x="75" y="46" text-anchor="middle" font-size="30" font-weight="800" fill="${theme.accent}">ECCV</text><text x="75" y="76" text-anchor="middle" font-size="22" font-weight="700" fill="${theme.text}">2026</text><text x="75" y="98" text-anchor="middle" font-size="11" font-weight="600" letter-spacing="1.5" fill="${theme.muted}">FEATURED PAPER</text></g>`
-  const status = `<g transform="translate(232 52)"><rect width="104" height="26" rx="13" fill="${theme.accent3}" fill-opacity="0.18" stroke="${theme.accent3}"/><circle cx="16" cy="13" r="4" fill="${theme.accent3}"><animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/></circle><text x="60" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="${theme.accent3}">${escape(FEATURED_PAPER.status)}</text></g>`
-  const arxiv = `<text x="352" y="70" font-size="13" font-family="${MONO}" fill="${theme.faint}">${escape(FEATURED_PAPER.arxiv)}</text>`
-  const title = titleLines.map((line, i) => `<text x="232" y="${112 + i * 32}" font-size="26" font-weight="700" fill="${theme.text}">${escape(line)}</text>`).join("")
-  const authorParts = FEATURED_PAPER.authors.split(", ").map((author) => (author === PROFILE.name ? `<tspan font-weight="700" fill="${theme.accent}">${escape(author)}</tspan>` : escape(author))).join(", ")
+  const status = `<g transform="translate(232 52)"><rect width="104" height="26" rx="13" fill="${theme.accent3}" fill-opacity="0.18" stroke="${theme.accent3}"/><circle cx="16" cy="13" r="4" fill="${theme.accent3}"><animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/></circle><text x="60" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="${theme.accent3}">${escapeXml(FEATURED_PAPER.status)}</text></g>`
+  const arxiv = `<text x="352" y="70" font-size="13" font-family="${MONO}" fill="${theme.faint}">${escapeXml(FEATURED_PAPER.arxiv)}</text>`
+  const title = titleLines.map((line, i) => `<text x="232" y="${112 + i * 32}" font-size="26" font-weight="700" fill="${theme.text}">${escapeXml(line)}</text>`).join("")
+  const authorParts = FEATURED_PAPER.authors.split(", ").map((author) => (author === PROFILE.name ? `<tspan font-weight="700" fill="${theme.accent}">${escapeXml(author)}</tspan>` : escapeXml(author))).join(", ")
   const authors = `<text x="232" y="${112 + titleLines.length * 32 + 4}" font-size="15" fill="${theme.muted}">${authorParts}</text>`
-  const venue = `<text x="232" y="${112 + titleLines.length * 32 + 28}" font-size="14" fill="${theme.faint}">${escape(FEATURED_PAPER.venue)}</text>`
+  const venue = `<text x="232" y="${112 + titleLines.length * 32 + 28}" font-size="14" fill="${theme.faint}">${escapeXml(FEATURED_PAPER.venue)}</text>`
   const cta = `<g transform="translate(1030 172)"><rect width="126" height="34" rx="17" fill="${theme.accent2}" fill-opacity="0.16" stroke="${theme.accent2}"/><text x="56" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="${theme.accent2}">Read on arXiv</text><path d="M104 12l6 5-6 5" fill="none" stroke="${theme.accent2}" stroke-width="2"><animateTransform attributeName="transform" type="translate" values="0 0;4 0;0 0" dur="1.4s" repeatCount="indefinite"/></path></g>`
   const shimmer = `<g clip-path="url(#paper-clip)"><rect x="-320" y="0" width="240" height="${height}" fill="url(#paper-shimmer)" transform="skewX(-20)"><animate attributeName="x" from="-320" to="${WIDTH + 200}" dur="6s" repeatCount="indefinite"/></rect></g>`
   const defs = [
-    card[0],
+    card.defs,
     `<clipPath id="paper-clip"><rect x="20" y="14" width="${WIDTH - 40}" height="${height - 28}" rx="20"/></clipPath>`,
     `<linearGradient id="paper-shimmer" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="${theme.name === "dark" ? 0.09 : 0.35}"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>`
   ].join("")
-  return svgDocument({ width: WIDTH, height, title: FEATURED_PAPER.title, theme, defs, body: [card[1], shimmer, badge, status, arxiv, title, authors, venue, cta].join("\n") })
+  return svgDocument({ id: "featured-paper", width: WIDTH, height, title: FEATURED_PAPER.title, theme, defs, body: [card.rect, shimmer, badge, status, arxiv, title, authors, venue, cta].join("\n") })
 }
 
 const TIMELINE_COLORS = { education: "accent2", teaching: "accent3", research: "accent", award: "accent4", paper: "accent" }
@@ -157,19 +157,19 @@ export function renderTimeline(theme) {
     const dateY = above ? baseline + 30 : baseline - 22
     const begin = round(0.4 + i * 0.4)
     const anchor = i === 0 ? "start" : i === TIMELINE.length - 1 ? "end" : "middle"
-    const label = labelLines.map((line, n) => `<text x="${x}" y="${top + 15 + n * 19}" text-anchor="${anchor}" font-size="15" font-weight="700" fill="${theme.text}">${escape(line)}</text>`).join("")
-    const detail = detailLines.map((line, n) => `<text x="${x}" y="${top + 15 + labelLines.length * 19 + n * 17}" text-anchor="${anchor}" font-size="12.5" fill="${theme.muted}">${escape(line)}</text>`).join("")
-    return `<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${begin}s" dur="0.5s" fill="freeze"/><g transform="translate(${x} ${baseline})"><g transform="scale(0)"><animateTransform attributeName="transform" type="scale" values="0.2;1.18;1" begin="${begin}s" dur="0.6s" fill="freeze"/><circle r="14" fill="${color}" opacity="0.22"><animate attributeName="r" values="12;20;12" dur="3s" begin="${begin}s" repeatCount="indefinite"/></circle><circle r="8" fill="${color}" stroke="${theme.bg}" stroke-width="3"/></g><line x1="0" y1="${above ? -12 : 12}" x2="0" y2="${above ? -28 : 28}" stroke="${color}" stroke-opacity="0.6"/></g><text x="${x}" y="${dateY}" text-anchor="middle" font-size="12" font-family="${MONO}" fill="${theme.faint}">${escape(item.date)}</text>${label}${detail}</g>`
+    const label = labelLines.map((line, n) => `<text x="${x}" y="${top + 15 + n * 19}" text-anchor="${anchor}" font-size="15" font-weight="700" fill="${theme.text}">${escapeXml(line)}</text>`).join("")
+    const detail = detailLines.map((line, n) => `<text x="${x}" y="${top + 15 + labelLines.length * 19 + n * 17}" text-anchor="${anchor}" font-size="12.5" fill="${theme.muted}">${escapeXml(line)}</text>`).join("")
+    return `<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${begin}s" dur="0.5s" fill="freeze"/><g transform="translate(${x} ${baseline})"><g transform="scale(0)"><animateTransform attributeName="transform" type="scale" values="0.2;1.18;1" begin="${begin}s" dur="0.6s" fill="freeze"/><circle r="14" fill="${color}" opacity="0.22"><animate attributeName="r" values="12;20;12" dur="3s" begin="${begin}s" repeatCount="indefinite"/></circle><circle r="8" fill="${color}" stroke="${theme.bg}" stroke-width="3"/></g><line x1="0" y1="${above ? -12 : 12}" x2="0" y2="${above ? -28 : 28}" stroke="${color}" stroke-opacity="0.6"/></g><text x="${x}" y="${dateY}" text-anchor="middle" font-size="12" font-family="${MONO}" fill="${theme.faint}">${escapeXml(item.date)}</text>${label}${detail}</g>`
   }).join("\n")
   const legend = Object.entries(TIMELINE_COLORS)
     .filter(([kind]) => kind !== "paper")
-    .map(([kind, token], i) => `<g transform="translate(${80 + i * 120} ${height - 22})"><circle r="5" fill="${theme[token]}"/><text x="12" y="4" font-size="12" fill="${theme.muted}">${escape(kind[0].toUpperCase() + kind.slice(1))}</text></g>`)
+    .map(([kind, token], i) => `<g transform="translate(${80 + i * 120} ${height - 22})"><circle r="5" fill="${theme[token]}"/><text x="12" y="4" font-size="12" fill="${theme.muted}">${escapeXml(kind[0].toUpperCase() + kind.slice(1))}</text></g>`)
     .join("")
   const defs = `<linearGradient id="timeline-line" x1="0" x2="1"><stop offset="0" stop-color="${theme.accent2}"/><stop offset="0.6" stop-color="${theme.accent}"/><stop offset="1" stop-color="${theme.accent4}"/></linearGradient>`
-  return svgDocument({ width: WIDTH, height, title: "Journey of Qiran Hu", theme, defs, body: [line, nodes, legend].join("\n") })
+  return svgDocument({ id: "timeline", width: WIDTH, height, title: "Journey of Qiran Hu", theme, defs, body: [line, nodes, legend].join("\n") })
 }
 
-export function renderMarquee(theme) {
+export function renderSkillsMarquee(theme) {
   const height = 122
   const gap = 12
   const speed = 34
@@ -188,7 +188,7 @@ export function renderMarquee(theme) {
   })
   const fades = `<rect width="140" height="${height}" fill="url(#marquee-left)"/><rect x="${WIDTH - 140}" width="140" height="${height}" fill="url(#marquee-right)"/>`
   const defs = `<linearGradient id="marquee-left" x1="0" x2="1"><stop offset="0" stop-color="${theme.bg}"/><stop offset="1" stop-color="${theme.bg}" stop-opacity="0"/></linearGradient><linearGradient id="marquee-right" x1="0" x2="1"><stop offset="0" stop-color="${theme.bg}" stop-opacity="0"/><stop offset="1" stop-color="${theme.bg}"/></linearGradient>`
-  return svgDocument({ width: WIDTH, height, title: "Tools and skills", theme, defs, body: [...rows, fades].join("\n") })
+  return svgDocument({ id: "skills-marquee", width: WIDTH, height, title: "Tools and skills", theme, defs, body: [...rows, fades].join("\n") })
 }
 
 // Each wave is built from identical 300px cycles and shifted by exactly one cycle per loop, so
@@ -203,7 +203,14 @@ export function renderFooter(theme) {
     return `<path d="${d}" fill="${color}" opacity="${opacity}"><animateTransform attributeName="transform" type="translate" from="0 0" to="${-cycle} 0" dur="${duration}s" repeatCount="indefinite"/></path>`
   }
   const body = [wave(14, 54, theme.accent2, 0.35, 9), wave(18, 62, theme.accent4, 0.3, 13), wave(12, 70, theme.accent, 0.5, 7)].join("")
-  return svgDocument({ width: WIDTH, height, title: "Footer", theme, body })
+  return svgDocument({ id: "footer", width: WIDTH, height, title: "Footer", theme, body })
 }
 
-export const STATIC_ASSETS = { hero: renderHero, "research-orbit": renderOrbit, "featured-paper": renderPaper, timeline: renderTimeline, "skills-marquee": renderMarquee, footer: renderFooter }
+export const STATIC_ASSETS = {
+  hero: renderHero,
+  "research-orbit": renderResearchOrbit,
+  "featured-paper": renderFeaturedPaper,
+  timeline: renderTimeline,
+  "skills-marquee": renderSkillsMarquee,
+  footer: renderFooter
+}

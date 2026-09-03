@@ -21,10 +21,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 20
 
@@ -36,7 +36,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # The third-party generators may be down; the cards above still deploy when they are.
+      # The third-party generators may be down. Their steps do not fail the run, and the step below
+      # restores the previous copy of any file they did not produce.
       - name: Generate snake animation
         continue-on-error: true
         uses: Platane/snk/svg-only@v3
@@ -48,19 +49,35 @@ jobs:
 
       - name: Generate 3D contribution calendar
         continue-on-error: true
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      - name: Collect calendar files
-        run: cp profile-3d-contrib/*.svg dist/ || echo "no calendar files this run"
+      - name: Collect the two calendar variants the README uses
+        run: cp profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-green-animate.svg dist/ || echo "no calendar files this run"
 
+      - name: Keep the previous copy of any file that was not generated
+        run: |
+          git fetch --depth=1 origin output || exit 0
+          for file in github-snake.svg github-snake-dark.svg profile-night-rainbow.svg profile-green-animate.svg; do
+            [ -f "dist/$file" ] || git show "origin/output:$file" > "dist/$file" 2>/dev/null || rm -f "dist/$file"
+          done
+
+      - name: Verify that every file the README loads from the output branch exists
+        run: |
+          missing=0
+          for file in $(grep -o 'Edward-H26/output/[^" )]*' README.md | sed 's#.*/##' | sort -u); do
+            [ -f "dist/$file" ] || { echo "missing dist/$file"; missing=1; }
+          done
+          exit $missing
+
+      # The branch holds only the current set of files, so it stays small.
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output
           build_dir: dist
-          keep_history: true
+          keep_history: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
