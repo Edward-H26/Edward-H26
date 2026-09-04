@@ -8,14 +8,14 @@ export const PROFILE = {
 }
 
 export const FOCUS = [
-  { label: "3D-Aware Generation", ring: 1 },
-  { label: "Multi-Agent Systems", ring: 1 },
-  { label: "Multimodal LLMs", ring: 1 },
-  { label: "World Models", ring: 2 },
-  { label: "Continual Learning", ring: 2 },
-  { label: "Human-AI Interaction", ring: 2 },
-  { label: "Spatial Intelligence", ring: 2 },
-  { label: "Agent Evaluation and Safety", ring: 2 }
+  { label: "3D-Aware Generation" },
+  { label: "Multi-Agent Systems" },
+  { label: "Multimodal LLMs" },
+  { label: "World Models" },
+  { label: "Continual Learning" },
+  { label: "Human-AI Interaction" },
+  { label: "Spatial Intelligence" },
+  { label: "Agent Evaluation and Safety" }
 ]
 
 export const FEATURED_PAPER = {
@@ -26,25 +26,27 @@ export const FEATURED_PAPER = {
   arxiv: "arXiv:2606.31204"
 }
 
-export const TIMELINE = [
-  { date: "2022.08", label: "B.S. Data Science and Information Science", detail: "University of Illinois Urbana-Champaign", kind: "education" },
-  { date: "2023.08", label: "Teaching Assistant", detail: "CS 107 Data Science Discovery, 2,000+ students", kind: "teaching" },
-  { date: "2025.05", label: "Research Assistant", detail: "Computer Vision and Machine Learning Group", kind: "research" },
-  { date: "2026.02", label: "NVIDIA Academic Grant", detail: "32,000 A100 GPU-hours for multimodal continual learning", kind: "award" },
-  { date: "2026.06", label: "AC3S accepted to ECCV 2026", detail: "3D-aware synthetic data generation", kind: "paper" },
-  { date: "2026.08", label: "M.S. Data Science", detail: "Columbia University, Fu Foundation School of Engineering", kind: "education" }
-]
-
 export const SKILL_ROWS = [
   [
     ["PyTorch", "ai"], ["JAX", "ai"], ["TensorFlow", "ai"], ["OpenCV", "ai"], ["Diffusion Models", "ai"], ["World Models", "ai"],
     ["3D Reconstruction", "ai"], ["Distributed Training", "ai"], ["CUDA", "ai"], ["PEFT", "ai"], ["LangGraph", "agents"], ["LangChain", "agents"],
-    ["GraphRAG", "agents"], ["MCP", "agents"], ["Long-Term Memory", "agents"]
+    ["GraphRAG", "agents"], ["MCP", "agents"], ["Long-Term Memory", "agents"], ["SAS", "data"], ["Arduino", "infra"]
   ],
   [
-    ["Python", "code"], ["C++", "code"], ["TypeScript", "code"], ["React", "code"], ["Next.js", "code"], ["Node.js", "code"], ["R", "code"],
-    ["PostgreSQL", "data"], ["Neo4j", "data"], ["MongoDB", "data"], ["Docker", "infra"], ["Kubernetes", "infra"], ["AWS", "infra"], ["HPC", "infra"], ["Unity", "infra"]
+    ["Python", "code"], ["C++", "code"], ["TypeScript", "code"], ["JavaScript", "code"], ["Java", "code"], ["Kotlin", "code"], ["Ruby", "code"], ["PHP", "code"], ["R", "code"],
+    ["React", "code"], ["Next.js", "code"], ["Vue.js", "code"], ["Angular.js", "code"], ["Node.js", "code"], ["HTML5", "code"], ["Tailwind CSS", "code"],
+    ["PostgreSQL", "data"], ["Neo4j", "data"], ["MongoDB", "data"], ["Docker", "infra"], ["Kubernetes", "infra"], ["AWS", "infra"], ["HPC", "infra"], ["Unity", "infra"],
+    ["Figma", "infra"], ["Canva", "infra"], ["Adobe Creative Suite", "infra"], ["Microsoft Office", "infra"]
   ]
 ]
 
-export const SKILL_COLORS = { ai: "accent", agents: "accent4", code: "accent2", data: "accent3", infra: "muted" }
+export const SKILL_COLORS = { ai: "accent", agents: "accent", code: "accent2", data: "accent3", infra: "muted" }
+
+// Animated link buttons rendered into assets/link-<id>-<theme>.svg; each is wrapped in one <a> in the README.
+export const LINKS = [
+  { id: "collab", label: "Open to research collaborations", url: "mailto:qiranhu8@gmail.com", icon: "spark", width: 420 },
+  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe", width: 176 },
+  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap", width: 214 },
+  { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in", width: 176 },
+  { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x", width: 128 }
+]

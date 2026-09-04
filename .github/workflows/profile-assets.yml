@@ -31,22 +31,13 @@ jobs:
       - name: Test renderers
         run: npm test
 
-      - name: Render stats and activity cards
+      - name: Render stats, milestones, constellation, and activity cards
         run: node scripts/render-assets.mjs --dynamic
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # The third-party generators may be down. Their steps do not fail the run, and the step below
-      # restores the previous copy of any file they did not produce.
-      - name: Generate snake animation
-        continue-on-error: true
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-
+      # The calendar generator may be down. Its step does not fail the run, and the step below
+      # restores the previous copy of any file it did not produce.
       - name: Generate 3D contribution calendar
         continue-on-error: true
         uses: yoshi389111/github-profile-3d-contrib@v0.9.3
@@ -60,7 +51,7 @@ jobs:
       - name: Keep the previous copy of any file that was not generated
         run: |
           git fetch --depth=1 origin output || exit 0
-          for file in github-snake.svg github-snake-dark.svg profile-night-rainbow.svg profile-green-animate.svg; do
+          for file in profile-night-rainbow.svg profile-green-animate.svg; do
             [ -f "dist/$file" ] || git show "origin/output:$file" > "dist/$file" 2>/dev/null || rm -f "dist/$file"
           done
 

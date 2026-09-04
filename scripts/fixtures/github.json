@@ -1,10 +1,10 @@
 {
-  "capturedAt": "2026-09-02T12:00:00Z",
+  "capturedAt": "2026-09-03T20:18:11.963Z",
   "user": {
     "name": "Qiran Hu",
     "login": "Edward-H26",
     "followers": {
-      "totalCount": 6
+      "totalCount": 7
     },
     "repositories": {
       "totalCount": 17,
@@ -406,9 +406,20 @@
           "stargazerCount": 1,
           "forkCount": 0,
           "isFork": false,
-          "primaryLanguage": null,
+          "primaryLanguage": {
+            "name": "JavaScript",
+            "color": "#f1e05a"
+          },
           "languages": {
-            "edges": []
+            "edges": [
+              {
+                "size": 50697,
+                "node": {
+                  "name": "JavaScript",
+                  "color": "#f1e05a"
+                }
+              }
+            ]
           }
         },
         {
@@ -423,28 +434,28 @@
           "languages": {
             "edges": [
               {
-                "size": 66259,
+                "size": 61715,
                 "node": {
                   "name": "TypeScript",
                   "color": "#3178c6"
                 }
               },
               {
-                "size": 37813,
+                "size": 38177,
                 "node": {
                   "name": "JavaScript",
                   "color": "#f1e05a"
                 }
               },
               {
-                "size": 31750,
+                "size": 31577,
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
                 }
               },
               {
-                "size": 7944,
+                "size": 7316,
                 "node": {
                   "name": "CSS",
                   "color": "#663399"
@@ -465,31 +476,31 @@
           "languages": {
             "edges": [
               {
-                "size": 233559,
+                "size": 239761,
                 "node": {
                   "name": "TypeScript",
                   "color": "#3178c6"
                 }
               },
               {
-                "size": 19570,
+                "size": 33136,
                 "node": {
                   "name": "JavaScript",
                   "color": "#f1e05a"
                 }
               },
               {
-                "size": 15251,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
-                }
-              },
-              {
-                "size": 1662,
+                "size": 24284,
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
+                }
+              },
+              {
+                "size": 14792,
+                "node": {
+                  "name": "CSS",
+                  "color": "#663399"
                 }
               }
             ]
@@ -638,12 +649,86 @@
       ]
     },
     "contributionsCollection": {
-      "totalCommitContributions": 920,
+      "commitContributionsByRepository": [
+        {
+          "repository": {
+            "name": "project-check-point-1-NOODEIA",
+            "primaryLanguage": {
+              "name": "TypeScript",
+              "color": "#3178c6"
+            }
+          },
+          "contributions": {
+            "totalCount": 413
+          }
+        },
+        {
+          "repository": {
+            "name": "HSLS-PISA-Interactive-Visualization",
+            "primaryLanguage": {
+              "name": "Jupyter Notebook",
+              "color": "#DA5B0B"
+            }
+          },
+          "contributions": {
+            "totalCount": 134
+          }
+        },
+        {
+          "repository": {
+            "name": "MIRA",
+            "primaryLanguage": {
+              "name": "Jupyter Notebook",
+              "color": "#DA5B0B"
+            }
+          },
+          "contributions": {
+            "totalCount": 112
+          }
+        },
+        {
+          "repository": {
+            "name": "Edward-H26.github.io",
+            "primaryLanguage": {
+              "name": "TypeScript",
+              "color": "#3178c6"
+            }
+          },
+          "contributions": {
+            "totalCount": 85
+          }
+        },
+        {
+          "repository": {
+            "name": "PersonalWebsite",
+            "primaryLanguage": {
+              "name": "TypeScript",
+              "color": "#3178c6"
+            }
+          },
+          "contributions": {
+            "totalCount": 52
+          }
+        },
+        {
+          "repository": {
+            "name": "Edward-H26",
+            "primaryLanguage": {
+              "name": "JavaScript",
+              "color": "#f1e05a"
+            }
+          },
+          "contributions": {
+            "totalCount": 50
+          }
+        }
+      ],
+      "totalCommitContributions": 925,
       "totalPullRequestContributions": 3,
       "totalIssueContributions": 66,
       "totalPullRequestReviewContributions": 0,
       "contributionCalendar": {
-        "totalContributions": 1368,
+        "totalContributions": 1375,
         "weeks": [
           {
             "contributionDays": [
@@ -2326,6 +2411,10 @@
               {
                 "date": "2026-09-02",
                 "contributionCount": 9
+              },
+              {
+                "date": "2026-09-03",
+                "contributionCount": 7
               }
             ]
           }
@@ -2334,6 +2423,22 @@
     }
   },
   "events": [
+    {
+      "type": "PushEvent",
+      "repo": {
+        "name": "Edward-H26/Edward-H26.github.io"
+      },
+      "created_at": "2026-09-02T15:12:23Z",
+      "payload": {}
+    },
+    {
+      "type": "PushEvent",
+      "repo": {
+        "name": "Edward-H26/PersonalWebsite"
+      },
+      "created_at": "2026-09-02T02:30:32Z",
+      "payload": {}
+    },
     {
       "type": "PushEvent",
       "repo": {

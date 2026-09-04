@@ -91,3 +91,25 @@ export function chip(theme, { x, y, label, color, size = 15 }) {
     svg: `<g transform="translate(${round(x)} ${round(y)})"><rect width="${width}" height="${height}" rx="${height / 2}" fill="${color}" fill-opacity="0.16" stroke="${color}" stroke-opacity="0.55"/><text x="${width / 2}" y="${height / 2 + size * 0.36}" text-anchor="middle" font-size="${size}" font-weight="600" fill="${theme.text}">${escapeXml(label)}</text></g>`
   }
 }
+
+// Film grain and soft glow, the two effects that make flat SVG shapes read as material.
+export function grainFilter(id, alpha = 0.06) {
+  return `<filter id="${id}" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="${alpha}"/></feComponentTransfer></filter>`
+}
+
+export function glowFilter(id, deviation = 4) {
+  return `<filter id="${id}" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="${deviation}" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`
+}
+
+export function linearGradient(id, stops, { x1 = "0", y1 = "0", x2 = "1", y2 = "0" } = {}) {
+  const body = stops.map(([offset, color, opacity]) => `<stop offset="${offset}" stop-color="${color}"${opacity === undefined ? "" : ` stop-opacity="${opacity}"`}/>`).join("")
+  return `<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${body}</linearGradient>`
+}
+
+// Mix a hex colour toward white (amount > 0) or black (amount < 0) for lit and shaded faces.
+export function shade(hex, amount) {
+  const channels = hex.replace("#", "").match(/.{2}/g).map((c) => parseInt(c, 16))
+  const target = amount > 0 ? 255 : 0
+  const mixed = channels.map((c) => Math.round(c + (target - c) * Math.abs(amount)))
+  return `#${mixed.map((c) => c.toString(16).padStart(2, "0")).join("")}`
+}
