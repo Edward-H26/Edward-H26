@@ -1,8 +1,8 @@
 <!-- Generated cards live in assets/ (node scripts/render-assets.mjs) and on the output branch (GitHub Actions). -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg" />
-  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/hero-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/scenes/hero-dark.webp" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/scenes/hero-light.webp" />
+  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/scenes/hero-dark.webp" />
 </picture>
 
 <p align="center">
@@ -39,9 +39,9 @@
 
 <a href="https://edward-h26.github.io/research/">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/research-globe-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/research-globe-light.svg" />
-  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/research-globe-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/scenes/planet-dark.webp" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/scenes/planet-light.webp" />
+  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/scenes/planet-dark.webp" />
 </picture>
 </a>
 
@@ -49,9 +49,9 @@
 
 <a href="https://arxiv.org/abs/2606.31204">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/featured-paper-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/featured-paper-light.svg" />
-  <img width="100%" alt="AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation, accepted to ECCV 2026." src="assets/featured-paper-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/scenes/paper-dark.webp" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/scenes/paper-light.webp" />
+  <img width="100%" alt="AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation, accepted to ECCV 2026." src="assets/scenes/paper-dark.webp" />
 </picture>
 </a>
 
@@ -94,13 +94,32 @@
 
 ## Papers
 
-1. Eric Ji, **Qiran Hu**, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu. **AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation.** European Conference on Computer Vision (ECCV) 2026.<br/>
-   [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2606.31204)
-   [![Project](https://img.shields.io/badge/Project-13294B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ac3s.cvmlgroup.web.illinois.edu/)
-   [![Video](https://img.shields.io/badge/Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/3jOJaT2a8iQ)
-2. Hangyue Zhang, **Qiran Hu**, Ziyi Zhang, Yun Huang. **Crowdsourced Open-Source Research: A Research Paradigm Probe.** Under Review.
-3. Tuan Minh Nguyen, **Qiran Hu**, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai. **Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation.** Under Review.
-4. Sarthak Jain, **Qiran Hu**, Zhen Zhu, Yaoyao Liu. **AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning.** Under Review.
+<table>
+<tr>
+<td width="300" valign="top"><a href="https://arxiv.org/abs/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
+<td valign="top">
+<b><a href="https://arxiv.org/abs/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
+Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
+<i>European Conference on Computer Vision (ECCV), 2026</i><br/><br/>
+<a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg"><img src="assets/paper-link-arxiv-light.svg" alt="arXiv" height="36"/></picture></a>
+<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg"><img src="assets/paper-link-project-page-light.svg" alt="Project Page" height="36"/></picture></a>
+<a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg"><img src="assets/paper-link-video-light.svg" alt="Video" height="36"/></picture></a>
+<a href="assets/papers/ac3s.bib"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg"><img src="assets/paper-link-bibtex-light.svg" alt="BibTeX" height="36"/></picture></a>
+</td>
+</tr>
+</table>
+
+<p><b>Crowdsourced Open-Source Research: A Research Paradigm Probe</b><br/>
+Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Yun Huang<br/>
+<i>Under Review</i></p>
+
+<p><b>Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation</b><br/>
+Tuan Minh Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai<br/>
+<i>Under Review</i></p>
+
+<p><b>AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning</b><br/>
+Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
+<i>Under Review</i></p>
 
 ## Research Groups
 
@@ -275,14 +294,25 @@ _2025.02 - 2025.06_
 <details>
 <summary><strong>How this profile is built</strong></summary>
 
-Every generated card above is plain SVG with SMIL animation, rendered by scripts in this
-repository: the static cards from `scripts/profile-data.mjs` into `assets/`, the live cards from
-the GitHub API on the `output` branch every six hours. The 3D contribution calendar comes from the
+The island, the research planet, and the featured paper are real 3D scenes: three.js with
+physically based materials (a reflecting Gerstner-wave sea, a refractive crystal, a planet with
+procedural continents and clouds) and GSAP timelines, rendered frame by frame in headless Chromium
+by `scenes/render.mjs` and encoded as seamless animated WebP loops in `assets/scenes/`, one per
+theme. Every other card is plain SVG with SMIL animation, rendered by scripts in this repository:
+the static cards from `scripts/profile-data.mjs` into `assets/` (lit keycaps, spheres, and tubes
+from `scripts/materials.mjs`), the live cards from the GitHub API on the `output` branch every six
+hours. Paper thumbnails are the papers' own figures, cropped to 10:7 under `assets/papers/figures/`,
+with the venue badge drawn by the same renderer. The 3D contribution calendar comes from the
 github-profile-3d-contrib action, and the island tour is an animated WebP recorded from the live site.
 
 ```mermaid
 flowchart LR
   data["profile-data.mjs"] --> render["render-assets.mjs"]
+  data --> scenes["scenes/*.js, three.js and GSAP"]
+  scenes --> capture["scenes/render.mjs, headless Chromium"]
+  capture --> loops["assets/scenes/*.webp"]
+  loops --> readme
+  figures["assets/papers/figures/*.webp"] --> render
   render --> assets["assets/*.svg"]
   api["GitHub GraphQL and events"] --> render
   render --> output["output branch"]

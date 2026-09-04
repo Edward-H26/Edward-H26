@@ -1,5 +1,6 @@
 // Cards rendered from live GitHub data by the Profile Assets workflow.
-import { MONO, cardFrame, escapeXml, glowFilter, linearGradient, rng, round, shade, svgDocument, textWidth } from "./svg.mjs"
+import { faceGradient, keycap, sphere, sphereGradient } from "./materials.mjs"
+import { MONO, cardFrame, escapeXml, glowFilter, linearGradient, mix, rng, round, shade, svgDocument, textWidth } from "./svg.mjs"
 import { FEATURED_PAPER } from "./profile-data.mjs"
 import { WIDTH } from "./render-static.mjs"
 
@@ -7,11 +8,13 @@ const compact = (value) => (value >= 1000 ? `${round(value / 1000)}k` : String(v
 
 export function renderStats(stats, theme) {
   const height = 452
+  const dark = theme.name === "dark"
   const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "stats" })
   const ringLength = round(2 * Math.PI * 54)
-  const ring = `<g transform="translate(120 122)"><circle r="54" fill="none" stroke="${theme.border}" stroke-width="8"/><circle r="54" fill="none" stroke="url(#stats-ring)" stroke-width="8" stroke-linecap="round" stroke-dasharray="${ringLength}" stroke-dashoffset="${ringLength}" transform="rotate(-90)" filter="url(#stats-glow)"><animate attributeName="stroke-dashoffset" from="${ringLength}" to="${round(ringLength * 0.12)}" dur="1.8s" fill="freeze"/></circle><text y="-2" text-anchor="middle" font-size="26" font-weight="800" fill="${theme.text}">${escapeXml(compact(stats.total))}</text><text y="17" text-anchor="middle" font-size="9" font-weight="600" letter-spacing="0.6" fill="${theme.muted}">CONTRIBUTIONS</text></g>`
+  // A torus: a grooved track with an inner shadow, and a bevelled progress band on top.
+  const ring = `<g transform="translate(120 122)"><circle r="54" fill="none" stroke="${dark ? "#070d1a" : "#c4cfe0"}" stroke-width="13"/><circle r="54" fill="none" stroke="url(#stats-groove)" stroke-width="11"/><circle r="54" fill="none" stroke="url(#stats-ring)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${ringLength}" stroke-dashoffset="${ringLength}" transform="rotate(-90)" filter="url(#mat-bevel-soft)"><animate attributeName="stroke-dashoffset" from="${ringLength}" to="${round(ringLength * 0.12)}" dur="1.8s" fill="freeze"/></circle><text y="-2" text-anchor="middle" font-size="26" font-weight="800" fill="${theme.text}">${escapeXml(compact(stats.total))}</text><text y="17" text-anchor="middle" font-size="9" font-weight="600" letter-spacing="0.6" fill="${theme.muted}">CONTRIBUTIONS</text></g>`
   const streak = `<g transform="translate(60 196)"><text font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">STREAK</text><path d="M18 26c-6 6-9 12-9 18a12 12 0 0 0 24 0c0-4-2-8-4-11-1 3-3 5-5 6 1-5-1-10-6-13z" fill="${theme.accent}" filter="url(#stats-glow)"><animate attributeName="opacity" values="1;0.55;1" dur="1.4s" repeatCount="indefinite"/></path><text x="36" y="50" font-size="30" font-weight="800" fill="${theme.text}">${stats.streak.current}<tspan font-size="14" font-weight="600" fill="${theme.muted}"> day${stats.streak.current === 1 ? "" : "s"} now</tspan></text><text x="0" y="80" font-size="13" fill="${theme.muted}">Longest streak, past year: <tspan font-weight="700" fill="${theme.text}">${stats.streak.longest} days</tspan></text></g>`
-  const tiles = [
+  const tileItems = [
     ["Commits", stats.commits, theme.accent2],
     ["Pull requests", stats.pullRequests, theme.accent4],
     ["Issues", stats.issues, theme.accent3],
@@ -21,19 +24,23 @@ export function renderStats(stats, theme) {
     ["Followers", stats.followers, theme.accent4],
     ["Forks", stats.forks, theme.accent3]
   ]
+  const tiles = tileItems
     .map(([label, value, color], i) => {
       const x = 300 + (i % 4) * 118
       const y = 54 + Math.floor(i / 4) * 92
-      return `<g transform="translate(${x} ${y})" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.15 + i * 0.08)}s" dur="0.5s" fill="freeze"/><rect width="106" height="78" rx="14" fill="${color}" fill-opacity="0.09" stroke="${color}" stroke-opacity="0.35"/><text x="14" y="40" font-size="26" font-weight="800" fill="${theme.text}">${escapeXml(compact(value))}</text><text x="14" y="62" font-size="12" fill="${theme.muted}">${escapeXml(label)}</text></g>`
+      const tint = mix(theme.card, color, dark ? 0.32 : 0.2)
+      return `<g transform="translate(${x} ${y})" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.15 + i * 0.08)}s" dur="0.5s" fill="freeze"/>${keycap({ width: 106, height: 74, radius: 14, fill: `url(#stats-tile-${i})`, side: shade(tint, dark ? -0.55 : -0.32), depth: 5, shadow: false })}<rect width="106" height="74" rx="14" fill="none" stroke="${color}" stroke-opacity="0.4"/><text x="14" y="41" font-size="26" font-weight="800" fill="${dark ? "#000000" : "#ffffff"}" opacity="0.4">${escapeXml(compact(value))}</text><text x="14" y="40" font-size="26" font-weight="800" fill="${theme.text}">${escapeXml(compact(value))}</text><text x="14" y="60" font-size="12" fill="${theme.muted}">${escapeXml(label)}</text></g>`
     })
     .join("")
+  const tileFaces = tileItems.map(([, , color], i) => faceGradient(`stats-tile-${i}`, mix(theme.card, color, dark ? 0.32 : 0.2), { top: 0.18, bottom: -0.1 })).join("")
   const languages = stats.languages
     .map((language, i) => {
       const y = 62 + i * 30
       const width = round(Math.max(6, (language.share / 100) * 280))
-      return `<g transform="translate(800 ${y})"><circle cx="6" cy="-5" r="5" fill="${language.color}"/><text x="18" font-size="13" font-weight="600" fill="${theme.text}">${escapeXml(language.name)}</text><text x="330" text-anchor="end" font-size="12" font-family="${MONO}" fill="${theme.muted}">${language.share}%</text><rect x="0" y="6" width="330" height="6" rx="3" fill="${theme.border}"/><rect x="0" y="6" width="0" height="6" rx="3" fill="${language.color}"><animate attributeName="width" from="0" to="${width}" begin="${round(0.3 + i * 0.12)}s" dur="0.9s" fill="freeze"/></rect></g>`
+      return `<g transform="translate(800 ${y})">${sphere({ cx: 6, cy: -5, r: 5, fill: `url(#stats-lang-dot-${i})`, shadow: false })}<text x="18" font-size="13" font-weight="600" fill="${theme.text}">${escapeXml(language.name)}</text><text x="330" text-anchor="end" font-size="12" font-family="${MONO}" fill="${theme.muted}">${language.share}%</text><rect x="0" y="5" width="330" height="8" rx="4" fill="url(#stats-groove)"/><rect x="0" y="5" width="0" height="8" rx="4" fill="url(#stats-lang-${i})"><animate attributeName="width" from="0" to="${width}" begin="${round(0.3 + i * 0.12)}s" dur="0.9s" fill="freeze"/></rect></g>`
     })
     .join("")
+  const languageDefs = stats.languages.map((language, i) => sphereGradient(`stats-lang-dot-${i}`, language.color) + linearGradient(`stats-lang-${i}`, [["0", shade(language.color, 0.5)], ["0.45", language.color], ["1", shade(language.color, -0.4)]], { x2: "0", y2: "1" })).join("")
   const repos = stats.repositoriesByCommits.slice(0, 6)
   const maxCommits = Math.max(1, ...repos.map((repo) => repo.commits))
   // Extruded bars: a front face, a lit top, and a shaded side, growing from the left.
@@ -42,13 +49,13 @@ export function renderStats(stats, theme) {
       const y = 290 + i * 22
       const width = round(Math.max(8, (repo.commits / maxCommits) * 540))
       const begin = round(0.4 + i * 0.1)
-      const bar = `<g transform="scale(0.01 1)"><animateTransform attributeName="transform" type="scale" values="0.01 1;1 1" begin="${begin}s" dur="0.9s" fill="freeze"/><polygon points="0,0 ${width},0 ${width + 7},-7 7,-7" fill="${shade(repo.color, 0.35)}"/><polygon points="${width},0 ${width + 7},-7 ${width + 7},5 ${width},12" fill="${shade(repo.color, -0.35)}"/><rect width="${width}" height="12" fill="${repo.color}"/></g>`
+      const bar = `<g transform="scale(0.01 1)"><animateTransform attributeName="transform" type="scale" values="0.01 1;1 1" begin="${begin}s" dur="0.9s" fill="freeze"/><rect x="2" y="12" width="${width + 5}" height="5" fill="#000000" opacity="${dark ? 0.45 : 0.18}"/><polygon points="0,0 ${width},0 ${width + 7},-7 7,-7" fill="${shade(repo.color, 0.35)}"/><polygon points="${width},0 ${width + 7},-7 ${width + 7},5 ${width},12" fill="${shade(repo.color, -0.35)}"/><rect width="${width}" height="12" fill="${repo.color}"/></g>`
       return `<g transform="translate(300 ${y})"><text x="0" y="10" font-size="12" font-family="${MONO}" fill="${theme.text}">${escapeXml(repo.name.length > 26 ? `${repo.name.slice(0, 25)}…` : repo.name)}</text><g transform="translate(230 0)">${bar}</g><text x="${round(230 + width + 16)}" y="11" font-size="11" font-family="${MONO}" fill="${theme.muted}" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(begin + 0.7)}s" dur="0.4s" fill="freeze"/>${repo.commits}</text></g>`
     })
     .join("")
   const labels = `<text x="60" y="52" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PAST 12 MONTHS</text><text x="800" y="44" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">TOP LANGUAGES</text><text x="300" y="266" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">COMMITS BY REPOSITORY</text>`
   const footer = `<text x="${WIDTH - 48}" y="${height - 26}" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">@${escapeXml(stats.login)} · updated ${escapeXml(stats.updated)}</text>`
-  const defs = `${card.defs}${linearGradient("stats-ring", [["0", theme.accent2], ["1", theme.accent]])}${glowFilter("stats-glow", 3)}`
+  const defs = `${card.defs}${linearGradient("stats-ring", [["0", theme.accent2], ["1", theme.accent]])}${linearGradient("stats-groove", [["0", "#000000", dark ? 0.55 : 0.22], ["1", "#ffffff", dark ? 0.1 : 0.7]], { x2: "0", y2: "1" })}${glowFilter("stats-glow", 3)}${tileFaces}${languageDefs}`
   return svgDocument({ id: "stats", width: WIDTH, height, title: `GitHub activity of ${stats.name}`, theme, defs, body: [card.rect, labels, ring, streak, tiles, languages, byRepo, footer].join("\n") })
 }
 
@@ -111,7 +118,8 @@ export function renderConstellation(stats, theme) {
   const nodes = bubbles
     .map(({ repo, cx, cy, r, dur, dx, dy }, i) => {
       const name = bubbleLabel(repo.name)
-      return `<g transform="translate(${cx} ${cy})" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.2 + i * 0.09)}s" dur="0.6s" fill="freeze"/><g><animateTransform attributeName="transform" type="translate" values="0 0;${dx} ${dy};0 0" dur="${dur}s" repeatCount="indefinite"/><circle r="${r + 8}" fill="${repo.color}" opacity="0.12"><animate attributeName="r" values="${r + 6};${r + 14};${r + 6}" dur="${dur}s" repeatCount="indefinite"/></circle><circle r="${r}" fill="url(#sphere-${i})" stroke="${repo.color}" stroke-opacity="0.55" filter="url(#constellation-glow)"/><ellipse cx="${round(-r * 0.38)}" cy="${round(-r * 0.52)}" rx="${round(r * 0.3)}" ry="${round(r * 0.16)}" fill="#ffffff" opacity="0.22"/><text y="4" text-anchor="middle" font-size="12" font-weight="700" fill="${theme.text}">${escapeXml(repo.stars)}<tspan font-size="9" font-weight="600" fill="${theme.muted}"> ★</tspan></text><text y="${r + 16}" text-anchor="middle" font-size="${LABEL_FONT}" font-family="${MONO}" fill="${theme.text}">${escapeXml(name)}</text></g></g>`
+      const shadowRx = round(r * 0.95)
+      return `<g transform="translate(${cx} ${cy})" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.2 + i * 0.09)}s" dur="0.6s" fill="freeze"/><ellipse cy="${round(r * 1.02)}" rx="${shadowRx}" ry="${round(r * 0.26)}" fill="url(#mat-shadow)" opacity="0.9"><animate attributeName="rx" values="${shadowRx};${round(shadowRx * 0.82)};${shadowRx}" dur="${dur}s" repeatCount="indefinite"/></ellipse><g><animateTransform attributeName="transform" type="translate" values="0 0;${dx} ${dy};0 0" dur="${dur}s" repeatCount="indefinite"/><circle r="${r + 8}" fill="${repo.color}" opacity="0.12"><animate attributeName="r" values="${r + 6};${r + 14};${r + 6}" dur="${dur}s" repeatCount="indefinite"/></circle>${sphere({ cx: 0, cy: 0, r, fill: `url(#sphere-${i})`, shadow: false })}<text y="4" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">${escapeXml(repo.stars)}<tspan font-size="9" font-weight="600" fill="#ffffff" fill-opacity="0.8"> ★</tspan></text><text y="${r + 16}" text-anchor="middle" font-size="${LABEL_FONT}" font-family="${MONO}" fill="${theme.text}">${escapeXml(name)}</text></g></g>`
     })
     .join("\n")
   const languages = [...new Map(repos.map((repo) => [repo.language, repo.color])).entries()]
@@ -124,8 +132,8 @@ export function renderConstellation(stats, theme) {
     })
     .join("")
   const header = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PUBLIC REPOSITORIES · BUBBLE SIZE FOLLOWS STARS</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
-  const spheres = bubbles.map(({ repo }, i) => `<radialGradient id="sphere-${i}" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="${shade(repo.color, 0.55)}"/><stop offset="0.55" stop-color="${repo.color}"/><stop offset="1" stop-color="${shade(repo.color, -0.5)}"/></radialGradient>`).join("")
-  return svgDocument({ id: "constellation", width: WIDTH, height, title: `Public repositories of ${stats.name}`, theme, defs: card.defs + glowFilter("constellation-glow", 5) + spheres, body: [card.rect, header, links, nodes, legend].join("\n") })
+  const spheres = bubbles.map(({ repo }, i) => sphereGradient(`sphere-${i}`, repo.color)).join("")
+  return svgDocument({ id: "constellation", width: WIDTH, height, title: `Public repositories of ${stats.name}`, theme, defs: card.defs + spheres, body: [card.rect, header, links, nodes, legend].join("\n") })
 }
 
 const EVENT_COLORS = { PushEvent: "accent2", PullRequestEvent: "accent4", IssuesEvent: "accent3", IssueCommentEvent: "accent3", CreateEvent: "accent", WatchEvent: "accent", ForkEvent: "accent2", ReleaseEvent: "accent4", PublicEvent: "accent" }
@@ -141,11 +149,12 @@ export function renderActivity(stats, theme) {
       const color = theme[EVENT_COLORS[item.type] ?? "accent2"]
       const textX = 96
       const repoX = round(textX + textWidth(item.text, 15) + 10)
-      return `<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.2 + i * 0.18)}s" dur="0.45s" fill="freeze"/><animateTransform attributeName="transform" type="translate" values="-16 0;0 0" begin="${round(0.2 + i * 0.18)}s" dur="0.45s" fill="freeze"/><circle cx="66" cy="${y - 5}" r="6" fill="${color}" filter="url(#activity-glow)"/><line x1="66" y1="${y + 9}" x2="66" y2="${y + rowHeight - 12}" stroke="${theme.border}" stroke-dasharray="2 4"/><text x="${textX}" y="${y}" font-size="15" fill="${theme.text}">${escapeXml(item.text)}</text><text x="${repoX}" y="${y}" font-size="14" font-family="${MONO}" font-weight="600" fill="${color}">${escapeXml(item.repo)}</text><text x="${WIDTH - 52}" y="${y}" text-anchor="end" font-size="12" font-family="${MONO}" fill="${theme.faint}">${escapeXml(item.when)}</text></g>`
+      return `<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.2 + i * 0.18)}s" dur="0.45s" fill="freeze"/><animateTransform attributeName="transform" type="translate" values="-16 0;0 0" begin="${round(0.2 + i * 0.18)}s" dur="0.45s" fill="freeze"/><circle cx="66" cy="${y - 5}" r="9" fill="${color}" opacity="0.25" filter="url(#activity-glow)"/>${sphere({ cx: 66, cy: y - 5, r: 6.5, fill: `url(#activity-dot-${EVENT_COLORS[item.type] ?? "accent2"})`, shadow: false })}<line x1="66" y1="${y + 9}" x2="66" y2="${y + rowHeight - 12}" stroke="${theme.border}" stroke-dasharray="2 4"/><text x="${textX}" y="${y}" font-size="15" fill="${theme.text}">${escapeXml(item.text)}</text><text x="${repoX}" y="${y}" font-size="14" font-family="${MONO}" font-weight="600" fill="${color}">${escapeXml(item.repo)}</text><text x="${WIDTH - 52}" y="${y}" text-anchor="end" font-size="12" font-family="${MONO}" fill="${theme.faint}">${escapeXml(item.when)}</text></g>`
     })
     .join("\n")
   const header = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">RECENT PUBLIC ACTIVITY</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
-  return svgDocument({ id: "activity", width: WIDTH, height, title: `Recent GitHub activity of ${stats.name}`, theme, defs: card.defs + glowFilter("activity-glow", 3), body: [card.rect, header, list].join("\n") })
+  const dotDefs = [...new Set(Object.values(EVENT_COLORS))].map((token) => sphereGradient(`activity-dot-${token}`, theme[token])).join("")
+  return svgDocument({ id: "activity", width: WIDTH, height, title: `Recent GitHub activity of ${stats.name}`, theme, defs: card.defs + glowFilter("activity-glow", 3) + dotDefs, body: [card.rect, header, list].join("\n") })
 }
 
 const MILESTONE_ICONS = {
@@ -182,7 +191,7 @@ function medal(theme, item, x, y, index) {
   const hex = "M0,-30 L26,-15 L26,15 L0,30 L-26,15 L-26,-15 Z"
   const begin = round(0.2 + index * 0.12)
   const shine = item.unlocked ? `<g clip-path="url(#medal-clip)"><rect x="-14" y="-34" width="28" height="68" fill="url(#medal-shine)" transform="skewX(-20)"><animate attributeName="x" values="-70;70" dur="${round(3.5 + index * 0.4)}s" begin="${round(index * 0.5)}s" repeatCount="indefinite"/></rect></g>` : ""
-  const face = `<g transform="translate(0 6)"><path d="${hex}" fill="${shade(color, -0.45)}"/></g><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="${round(4 + index * 0.3)}s" repeatCount="indefinite"/><path d="${hex}" fill="url(#medal-${item.id})" stroke="${shade(color, 0.3)}" stroke-opacity="0.8"/><path d="M0,-22 L19,-11 L19,11 L0,22 L-19,11 L-19,-11 Z" fill="none" stroke="#fff" stroke-opacity="${item.unlocked ? 0.35 : 0.15}"/>${shine}${MILESTONE_ICONS[item.icon]}</g>`
+  const face = `<g transform="translate(0 6)"><path d="${hex}" fill="${shade(color, -0.45)}"/></g><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="${round(4 + index * 0.3)}s" repeatCount="indefinite"/><path d="${hex}" fill="url(#medal-${item.id})" stroke="${shade(color, 0.3)}" stroke-opacity="0.8" filter="url(#mat-bevel)"/><path d="M0,-22 L19,-11 L19,11 L0,22 L-19,11 L-19,-11 Z" fill="none" stroke="#fff" stroke-opacity="${item.unlocked ? 0.35 : 0.15}"/>${shine}${MILESTONE_ICONS[item.icon]}</g>`
   const label = `<text y="52" text-anchor="middle" font-size="13" font-weight="700" fill="${item.unlocked ? theme.text : theme.faint}">${escapeXml(item.label)}</text><text y="68" text-anchor="middle" font-size="11" fill="${theme.muted}">${escapeXml(item.unlocked ? item.detail : "locked")}</text>`
   return `<g transform="translate(${x} ${y})" opacity="0"><animate attributeName="opacity" from="0" to="${item.unlocked ? 1 : 0.55}" begin="${begin}s" dur="0.5s" fill="freeze"/><animateTransform attributeName="transform" type="translate" values="${x} ${y + 12};${x} ${y}" begin="${begin}s" dur="0.5s" fill="freeze"/>${face}${label}</g>`
 }

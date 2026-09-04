@@ -1,10 +1,10 @@
 import assert from "node:assert/strict"
-import { readFileSync, readdirSync } from "node:fs"
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs"
 import path from "node:path"
 import { describe, it } from "node:test"
 import { fileURLToPath } from "node:url"
 import { commitsByRepository, computeStreaks, publicRepositories, relativeTime, slimEvent, summarize, summarizeEvents, topLanguages } from "./github-stats.mjs"
-import { FEATURED_PAPER, FOCUS, LINKS, PROFILE, SKILL_ROWS } from "./profile-data.mjs"
+import { LINKS, PAPERS, PAPER_BUTTONS, PROFILE, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
 import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
 import { MAX_BUBBLE_RADIUS, bubbleHalfHeight, bubbleHalfWidth, layoutBubbles, milestones } from "./render-dynamic.mjs"
 import { THEMES, escapeXml, rng } from "./svg.mjs"
@@ -40,7 +40,7 @@ function assertSelfContained(svg, name) {
   const namespaces = ["http://www.w3.org/2000/svg", "http://www.w3.org/1999/xlink"]
   assert.ok(urls.every((url) => namespaces.includes(url)), `${name} must not reference external resources`)
   assert.ok(svg.startsWith('<svg xmlns="http://www.w3.org/2000/svg"'))
-  assert.match(svg, /aria-labelledby="([a-z-]+)-title"[\s\S]*<title id="\1-title">/)
+  assert.match(svg, /aria-labelledby="([a-z0-9-]+)-title"[\s\S]*<title id="\1-title">/)
   assert.ok(!svg.includes("undefined") && !svg.includes("NaN"), `${name} leaked undefined or NaN`)
 }
 
@@ -48,7 +48,7 @@ describe("static assets", () => {
   const files = renderStaticAssets()
 
   it("renders every card in both themes as self-contained, well-formed SVG", () => {
-    assert.equal(Object.keys(files).length, (5 + LINKS.length) * 2)
+    assert.equal(Object.keys(files).length, (2 + LINKS.length + PAPER_BUTTONS.length) * 2 + PAPERS.filter((paper) => paper.thumbnail).length)
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -57,11 +57,6 @@ describe("static assets", () => {
   })
 
   it("puts the profile content into the cards", () => {
-    assert.ok(files["hero-dark.svg"].includes(escapeXml(PROFILE.name)))
-    for (const line of PROFILE.taglines) assert.ok(files["hero-dark.svg"].includes(escapeXml(line)))
-    for (const item of FOCUS) assert.ok(files["research-globe-light.svg"].includes(escapeXml(item.label)))
-    assert.ok(files["featured-paper-dark.svg"].includes("ECCV"))
-    assert.ok(files["featured-paper-dark.svg"].includes(escapeXml(FEATURED_PAPER.arxiv)))
     for (const [label] of SKILL_ROWS.flat()) assert.ok(files["skills-marquee-light.svg"].includes(escapeXml(label)))
     for (const link of LINKS) {
       const svg = files[`link-${link.id}-dark.svg`]
@@ -70,50 +65,8 @@ describe("static assets", () => {
     }
   })
 
-  it("projects the featured paper icosahedron as closed loops with lit front faces only", () => {
-    const svg = files["featured-paper-dark.svg"]
-    const faces = svg.match(/<polygon fill="[^"]+" stroke="none">/g) ?? []
-    assert.equal(faces.length, 20)
-    const edges = svg.match(/<line stroke="[^"]+" stroke-width="1.2" stroke-opacity="0.55" stroke-linecap="round">/g) ?? []
-    assert.equal(edges.length, 30)
-    const points = svg.match(/<animate attributeName="points" values="([^"]+)"/)[1].split(";")
-    assert.equal(points.length, 49)
-    assert.equal(points[0], points[points.length - 1])
-    const opacityTracks = [...svg.matchAll(/<animate attributeName="fill-opacity" values="([^"]+)"/g)].map((m) => m[1].split(";").map(Number))
-    assert.equal(opacityTracks.length, 20)
-    for (let frame = 0; frame < 49; frame += 1) {
-      const visible = opacityTracks.filter((values) => values[frame] > 0).length
-      assert.ok(visible >= 8 && visible <= 12, `frame ${frame} shows ${visible} faces`)
-    }
-    assert.ok(opacityTracks.flat().every((value) => value >= 0 && value <= 0.8))
-  })
 
-  it("rotates the research globe as closed loops with every topic on the ring", () => {
-    const svg = files["research-globe-dark.svg"]
-    const dots = svg.match(/<circle r="2.6" fill="[^"]+"><animate attributeName="cx"/g) ?? []
-    assert.equal(dots.length, 40)
-    const wires = svg.match(/<line stroke="[^"]+" stroke-width="1" stroke-opacity="0.35">/g) ?? []
-    assert.ok(wires.length >= 36)
-    const cx = svg.match(/<animate attributeName="cx" values="([^"]+)"/)[1].split(";")
-    assert.equal(cx.length, 37)
-    assert.equal(cx[0], cx[cx.length - 1])
-    assert.equal((svg.match(/<mpath xlink:href="#globe-ring"\/>/g) ?? []).length, FOCUS.length * 3)
-  })
 
-  it("types each hero tagline with its own clip and a caret that follows the text", () => {
-    const svg = files["hero-dark.svg"]
-    const clips = svg.match(/<clipPath id="hero-type-\d+">/g) ?? []
-    assert.equal(clips.length, PROFILE.taglines.length)
-    const caret = svg.match(/<animate attributeName="x" values="([^"]+)" keyTimes="([^"]+)"/)
-    assert.equal(caret[1].split(";").length, caret[2].split(";").length)
-    assert.ok(caret[2].split(";").map(Number).every((v, i, all) => i === 0 || v >= all[i - 1]))
-    // WebKit ignores a clip rect of width 0, which would show every tagline at once.
-    for (const match of svg.matchAll(/<clipPath id="hero-type-\d+"><rect[^>]*width="([^"]+)"><animate attributeName="width" values="([^"]+)"/g)) {
-      assert.notEqual(Number(match[1]), 0)
-      assert.ok(match[2].split(";").every((value) => Number(value) > 0))
-    }
-    assert.equal((svg.match(/lengthAdjust="spacing"/g) ?? []).length, PROFILE.taglines.length)
-  })
 
   it("links every button to the address in the profile data", () => {
     const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
@@ -125,10 +78,41 @@ describe("static assets", () => {
     }
   })
 
+  it("lists every paper with its thumbnail, authors, and buttons in the README", () => {
+    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    for (const paper of PAPERS) {
+      if (paper.thumbnail) {
+        assert.ok(readme.includes(`src="assets/papers/${paper.id}.svg"`), `${paper.id} thumbnail`)
+        const thumbnail = files[`papers/${paper.id}.svg`]
+        assert.ok(thumbnail.includes("data:image/webp;base64,") && thumbnail.includes(escapeXml(paper.thumbnail.badge)), `${paper.id} thumbnail content`)
+        assert.ok(existsSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`)), `${paper.id} figure file`)
+      } else assert.ok(!readme.includes(`assets/papers/${paper.id}`), `${paper.id} must stay text-only`)
+      assert.ok(readme.includes(escapeXml(paper.title)), `${paper.id} title`)
+      assert.ok(readme.includes(`<b>${PROFILE.name}</b>`))
+      for (const link of paper.links) {
+        const anchor = new RegExp(`<a href="${link.url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"><picture><source[^>]*srcset="assets/${paperButtonId(link.label)}-dark.svg"`)
+        assert.ok(anchor.test(readme), `${paper.id} has no ${link.label} button`)
+      }
+    }
+    for (const label of PAPER_BUTTONS) assert.ok(files[`${paperButtonId(label)}-dark.svg`].includes(escapeXml(label)))
+  })
+
   it("differs between dark and light and is deterministic", () => {
-    assert.notEqual(files["hero-dark.svg"], files["hero-light.svg"])
-    assert.ok(files["hero-dark.svg"].includes(THEMES.dark.bg) && files["hero-light.svg"].includes(THEMES.light.bg))
+    assert.notEqual(files["skills-marquee-dark.svg"], files["skills-marquee-light.svg"])
+    assert.ok(files["skills-marquee-dark.svg"].includes(THEMES.dark.bg) && files["skills-marquee-light.svg"].includes(THEMES.light.bg))
     assert.deepEqual(renderStaticAssets(), files)
+  })
+
+  it("references the three rendered 3D loops in both themes, each committed and within budget", () => {
+    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    for (const scene of ["hero", "planet", "paper"]) {
+      for (const theme of ["dark", "light"]) {
+        const file = `assets/scenes/${scene}-${theme}.webp`
+        assert.ok(readme.includes(file), `README lacks ${file}`)
+        assert.ok(existsSync(path.join(ROOT, file)), `${file} missing; run npm run scenes -- ${scene}`)
+        assert.ok(statSync(path.join(ROOT, file)).size < 3.5 * 1024 * 1024, `${file} is over 3.5 MB`)
+      }
+    }
   })
 
   it("matches the committed files in assets/ (run: npm run render)", () => {
@@ -264,7 +248,9 @@ describe("dynamic assets", () => {
   it("keeps every constellation bubble inside the card", () => {
     const svg = renderDynamicAssets(stats)["constellation-dark.svg"]
     const height = Number(svg.match(/viewBox="0 0 1200 (\d+)"/)[1])
-    for (const match of svg.matchAll(/<g transform="translate\((-?[\d.]+) (-?[\d.]+)\)" opacity="0">[\s\S]*?<circle r="([\d.]+)" fill="[^"]+" fill-opacity/g)) {
+    const bubbles = [...svg.matchAll(/<g transform="translate\((-?[\d.]+) (-?[\d.]+)\)" opacity="0">[\s\S]*?<circle cx="0" cy="0" r="([\d.]+)" fill="url\(#sphere-/g)]
+    assert.equal(bubbles.length, stats.repositories.length)
+    for (const match of bubbles) {
       const [, x, y, r] = match.map(Number)
       assert.ok(x - r > 24 && x + r < 1176, `bubble at ${x} overflows horizontally`)
       assert.ok(y - r > 60 && y + r + 20 < height - 40, `bubble at ${y} overflows vertically`)

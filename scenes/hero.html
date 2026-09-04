@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Hero scene</title>
+<link rel="stylesheet" href="./scene.css" />
+<style>
+  .shade { background: var(--shade); }
+  .vignette { background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 55%, var(--vignette) 100%); }
+  .text { color: var(--text); }
+  .text > * { position: absolute; left: 72px; white-space: nowrap; }
+  .name {
+    top: 92px;
+    margin: 0;
+    isolation: isolate;
+    font-size: 89px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -3px;
+    background: var(--name);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .name::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    color: var(--extrude);
+    background: none;
+    -webkit-text-fill-color: var(--extrude);
+    text-shadow: 0.6px 0.9px 0 var(--extrude), 1.2px 1.8px 0 var(--extrude-2), 1.8px 2.7px 0 var(--extrude-2), 2.4px 3.6px 0 var(--extrude-3), 3px 4.5px 0 var(--extrude-3), 3.6px 5.4px 0 var(--extrude-4), 4.2px 6.3px 0 var(--extrude-4), 6px 12px 22px rgba(0, 0, 0, 0.45);
+  }
+  .rule { top: 196px; height: 4px; width: 356px; border-radius: 2px; background: linear-gradient(90deg, var(--accent), rgba(88, 166, 255, 0)); }
+  .role { top: 222px; font-size: 31px; font-weight: 700; color: var(--accent); }
+  .aff { font-size: 20px; font-weight: 500; color: var(--muted); }
+  .aff-1 { top: 272px; }
+  .aff-2 { top: 303px; }
+  .echo { top: 346px; font-size: 15.6px; color: var(--faint); }
+  .tagline { top: 372px; font-size: 25px; font-weight: 600; color: var(--accent2); display: flex; align-items: center; }
+  .caret { display: inline-block; width: 3.6px; height: 27px; margin-left: 2px; background: var(--accent2); }
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div class="overlay shade"></div>
+<div class="overlay vignette"></div>
+<div class="overlay text">
+  <h1 class="name" data-text="Qiran Hu">Qiran Hu</h1>
+  <div class="rule"></div>
+  <div class="role">Research Assistant</div>
+  <div class="aff aff-1">Computer Vision and Machine Learning Group, UIUC</div>
+  <div class="aff aff-2">M.S. in Data Science, Columbia University</div>
+  <div class="echo mono">$ echo $FOCUS</div>
+  <div class="tagline"><span id="typed"></span><span class="caret" id="caret"></span></div>
+</div>
+<script type="importmap">
+{ "imports": { "three": "/scenes/node_modules/three/build/three.module.js", "three/addons/": "/scenes/node_modules/three/examples/jsm/", "gsap": "/scenes/node_modules/gsap/index.js" } }
+</script>
+<script type="module" src="./hero.js"></script>
+</body>
+</html>

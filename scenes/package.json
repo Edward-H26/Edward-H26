@@ -1,0 +1,14 @@
+{
+  "name": "profile-scenes",
+  "private": true,
+  "type": "module",
+  "description": "Pre-rendered three.js showpieces for the profile README (hero, planet, paper), captured frame by frame and encoded as animated WebP.",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "gsap": "^3.12.5",
+    "playwright": "^1.62.1",
+    "three": "^0.170.0"
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Research planet scene</title>
+<link rel="stylesheet" href="./scene.css" />
+<style>
+  .plate {
+    position: absolute;
+    left: 48px;
+    bottom: 30px;
+    padding: 10px 18px 12px;
+    border-radius: 14px;
+    background: var(--plate);
+    box-shadow: 0 5px 0 var(--plate-side), 0 12px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    color: var(--text);
+  }
+  .plate .who { font-size: 16px; font-weight: 800; }
+  .plate .what { margin-top: 2px; font-size: 10.5px; font-weight: 700; letter-spacing: 2.4px; color: var(--accent); }
+  .caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+    font-size: 17px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div class="overlay">
+  <div class="plate"><div class="who">Qiran Hu</div><div class="what">RESEARCH FOCUS</div></div>
+  <div class="caption">Generative models, world models, and agents that understand 3D space and people.</div>
+</div>
+<script type="importmap">
+{ "imports": { "three": "/scenes/node_modules/three/build/three.module.js", "three/addons/": "/scenes/node_modules/three/examples/jsm/", "gsap": "/scenes/node_modules/gsap/index.js" } }
+</script>
+<script type="module" src="./planet.js"></script>
+</body>
+</html>
