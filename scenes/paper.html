@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Featured paper scene</title>
+<link rel="stylesheet" href="./scene.css" />
+<style>
+  body { background: var(--bg); }
+  .card {
+    position: absolute;
+    left: 24px;
+    top: 17px;
+    width: 1392px;
+    height: 254px;
+    border-radius: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 0 var(--card-side), 0 18px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    height: 36%;
+    border-radius: 24px 24px 0 0;
+    background: linear-gradient(180deg, var(--gloss), rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
+  .shimmer {
+    position: absolute;
+    top: -40px;
+    width: 280px;
+    height: 340px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--shine), rgba(255, 255, 255, 0));
+    transform: skewX(-20deg);
+  }
+  .stagebox {
+    position: absolute;
+    left: 29px;
+    top: 24px;
+    width: 207px;
+    height: 207px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  #stage { left: 53px; top: 41px; }
+  .tag {
+    left: 53px;
+    top: 226px;
+    width: 207px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    color: var(--tag);
+  }
+  .text { color: var(--text); }
+  .text > * { position: absolute; white-space: nowrap; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 31px;
+    padding: 0 16px;
+    border-radius: 16px;
+    color: #fff;
+    font-size: 15.6px;
+    font-weight: 800;
+    box-shadow: 0 4px 0 var(--pill-side), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .eccv { left: 269px; top: 43px; background: linear-gradient(180deg, var(--accent-top), var(--accent-bottom)); --pill-side: var(--accent-side); }
+  .accepted { left: 396px; top: 43px; background: linear-gradient(180deg, var(--green-top), var(--green-bottom)); --pill-side: var(--green-side); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; }
+  .arxiv { left: 540px; top: 50px; font-size: 15.6px; color: var(--faint); }
+  .title { left: 269px; top: 96px; margin: 0; font-size: 31px; font-weight: 800; letter-spacing: -0.5px; line-height: 38px; }
+  .authors { left: 269px; top: 185px; font-size: 18px; color: var(--muted); }
+  .authors b { color: var(--accent); font-weight: 700; }
+  .venue { left: 269px; top: 214px; font-size: 16.8px; color: var(--faint); }
+  .cta {
+    left: 1212px;
+    top: 194px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 41px;
+    padding: 0 18px 0 22px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 15.6px;
+    font-weight: 700;
+    background: linear-gradient(180deg, var(--blue-top), var(--blue-bottom));
+    box-shadow: 0 5px 0 var(--blue-side), 0 12px 22px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .chevron { display: inline-block; width: 9px; height: 9px; border-right: 2.4px solid #fff; border-top: 2.4px solid #fff; transform: rotate(45deg); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="shimmer"></div>
+  <div class="stagebox"></div>
+</div>
+<canvas id="stage"></canvas>
+<div class="overlay text">
+  <div class="tag">3D-AWARE</div>
+  <div class="pill eccv" id="badge">ECCV 2026</div>
+  <div class="pill accepted"><span class="dot" id="dot"></span><span id="status">Accepted</span></div>
+  <div class="arxiv mono" id="arxiv"></div>
+  <h2 class="title" id="title"></h2>
+  <div class="authors" id="authors"></div>
+  <div class="venue" id="venue"></div>
+  <div class="cta">Read on arXiv <span class="chevron" id="chevron"></span></div>
+</div>
+<script type="importmap">
+{ "imports": { "three": "/scenes/node_modules/three/build/three.module.js", "three/addons/": "/scenes/node_modules/three/examples/jsm/", "gsap": "/scenes/node_modules/gsap/index.js" } }
+</script>
+<script type="module" src="./paper.js"></script>
+</body>
+</html>

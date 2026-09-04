@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+  width: var(--w);
+  height: var(--h);
+  overflow: hidden;
+  background: #000;
+  font-family: ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cw, var(--w)) !important;
+  height: var(--ch, var(--h)) !important;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transform: scale(var(--scale, 1));
+  width: calc(100% / var(--scale, 1));
+  height: calc(100% / var(--scale, 1));
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

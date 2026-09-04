@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url"
 import { PROFILE } from "./profile-data.mjs"
 import { fetchGithub, summarize } from "./github-stats.mjs"
 import { renderActivity, renderConstellation, renderMilestones, renderStats } from "./render-dynamic.mjs"
-import { STATIC_ASSETS } from "./render-static.mjs"
+import { SINGLE_ASSETS, STATIC_ASSETS } from "./render-static.mjs"
 import { THEMES } from "./svg.mjs"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
@@ -19,6 +19,7 @@ export function renderStaticAssets() {
   for (const [name, render] of Object.entries(STATIC_ASSETS)) {
     for (const theme of Object.values(THEMES)) files[`${name}-${theme.name}.svg`] = render(theme)
   }
+  for (const [name, render] of Object.entries(SINGLE_ASSETS)) files[`${name}.svg`] = render()
   return files
 }
 
@@ -34,8 +35,10 @@ export function renderDynamicAssets(stats) {
 }
 
 function writeAll(dir, files) {
-  mkdirSync(dir, { recursive: true })
-  for (const [name, content] of Object.entries(files)) writeFileSync(path.join(dir, name), content)
+  for (const [name, content] of Object.entries(files)) {
+    mkdirSync(path.dirname(path.join(dir, name)), { recursive: true })
+    writeFileSync(path.join(dir, name), content)
+  }
   console.log(`${Object.keys(files).length} files written to ${path.relative(ROOT, dir)}/`)
 }
 

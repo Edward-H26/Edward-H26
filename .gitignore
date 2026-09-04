@@ -3,3 +3,4 @@ profile-3d-contrib/
 node_modules/
 .claude/settings.local.json
 .DS_Store
+assets/scenes/*-still.png

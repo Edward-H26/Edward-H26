@@ -18,11 +18,56 @@ export const FOCUS = [
   { label: "Agent Evaluation and Safety" }
 ]
 
+// Papers in README order. A paper with a `thumbnail` gets a figure card: its cropped figure
+// (assets/papers/figures/<id>.webp) is rendered into assets/papers/<id>.svg with the venue badge.
+// Papers under review stay text-only until they are public. Each link label renders as one
+// keycap button (assets/paper-link-<label>).
+export const PAPERS = [
+  {
+    id: "ac3s",
+    title: "AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation",
+    authors: ["Eric Ji", "Qiran Hu", "Wufei Ma", "Sarthak Jain", "Yingying Li", "Minh N. Do", "Yaoyao Liu"],
+    venue: "European Conference on Computer Vision (ECCV), 2026",
+    thumbnail: { badge: "ECCV", alt: "AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM" },
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2606.31204" },
+      { label: "Project Page", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
+      { label: "Video", url: "https://youtu.be/3jOJaT2a8iQ" },
+      { label: "BibTeX", url: "assets/papers/ac3s.bib" }
+    ]
+  },
+  {
+    id: "crowdsourced",
+    title: "Crowdsourced Open-Source Research: A Research Paradigm Probe",
+    authors: ["Hangyue Zhang", "Qiran Hu", "Ziyi Zhang", "Yun Huang"],
+    venue: "Under Review",
+    links: []
+  },
+  {
+    id: "context-under-budget",
+    title: "Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation",
+    authors: ["Tuan Minh Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D Doan", "Kok-Seng Wong", "Fan Lai"],
+    venue: "Under Review",
+    links: []
+  },
+  {
+    id: "alphawiseft",
+    title: "AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning",
+    authors: ["Sarthak Jain", "Qiran Hu", "Zhen Zhu", "Yaoyao Liu"],
+    venue: "Under Review",
+    links: []
+  }
+]
+
+export const PAPER_BUTTONS = [...new Set(PAPERS.flatMap((paper) => paper.links.map((link) => link.label)))]
+
+export const paperButtonId = (label) => `paper-link-${label.toLowerCase().replace(/\W+/g, "-")}`
+
 export const FEATURED_PAPER = {
-  title: "AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation",
-  venue: "European Conference on Computer Vision (ECCV) 2026",
+  title: PAPERS[0].title,
+  venue: PAPERS[0].venue,
   status: "Accepted",
-  authors: "Eric Ji, Qiran Hu, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu",
+  authors: PAPERS[0].authors.join(", "),
   arxiv: "arXiv:2606.31204"
 }
 
