@@ -6,24 +6,20 @@
 </picture>
 
 <p align="center">
-  qiranhu8@gmail.com | +1 (347)-957-9176 | <a href="https://edward-h26.github.io/">https://edward-h26.github.io/</a> | <a href="https://edward-h26.github.io/PersonalWebsite/">3D Portfolio</a>
+  qiranhu8@gmail.com | +1 (347)-957-9176<br />
+  <img src="https://komarev.com/ghpvc/?username=Edward-H26&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />
 </p>
-
-<div align="center">
-  <br/>
-  <a href="mailto:qiranhu8@gmail.com">
-    <img src="https://img.shields.io/badge/OPEN_TO_RESEARCH_COLLABORATIONS-LET'S_CONNECT!-E84A27?style=for-the-badge&labelColor=13294B" alt="Open to Collaborations"/>
-  </a>
-</div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/qiranhu/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:qiranhu8@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-  <a href="https://github.com/Edward-H26"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-  <a href="https://x.com/QiranHu"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a>
-  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"/></a>
+  <a href="mailto:qiranhu8@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-collab-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-collab-light.svg" /><img height="60" alt="Open to research collaborations" src="assets/link-collab-dark.svg" /></picture></a>
 </p>
 
+<p align="center">
+  <a href="https://edward-h26.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg" /><img height="60" alt="Website" src="assets/link-website-dark.svg" /></picture></a>
+  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="60" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>
+  <a href="https://www.linkedin.com/in/qiranhu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="60" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>
+  <a href="https://x.com/QiranHu"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="60" alt="X" src="assets/link-x-dark.svg" /></picture></a>
+</p>
 <div align="center">
   <p>
     I am a current student in <strong><a href="https://www.engineering.columbia.edu/about">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
@@ -43,9 +39,9 @@
 
 <a href="https://edward-h26.github.io/research/">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/research-orbit-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/research-orbit-light.svg" />
-  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/research-orbit-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/research-globe-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/research-globe-light.svg" />
+  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/research-globe-dark.svg" />
 </picture>
 </a>
 
@@ -59,23 +55,17 @@
 </picture>
 </a>
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2606.31204"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv"/></a>
-  <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><img src="https://img.shields.io/badge/Project-13294B?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project page"/></a>
-  <a href="https://youtu.be/3jOJaT2a8iQ"><img src="https://img.shields.io/badge/Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo video"/></a>
-</p>
-
 ## News
 
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
 
-## Journey
+## Interactive 3D Portfolio
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/timeline-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/timeline-light.svg" />
-  <img width="100%" alt="Timeline: B.S. at UIUC from 2022, Teaching Assistant from 2023, Research Assistant from 2025, NVIDIA Academic Grant and ECCV 2026 acceptance in 2026, M.S. at Columbia University from 2026." src="assets/timeline-dark.svg" />
-</picture>
+<a href="https://edward-h26.github.io/PersonalWebsite/">
+  <img width="100%" alt="Animated tour of the interactive 3D island portfolio: an overview of the island, then a first-person walk along its road past the publication cards." src="assets/island-tour.webp" />
+</a>
+
+<p align="center">Click the preview to walk the island: scroll to move, look sideways with the arrow keys. Built with React and three.js.</p>
 
 ## Education
 
@@ -242,7 +232,10 @@ _2025.02 - 2025.06_
   <img width="100%" alt="Skills: PyTorch, JAX, TensorFlow, OpenCV, diffusion models, world models, 3D reconstruction, distributed training, CUDA, PEFT, LangGraph, LangChain, GraphRAG, MCP, Python, C++, TypeScript, React, Next.js, Node.js, R, PostgreSQL, Neo4j, MongoDB, Docker, Kubernetes, AWS, HPC, Unity." src="assets/skills-marquee-dark.svg" />
 </picture>
 
-**Technical Stacks:** Python, C++, PostgreSQL, Neo4j, MongoDB, React.js, TypeScript, Next.js, Angular.js, Vue.js, JavaScript, HTML5, Tailwind CSS, Ruby, Java, R, Kotlin, PHP, Cloud DevOps, Unity, SAS, Figma, Canva, Microsoft Office Suite, Adobe Creative Suite, and Arduino UNO<br/>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,opencv,react,nextjs,nodejs,ts,js,html,tailwind,postgres,mongodb,docker,kubernetes,aws,git,unity&perline=9" alt="Technology logos: Python, PyTorch, TensorFlow, OpenCV, React, Next.js, Node.js, TypeScript, JavaScript, HTML, Tailwind CSS, PostgreSQL, MongoDB, Docker, Kubernetes, AWS, Git, Unity" />
+</p>
+
 **Languages:** Chinese (native), English (native), Spanish (elementary)
 
 ## GitHub Activity
@@ -250,7 +243,19 @@ _2025.02 - 2025.06_
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-light.svg" />
-  <img width="100%" alt="GitHub statistics of Edward-H26: contributions, streak, commits, pull requests, issues, stars, repositories, followers, top languages, and a 26 week contribution heatmap." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
+  <img width="100%" alt="GitHub statistics of Edward-H26: contributions in the past year, streak, commits, pull requests, issues, reviews, stars, repositories, followers, forks, top languages, and commits by repository as extruded bars." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-light.svg" />
+  <img width="100%" alt="Milestones of Edward-H26 drawn as medals: ECCV 2026 paper, NVIDIA grant, contributions, streak, repositories, stars, and languages." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/constellation-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/constellation-light.svg" />
+  <img width="100%" alt="Public repositories of Edward-H26 drawn as a constellation, bubble size following stars and colour following the primary language." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/constellation-dark.svg" />
 </picture>
 
 <picture>
@@ -263,23 +268,31 @@ _2025.02 - 2025.06_
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-green-animate.svg" />
-    <img width="100%" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D contribution calendar" />
+    <img width="100%" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/profile-night-rainbow.svg" alt="3D contribution calendar of the past year" />
   </picture>
 </div>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake.svg" />
-  <img width="100%" alt="Contribution snake animation" src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/github-snake-dark.svg" />
-</picture>
+<details>
+<summary><strong>How this profile is built</strong></summary>
 
-<p align="center">
-  <a href="https://github.com/Edward-H26"><img src="assets/icon-github.svg" width="52" height="52" alt="GitHub"/></a>
-  <a href="https://www.linkedin.com/in/qiranhu/"><img src="assets/icon-linkedin.svg" width="52" height="52" alt="LinkedIn"/></a>
-  <a href="https://x.com/QiranHu"><img src="assets/icon-x.svg" width="52" height="52" alt="X"/></a>
-  <a href="mailto:qiranhu8@gmail.com"><img src="assets/icon-email.svg" width="52" height="52" alt="Email"/></a>
-</p>
-<p align="center"><strong>Feel free to contact me!</strong></p>
+Every generated card above is plain SVG with SMIL animation, rendered by scripts in this
+repository: the static cards from `scripts/profile-data.mjs` into `assets/`, the live cards from
+the GitHub API on the `output` branch every six hours. The 3D contribution calendar comes from the
+github-profile-3d-contrib action, and the island tour is an animated WebP recorded from the live site.
+
+```mermaid
+flowchart LR
+  data["profile-data.mjs"] --> render["render-assets.mjs"]
+  render --> assets["assets/*.svg"]
+  api["GitHub GraphQL and events"] --> render
+  render --> output["output branch"]
+  calendar["3D contribution calendar action"] --> output
+  assets --> readme["README"]
+  output --> readme
+  schedule["GitHub Actions, every 6 hours"] --> render
+```
+
+</details>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg" />

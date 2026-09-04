@@ -17,6 +17,10 @@ const STATS_QUERY = `query($login: String!) {
       }
     }
     contributionsCollection {
+      commitContributionsByRepository(maxRepositories: 6) {
+        repository { name primaryLanguage { name color } }
+        contributions { totalCount }
+      }
       totalCommitContributions
       totalPullRequestContributions
       totalIssueContributions
@@ -25,6 +29,8 @@ const STATS_QUERY = `query($login: String!) {
     }
   }
 }`
+
+const safeColor = (color, fallback = "#8b949e") => (/^#[0-9a-f]{6}$/i.test(color ?? "") ? color : fallback)
 
 async function request(url, token, init = {}) {
   const response = await fetch(url, {
@@ -89,8 +95,7 @@ export function topLanguages(nodes, limit = 6) {
   for (const repo of nodes) {
     if (repo.isFork) continue
     for (const edge of repo.languages?.edges ?? []) {
-      const color = /^#[0-9a-f]{6}$/i.test(edge.node.color ?? "") ? edge.node.color : "#8b949e"
-      const entry = totals.get(edge.node.name) ?? { name: edge.node.name, color, size: 0 }
+      const entry = totals.get(edge.node.name) ?? { name: edge.node.name, color: safeColor(edge.node.color), size: 0 }
       entry.size += edge.size
       totals.set(edge.node.name, entry)
     }
@@ -98,6 +103,22 @@ export function topLanguages(nodes, limit = 6) {
   const ranked = [...totals.values()].sort((a, b) => b.size - a.size)
   const sum = ranked.reduce((acc, entry) => acc + entry.size, 0) || 1
   return ranked.slice(0, limit).map((entry) => ({ name: entry.name, color: entry.color, share: Math.round((entry.size / sum) * 1000) / 10 }))
+}
+
+export function commitsByRepository(contributions) {
+  return (contributions.commitContributionsByRepository ?? [])
+    .map((entry) => ({ name: entry.repository.name, commits: entry.contributions.totalCount, color: safeColor(entry.repository.primaryLanguage?.color) }))
+    .filter((entry) => entry.commits > 0)
+    .sort((a, b) => b.commits - a.commits || a.name.localeCompare(b.name))
+}
+
+// Public, non-fork repositories ranked by stars, then forks, then name; the constellation shows the top ones.
+export function publicRepositories(nodes, limit = 12) {
+  return nodes
+    .filter((repo) => !repo.isFork)
+    .map((repo) => ({ name: repo.name, stars: repo.stargazerCount, forks: repo.forkCount, language: repo.primaryLanguage?.name ?? "Other", color: safeColor(repo.primaryLanguage?.color) }))
+    .sort((a, b) => b.stars - a.stars || b.forks - a.forks || a.name.localeCompare(b.name))
+    .slice(0, limit)
 }
 
 export function relativeTime(iso, now) {
@@ -153,8 +174,9 @@ export function summarize({ user, events }, now = new Date()) {
     reviews: contributions.totalPullRequestReviewContributions,
     total: contributions.contributionCalendar.totalContributions,
     streak: computeStreaks(days, today),
-    weeks: contributions.contributionCalendar.weeks.slice(-26).map((week) => week.contributionDays.map((day) => day.contributionCount)),
     languages: topLanguages(nodes),
+    repositoriesByCommits: commitsByRepository(contributions),
+    repositories: publicRepositories(nodes),
     activity: summarizeEvents(events, now)
   }
 }

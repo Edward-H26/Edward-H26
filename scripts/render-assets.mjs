@@ -7,7 +7,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { PROFILE } from "./profile-data.mjs"
 import { fetchGithub, summarize } from "./github-stats.mjs"
-import { renderActivity, renderStats } from "./render-dynamic.mjs"
+import { renderActivity, renderConstellation, renderMilestones, renderStats } from "./render-dynamic.mjs"
 import { STATIC_ASSETS } from "./render-static.mjs"
 import { THEMES } from "./svg.mjs"
 
@@ -26,6 +26,8 @@ export function renderDynamicAssets(stats) {
   const files = {}
   for (const theme of Object.values(THEMES)) {
     files[`stats-${theme.name}.svg`] = renderStats(stats, theme)
+    files[`milestones-${theme.name}.svg`] = renderMilestones(stats, theme)
+    files[`constellation-${theme.name}.svg`] = renderConstellation(stats, theme)
     files[`activity-${theme.name}.svg`] = renderActivity(stats, theme)
   }
   return files

@@ -3,10 +3,11 @@ import { readFileSync, readdirSync } from "node:fs"
 import path from "node:path"
 import { describe, it } from "node:test"
 import { fileURLToPath } from "node:url"
-import { computeStreaks, relativeTime, slimEvent, summarize, summarizeEvents, topLanguages } from "./github-stats.mjs"
-import { FEATURED_PAPER, FOCUS, PROFILE, SKILL_ROWS, TIMELINE } from "./profile-data.mjs"
+import { commitsByRepository, computeStreaks, publicRepositories, relativeTime, slimEvent, summarize, summarizeEvents, topLanguages } from "./github-stats.mjs"
+import { FEATURED_PAPER, FOCUS, LINKS, PROFILE, SKILL_ROWS } from "./profile-data.mjs"
 import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
-import { THEMES, escapeXml } from "./svg.mjs"
+import { MAX_BUBBLE_RADIUS, bubbleHalfHeight, bubbleHalfWidth, layoutBubbles, milestones } from "./render-dynamic.mjs"
+import { THEMES, escapeXml, rng } from "./svg.mjs"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const fixture = JSON.parse(readFileSync(path.join(ROOT, "scripts/fixtures/github.json"), "utf8"))
@@ -47,7 +48,7 @@ describe("static assets", () => {
   const files = renderStaticAssets()
 
   it("renders every card in both themes as self-contained, well-formed SVG", () => {
-    assert.equal(Object.keys(files).length, 12)
+    assert.equal(Object.keys(files).length, (5 + LINKS.length) * 2)
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -58,15 +59,70 @@ describe("static assets", () => {
   it("puts the profile content into the cards", () => {
     assert.ok(files["hero-dark.svg"].includes(escapeXml(PROFILE.name)))
     for (const line of PROFILE.taglines) assert.ok(files["hero-dark.svg"].includes(escapeXml(line)))
-    for (const item of FOCUS) assert.ok(files["research-orbit-light.svg"].includes(escapeXml(item.label)))
+    for (const item of FOCUS) assert.ok(files["research-globe-light.svg"].includes(escapeXml(item.label)))
     assert.ok(files["featured-paper-dark.svg"].includes("ECCV"))
     assert.ok(files["featured-paper-dark.svg"].includes(escapeXml(FEATURED_PAPER.arxiv)))
-    const timelineText = [...files["timeline-dark.svg"].matchAll(/<text[^>]*>([^<]*)<\/text>/g)].map((m) => m[1]).join(" ").replace(/\s+/g, "")
-    for (const item of TIMELINE) {
-      assert.ok(timelineText.includes(escapeXml(item.label).replace(/\s+/g, "")), item.label)
-      assert.ok(timelineText.includes(escapeXml(item.detail).replace(/\s+/g, "")), item.detail)
-    }
     for (const [label] of SKILL_ROWS.flat()) assert.ok(files["skills-marquee-light.svg"].includes(escapeXml(label)))
+    for (const link of LINKS) {
+      const svg = files[`link-${link.id}-dark.svg`]
+      assert.ok(svg.includes(escapeXml(link.label)), link.id)
+      assert.ok(svg.includes(`viewBox="0 0 ${link.width} 60"`))
+    }
+  })
+
+  it("projects the featured paper icosahedron as closed loops with lit front faces only", () => {
+    const svg = files["featured-paper-dark.svg"]
+    const faces = svg.match(/<polygon fill="[^"]+" stroke="none">/g) ?? []
+    assert.equal(faces.length, 20)
+    const edges = svg.match(/<line stroke="[^"]+" stroke-width="1.2" stroke-opacity="0.55" stroke-linecap="round">/g) ?? []
+    assert.equal(edges.length, 30)
+    const points = svg.match(/<animate attributeName="points" values="([^"]+)"/)[1].split(";")
+    assert.equal(points.length, 49)
+    assert.equal(points[0], points[points.length - 1])
+    const opacityTracks = [...svg.matchAll(/<animate attributeName="fill-opacity" values="([^"]+)"/g)].map((m) => m[1].split(";").map(Number))
+    assert.equal(opacityTracks.length, 20)
+    for (let frame = 0; frame < 49; frame += 1) {
+      const visible = opacityTracks.filter((values) => values[frame] > 0).length
+      assert.ok(visible >= 8 && visible <= 12, `frame ${frame} shows ${visible} faces`)
+    }
+    assert.ok(opacityTracks.flat().every((value) => value >= 0 && value <= 0.8))
+  })
+
+  it("rotates the research globe as closed loops with every topic on the ring", () => {
+    const svg = files["research-globe-dark.svg"]
+    const dots = svg.match(/<circle r="2.6" fill="[^"]+"><animate attributeName="cx"/g) ?? []
+    assert.equal(dots.length, 40)
+    const wires = svg.match(/<line stroke="[^"]+" stroke-width="1" stroke-opacity="0.35">/g) ?? []
+    assert.ok(wires.length >= 36)
+    const cx = svg.match(/<animate attributeName="cx" values="([^"]+)"/)[1].split(";")
+    assert.equal(cx.length, 37)
+    assert.equal(cx[0], cx[cx.length - 1])
+    assert.equal((svg.match(/<mpath xlink:href="#globe-ring"\/>/g) ?? []).length, FOCUS.length * 3)
+  })
+
+  it("types each hero tagline with its own clip and a caret that follows the text", () => {
+    const svg = files["hero-dark.svg"]
+    const clips = svg.match(/<clipPath id="hero-type-\d+">/g) ?? []
+    assert.equal(clips.length, PROFILE.taglines.length)
+    const caret = svg.match(/<animate attributeName="x" values="([^"]+)" keyTimes="([^"]+)"/)
+    assert.equal(caret[1].split(";").length, caret[2].split(";").length)
+    assert.ok(caret[2].split(";").map(Number).every((v, i, all) => i === 0 || v >= all[i - 1]))
+    // WebKit ignores a clip rect of width 0, which would show every tagline at once.
+    for (const match of svg.matchAll(/<clipPath id="hero-type-\d+"><rect[^>]*width="([^"]+)"><animate attributeName="width" values="([^"]+)"/g)) {
+      assert.notEqual(Number(match[1]), 0)
+      assert.ok(match[2].split(";").every((value) => Number(value) > 0))
+    }
+    assert.equal((svg.match(/lengthAdjust="spacing"/g) ?? []).length, PROFILE.taglines.length)
+  })
+
+  it("links every button to the address in the profile data", () => {
+    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    for (const link of LINKS) {
+      const anchor = new RegExp(`<a href="([^"]+)"><picture><source[^>]*srcset="assets/link-${link.id}-dark.svg"`)
+      const match = readme.match(anchor)
+      assert.ok(match, `README has no button for ${link.id}`)
+      assert.equal(match[1].replace(/&amp;/g, "&"), link.url)
+    }
   })
 
   it("differs between dark and light and is deterministic", () => {
@@ -128,11 +184,27 @@ describe("github stats", () => {
     assert.ok(!JSON.stringify(fixture.events).includes('"message"'))
   })
 
+  it("ranks repositories by commits and by stars", () => {
+    const byCommits = commitsByRepository({ commitContributionsByRepository: [
+      { repository: { name: "b", primaryLanguage: { name: "Python", color: "#3572A5" } }, contributions: { totalCount: 5 } },
+      { repository: { name: "a", primaryLanguage: null }, contributions: { totalCount: 5 } },
+      { repository: { name: "empty", primaryLanguage: null }, contributions: { totalCount: 0 } }
+    ] })
+    assert.deepEqual(byCommits, [{ name: "a", commits: 5, color: "#8b949e" }, { name: "b", commits: 5, color: "#3572A5" }])
+    assert.deepEqual(commitsByRepository({}), [])
+    const repos = publicRepositories([
+      { name: "fork", isFork: true, stargazerCount: 99, forkCount: 0 },
+      { name: "z", isFork: false, stargazerCount: 2, forkCount: 1, primaryLanguage: { name: "Go", color: "bad" } },
+      { name: "a", isFork: false, stargazerCount: 2, forkCount: 1, primaryLanguage: { name: "TypeScript", color: "#3178c6" } }
+    ])
+    assert.deepEqual(repos.map((repo) => `${repo.name}:${repo.language}:${repo.color}`), ["a:TypeScript:#3178c6", "z:Go:#8b949e"])
+  })
+
   it("summarizes the recorded fixture into card numbers", () => {
     const stats = summarize(fixture, CAPTURED_AT)
     assert.equal(stats.login, PROFILE.handle)
     assert.ok(stats.total > 0 && stats.commits > 0 && stats.repos > 0)
-    assert.equal(stats.weeks.length, 26)
+    assert.ok(stats.repositoriesByCommits.length > 0 && stats.repositories.length > 0)
     assert.ok(stats.languages.length >= 3 && stats.languages.length <= 6)
     assert.ok(stats.activity.length > 0)
     assert.equal(stats.updated, fixture.capturedAt.slice(0, 10))
@@ -143,14 +215,16 @@ describe("dynamic assets", () => {
   const stats = summarize(fixture, CAPTURED_AT)
   const files = renderDynamicAssets(stats)
 
-  it("renders stats and activity cards for both themes", () => {
-    assert.deepEqual(Object.keys(files).sort(), ["activity-dark.svg", "activity-light.svg", "stats-dark.svg", "stats-light.svg"])
+  it("renders the four live cards for both themes", () => {
+    assert.deepEqual(Object.keys(files).sort(), ["activity-dark.svg", "activity-light.svg", "constellation-dark.svg", "constellation-light.svg", "milestones-dark.svg", "milestones-light.svg", "stats-dark.svg", "stats-light.svg"])
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
     }
     assert.ok(files["stats-dark.svg"].includes(`@${PROFILE.handle}`))
     assert.ok(files["stats-dark.svg"].includes(stats.languages[0].name))
+    assert.ok(files["stats-dark.svg"].includes(escapeXml(stats.repositoriesByCommits[0].name.slice(0, 20))))
+    for (const repo of stats.repositories) assert.ok(files["constellation-light.svg"].includes(escapeXml(repo.name.slice(0, 20))), repo.name)
     for (const item of stats.activity) assert.ok(files["activity-light.svg"].includes(escapeXml(item.repo)))
   })
 
@@ -164,13 +238,54 @@ describe("dynamic assets", () => {
     assert.ok(empty.includes("No public activity"))
   })
 
-  it("keeps the heatmap and language bars inside the card", () => {
-    const svg = renderDynamicAssets({ ...stats, weeks: Array.from({ length: 26 }, () => [0, 1, 2, 3, 4, 5, 60]), languages: [{ name: "Python", color: "#3572A5", share: 100 }] })["stats-light.svg"]
-    const widths = [...svg.matchAll(/to="([\d.]+)" begin="0\.3s"/g)].map((m) => Number(m[1]))
-    assert.deepEqual(widths, [280])
-    const cells = [...svg.matchAll(/<rect x="([\d.]+)" y="([\d.]+)" width="10" height="10"/g)].map((m) => ({ x: Number(m[1]), y: Number(m[2]) }))
-    assert.equal(Math.max(...cells.map((c) => c.x)), 300 + 25 * 13)
-    const cardBottom = Number(svg.match(/viewBox="0 0 1200 (\d+)"/)[1]) - 14
-    assert.ok(Math.max(...cells.map((c) => c.y)) + 10 < cardBottom - 4, "heatmap must stay inside the card")
+  it("keeps bars inside their tracks and copes with an empty repository list", () => {
+    const svg = renderDynamicAssets({ ...stats, languages: [{ name: "Python", color: "#3572A5", share: 100 }], repositoriesByCommits: [{ name: "only", commits: 7, color: "#3572A5" }] })["stats-light.svg"]
+    assert.deepEqual([...svg.matchAll(/to="([\d.]+)" begin="0\.3s"/g)].map((m) => Number(m[1])), [280])
+    assert.ok(svg.includes('<rect width="540" height="12" fill="#3572A5"/>'))
+    const empty = renderDynamicAssets({ ...stats, repositories: [], repositoriesByCommits: [] })
+    assertWellFormed(empty["constellation-dark.svg"], "empty constellation")
+    assertWellFormed(empty["stats-dark.svg"], "empty stats")
+  })
+
+  it("unlocks milestones from live numbers and keeps the static ones", () => {
+    const items = milestones(stats)
+    assert.equal(items.length, 7)
+    assert.ok(items.every((item) => item.label && item.detail))
+    const quiet = milestones({ ...stats, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python" }] })
+    assert.deepEqual(quiet.map((item) => item.unlocked), [true, true, false, false, false, false, false])
+    const busy = milestones({ ...stats, stars: 300, total: 6000, streak: { current: 1, longest: 99 }, repos: 45, languages: stats.languages })
+    assert.deepEqual(busy.slice(2, 6).map((item) => item.label), ["5,000+ contributions", "60-day streak", "40+ repositories", "250+ stars"])
+    const svg = renderDynamicAssets({ ...stats, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python", color: "#3572A5", share: 100 }] })["milestones-dark.svg"]
+    assertWellFormed(svg, "milestones")
+    assert.ok(svg.includes("2 OF 7 UNLOCKED"))
+    assert.ok(svg.includes(">locked<"))
+  })
+
+  it("keeps every constellation bubble inside the card", () => {
+    const svg = renderDynamicAssets(stats)["constellation-dark.svg"]
+    const height = Number(svg.match(/viewBox="0 0 1200 (\d+)"/)[1])
+    for (const match of svg.matchAll(/<g transform="translate\((-?[\d.]+) (-?[\d.]+)\)" opacity="0">[\s\S]*?<circle r="([\d.]+)" fill="[^"]+" fill-opacity/g)) {
+      const [, x, y, r] = match.map(Number)
+      assert.ok(x - r > 24 && x + r < 1176, `bubble at ${x} overflows horizontally`)
+      assert.ok(y - r > 60 && y + r + 20 < height - 40, `bubble at ${y} overflows vertically`)
+    }
+  })
+
+  it("keeps constellation bubbles and their labels apart, even with a very popular repository", () => {
+    const popular = { name: "a-repository-with-a-long-name", stars: 500, forks: 40, language: "Python", color: "#3572A5" }
+    for (const repos of [stats.repositories, [popular, ...stats.repositories]]) {
+      const bubbles = layoutBubbles(repos, { random: rng(29) })
+      for (let i = 0; i < bubbles.length; i += 1) {
+        assert.ok(bubbles[i].r <= MAX_BUBBLE_RADIUS)
+        assert.ok(bubbles[i].cx - bubbleHalfWidth(bubbles[i]) >= 40 && bubbles[i].cx + bubbleHalfWidth(bubbles[i]) <= 1160, `${bubbles[i].repo.name} leaves the card`)
+        for (let j = i + 1; j < bubbles.length; j += 1) {
+          const a = bubbles[i]
+          const b = bubbles[j]
+          const boxesApart = Math.abs(b.cx - a.cx) >= bubbleHalfWidth(a) + bubbleHalfWidth(b) - 1 || Math.abs(b.cy - a.cy) >= bubbleHalfHeight(a) + bubbleHalfHeight(b) - 1
+          assert.ok(boxesApart, `${a.repo.name} and ${b.repo.name} overlap`)
+        }
+      }
+    }
+    assert.deepEqual(layoutBubbles([], { random: rng(1) }), [])
   })
 })
