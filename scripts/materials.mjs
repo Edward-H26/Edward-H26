@@ -1,6 +1,6 @@
 // Materials shared by the cards: everything that makes a flat shape read as a lit, solid object.
 // One light sits at the top left of every card, so highlights, bevels, and shadows agree.
-import { round, shade } from "./svg.mjs"
+import { linearGradient, mix, round, shade } from "./svg.mjs"
 
 // Shared gradients and filters; include once per document that uses these helpers.
 export function materialDefs() {
@@ -39,6 +39,34 @@ export function sphere({ cx, cy, r, fill, shadow = true }) {
 
 // An extruded button seen from the front: a shaded side below the face, a bevelled top face, and a
 // gloss on the upper half. `fill` is any paint (usually a faceGradient url).
+// Apple-style glass: a frosted translucent body, a rim lit from the top left, a specular streak
+// along the top edge, a tinted glow behind the content, and a soft shadow. `key` prefixes ids.
+export function glassDefs(key, { dark, tint }) {
+  return [
+    linearGradient(`${key}-fill`, dark ? [["0", "#ffffff", 0.3], ["0.5", "#ffffff", 0.12], ["1", "#ffffff", 0.06]] : [["0", "#ffffff", 0.98], ["0.55", "#ffffff", 0.78], ["1", mix("#ffffff", tint, 0.14), 0.62]], { x1: "0", y1: "0", x2: "1", y2: "1" }),
+    linearGradient(`${key}-rim`, dark ? [["0", "#ffffff", 0.95], ["0.45", "#ffffff", 0.28], ["1", "#ffffff", 0.14]] : [["0", "#ffffff", 1], ["0.5", tint, 0.4], ["1", "#13294B", 0.4]], { x1: "0", y1: "0", x2: "1", y2: "1" }),
+    `<radialGradient id="${key}-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="${tint}" stop-opacity="${dark ? 0.6 : 0.4}"/><stop offset="1" stop-color="${tint}" stop-opacity="0"/></radialGradient>`,
+    linearGradient(`${key}-spec`, [["0", "#ffffff", dark ? 0.6 : 0.95], ["1", "#ffffff", 0]], { x2: "0", y2: "1" })
+  ].join("")
+}
+
+export function glassBody(key, { x, y, width, height, radius, dark, glowAt = 0.12 }) {
+  const clip = `<clipPath id="${key}-shape"><rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}"/></clipPath>`
+  return {
+    defs: clip,
+    svg: [
+      `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="${dark ? "#000000" : "#13294B"}" opacity="${dark ? 0.35 : 0.16}" filter="url(#mat-drop)"/>`,
+      `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="url(#${key}-fill)"/>`,
+      `<g clip-path="url(#${key}-shape)">`,
+      `<ellipse cx="${round(x + width * glowAt)}" cy="${round(y + height * 0.55)}" rx="${round(height * 1.1)}" ry="${round(height * 0.8)}" fill="url(#${key}-glow)"/>`,
+      `<rect x="${round(x + 2)}" y="${round(y + 1.5)}" width="${round(width - 4)}" height="${round(height * 0.46)}" rx="${round(Math.max(2, radius - 2))}" fill="url(#${key}-spec)" opacity="0.7"/>`,
+      `<rect x="${round(x + radius * 0.6)}" y="${round(y + height - 2.2)}" width="${round(width - radius * 1.2)}" height="1" fill="#ffffff" opacity="${dark ? 0.35 : 0.8}"/>`,
+      `</g>`,
+      `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="none" stroke="url(#${key}-rim)" stroke-width="1.2"/>`
+    ].join("")
+  }
+}
+
 export function keycap({ x = 0, y = 0, width, height, radius = 12, fill, side, depth = 5, bevel = "url(#mat-bevel)", shadow = true, gloss = 0.45 }) {
   const cast = shadow ? `<rect x="${round(x + 2)}" y="${round(y + depth + 2)}" width="${round(width - 4)}" height="${round(height - 2)}" rx="${radius}" fill="#000000" opacity="0.001" filter="url(#mat-drop)"/>` : ""
   return [

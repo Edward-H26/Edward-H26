@@ -41,7 +41,8 @@ function assertSelfContained(svg, name) {
   assert.ok(urls.every((url) => namespaces.includes(url)), `${name} must not reference external resources`)
   assert.ok(svg.startsWith('<svg xmlns="http://www.w3.org/2000/svg"'))
   assert.match(svg, /aria-labelledby="([a-z0-9-]+)-title"[\s\S]*<title id="\1-title">/)
-  assert.ok(!svg.includes("undefined") && !svg.includes("NaN"), `${name} leaked undefined or NaN`)
+  const markup = svg.replace(/data:[^"]+/g, "")
+  assert.ok(!markup.includes("undefined") && !markup.includes("NaN"), `${name} leaked undefined or NaN`)
 }
 
 describe("static assets", () => {
@@ -110,7 +111,7 @@ describe("static assets", () => {
         const file = `assets/scenes/${scene}-${theme}.webp`
         assert.ok(readme.includes(file), `README lacks ${file}`)
         assert.ok(existsSync(path.join(ROOT, file)), `${file} missing; run npm run scenes -- ${scene}`)
-        assert.ok(statSync(path.join(ROOT, file)).size < 3.5 * 1024 * 1024, `${file} is over 3.5 MB`)
+        assert.ok(statSync(path.join(ROOT, file)).size < 4.9 * 1024 * 1024, `${file} is over 4.9 MB`)
       }
     }
   })

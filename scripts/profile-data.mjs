@@ -20,8 +20,8 @@ export const FOCUS = [
 
 // Papers in README order. A paper with a `thumbnail` gets a figure card: its cropped figure
 // (assets/papers/figures/<id>.webp) is rendered into assets/papers/<id>.svg with the venue badge.
-// Papers under review stay text-only until they are public. Each link label renders as one
-// keycap button (assets/paper-link-<label>).
+// Papers under review carry a neutral concept illustration rather than their figures. Each link
+// label renders as one keycap button (assets/paper-link-<label>).
 export const PAPERS = [
   {
     id: "ac3s",
@@ -30,10 +30,10 @@ export const PAPERS = [
     venue: "European Conference on Computer Vision (ECCV), 2026",
     thumbnail: { badge: "ECCV", alt: "AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM" },
     links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2606.31204" },
+      { label: "PDF", url: "https://arxiv.org/pdf/2606.31204" },
       { label: "Project Page", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
       { label: "Video", url: "https://youtu.be/3jOJaT2a8iQ" },
-      { label: "BibTeX", url: "assets/papers/ac3s.bib" }
+      { label: "BibTeX", url: "https://arxiv.org/bibtex/2606.31204" }
     ]
   },
   {
@@ -41,6 +41,7 @@ export const PAPERS = [
     title: "Crowdsourced Open-Source Research: A Research Paradigm Probe",
     authors: ["Hangyue Zhang", "Qiran Hu", "Ziyi Zhang", "Yun Huang"],
     venue: "Under Review",
+    thumbnail: { badge: "Under Review", alt: "Contributors feeding a shared open research record" },
     links: []
   },
   {
@@ -48,6 +49,7 @@ export const PAPERS = [
     title: "Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation",
     authors: ["Tuan Minh Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D Doan", "Kok-Seng Wong", "Fan Lai"],
     venue: "Under Review",
+    thumbnail: { badge: "Under Review", alt: "Retrieved documents compressed into a compact context for a model" },
     links: []
   },
   {
@@ -55,6 +57,7 @@ export const PAPERS = [
     title: "AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning",
     authors: ["Sarthak Jain", "Qiran Hu", "Zhen Zhu", "Yaoyao Liu"],
     venue: "Under Review",
+    thumbnail: { badge: "Under Review", alt: "Two model checkpoints blended into one fused model" },
     links: []
   }
 ]
@@ -90,6 +93,7 @@ export const SKILL_COLORS = { ai: "accent", agents: "accent", code: "accent2", d
 // Animated link buttons rendered into assets/link-<id>-<theme>.svg; each is wrapped in one <a> in the README.
 export const LINKS = [
   { id: "collab", label: "Open to research collaborations", url: "mailto:qiranhu8@gmail.com", icon: "spark", width: 420 },
+  { id: "email", label: "qiranhu8@gmail.com", url: "mailto:qiranhu8@gmail.com", icon: "mail", width: 236 },
   { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe", width: 176 },
   { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap", width: 214 },
   { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in", width: 176 },

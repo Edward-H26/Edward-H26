@@ -6,7 +6,8 @@
 </picture>
 
 <p align="center">
-  qiranhu8@gmail.com | +1 (347)-957-9176<br />
+  <a href="mailto:qiranhu8@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="60" alt="Email qiranhu8@gmail.com" src="assets/link-email-dark.svg" /></picture></a><br />
+  +1 (347)-957-9176<br />
   <img src="https://komarev.com/ghpvc/?username=Edward-H26&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />
 </p>
 
@@ -96,30 +97,51 @@
 
 <table>
 <tr>
-<td width="300" valign="top"><a href="https://arxiv.org/abs/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
+<td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
 <td valign="top">
-<b><a href="https://arxiv.org/abs/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
+<b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
-<i>European Conference on Computer Vision (ECCV), 2026</i><br/><br/>
-<a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg"><img src="assets/paper-link-arxiv-light.svg" alt="arXiv" height="36"/></picture></a>
+<i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
+<a href="https://arxiv.org/pdf/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg"><img src="assets/paper-link-pdf-light.svg" alt="PDF" height="36"/></picture></a>
 <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg"><img src="assets/paper-link-project-page-light.svg" alt="Project Page" height="36"/></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg"><img src="assets/paper-link-video-light.svg" alt="Video" height="36"/></picture></a>
-<a href="assets/papers/ac3s.bib"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg"><img src="assets/paper-link-bibtex-light.svg" alt="BibTeX" height="36"/></picture></a>
+<a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg"><img src="assets/paper-link-bibtex-light.svg" alt="BibTeX" height="36"/></picture></a>
 </td>
 </tr>
 </table>
 
-<p><b>Crowdsourced Open-Source Research: A Research Paradigm Probe</b><br/>
+<table>
+<tr>
+<td width="300" valign="top"><img src="assets/papers/crowdsourced.svg" width="300" alt="Contributors feeding a shared open research record"/></td>
+<td valign="top">
+<b>Crowdsourced Open-Source Research: A Research Paradigm Probe</b><br/>
 Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Yun Huang<br/>
-<i>Under Review</i></p>
+<i>Under Review</i>
+</td>
+</tr>
+</table>
 
-<p><b>Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation</b><br/>
+<table>
+<tr>
+<td width="300" valign="top"><img src="assets/papers/context-under-budget.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></td>
+<td valign="top">
+<b>Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation</b><br/>
 Tuan Minh Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai<br/>
-<i>Under Review</i></p>
+<i>Under Review</i>
+</td>
+</tr>
+</table>
 
-<p><b>AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning</b><br/>
+<table>
+<tr>
+<td width="300" valign="top"><img src="assets/papers/alphawiseft.svg" width="300" alt="Two model checkpoints blended into one fused model"/></td>
+<td valign="top">
+<b>AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning</b><br/>
 Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
-<i>Under Review</i></p>
+<i>Under Review</i>
+</td>
+</tr>
+</table>
 
 ## Research Groups
 

@@ -17,20 +17,36 @@ import { chromium } from "playwright"
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(HERE, "..")
 const OUT = path.join(ROOT, "assets/scenes")
+// The island reuses the models and textures the personal website ships: from the sibling checkout
+// when it is there, otherwise from the published site.
+const SITE_ASSETS = path.resolve(ROOT, "../PersonalWebsite/public")
+const SITE_URL = "https://edward-h26.github.io/PersonalWebsite"
 
 // Loop lengths are chosen so every integer-cycle animation in the scene repeats exactly.
 // Scenes are authored at 1440 px wide; `output` is the width of the encoded loop.
 export const SCENES = {
-  hero: { width: 1440, height: 456, loop: 12, output: 1200 },
-  planet: { width: 1440, height: 672, loop: 12, output: 1200 },
-  paper: { width: 1440, height: 288, loop: 8, output: 1200 }
+  hero: { width: 1440, height: 456, loop: 10, output: 1440 },
+  planet: { width: 1440, height: 672, loop: 10, output: 1200 },
+  paper: { width: 1440, height: 288, loop: 8, output: 1440 }
 }
 
-const MIME = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json", ".css": "text/css" }
+const MIME = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json", ".css": "text/css", ".glb": "model/gltf-binary", ".wasm": "application/wasm", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" }
 
 function serve(root) {
   const server = createServer((request, response) => {
-    const file = path.join(root, decodeURIComponent(new URL(request.url, "http://x").pathname))
+    const pathname = decodeURIComponent(new URL(request.url, "http://x").pathname)
+    if (pathname.startsWith("/assets3d/")) {
+      const local = path.join(SITE_ASSETS, pathname.slice("/assets3d/".length))
+      if (existsSync(local) && !statSync(local).isDirectory()) {
+        response.writeHead(200, { "content-type": MIME[path.extname(local)] ?? "application/octet-stream" })
+        response.end(readFileSync(local))
+      } else {
+        response.writeHead(302, { location: `${SITE_URL}/${pathname.slice("/assets3d/".length)}` })
+        response.end()
+      }
+      return
+    }
+    const file = path.join(root, pathname)
     if (!file.startsWith(root) || !existsSync(file) || statSync(file).isDirectory()) {
       response.writeHead(404)
       response.end()
@@ -52,7 +68,7 @@ async function main(args) {
   const scene = SCENES[name]
   if (!scene) throw new Error(`unknown scene ${name}; choose one of ${Object.keys(SCENES).join(", ")}`)
   const fps = Number(option(args, "fps", 15))
-  const quality = Number(option(args, "quality", 70))
+  const quality = Number(option(args, "quality", 80))
   const still = option(args, "still", null)
   const keep = args.includes("--keep")
   const outputWidth = Number(option(args, "width", still !== null ? scene.width : scene.output))

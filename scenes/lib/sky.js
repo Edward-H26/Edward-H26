@@ -3,6 +3,7 @@
 import * as THREE from "three"
 import { gsap } from "gsap"
 import { TAU, rng, wave } from "./periodic.js"
+import { effectLayer } from "./stage.js"
 import { cloudTexture, heightTexture, tileableNoise } from "./textures.js"
 
 const simplex = /* glsl */ `
@@ -109,45 +110,64 @@ export function starField(count, radius, { seed = 5, minElevation = 0.04 } = {})
   return new THREE.Points(geometry, material)
 }
 
-function aurora() {
-  const geometry = new THREE.PlaneGeometry(440, 96, 96, 12)
+// An aurora curtain: long ribbons that fold slowly, fine vertical rays, a bright green lower edge
+// that feathers into violet at the top. Two curtains at different depths give it volume.
+function auroraCurtain({ seed, width, height, intensity }) {
+  const geometry = new THREE.PlaneGeometry(width, height, 96, 12)
   const material = new THREE.ShaderMaterial({
     transparent: true,
     depthWrite: false,
     side: THREE.DoubleSide,
     blending: THREE.AdditiveBlending,
-    uniforms: { phase: { value: 0 }, colorA: { value: new THREE.Color("#2fe39a") }, colorB: { value: new THREE.Color("#3ab8ff") }, colorC: { value: new THREE.Color("#8f6bff") }, intensity: { value: 0.9 } },
+    uniforms: { phase: { value: 0 }, seed: { value: seed }, colorA: { value: new THREE.Color("#35f0a0") }, colorB: { value: new THREE.Color("#2fd0d8") }, colorC: { value: new THREE.Color("#a85cff") }, intensity: { value: intensity } },
     vertexShader: /* glsl */ `
       varying vec2 vUv;
       void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }
     `,
     fragmentShader: /* glsl */ `
       ${simplex}
-      uniform float phase; uniform vec3 colorA; uniform vec3 colorB; uniform vec3 colorC; uniform float intensity;
+      uniform float phase; uniform float seed; uniform vec3 colorA; uniform vec3 colorB; uniform vec3 colorC; uniform float intensity;
       varying vec2 vUv;
       #define TAU 6.28318530718
       void main() {
         float sx = sin(TAU * phase);
         float cx = cos(TAU * phase);
-        float n1 = snoise(vec2(vUv.x * 7.0 + 0.9 * sx, vUv.y * 0.9 + 0.4 * cx));
-        float n2 = snoise(vec2(vUv.x * 18.0 - 1.1 * cx, vUv.y * 1.8 + 0.5 * sin(TAU * 2.0 * phase)));
-        float bands = clamp(0.45 + 0.55 * n1 + 0.25 * n2, 0.0, 1.0);
-        float curtain = smoothstep(0.02, 0.16, vUv.y) * (1.0 - smoothstep(0.3, 0.95, vUv.y));
-        float edge = smoothstep(0.0, 0.14, vUv.x) * (1.0 - smoothstep(0.86, 1.0, vUv.x));
-        float rays = 0.7 + 0.3 * sin(vUv.x * 220.0 + n1 * 14.0 + n2 * 6.0);
-        float a = pow(bands, 1.8) * curtain * edge * rays * intensity;
-        vec3 col = mix(colorA, colorB, clamp(vUv.y * 1.8, 0.0, 1.0));
-        col = mix(col, colorC, smoothstep(0.55, 1.0, vUv.y));
-        gl_FragColor = vec4(col * a * 1.6, a);
+        // Ribbons: low-frequency noise stretched along x, folding as the loop turns.
+        float fold = snoise(vec2(vUv.x * 2.6 + seed + 0.5 * sx, 0.3 * cx)) * 0.5;
+        float ribbon = snoise(vec2(vUv.x * 5.0 + seed * 3.0 + 0.7 * cx, vUv.y * 0.6 + fold));
+        float ribbon2 = snoise(vec2(vUv.x * 11.0 - seed - 0.9 * sx, vUv.y * 1.2 - 0.4 * cx));
+        float bands = clamp(0.55 + 0.5 * ribbon + 0.25 * ribbon2, 0.0, 1.0);
+        // Rays: fine vertical striations that drift sideways.
+        float rays = 0.55 + 0.45 * pow(0.5 + 0.5 * sin(vUv.x * 520.0 + ribbon * 30.0 + sx * 3.0), 3.0);
+        rays = mix(1.0, rays, smoothstep(0.05, 0.4, vUv.y));
+        // Curtain: a crisp bright lower edge that thins upward.
+        float base = 0.1 + 0.05 * ribbon;
+        float curtain = smoothstep(base - 0.03, base + 0.06, vUv.y) * pow(clamp(1.0 - (vUv.y - base) / (1.0 - base), 0.0, 1.0), 1.7);
+        float edge = smoothstep(0.0, 0.12, vUv.x) * (1.0 - smoothstep(0.88, 1.0, vUv.x));
+        float a = pow(bands, 1.6) * curtain * edge * rays * intensity;
+        vec3 col = mix(colorA, colorB, smoothstep(0.1, 0.45, vUv.y));
+        col = mix(col, colorC, smoothstep(0.4, 0.95, vUv.y));
+        gl_FragColor = vec4(col * a * 1.8, a);
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
       }
     `
   })
-  const mesh = new THREE.Mesh(geometry, material)
-  mesh.position.set(0, 66, -240)
-  mesh.rotation.x = 0.2
-  return mesh
+  return new THREE.Mesh(geometry, material)
+}
+
+function aurora() {
+  const group = new THREE.Group()
+  const back = auroraCurtain({ seed: 1.7, width: 520, height: 130, intensity: 0.75 })
+  back.position.set(30, 84, -290)
+  back.rotation.x = 0.22
+  group.add(back)
+  const front = auroraCurtain({ seed: 4.3, width: 420, height: 100, intensity: 0.95 })
+  front.position.set(-20, 62, -230)
+  front.rotation.x = 0.18
+  group.add(front)
+  group.userData.curtains = [back, front]
+  return group
 }
 
 function glowSprite(color, size, { inner = 0.85, outer = 0 } = {}) {
@@ -188,12 +208,29 @@ function shootingStar() {
   return mesh
 }
 
+function cloudLayer({ scene, random, count, color, opacity, sizes, heights }) {
+  const clouds = Array.from({ length: count }, (_, i) => {
+    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: cloudTexture(512, 30 + i), color, transparent: true, depthWrite: false, opacity, fog: false }))
+    const width = sizes[0] + random() * (sizes[1] - sizes[0])
+    sprite.scale.set(width, width * 0.42, 1)
+    sprite.userData = { x: -150 + (i / count) * 300 + random() * 40, y: heights[0] + random() * (heights[1] - heights[0]), z: -150 - random() * 60, offset: random(), drift: 4 + random() * 5 }
+    sprite.position.set(sprite.userData.x, sprite.userData.y, sprite.userData.z)
+    scene.add(effectLayer(sprite))
+    return sprite
+  })
+  return (phase) => {
+    for (const cloud of clouds) cloud.position.x = cloud.userData.x + cloud.userData.drift * wave(phase, 1, cloud.userData.offset)
+  }
+}
+
 export function createNightSky({ scene, loop, moonDirection, focus = new THREE.Vector3() }) {
   const dome = gradientDome({ top: "#04060f", mid: "#0e1a36", horizon: "#3a2a4a" })
   scene.add(dome)
-  const stars = starField(1400, 300)
+  const driftClouds = cloudLayer({ scene, random: rng(23), count: 4, color: "#7d8fb8", opacity: 0.45, sizes: [40, 70], heights: [26, 44] })
+  const stars = effectLayer(starField(1400, 300))
   scene.add(stars)
   const curtain = aurora()
+  for (const layer of curtain.userData.curtains) effectLayer(layer)
   scene.add(curtain)
 
   const moonDistance = 250
@@ -202,15 +239,15 @@ export function createNightSky({ scene, loop, moonDirection, focus = new THREE.V
   const moon = new THREE.Mesh(new THREE.SphereGeometry(7, 48, 32), new THREE.MeshStandardMaterial({ color: "#e9dfc4", emissive: "#f3e8cc", emissiveIntensity: 1.5, emissiveMap: craters, bumpMap: craters, bumpScale: 1.4, roughness: 1 }))
   moon.position.copy(moonPosition)
   scene.add(moon)
-  const halo = glowSprite("#dfe6ff", 46, { inner: 0.55 })
+  const halo = effectLayer(glowSprite("#dfe6ff", 46, { inner: 0.55 }))
   halo.position.copy(moonPosition)
   scene.add(halo)
 
-  const moonlight = new THREE.DirectionalLight("#c9d8ff", 0.9)
+  const moonlight = new THREE.DirectionalLight("#c9d8ff", 4)
   moonlight.position.copy(moonDirection.clone().normalize().multiplyScalar(80))
   moonlight.castShadow = true
-  moonlight.shadow.mapSize.set(2048, 2048)
-  Object.assign(moonlight.shadow.camera, { left: -18, right: 18, top: 18, bottom: -18, near: 10, far: 200 })
+  moonlight.shadow.mapSize.set(4096, 4096)
+  Object.assign(moonlight.shadow.camera, { left: -26, right: 26, top: 26, bottom: -26, near: 10, far: 200 })
   moonlight.shadow.camera.updateProjectionMatrix()
   moonlight.shadow.bias = -0.0004
   moonlight.shadow.normalBias = 0.03
@@ -218,11 +255,16 @@ export function createNightSky({ scene, loop, moonDirection, focus = new THREE.V
   moonlight.target.position.copy(focus)
   scene.add(moonlight)
   scene.add(moonlight.target)
-  scene.add(new THREE.HemisphereLight("#22365f", "#0a1220", 0.35))
+  scene.add(new THREE.HemisphereLight("#4a68a8", "#1a2436", 1.6))
+  const fill = new THREE.DirectionalLight("#6f8fd6", 0.9)
+  fill.position.set(focus.x - 30, focus.y + 20, focus.z + 60)
+  fill.target.position.copy(focus)
+  scene.add(fill)
+  scene.add(fill.target)
 
   // Two shooting stars per loop, on a timeline the capture script scrubs.
   const stars2 = [shootingStar(), shootingStar()]
-  for (const star of stars2) scene.add(star)
+  for (const star of stars2) scene.add(effectLayer(star))
   const timeline = gsap.timeline({ repeat: -1 })
   ;[[2.4, new THREE.Vector3(120, 150, -240), new THREE.Vector3(60, 105, -230)], [8.1, new THREE.Vector3(-30, 160, -250), new THREE.Vector3(-95, 118, -240)]].forEach(([start, from, to], i) => {
     const star = stars2[i]
@@ -239,27 +281,33 @@ export function createNightSky({ scene, loop, moonDirection, focus = new THREE.V
   timeline.set({}, {}, loop)
 
   return {
+    dome,
     sunDir: moonDirection.clone().normalize(),
     sunColor: "#d6e2ff",
     update: (phase) => {
       stars.material.uniforms.phase.value = phase
-      curtain.material.uniforms.phase.value = phase
-      curtain.material.uniforms.intensity.value = 0.85 + 0.15 * wave(phase, 2)
+      curtain.userData.curtains.forEach((layer, i) => {
+        layer.material.uniforms.phase.value = phase
+        layer.material.uniforms.intensity.value = (i ? 0.95 : 0.75) * (0.85 + 0.15 * wave(phase, 2, i * 0.3))
+      })
+      driftClouds(phase)
     }
   }
 }
 
+// A clear afternoon: deep blue zenith, pale horizon, a high warm sun with crisp shadows.
 export function createDaySky({ scene, sunDirection, focus = new THREE.Vector3() }) {
-  scene.add(gradientDome({ top: "#3d8ce6", mid: "#9ccaf7", horizon: "#eaf3fc" }))
-  const glare = glowSprite("#fff1c0", 30, { inner: 0.7 })
+  const dome = gradientDome({ top: "#2a6fd6", mid: "#7fb6f2", horizon: "#dcebfa" })
+  scene.add(dome)
+  const glare = effectLayer(glowSprite("#fff6dc", 60, { inner: 0.8 }))
   glare.position.copy(sunDirection.clone().normalize().multiplyScalar(280))
   scene.add(glare)
 
-  const sun = new THREE.DirectionalLight("#fff0d2", 2.4)
+  const sun = new THREE.DirectionalLight("#fff1dc", 3.4)
   sun.position.copy(sunDirection.clone().normalize().multiplyScalar(90))
   sun.castShadow = true
-  sun.shadow.mapSize.set(2048, 2048)
-  Object.assign(sun.shadow.camera, { left: -18, right: 18, top: 18, bottom: -18, near: 10, far: 220 })
+  sun.shadow.mapSize.set(4096, 4096)
+  Object.assign(sun.shadow.camera, { left: -26, right: 26, top: 26, bottom: -26, near: 10, far: 220 })
   sun.shadow.camera.updateProjectionMatrix()
   sun.shadow.bias = -0.0004
   sun.shadow.normalBias = 0.03
@@ -267,24 +315,13 @@ export function createDaySky({ scene, sunDirection, focus = new THREE.Vector3() 
   sun.target.position.copy(focus)
   scene.add(sun)
   scene.add(sun.target)
-  scene.add(new THREE.HemisphereLight("#bcd6ff", "#5d7a4c", 0.6))
-
-  const random = rng(17)
-  const clouds = Array.from({ length: 4 }, (_, i) => {
-    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: cloudTexture(256, 30 + i), transparent: true, depthWrite: false, opacity: 0.8 }))
-    const width = 18 + random() * 14
-    sprite.scale.set(width, width * 0.42, 1)
-    sprite.userData = { x: -120 + i * 85 + random() * 30, y: 44 + random() * 26, z: -230 - random() * 40, offset: random(), drift: 4 + random() * 4 }
-    sprite.position.set(sprite.userData.x, sprite.userData.y, sprite.userData.z)
-    scene.add(sprite)
-    return sprite
-  })
+  scene.add(new THREE.HemisphereLight("#bcd8ff", "#7a6a48", 1.3))
+  const driftClouds = cloudLayer({ scene, random: rng(17), count: 6, color: "#ffffff", opacity: 0.95, sizes: [36, 70], heights: [28, 56] })
 
   return {
+    dome,
     sunDir: sunDirection.clone().normalize(),
-    sunColor: "#fff2cf",
-    update: (phase) => {
-      for (const cloud of clouds) cloud.position.x = cloud.userData.x + cloud.userData.drift * wave(phase, 1, cloud.userData.offset)
-    }
+    sunColor: "#ffe2b8",
+    update: driftClouds
   }
 }

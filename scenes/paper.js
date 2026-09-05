@@ -25,15 +25,14 @@ set("--card-side", dark ? "#04070d" : "#c3cddd")
 set("--border", dark ? "rgba(255,255,255,0.12)" : "rgba(19,41,75,0.16)")
 set("--gloss", dark ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.55)")
 set("--shine", dark ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.5)")
-set("--accent-top", dark ? "#ff9a76" : "#f06a4a")
-set("--accent-bottom", dark ? "#f0663a" : "#d43f1e")
-set("--accent-side", dark ? "#7f3d26" : "#742513")
-set("--green-top", dark ? "#5fd070" : "#2f9b4a")
-set("--green-bottom", dark ? "#2f9d43" : "#186b2e")
-set("--green-side", dark ? "#1f5a28" : "#0d4019")
-set("--blue-top", dark ? "#7bb8ff" : "#2f83ea")
-set("--blue-bottom", dark ? "#3f8ff0" : "#0b57c2")
-set("--blue-side", dark ? "#1f4f8c" : "#083b7a")
+set("--glass-rim", dark ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.85)")
+set("--accent-top", dark ? "rgba(255,138,96,0.78)" : "rgba(240,106,74,0.82)")
+set("--accent-bottom", dark ? "rgba(232,74,39,0.55)" : "rgba(212,63,30,0.7)")
+set("--green-top", dark ? "rgba(95,208,112,0.72)" : "rgba(47,155,74,0.8)")
+set("--green-bottom", dark ? "rgba(47,157,67,0.5)" : "rgba(24,107,46,0.7)")
+set("--blue-top", dark ? "rgba(140,190,255,0.42)" : "rgba(255,255,255,0.85)")
+set("--blue-bottom", dark ? "rgba(88,166,255,0.16)" : "rgba(214,230,255,0.6)")
+set("--cta-ink", dark ? "#ffffff" : "#0b57c2")
 set("--tag", dark ? "#b9c8e2" : "#4c5b73")
 
 // Text from the profile data; the title wraps at the same width as the old SVG card.
@@ -57,7 +56,16 @@ FEATURED_PAPER.authors.split(", ").forEach((author, i) => {
     authors.append(owner)
   } else authors.append(author)
 })
-document.getElementById("venue").textContent = FEATURED_PAPER.venue
+const venue = document.getElementById("venue")
+const acronym = FEATURED_PAPER.venue.match(/\(([A-Za-z]+)\)/)
+if (acronym) {
+  const [match, name] = acronym
+  const start = FEATURED_PAPER.venue.indexOf(match)
+  venue.append(FEATURED_PAPER.venue.slice(0, start + 1))
+  const strong = document.createElement("b")
+  strong.textContent = name
+  venue.append(strong, FEATURED_PAPER.venue.slice(start + match.length - 1))
+} else venue.textContent = FEATURED_PAPER.venue
 document.getElementById("arxiv").textContent = FEATURED_PAPER.arxiv
 document.getElementById("status").textContent = FEATURED_PAPER.status
 
