@@ -13,6 +13,7 @@ const vertexShader = /* glsl */ `
   varying vec4 vUv;
   varying vec3 vWorldPos;
   varying vec3 vNormal;
+  varying float vCrest;
   #define TAU 6.28318530718
   void main() {
     vec3 p = position;
@@ -32,6 +33,7 @@ const vertexShader = /* glsl */ `
       binormal += vec3(-d.x * d.y * steep * s, d.y * steep * c, -d.y * d.y * steep * s);
     }
     vec3 n = normalize(cross(binormal, tangent));
+    vCrest = offset.y * 2.2;
     p += offset;
     vec4 world = modelMatrix * vec4(p, 1.0);
     vWorldPos = world.xyz;
@@ -55,9 +57,12 @@ const fragmentShader = /* glsl */ `
   uniform float fogFar;
   uniform float reflectivity;
   uniform float phase;
+  uniform vec4 island;
+  uniform vec3 shallowColor;
   varying vec4 vUv;
   varying vec3 vWorldPos;
   varying vec3 vNormal;
+  varying float vCrest;
   void main() {
     vec2 uv1 = vWorldPos.xz * 0.05 + vec2(phase, 0.0);
     vec2 uv2 = vWorldPos.xz * 0.12 + vec2(0.0, -2.0 * phase);
@@ -76,7 +81,11 @@ const fragmentShader = /* glsl */ `
     vec3 H = normalize(sunDir + V);
     float spec = pow(max(dot(n, H), 0.0), sunPower) * sunStrength;
     vec3 body = mix(deepColor, color, 0.25 + 0.75 * NdV);
-    vec3 col = mix(body, reflection, clamp(fresnel * reflectivity, 0.0, 1.0)) + sunColor * spec;
+    // Shallow, brighter water over the shelf around the island, and light through the wave crests.
+    float shelf = 1.0 - smoothstep(0.95, 1.45, length((vWorldPos.xz - island.xy) / island.zw));
+    body = mix(body, shallowColor, shelf * 0.5);
+    body += sunColor * 0.08 * clamp(vCrest, 0.0, 1.0);
+    vec3 col = mix(body, reflection, clamp(fresnel * reflectivity * (1.0 - 0.45 * shelf), 0.0, 1.0)) + sunColor * spec;
     float fog = smoothstep(fogNear, fogFar, length(cameraPosition - vWorldPos));
     col = mix(col, fogColor, fog);
     gl_FragColor = vec4(col, 1.0);
@@ -85,7 +94,7 @@ const fragmentShader = /* glsl */ `
   }
 `
 
-export function createSea({ size = 420, segments = 220, textureSize = 1536, color, deepColor, fogColor, sunDir, sunColor, sunPower = 380, sunStrength = 1.4, fogNear = 90, fogFar = 260, reflectivity = 1 }) {
+export function createSea({ size = 520, segments = 260, textureSize = 1536, color, deepColor, shallowColor, fogColor, sunDir, sunColor, sunPower = 380, sunStrength = 1.4, fogNear = 110, fogFar = 320, reflectivity = 1, island = new THREE.Vector4(0, 0, 1, 1) }) {
   const geometry = new THREE.PlaneGeometry(size, size, segments, segments)
   geometry.rotateX(-Math.PI / 2)
   const shader = {
@@ -96,6 +105,8 @@ export function createSea({ size = 420, segments = 220, textureSize = 1536, colo
       color: { value: new THREE.Color(color) },
       normalMap: { value: normalTexture(tileableNoise(256, { seed: 21, octaves: 4, period: 6 }), 2.5) },
       deepColor: { value: new THREE.Color(deepColor) },
+      shallowColor: { value: new THREE.Color(shallowColor) },
+      island: { value: island },
       fogColor: { value: new THREE.Color(fogColor) },
       sunDir: { value: sunDir.clone().normalize() },
       sunColor: { value: new THREE.Color(sunColor) },
@@ -106,8 +117,8 @@ export function createSea({ size = 420, segments = 220, textureSize = 1536, colo
       reflectivity: { value: reflectivity },
       phase: { value: 0 },
       // direction x, direction z, steepness, wavelength; steepness sums stay below one so crests never loop.
-      waves: { value: [new THREE.Vector4(1, 0.35, 0.1, 7), new THREE.Vector4(-0.4, 1, 0.08, 4.2), new THREE.Vector4(0.7, -0.6, 0.06, 2.6), new THREE.Vector4(-1, -0.2, 0.05, 1.5)] },
-      cycles: { value: [6, 8, 10, 13] }
+      waves: { value: [new THREE.Vector4(1, 0.35, 0.09, 11), new THREE.Vector4(-0.4, 1, 0.07, 6.2), new THREE.Vector4(0.7, -0.6, 0.06, 3.4), new THREE.Vector4(-1, -0.2, 0.05, 1.9)] },
+      cycles: { value: [5, 7, 9, 12] }
     },
     vertexShader,
     fragmentShader

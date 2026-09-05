@@ -1,5 +1,5 @@
-// Hero: the island at dusk (or in daylight), seen across a reflecting sea, with the profile text
-// typed over it. Loop: 12 s.
+// Hero: the island at dusk (or in golden-hour daylight), seen across a reflecting sea, with the
+// profile text typed over it. Loop: 12 s.
 import * as THREE from "three"
 import { createIsland } from "./lib/island.js"
 import { wave } from "./lib/periodic.js"
@@ -28,27 +28,42 @@ root.setProperty("--vignette", dark ? "rgba(13,17,23,0.75)" : "rgba(255,255,255,
 
 // ?hide=sea,sky,island renders a still without those parts, for debugging.
 const hidden = new Set((params.get("hide") ?? "").split(","))
-const stage = createStage({ width, height, loop, fov: 40, bloom: dark ? { strength: 0.5, radius: 0.6, threshold: 1 } : { strength: 0.25, radius: 0.6, threshold: 1.1 }, exposure: dark ? 1 : 1.1 })
+const stage = createStage({
+  width,
+  height,
+  loop,
+  fov: 34,
+  bloom: dark ? { strength: 0.5, radius: 0.6, threshold: 1 } : { strength: 0.22, radius: 0.6, threshold: 1.1 },
+  ao: { radius: 0.6, scale: 1, intensity: dark ? 0.5 : 0.6 },
+  exposure: dark ? 1.2 : 1
+})
 const { scene, camera } = stage
-const eye = new THREE.Vector3(0, 4.2, 19)
-const target = new THREE.Vector3(7, 2.1, -4)
+const eye = new THREE.Vector3(0, 5.6, 27)
+const target = new THREE.Vector3(12, 3, -6)
 camera.position.copy(eye)
 camera.lookAt(target)
 
-const lightDirection = dark ? new THREE.Vector3(-0.1, 0.21, -0.97) : new THREE.Vector3(-0.5, 0.62, -0.6)
-const islandPosition = new THREE.Vector3(14, 0, -4)
+const islandPosition = new THREE.Vector3(23, 0, -7)
+const lightDirection = dark ? new THREE.Vector3(-0.1, 0.21, -0.97) : new THREE.Vector3(-0.55, 0.7, -0.45)
 const sky = hidden.has("sky") ? { sunColor: "#ffffff", update() {} } : dark ? createNightSky({ scene, loop, moonDirection: lightDirection, focus: islandPosition }) : createDaySky({ scene, sunDirection: lightDirection, focus: islandPosition })
+if (sky.dome) stage.useSkyEnvironment(sky.dome)
+if (params.get("fog") !== "0") scene.fog = new THREE.Fog(dark ? "#2c2440" : "#dcebfa", 150, 420)
 const sea = createSea({
-  color: dark ? "#1c3d6d" : "#4f9be0",
-  deepColor: dark ? "#061225" : "#174d96",
-  fogColor: dark ? "#2c2440" : "#cfdff2",
+  color: dark ? "#1c3d6d" : "#2f7fcf",
+  deepColor: dark ? "#061225" : "#0e3a78",
+  shallowColor: dark ? "#1f5a7a" : "#2fa9c9",
+  fogColor: dark ? "#2c2440" : "#dcebfa",
   sunDir: lightDirection,
   sunColor: sky.sunColor,
-  sunPower: dark ? 420 : 520,
-  sunStrength: dark ? 0.55 : 1.6
+  sunPower: dark ? 420 : 380,
+  sunStrength: dark ? 0.55 : 0.9,
+  reflectivity: dark ? 1 : 0.75,
+  fogNear: 150,
+  fogFar: 420,
+  island: new THREE.Vector4(islandPosition.x, islandPosition.z, 16, 13)
 })
 if (!hidden.has("sea")) scene.add(sea)
-const island = createIsland({ dark, position: islandPosition })
+const island = hidden.has("island") ? { userData: { update() {} } } : await createIsland({ dark, position: islandPosition })
 if (!hidden.has("island")) scene.add(island)
 
 // Typing: each tagline is typed, held, erased, inside its slot of the loop.
@@ -70,7 +85,6 @@ function typing(t) {
   else visible = 0
   typed.textContent = line.slice(0, visible)
 }
-
 document.querySelector(".name").textContent = PROFILE.name
 document.querySelector(".name").dataset.text = PROFILE.name
 document.querySelector(".role").textContent = PROFILE.role
@@ -81,7 +95,7 @@ stage.onFrame(({ phase, t }) => {
   sea.material.uniforms.phase.value = phase
   sky.update(phase)
   island.userData.update(phase)
-  camera.position.set(eye.x + 0.5 * wave(phase, 1), eye.y + 0.12 * wave(phase, 1, 0.25), eye.z)
+  camera.position.set(eye.x + 0.9 * wave(phase, 1), eye.y + 0.25 * wave(phase, 1, 0.25), eye.z + 0.5 * wave(phase, 1, 0.5))
   camera.lookAt(target)
   typing(t % loop)
   caret.style.opacity = wave(phase, 13) > -0.2 ? "1" : "0"

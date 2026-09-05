@@ -5,7 +5,7 @@
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
-import { faceGradient, keycap, sphere, sphereGradient } from "./materials.mjs"
+import { faceGradient, glassBody, glassDefs, keycap } from "./materials.mjs"
 import { LINKS, PAPERS, PAPER_BUTTONS, SKILL_COLORS, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
 import { THEMES, chip, escapeXml, linearGradient, mix, round, shade, svgDocument, textWidth } from "./svg.mjs"
 
@@ -41,10 +41,12 @@ const LINK_ICONS = {
   globe: `<circle r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><ellipse rx="3.5" ry="8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M-8,0 H8 M-6.5,-4.5 H6.5 M-6.5,4.5 H6.5" stroke="currentColor" stroke-width="1.2"/>`,
   cap: `<path d="M-9,-2 L0,-6.5 L9,-2 L0,2.5 Z" fill="currentColor"/><path d="M-5,0 V4 Q0,7.5 5,4 V0" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8,-1.5 V4" stroke="currentColor" stroke-width="1.6"/>`,
   in: `<rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M-4.5,-1 V5 M-4.5,-4.2 V-4 M0,5 V-1 M0,1.5 Q1.5,-1.5 4.5,0.5 V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`,
-  x: `<path d="M-7,-8 L7,8 M7,-8 L-7,8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>`
+  x: `<path d="M-7,-8 L7,8 M7,-8 L-7,8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>`,
+  mail: `<rect x="-9" y="-6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M-9,-5 L0,1.5 L9,-5" fill="none" stroke="currentColor" stroke-width="1.8"/>`
 }
 
-// One keycap per link, with the icon on a small sphere; the README wraps each image in an anchor.
+// One glass pill per link, with the icon on a small glass disc; the README wraps each image in an
+// anchor. A light sweep crosses the glass every few seconds.
 export function renderLinkButton(theme, link) {
   const height = 60
   const width = link.width
@@ -52,48 +54,40 @@ export function renderLinkButton(theme, link) {
   const accent = link.id === "collab" ? theme.accent : theme.accent2
   const ink = link.id === "collab" ? theme.accent : theme.text
   const id = `link-${link.id}`
-  const face = dark ? mix("#1a2f57", accent, 0.12) : mix("#f4f8fe", accent, 0.05)
-  const side = dark ? shade(face, -0.55) : shade(face, -0.32)
-  const shimmer = `<g clip-path="url(#${id}-clip)"><rect x="-120" y="0" width="90" height="${height}" fill="url(#${id}-shine)" transform="skewX(-22)"><animate attributeName="x" from="-120" to="${width + 100}" dur="${round(4 + width / 120)}s" repeatCount="indefinite"/></rect></g>`
+  const glass = glassBody(id, { x: 3, y: 4, width: width - 6, height: 48, radius: 24, dark })
+  const shimmer = `<g clip-path="url(#${id}-shape)"><rect x="-120" y="0" width="90" height="${height}" fill="url(#${id}-shine)" transform="skewX(-22)"><animate attributeName="x" from="-120" to="${width + 100}" dur="${round(4 + width / 120)}s" repeatCount="indefinite"/></rect></g>`
   const body = [
-    keycap({ x: 3, y: 2, width: width - 6, height: 48, radius: 15, fill: `url(#${id}-face)`, side, depth: 5 }),
-    `<rect x="3" y="2" width="${width - 6}" height="48" rx="15" fill="none" stroke="url(#${id}-border)" stroke-width="1.2"/>`,
+    glass.svg,
     shimmer,
-    sphere({ cx: 30, cy: 26, r: 13, fill: `url(#${id}-orb)`, shadow: false }),
-    `<g transform="translate(30 26)" style="color:#ffffff">${LINK_ICONS[link.icon]}</g>`,
-    `<text x="54" y="32" font-size="15" font-weight="700" fill="${dark ? "#000000" : "#ffffff"}" opacity="0.45">${escapeXml(link.label)}</text>`,
-    `<text x="54" y="31" font-size="15" font-weight="700" fill="${ink}">${escapeXml(link.label)}</text>`,
-    `<path d="M${width - 30},21 l5,5 -5,5" fill="none" stroke="${accent}" stroke-width="2" stroke-linecap="round"><animateTransform attributeName="transform" type="translate" values="0 0;3 0;0 0" dur="1.6s" repeatCount="indefinite"/></path>`
+    `<circle cx="30" cy="28" r="15" fill="#ffffff" fill-opacity="${dark ? 0.16 : 0.7}" stroke="url(#${id}-rim)" stroke-width="1"/>`,
+    `<g transform="translate(30 28)" style="color:${accent}">${LINK_ICONS[link.icon]}</g>`,
+    `<text x="54" y="34" font-size="15" font-weight="700" fill="${dark ? "#000000" : "#ffffff"}" opacity="${dark ? 0.35 : 0.8}">${escapeXml(link.label)}</text>`,
+    `<text x="54" y="33" font-size="15" font-weight="700" fill="${ink}">${escapeXml(link.label)}</text>`,
+    `<path d="M${width - 30},23 l5,5 -5,5" fill="none" stroke="${accent}" stroke-width="2" stroke-linecap="round"><animateTransform attributeName="transform" type="translate" values="0 0;3 0;0 0" dur="1.6s" repeatCount="indefinite"/></path>`
   ].join("")
   const defs = [
-    faceGradient(`${id}-face`, face, { top: 0.16, bottom: -0.1 }),
-    sphereGradient(`${id}-orb`, accent),
-    linearGradient(`${id}-border`, [["0", accent, 0.9], ["0.5", theme.border], ["1", accent, 0.9]]),
-    `<clipPath id="${id}-clip"><rect x="3" y="2" width="${width - 6}" height="48" rx="15"/></clipPath>`,
-    linearGradient(`${id}-shine`, [["0", "#ffffff", 0], ["0.5", "#ffffff", dark ? 0.14 : 0.55], ["1", "#ffffff", 0]])
+    glassDefs(id, { dark, tint: accent }),
+    glass.defs,
+    linearGradient(`${id}-shine`, [["0", "#ffffff", 0], ["0.5", "#ffffff", dark ? 0.22 : 0.7], ["1", "#ffffff", 0]])
   ].join("")
   return svgDocument({ id, width, height, title: link.label, theme, defs, body })
 }
 
-// A small keycap for one paper link label (arXiv, Project Page, ...), reused by every paper.
+// A paper link button in the style of academic homepages: a plain outlined pill (PDF, Project
+// Page, Video, BibTeX), reused by every paper. A faint sweep keeps it alive.
 export function renderPaperButton(theme, label) {
   const height = 36
-  const width = round(textWidth(label, 13, 700) + 40)
+  const width = round(textWidth(label, 13, 600) + 36)
   const dark = theme.name === "dark"
   const id = paperButtonId(label)
-  const face = dark ? "#1a2f57" : "#f4f8fe"
-  const side = dark ? shade(face, -0.55) : shade(face, -0.32)
   const body = [
-    keycap({ x: 2, y: 2, width: width - 4, height: 26, radius: 9, fill: `url(#${id}-face)`, side, depth: 4 }),
-    `<rect x="2" y="2" width="${width - 4}" height="26" rx="9" fill="none" stroke="${theme.accent2}" stroke-opacity="0.55"/>`,
+    `<rect x="1" y="2.5" width="${width - 2}" height="30" rx="15" fill="${dark ? "#161b22" : "#ffffff"}" stroke="${dark ? "#3d444d" : "#c9d3e3"}" stroke-width="1.2"/>`,
     `<g clip-path="url(#${id}-clip)"><rect x="-80" y="0" width="50" height="${height}" fill="url(#${id}-shine)" transform="skewX(-22)"><animate attributeName="x" from="-80" to="${width + 60}" dur="${round(5 + width / 60)}s" repeatCount="indefinite"/></rect></g>`,
-    `<text x="${width / 2}" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="${dark ? "#000000" : "#ffffff"}" opacity="0.45">${escapeXml(label)}</text>`,
-    `<text x="${width / 2}" y="19" text-anchor="middle" font-size="13" font-weight="700" fill="${theme.text}">${escapeXml(label)}</text>`
+    `<text x="${width / 2}" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="${dark ? "#e6edf3" : "#13294B"}">${escapeXml(label)}</text>`
   ].join("")
   const defs = [
-    faceGradient(`${id}-face`, face, { top: 0.16, bottom: -0.1 }),
-    `<clipPath id="${id}-clip"><rect x="2" y="2" width="${width - 4}" height="26" rx="9"/></clipPath>`,
-    linearGradient(`${id}-shine`, [["0", "#ffffff", 0], ["0.5", "#ffffff", dark ? 0.14 : 0.55], ["1", "#ffffff", 0]])
+    `<clipPath id="${id}-clip"><rect x="1" y="2.5" width="${width - 2}" height="30" rx="15"/></clipPath>`,
+    linearGradient(`${id}-shine`, [["0", "#ffffff", 0], ["0.5", "#ffffff", dark ? 0.08 : 0.5], ["1", "#ffffff", 0]])
   ].join("")
   return svgDocument({ id, width, height, title: label, theme, defs, body })
 }
@@ -105,7 +99,7 @@ export function renderPaperThumbnail(paper) {
   const height = 420
   const { badge, alt } = paper.thumbnail
   const figure = readFileSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`)).toString("base64")
-  const navy = "#13294B"
+  const navy = badge === "Under Review" ? "#4c5b73" : "#13294B"
   const badgeWidth = round(textWidth(badge, 17, 700) + 34)
   const id = `paper-${paper.id}`
   const body = [

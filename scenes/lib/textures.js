@@ -83,23 +83,26 @@ export function normalTexture({ heights, size }, strength = 2) {
 }
 
 // Soft cloud puff: a few overlapping radial blobs with a noisy edge.
-export function cloudTexture(size = 256, seed = 3) {
+export function cloudTexture(size = 512, seed = 3) {
   const random = rng(seed)
-  const blobs = Array.from({ length: 7 }, () => [0.25 + random() * 0.5, 0.35 + random() * 0.3, 0.12 + random() * 0.16])
-  const noise = tileableNoise(size, { seed, octaves: 3, period: 4 })
+  const blobs = Array.from({ length: 11 }, () => [0.2 + random() * 0.6, 0.4 + random() * 0.28, 0.1 + random() * 0.15])
+  const noise = tileableNoise(size, { seed, octaves: 5, period: 5 })
   return canvasTexture(size, (data) => {
     for (let y = 0; y < size; y += 1) {
       for (let x = 0; x < size; x += 1) {
         const u = x / size
         const v = y / size
         let density = 0
-        for (const [bx, by, r] of blobs) density += Math.max(0, 1 - Math.hypot(u - bx, (v - by) * 1.6) / r)
-        density = Math.min(1, density * 0.8) * (0.55 + 0.45 * noise.heights[y * size + x])
-        const alpha = Math.max(0, Math.min(1, (density - 0.18) * 1.6))
+        for (const [bx, by, r] of blobs) density += Math.max(0, 1 - Math.hypot(u - bx, (v - by) * 1.7) / r)
+        const n = noise.heights[y * size + x]
+        density = Math.min(1, density * 0.75) * (0.45 + 0.55 * n)
+        const alpha = Math.max(0, Math.min(1, (density - 0.16) * 1.9))
+        // Lit from above: brighter tops, a soft grey base.
+        const shade = 0.72 + 0.28 * Math.min(1, Math.max(0, (0.72 - v) * 2.2 + n * 0.35))
         const i = (y * size + x) * 4
-        data[i] = 255
-        data[i + 1] = 255
-        data[i + 2] = 255
+        data[i] = 255 * shade
+        data[i + 1] = 255 * shade
+        data[i + 2] = 255 * Math.min(1, shade + 0.03)
         data[i + 3] = alpha * 255
       }
     }
