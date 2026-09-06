@@ -66,13 +66,6 @@ export const PAPER_BUTTONS = [...new Set(PAPERS.flatMap((paper) => paper.links.m
 
 export const paperButtonId = (label) => `paper-link-${label.toLowerCase().replace(/\W+/g, "-")}`
 
-export const FEATURED_PAPER = {
-  title: PAPERS[0].title,
-  venue: PAPERS[0].venue,
-  status: "Accepted",
-  authors: PAPERS[0].authors.join(", "),
-  arxiv: "arXiv:2606.31204"
-}
 
 export const SKILL_ROWS = [
   [
@@ -90,12 +83,14 @@ export const SKILL_ROWS = [
 
 export const SKILL_COLORS = { ai: "accent", agents: "accent", code: "accent2", data: "accent3", infra: "muted" }
 
-// Animated link buttons rendered into assets/link-<id>-<theme>.svg; each is wrapped in one <a> in the README.
+// Round icon links rendered into assets/link-<id>-<theme>.svg, like the website's sidebar; the
+// README wraps each in one <a>.
 export const LINKS = [
-  { id: "collab", label: "Open to research collaborations", url: "mailto:qiranhu8@gmail.com", icon: "spark", width: 420 },
-  { id: "email", label: "qiranhu8@gmail.com", url: "mailto:qiranhu8@gmail.com", icon: "mail", width: 236 },
-  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe", width: 176 },
-  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap", width: 214 },
-  { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in", width: 176 },
-  { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x", width: 128 }
+  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe" },
+  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap" },
+  { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in" },
+  { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x" },
+  { id: "email", label: "Email", url: "mailto:qiranhu8@gmail.com", icon: "mail" }
 ]
+
+export const PHONE = "+1 (347)-957-9176"

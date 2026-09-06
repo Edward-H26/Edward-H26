@@ -5,22 +5,20 @@
   <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/scenes/hero-dark.webp" />
 </picture>
 
+<!-- links:start -->
 <p align="center">
-  <a href="mailto:qiranhu8@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="60" alt="Email qiranhu8@gmail.com" src="assets/link-email-dark.svg" /></picture></a><br />
+  <a href="https://edward-h26.github.io/" title="Website"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg" /><img height="56" alt="Website" src="assets/link-website-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&amp;hl=en" title="Google Scholar"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="56" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/qiranhu/" title="LinkedIn"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="56" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="56" alt="X" src="assets/link-x-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="mailto:qiranhu8@gmail.com" title="Email"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="56" alt="Email" src="assets/link-email-dark.svg" /></picture></a>
+</p>
+
+<p align="center">
   +1 (347)-957-9176<br />
   <img src="https://komarev.com/ghpvc/?username=Edward-H26&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />
 </p>
-
-<p align="center">
-  <a href="mailto:qiranhu8@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-collab-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-collab-light.svg" /><img height="60" alt="Open to research collaborations" src="assets/link-collab-dark.svg" /></picture></a>
-</p>
-
-<p align="center">
-  <a href="https://edward-h26.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg" /><img height="60" alt="Website" src="assets/link-website-dark.svg" /></picture></a>
-  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="60" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>
-  <a href="https://www.linkedin.com/in/qiranhu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="60" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>
-  <a href="https://x.com/QiranHu"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="60" alt="X" src="assets/link-x-dark.svg" /></picture></a>
-</p>
+<!-- links:end -->
 <div align="center">
   <p>
     I am a current student in <strong><a href="https://www.engineering.columbia.edu/about">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
@@ -48,13 +46,22 @@
 
 ## Featured Paper
 
-<a href="https://arxiv.org/abs/2606.31204">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/scenes/paper-dark.webp" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/scenes/paper-light.webp" />
-  <img width="100%" alt="AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation, accepted to ECCV 2026." src="assets/scenes/paper-dark.webp" />
-</picture>
-</a>
+<!-- featured-paper:start -->
+<table width="100%">
+<tr>
+<td width="400" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="400" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
+<td valign="top">
+<b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
+Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
+<i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
+<a href="https://arxiv.org/pdf/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-pdf-light.svg" /><img height="36" alt="PDF" src="assets/paper-link-pdf-dark.svg" /></picture></a>
+<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-project-page-light.svg" /><img height="36" alt="Project Page" src="assets/paper-link-project-page-dark.svg" /></picture></a>
+<a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
+<a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
+</td>
+</tr>
+</table>
+<!-- featured-paper:end -->
 
 ## News
 
@@ -95,22 +102,23 @@
 
 ## Papers
 
-<table>
+<!-- papers:start -->
+<table width="100%">
 <tr>
 <td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
 <i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
-<a href="https://arxiv.org/pdf/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg"><img src="assets/paper-link-pdf-light.svg" alt="PDF" height="36"/></picture></a>
-<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg"><img src="assets/paper-link-project-page-light.svg" alt="Project Page" height="36"/></picture></a>
-<a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg"><img src="assets/paper-link-video-light.svg" alt="Video" height="36"/></picture></a>
-<a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg"><img src="assets/paper-link-bibtex-light.svg" alt="BibTeX" height="36"/></picture></a>
+<a href="https://arxiv.org/pdf/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-pdf-light.svg" /><img height="36" alt="PDF" src="assets/paper-link-pdf-dark.svg" /></picture></a>
+<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-project-page-light.svg" /><img height="36" alt="Project Page" src="assets/paper-link-project-page-dark.svg" /></picture></a>
+<a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
+<a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
 <td width="300" valign="top"><img src="assets/papers/crowdsourced.svg" width="300" alt="Contributors feeding a shared open research record"/></td>
 <td valign="top">
@@ -121,7 +129,7 @@ Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Yun Huang<br/>
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
 <td width="300" valign="top"><img src="assets/papers/context-under-budget.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></td>
 <td valign="top">
@@ -132,7 +140,7 @@ Tuan Minh Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan L
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
 <td width="300" valign="top"><img src="assets/papers/alphawiseft.svg" width="300" alt="Two model checkpoints blended into one fused model"/></td>
 <td valign="top">
@@ -142,6 +150,7 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 </td>
 </tr>
 </table>
+<!-- papers:end -->
 
 ## Research Groups
 
@@ -290,19 +299,13 @@ _2025.02 - 2025.06_
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-light.svg" />
-  <img width="100%" alt="Milestones of Edward-H26 drawn as medals: ECCV 2026 paper, NVIDIA grant, contributions, streak, repositories, stars, and languages." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
+  <img width="100%" alt="Milestones of Edward-H26 drawn as medals: followers, pull requests, contributions, streak, repositories, stars, and languages." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/constellation-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/constellation-light.svg" />
-  <img width="100%" alt="Public repositories of Edward-H26 drawn as a constellation, bubble size following stars and colour following the primary language." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/constellation-dark.svg" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-light.svg" />
-  <img width="100%" alt="Recent public GitHub activity of Edward-H26." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/activity-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-light.svg" />
+  <img width="100%" alt="Lines of code pushed by Edward-H26 in the past year: additions and deletions per week and per repository." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-dark.svg" />
 </picture>
 
 <div align="center">
@@ -313,41 +316,8 @@ _2025.02 - 2025.06_
   </picture>
 </div>
 
-<details>
-<summary><strong>How this profile is built</strong></summary>
-
-The island, the research planet, and the featured paper are real 3D scenes: three.js with
-physically based materials (a reflecting Gerstner-wave sea, a refractive crystal, a planet with
-procedural continents and clouds) and GSAP timelines, rendered frame by frame in headless Chromium
-by `scenes/render.mjs` and encoded as seamless animated WebP loops in `assets/scenes/`, one per
-theme. Every other card is plain SVG with SMIL animation, rendered by scripts in this repository:
-the static cards from `scripts/profile-data.mjs` into `assets/` (lit keycaps, spheres, and tubes
-from `scripts/materials.mjs`), the live cards from the GitHub API on the `output` branch every six
-hours. Paper thumbnails are the papers' own figures, cropped to 10:7 under `assets/papers/figures/`,
-with the venue badge drawn by the same renderer. The 3D contribution calendar comes from the
-github-profile-3d-contrib action, and the island tour is an animated WebP recorded from the live site.
-
-```mermaid
-flowchart LR
-  data["profile-data.mjs"] --> render["render-assets.mjs"]
-  data --> scenes["scenes/*.js, three.js and GSAP"]
-  scenes --> capture["scenes/render.mjs, headless Chromium"]
-  capture --> loops["assets/scenes/*.webp"]
-  loops --> readme
-  figures["assets/papers/figures/*.webp"] --> render
-  render --> assets["assets/*.svg"]
-  api["GitHub GraphQL and events"] --> render
-  render --> output["output branch"]
-  calendar["3D contribution calendar action"] --> output
-  assets --> readme["README"]
-  output --> readme
-  schedule["GitHub Actions, every 6 hours"] --> render
-```
-
-</details>
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg" />
-  <img width="100%" alt="" src="assets/footer-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/snake-light.svg" />
+  <img width="100%" alt="Contribution snake eating the contribution graph of Edward-H26." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/snake-dark.svg" />
 </picture>

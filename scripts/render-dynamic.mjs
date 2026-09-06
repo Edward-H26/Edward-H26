@@ -1,7 +1,6 @@
 // Cards rendered from live GitHub data by the Profile Assets workflow.
 import { faceGradient, keycap, sphere, sphereGradient } from "./materials.mjs"
-import { MONO, cardFrame, escapeXml, glowFilter, linearGradient, mix, rng, round, shade, svgDocument, textWidth } from "./svg.mjs"
-import { FEATURED_PAPER } from "./profile-data.mjs"
+import { MONO, cardFrame, escapeXml, glowFilter, linearGradient, mix, round, shade, svgDocument } from "./svg.mjs"
 import { WIDTH } from "./render-static.mjs"
 
 const compact = (value) => (value >= 1000 ? `${round(value / 1000)}k` : String(value))
@@ -59,107 +58,73 @@ export function renderStats(stats, theme) {
   return svgDocument({ id: "stats", width: WIDTH, height, title: `GitHub activity of ${stats.name}`, theme, defs, body: [card.rect, labels, ring, streak, tiles, languages, byRepo, footer].join("\n") })
 }
 
-// Public repositories as a drifting constellation: bubble size follows stars and colour follows the
-// primary language. A sunflower spiral seeds the positions and a few relaxation passes push
-// overlapping bubbles (including their labels) apart and back inside the card.
-export const MAX_BUBBLE_RADIUS = 40
-const LABEL_FONT = 11.5
-const DRIFT = 8
+// Lines of code pushed in the past year: weekly additions rise above the baseline and deletions
+// hang below it, both as lit extruded bars; the busiest repositories follow as horizontal bars.
+const lines = (value) => (value >= 1000000 ? `${round(value / 1000000)}M` : value >= 1000 ? `${round(value / 1000)}k` : String(value))
 
-export function bubbleLabel(name) {
-  return name.length > 24 ? `${name.slice(0, 23)}…` : name
+// Both charts use a log scale: one bulk data commit would otherwise flatten every other bar.
+const logScale = (value, max) => (value > 0 ? Math.log10(1 + value) / Math.log10(1 + max) : 0)
+
+function extruded(width, height, color, depth = 6) {
+  return `<polygon points="0,0 ${width},0 ${width + depth},${-depth} ${depth},${-depth}" fill="${shade(color, 0.35)}"/><polygon points="${width},0 ${width + depth},${-depth} ${width + depth},${round(height - depth)} ${width},${height}" fill="${shade(color, -0.35)}"/><rect width="${width}" height="${height}" fill="${color}"/>`
 }
 
-// Half the width of a bubble including its monospace label, plus the drift amplitude.
-export function bubbleHalfWidth(bubble) {
-  return Math.max(bubble.r, (bubbleLabel(bubble.repo.name).length * LABEL_FONT * 0.62) / 2) + DRIFT
-}
+export function renderCode(stats, theme) {
+  const height = 460
+  const dark = theme.name === "dark"
+  const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "code" })
+  const { code } = stats
+  const green = theme.accent3
+  const red = dark ? "#f85149" : "#cf222e"
+  const totals = `<g transform="translate(60 92)"><text font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">ADDED</text><text y="34" font-size="30" font-weight="800" fill="${green}">+${escapeXml(lines(code.added))}</text><text y="74" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">DELETED</text><text y="108" font-size="30" font-weight="800" fill="${red}">-${escapeXml(lines(code.deleted))}</text><text y="148" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">NET</text><text y="182" font-size="30" font-weight="800" fill="${theme.text}">${code.added - code.deleted >= 0 ? "+" : "-"}${escapeXml(lines(Math.abs(code.added - code.deleted)))}</text><text y="212" font-size="13" fill="${theme.muted}">${escapeXml(lines(code.commits))} commits across ${code.byRepo.length} ${code.byRepo.length === 1 ? "repository" : "repositories"}</text></g>`
 
-// Vertical extent: the bubble plus the label line under it, plus the drift amplitude.
-export function bubbleHalfHeight(bubble) {
-  return bubble.r + 14 + DRIFT
-}
-
-// Bubbles sit in a grid of cells sized for the widest label, with a deterministic jitter that
-// never exceeds the slack in the cell, so no bubble can touch another whatever the names are.
-const CELL_HEIGHT = 132
-
-export function constellationHeight(count) {
-  return 96 + Math.max(1, Math.ceil(count / 4)) * CELL_HEIGHT + 70
-}
-
-export function layoutBubbles(repos, { width = WIDTH, random }) {
-  const columns = Math.min(4, Math.max(1, repos.length))
-  const area = { left: 60, right: width - 60, top: 96 }
-  const cellWidth = (area.right - area.left) / columns
-  const cellHeight = CELL_HEIGHT
-  return repos.map((repo, i) => {
-    const r = round(Math.min(MAX_BUBBLE_RADIUS, 20 + Math.sqrt(repo.stars) * 9))
-    const bubble = { repo, r }
-    const slackX = Math.max(0, cellWidth / 2 - bubbleHalfWidth(bubble) - 4)
-    const slackY = Math.max(0, cellHeight / 2 - bubbleHalfHeight(bubble) - 4)
-    const column = i % columns
-    const row = Math.floor(i / columns)
-    const cx = area.left + cellWidth * (column + 0.5) + (random() - 0.5) * 2 * Math.min(slackX, 34)
-    const cy = area.top + cellHeight * (row + 0.5) - 6 + (random() - 0.5) * 2 * Math.min(slackY, 18)
-    return { ...bubble, cx: round(cx), cy: round(cy), dur: round(7 + random() * 6), dx: round((random() - 0.5) * 14), dy: round((random() - 0.5) * 12) }
-  })
-}
-
-export function renderConstellation(stats, theme) {
-  const repos = stats.repositories
-  const height = constellationHeight(repos.length)
-  const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "constellation" })
-  const bubbles = layoutBubbles(repos, { random: rng(29) })
-  const links = bubbles
-    .flatMap((a, i) => bubbles.slice(i + 1).filter((b) => b.repo.language === a.repo.language).map((b) => [a, b]))
-    .map(([a, b]) => `<line x1="${a.cx}" y1="${a.cy}" x2="${b.cx}" y2="${b.cy}" stroke="${a.repo.color}" stroke-opacity="0.18" stroke-dasharray="3 7"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="2s" repeatCount="indefinite"/></line>`)
-    .join("")
-  const nodes = bubbles
-    .map(({ repo, cx, cy, r, dur, dx, dy }, i) => {
-      const name = bubbleLabel(repo.name)
-      const shadowRx = round(r * 0.95)
-      return `<g transform="translate(${cx} ${cy})" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.2 + i * 0.09)}s" dur="0.6s" fill="freeze"/><ellipse cy="${round(r * 1.02)}" rx="${shadowRx}" ry="${round(r * 0.26)}" fill="url(#mat-shadow)" opacity="0.9"><animate attributeName="rx" values="${shadowRx};${round(shadowRx * 0.82)};${shadowRx}" dur="${dur}s" repeatCount="indefinite"/></ellipse><g><animateTransform attributeName="transform" type="translate" values="0 0;${dx} ${dy};0 0" dur="${dur}s" repeatCount="indefinite"/><circle r="${r + 8}" fill="${repo.color}" opacity="0.12"><animate attributeName="r" values="${r + 6};${r + 14};${r + 6}" dur="${dur}s" repeatCount="indefinite"/></circle>${sphere({ cx: 0, cy: 0, r, fill: `url(#sphere-${i})`, shadow: false })}<text y="4" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">${escapeXml(repo.stars)}<tspan font-size="9" font-weight="600" fill="#ffffff" fill-opacity="0.8"> ★</tspan></text><text y="${r + 16}" text-anchor="middle" font-size="${LABEL_FONT}" font-family="${MONO}" fill="${theme.text}">${escapeXml(name)}</text></g></g>`
-    })
-    .join("\n")
-  const languages = [...new Map(repos.map((repo) => [repo.language, repo.color])).entries()]
-  let legendX = 60
-  const legend = languages
-    .map(([language, color]) => {
-      const item = `<g transform="translate(${legendX} ${height - 34})"><circle r="5" fill="${color}"/><text x="11" y="4" font-size="12" fill="${theme.muted}">${escapeXml(language)}</text></g>`
-      legendX += round(textWidth(language, 12) + 30)
-      return item
+  // Weekly chart: 52 columns between x = 330 and x = 1140, baseline at y = 214.
+  const chart = { left: 330, right: 1140, baseline: 214, up: 118, down: 52 }
+  const slot = (chart.right - chart.left) / 52
+  const barWidth = round(slot * 0.62)
+  const maxAdded = Math.max(1, ...code.weeks.map((week) => week.added))
+  const maxDeleted = Math.max(1, ...code.weeks.map((week) => week.deleted))
+  const columns = code.weeks
+    .map((week, i) => {
+      const x = round(chart.left + i * slot)
+      const up = round(logScale(week.added, maxAdded) * chart.up)
+      const down = round(logScale(week.deleted, maxDeleted) * chart.down)
+      const begin = round(0.2 + i * 0.03)
+      const rise = up > 0 ? `<g transform="translate(${x} ${chart.baseline}) scale(1 -1)"><g transform="scale(1 0.01)"><animateTransform attributeName="transform" type="scale" values="1 0.01;1 1" begin="${begin}s" dur="0.7s" fill="freeze"/>${extruded(barWidth, up, green, 4)}</g></g>` : ""
+      const fall = down > 0 ? `<g transform="translate(${x} ${chart.baseline + 4})"><g transform="scale(1 0.01)"><animateTransform attributeName="transform" type="scale" values="1 0.01;1 1" begin="${begin}s" dur="0.7s" fill="freeze"/><rect width="${barWidth}" height="${down}" fill="${red}" opacity="0.85"/><rect x="${barWidth}" width="4" height="${down}" fill="${shade(red, -0.35)}" opacity="0.85"/></g></g>` : ""
+      return rise + fall
     })
     .join("")
-  const header = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PUBLIC REPOSITORIES · BUBBLE SIZE FOLLOWS STARS</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
-  const spheres = bubbles.map(({ repo }, i) => sphereGradient(`sphere-${i}`, repo.color)).join("")
-  return svgDocument({ id: "constellation", width: WIDTH, height, title: `Public repositories of ${stats.name}`, theme, defs: card.defs + spheres, body: [card.rect, header, links, nodes, legend].join("\n") })
-}
+  const months = code.weeks
+    .map((week, i) => ({ i, date: new Date(week.week * 1000) }))
+    .filter(({ date }, i, all) => i === 0 || date.getUTCMonth() !== all[i - 1].date.getUTCMonth())
+    .map(({ i, date }) => `<text x="${round(chart.left + i * slot)}" y="${chart.baseline + chart.down + 24}" font-size="10" font-family="${MONO}" fill="${theme.faint}">${date.toLocaleString("en-US", { month: "short", timeZone: "UTC" })}</text>`)
+    .join("")
+  const axis = `<line x1="${chart.left}" y1="${chart.baseline + 2}" x2="${chart.right}" y2="${chart.baseline + 2}" stroke="${theme.border}"/><text x="${chart.right}" y="${chart.baseline - chart.up - 8}" text-anchor="end" font-size="10" font-family="${MONO}" fill="${theme.faint}">peak week +${escapeXml(lines(maxAdded))}</text>`
 
-const EVENT_COLORS = { PushEvent: "accent2", PullRequestEvent: "accent4", IssuesEvent: "accent3", IssueCommentEvent: "accent3", CreateEvent: "accent", WatchEvent: "accent", ForkEvent: "accent2", ReleaseEvent: "accent4", PublicEvent: "accent" }
-
-export function renderActivity(stats, theme) {
-  const rowHeight = 44
-  const rows = stats.activity.length ? stats.activity : [{ type: "PushEvent", text: "No public activity in the last 90 days", repo: "", when: "" }]
-  const height = 78 + rows.length * rowHeight + 18
-  const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "activity" })
-  const list = rows
-    .map((item, i) => {
-      const y = 92 + i * rowHeight
-      const color = theme[EVENT_COLORS[item.type] ?? "accent2"]
-      const textX = 96
-      const repoX = round(textX + textWidth(item.text, 15) + 10)
-      return `<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(0.2 + i * 0.18)}s" dur="0.45s" fill="freeze"/><animateTransform attributeName="transform" type="translate" values="-16 0;0 0" begin="${round(0.2 + i * 0.18)}s" dur="0.45s" fill="freeze"/><circle cx="66" cy="${y - 5}" r="9" fill="${color}" opacity="0.25" filter="url(#activity-glow)"/>${sphere({ cx: 66, cy: y - 5, r: 6.5, fill: `url(#activity-dot-${EVENT_COLORS[item.type] ?? "accent2"})`, shadow: false })}<line x1="66" y1="${y + 9}" x2="66" y2="${y + rowHeight - 12}" stroke="${theme.border}" stroke-dasharray="2 4"/><text x="${textX}" y="${y}" font-size="15" fill="${theme.text}">${escapeXml(item.text)}</text><text x="${repoX}" y="${y}" font-size="14" font-family="${MONO}" font-weight="600" fill="${color}">${escapeXml(item.repo)}</text><text x="${WIDTH - 52}" y="${y}" text-anchor="end" font-size="12" font-family="${MONO}" fill="${theme.faint}">${escapeXml(item.when)}</text></g>`
+  // Busiest repositories: bar length follows the log of the lines touched, and the green and
+  // red parts split it in the true proportion of additions to deletions.
+  const repoMax = Math.max(1, ...code.byRepo.map((repo) => repo.added + repo.deleted))
+  const repos = code.byRepo
+    .map((repo, i) => {
+      const y = 330 + i * 18
+      const total = repo.added + repo.deleted
+      const length = logScale(total, repoMax) * 420
+      const added = round(Math.max((length * repo.added) / Math.max(total, 1), repo.added ? 3 : 0))
+      const deleted = round(Math.max((length * repo.deleted) / Math.max(total, 1), repo.deleted ? 3 : 0))
+      const begin = round(1.2 + i * 0.1)
+      const name = repo.name.length > 26 ? `${repo.name.slice(0, 25)}…` : repo.name
+      return `<g transform="translate(330 ${y})"><text x="-8" y="9" text-anchor="end" font-size="11.5" font-family="${MONO}" fill="${theme.text}">${escapeXml(name)}</text><g transform="scale(0.01 1)"><animateTransform attributeName="transform" type="scale" values="0.01 1;1 1" begin="${begin}s" dur="0.8s" fill="freeze"/><rect width="${added}" height="10" rx="2" fill="${green}"/><rect x="${added + 2}" width="${deleted}" height="10" rx="2" fill="${red}" opacity="0.85"/></g><text x="${added + deleted + 12}" y="9" font-size="10.5" font-family="${MONO}" fill="${theme.muted}" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(begin + 0.6)}s" dur="0.4s" fill="freeze"/>+${escapeXml(lines(repo.added))} / -${escapeXml(lines(repo.deleted))}</text></g>`
     })
-    .join("\n")
-  const header = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">RECENT PUBLIC ACTIVITY</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
-  const dotDefs = [...new Set(Object.values(EVENT_COLORS))].map((token) => sphereGradient(`activity-dot-${token}`, theme[token])).join("")
-  return svgDocument({ id: "activity", width: WIDTH, height, title: `Recent GitHub activity of ${stats.name}`, theme, defs: card.defs + glowFilter("activity-glow", 3) + dotDefs, body: [card.rect, header, list].join("\n") })
+    .join("")
+  const empty = code.byRepo.length ? "" : `<text x="600" y="360" text-anchor="middle" font-size="14" fill="${theme.muted}">No code pushed to public repositories in the past year.</text>`
+  const labels = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">LINES OF CODE · PAST 12 MONTHS</text><text x="${chart.left}" y="76" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PER WEEK · LOG SCALE</text><text x="${chart.left}" y="312" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">BUSIEST REPOSITORIES · LOG SCALE</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
+  return svgDocument({ id: "code", width: WIDTH, height, title: `Lines of code pushed by ${stats.name} in the past year`, theme, defs: card.defs, body: [card.rect, labels, totals, axis, columns, months, repos, empty].join("\n") })
 }
 
 const MILESTONE_ICONS = {
-  paper: `<path d="M-6,-8 H4 L8,-4 V8 H-6 Z M-3,-2 H5 M-3,2 H5 M-3,6 H2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>`,
-  grant: `<path d="M0,-8 L2.4,-2.4 L8,-1.5 L3.8,2.4 L5,8 L0,5.2 L-5,8 L-3.8,2.4 L-8,-1.5 L-2.4,-2.4 Z" fill="#fff"/>`,
+  followers: `<circle cx="-3" cy="-3" r="3.2" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M-9,7 Q-9,1 -3,1 Q3,1 3,7" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="5" cy="-4" r="2.4" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M5,0 Q9.5,0 9.5,5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>`,
+  pulls: `<circle cx="-5" cy="-6" r="2.4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="-5" cy="6" r="2.4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="5" cy="6" r="2.4" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M-5,-3.6 V3.6 M5,3.6 V-2 Q5,-6 1,-6 H-1" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>`,
   commits: `<circle r="3" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M-8,0 H-3 M3,0 H8" stroke="#fff" stroke-width="1.8"/>`,
   streak: `<path d="M1,-9 C-5,-3 -7,1 -7,4 a7,7 0 0 0 14,0 c0,-3 -1.5,-5 -3,-7 -0.5,2 -1.5,3 -3,4 0.8,-3 -0.5,-6 -1,-10 z" fill="#fff"/>`,
   repos: `<path d="M-7,-6 H-1 L1,-4 H7 V6 H-7 Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>`,
@@ -169,15 +134,17 @@ const MILESTONE_ICONS = {
 
 const tier = (value, steps) => steps.filter((step) => value >= step).pop()
 
-// Achievements computed from live numbers; static ones come from the profile data.
+// Achievements computed from live numbers, each shown as the tier reached.
 export function milestones(stats) {
   const stars = tier(stats.stars, [10, 25, 50, 100, 250])
   const contributions = tier(stats.total, [100, 500, 1000, 2500, 5000])
   const streak = tier(stats.streak.longest, [7, 14, 21, 30, 60])
   const repos = tier(stats.repos, [5, 10, 20, 40])
+  const followers = tier(stats.followers, [10, 25, 50, 100, 250])
+  const pulls = tier(stats.pullRequests, [5, 10, 25, 50, 100])
   return [
-    { id: "paper", icon: "paper", label: "ECCV 2026", detail: FEATURED_PAPER.title.split(":")[0], unlocked: true },
-    { id: "grant", icon: "grant", label: "NVIDIA grant", detail: "32k A100 GPU-hours", unlocked: true },
+    { id: "followers", icon: "followers", label: followers ? `${followers}+ followers` : "10+ followers", detail: "on GitHub", unlocked: Boolean(followers) },
+    { id: "pulls", icon: "pulls", label: pulls ? `${pulls}+ pull requests` : "5+ pull requests", detail: "in the past year", unlocked: Boolean(pulls) },
     { id: "commits", icon: "commits", label: contributions ? `${contributions.toLocaleString("en-US")}+ contributions` : "100+ contributions", detail: "in the past year", unlocked: Boolean(contributions) },
     { id: "streak", icon: "streak", label: streak ? `${streak}-day streak` : "7-day streak", detail: "longest this year", unlocked: Boolean(streak) },
     { id: "repos", icon: "repos", label: repos ? `${repos}+ repositories` : "5+ repositories", detail: "public on GitHub", unlocked: Boolean(repos) },

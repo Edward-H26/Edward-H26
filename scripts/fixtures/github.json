@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-03T20:18:11.963Z",
+  "capturedAt": "2026-09-05T13:40:38.801Z",
   "user": {
     "name": "Qiran Hu",
     "login": "Edward-H26",
@@ -413,10 +413,24 @@
           "languages": {
             "edges": [
               {
-                "size": 50697,
+                "size": 173875,
                 "node": {
                   "name": "JavaScript",
                   "color": "#f1e05a"
+                }
+              },
+              {
+                "size": 8494,
+                "node": {
+                  "name": "HTML",
+                  "color": "#e34c26"
+                }
+              },
+              {
+                "size": 686,
+                "node": {
+                  "name": "CSS",
+                  "color": "#663399"
                 }
               }
             ]
@@ -434,28 +448,28 @@
           "languages": {
             "edges": [
               {
-                "size": 61715,
+                "size": 63790,
                 "node": {
                   "name": "TypeScript",
                   "color": "#3178c6"
                 }
               },
               {
-                "size": 38177,
+                "size": 38192,
                 "node": {
                   "name": "JavaScript",
                   "color": "#f1e05a"
                 }
               },
               {
-                "size": 31577,
+                "size": 31725,
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
                 }
               },
               {
-                "size": 7316,
+                "size": 10177,
                 "node": {
                   "name": "CSS",
                   "color": "#663399"
@@ -476,28 +490,28 @@
           "languages": {
             "edges": [
               {
-                "size": 239761,
+                "size": 246301,
                 "node": {
                   "name": "TypeScript",
                   "color": "#3178c6"
                 }
               },
               {
-                "size": 33136,
+                "size": 33627,
                 "node": {
                   "name": "JavaScript",
                   "color": "#f1e05a"
                 }
               },
               {
-                "size": 24284,
+                "size": 26285,
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
                 }
               },
               {
-                "size": 14792,
+                "size": 16931,
                 "node": {
                   "name": "CSS",
                   "color": "#663399"
@@ -695,19 +709,7 @@
             }
           },
           "contributions": {
-            "totalCount": 85
-          }
-        },
-        {
-          "repository": {
-            "name": "PersonalWebsite",
-            "primaryLanguage": {
-              "name": "TypeScript",
-              "color": "#3178c6"
-            }
-          },
-          "contributions": {
-            "totalCount": 52
+            "totalCount": 86
           }
         },
         {
@@ -719,16 +721,28 @@
             }
           },
           "contributions": {
-            "totalCount": 50
+            "totalCount": 53
+          }
+        },
+        {
+          "repository": {
+            "name": "PersonalWebsite",
+            "primaryLanguage": {
+              "name": "TypeScript",
+              "color": "#3178c6"
+            }
+          },
+          "contributions": {
+            "totalCount": 53
           }
         }
       ],
-      "totalCommitContributions": 925,
+      "totalCommitContributions": 930,
       "totalPullRequestContributions": 3,
       "totalIssueContributions": 66,
       "totalPullRequestReviewContributions": 0,
       "contributionCalendar": {
-        "totalContributions": 1375,
+        "totalContributions": 1380,
         "weeks": [
           {
             "contributionDays": [
@@ -2415,6 +2429,14 @@
               {
                 "date": "2026-09-03",
                 "contributionCount": 7
+              },
+              {
+                "date": "2026-09-04",
+                "contributionCount": 2
+              },
+              {
+                "date": "2026-09-05",
+                "contributionCount": 3
               }
             ]
           }
@@ -2422,94 +2444,498 @@
       }
     }
   },
-  "events": [
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/Edward-H26.github.io"
+  "codeStats": {
+    "OnePromptClaudeCode": [
+      {
+        "w": 1774137600,
+        "a": 524560,
+        "d": 94018,
+        "c": 8
       },
-      "created_at": "2026-09-02T15:12:23Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/PersonalWebsite"
+      {
+        "w": 1774742400,
+        "a": 42341,
+        "d": 4966,
+        "c": 5
       },
-      "created_at": "2026-09-02T02:30:32Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/Edward-H26"
+      {
+        "w": 1775347200,
+        "a": 3451,
+        "d": 81871,
+        "c": 4
       },
-      "created_at": "2026-09-02T05:16:45Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/Edward-H26.github.io"
+      {
+        "w": 1775952000,
+        "a": 1430,
+        "d": 144832,
+        "c": 3
       },
-      "created_at": "2026-09-02T05:16:18Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/PersonalWebsite"
+      {
+        "w": 1777161600,
+        "a": 1672,
+        "d": 113,
+        "c": 1
       },
-      "created_at": "2026-09-02T04:36:39Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/Edward-H26.github.io"
+      {
+        "w": 1780790400,
+        "a": 2429,
+        "d": 218676,
+        "c": 1
       },
-      "created_at": "2026-09-02T02:28:06Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/Edward-H26"
+      {
+        "w": 1781395200,
+        "a": 339790,
+        "d": 3352,
+        "c": 1
       },
-      "created_at": "2026-09-02T02:27:11Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/OnePromptClaudeCode"
+      {
+        "w": 1782604800,
+        "a": 2714,
+        "d": 17204,
+        "c": 1
       },
-      "created_at": "2026-08-28T09:08:51Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/OnePromptClaudeCode"
+      {
+        "w": 1785024000,
+        "a": 15,
+        "d": 15,
+        "c": 1
       },
-      "created_at": "2026-08-21T12:06:04Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/OnePromptClaudeCode"
+      {
+        "w": 1786233600,
+        "a": 107,
+        "d": 168,
+        "c": 1
       },
-      "created_at": "2026-08-20T00:11:12Z",
-      "payload": {}
-    },
-    {
-      "type": "PushEvent",
-      "repo": {
-        "name": "Edward-H26/OnePromptClaudeCode"
+      {
+        "w": 1786838400,
+        "a": 72,
+        "d": 308,
+        "c": 2
       },
-      "created_at": "2026-08-10T00:56:11Z",
-      "payload": {}
-    }
-  ]
+      {
+        "w": 1787443200,
+        "a": 41773,
+        "d": 76,
+        "c": 1
+      }
+    ],
+    "AttentionBasedCompression": [
+      {
+        "w": 1777161600,
+        "a": 3602,
+        "d": 0,
+        "c": 1
+      },
+      {
+        "w": 1778371200,
+        "a": 1083642,
+        "d": 465,
+        "c": 1
+      }
+    ],
+    "CUTIEE": [
+      {
+        "w": 1775952000,
+        "a": 13887,
+        "d": 469,
+        "c": 2
+      },
+      {
+        "w": 1776556800,
+        "a": 33153,
+        "d": 16779,
+        "c": 12
+      },
+      {
+        "w": 1777161600,
+        "a": 11477,
+        "d": 2906,
+        "c": 2
+      },
+      {
+        "w": 1777766400,
+        "a": 6565,
+        "d": 970,
+        "c": 13
+      }
+    ],
+    "LongTermMemoryBased-ACE": [
+      {
+        "w": 1770508800,
+        "a": 303652,
+        "d": 8852,
+        "c": 8
+      },
+      {
+        "w": 1771113600,
+        "a": 4808,
+        "d": 17,
+        "c": 1
+      }
+    ],
+    "ResearchGit": [
+      {
+        "w": 1777161600,
+        "a": 9914,
+        "d": 4,
+        "c": 2
+      },
+      {
+        "w": 1777766400,
+        "a": 99734,
+        "d": 51324,
+        "c": 4
+      }
+    ],
+    "HSLS-PISA-Interactive-Visualization": [
+      {
+        "w": 1759017600,
+        "a": 10,
+        "d": 0,
+        "c": 1
+      },
+      {
+        "w": 1760227200,
+        "a": 828303,
+        "d": 70,
+        "c": 3
+      },
+      {
+        "w": 1762041600,
+        "a": 9427,
+        "d": 28,
+        "c": 3
+      },
+      {
+        "w": 1762646400,
+        "a": 1343837,
+        "d": 2070,
+        "c": 9
+      },
+      {
+        "w": 1763856000,
+        "a": 15488,
+        "d": 17609,
+        "c": 5
+      },
+      {
+        "w": 1764460800,
+        "a": 732905,
+        "d": 7770,
+        "c": 3
+      },
+      {
+        "w": 1765065600,
+        "a": 15632679,
+        "d": 14276630,
+        "c": 39
+      },
+      {
+        "w": 1773532800,
+        "a": 71112,
+        "d": 1277742,
+        "c": 4
+      },
+      {
+        "w": 1774137600,
+        "a": 67298,
+        "d": 182,
+        "c": 13
+      }
+    ],
+    "MIRA": [
+      {
+        "w": 1769299200,
+        "a": 762,
+        "d": 392,
+        "c": 4
+      },
+      {
+        "w": 1769904000,
+        "a": 7553,
+        "d": 1169,
+        "c": 15
+      },
+      {
+        "w": 1770508800,
+        "a": 1597,
+        "d": 247,
+        "c": 5
+      },
+      {
+        "w": 1771113600,
+        "a": 20,
+        "d": 9,
+        "c": 1
+      },
+      {
+        "w": 1771718400,
+        "a": 905,
+        "d": 129,
+        "c": 8
+      },
+      {
+        "w": 1772323200,
+        "a": 24017,
+        "d": 9156,
+        "c": 13
+      },
+      {
+        "w": 1772928000,
+        "a": 4129,
+        "d": 13,
+        "c": 1
+      },
+      {
+        "w": 1773532800,
+        "a": 3789,
+        "d": 325,
+        "c": 2
+      },
+      {
+        "w": 1774137600,
+        "a": 41667,
+        "d": 20307,
+        "c": 7
+      },
+      {
+        "w": 1774742400,
+        "a": 13270,
+        "d": 267,
+        "c": 4
+      },
+      {
+        "w": 1775347200,
+        "a": 17676,
+        "d": 10136,
+        "c": 14
+      },
+      {
+        "w": 1775952000,
+        "a": 22313,
+        "d": 7591,
+        "c": 20
+      },
+      {
+        "w": 1776556800,
+        "a": 2751,
+        "d": 899,
+        "c": 3
+      },
+      {
+        "w": 1777161600,
+        "a": 36,
+        "d": 11,
+        "c": 1
+      }
+    ],
+    "Edward-H26": [
+      {
+        "w": 1768694400,
+        "a": 862,
+        "d": 373,
+        "c": 5
+      },
+      {
+        "w": 1769299200,
+        "a": 1073,
+        "d": 1086,
+        "c": 25
+      },
+      {
+        "w": 1769904000,
+        "a": 149,
+        "d": 129,
+        "c": 3
+      },
+      {
+        "w": 1774137600,
+        "a": 7,
+        "d": 4,
+        "c": 2
+      },
+      {
+        "w": 1778976000,
+        "a": 199,
+        "d": 278,
+        "c": 3
+      },
+      {
+        "w": 1779580800,
+        "a": 30,
+        "d": 40,
+        "c": 3
+      },
+      {
+        "w": 1783814400,
+        "a": 5,
+        "d": 5,
+        "c": 1
+      },
+      {
+        "w": 1788048000,
+        "a": 8255,
+        "d": 1863,
+        "c": 8
+      }
+    ],
+    "Edward-H26.github.io": [
+      {
+        "w": 1768089600,
+        "a": 6779,
+        "d": 417,
+        "c": 9
+      },
+      {
+        "w": 1768694400,
+        "a": 4309,
+        "d": 1207,
+        "c": 37
+      },
+      {
+        "w": 1774137600,
+        "a": 636,
+        "d": 29,
+        "c": 4
+      },
+      {
+        "w": 1774742400,
+        "a": 133,
+        "d": 216,
+        "c": 17
+      },
+      {
+        "w": 1778976000,
+        "a": 918,
+        "d": 3298,
+        "c": 7
+      },
+      {
+        "w": 1779580800,
+        "a": 4,
+        "d": 4,
+        "c": 2
+      },
+      {
+        "w": 1783814400,
+        "a": 56,
+        "d": 3,
+        "c": 1
+      },
+      {
+        "w": 1788048000,
+        "a": 2258,
+        "d": 1138,
+        "c": 6
+      }
+    ],
+    "PersonalWebsite": [
+      {
+        "w": 1768089600,
+        "a": 21682,
+        "d": 298,
+        "c": 15
+      },
+      {
+        "w": 1768694400,
+        "a": 1252,
+        "d": 905,
+        "c": 25
+      },
+      {
+        "w": 1769299200,
+        "a": 36,
+        "d": 15,
+        "c": 1
+      },
+      {
+        "w": 1774137600,
+        "a": 7,
+        "d": 5,
+        "c": 2
+      },
+      {
+        "w": 1779580800,
+        "a": 1216,
+        "d": 2394,
+        "c": 3
+      },
+      {
+        "w": 1783814400,
+        "a": 22,
+        "d": 4,
+        "c": 1
+      },
+      {
+        "w": 1788048000,
+        "a": 7106,
+        "d": 6847,
+        "c": 6
+      }
+    ],
+    "Machine-Learning-Research": [
+      {
+        "w": 1747526400,
+        "a": 97387,
+        "d": 0,
+        "c": 2
+      }
+    ],
+    "Anime-Culture-And-Its-Influence": [
+      {
+        "w": 1747526400,
+        "a": 6705,
+        "d": 3,
+        "c": 3
+      }
+    ],
+    "Anime-Statistics-and-Analysis-Platform-ASAP": [
+      {
+        "w": 1747526400,
+        "a": 7931,
+        "d": 2,
+        "c": 2
+      }
+    ],
+    "Kyoto-Restaurants-Explorer": [
+      {
+        "w": 1747526400,
+        "a": 1305,
+        "d": 1,
+        "c": 3
+      }
+    ],
+    "Realistic-Neural-Style-Transfer-Architecture": [
+      {
+        "w": 1744502400,
+        "a": 27,
+        "d": 0,
+        "c": 2
+      },
+      {
+        "w": 1745107200,
+        "a": 2,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1745712000,
+        "a": 2,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1746316800,
+        "a": 665,
+        "d": 7,
+        "c": 7
+      },
+      {
+        "w": 1746921600,
+        "a": 0,
+        "d": 0,
+        "c": 1
+      }
+    ]
+  }
 }

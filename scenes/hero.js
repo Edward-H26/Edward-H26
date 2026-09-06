@@ -1,7 +1,7 @@
 // Hero: the island at dusk (or in golden-hour daylight), seen across a reflecting sea, with the
 // profile text typed over it. Loop: 12 s.
 import * as THREE from "three"
-import { createIsland } from "./lib/island.js"
+import { createIsland, islandHeight } from "./lib/island.js"
 import { wave } from "./lib/periodic.js"
 import { createSea } from "./lib/sea.js"
 import { createDaySky, createNightSky } from "./lib/sky.js"
@@ -14,8 +14,6 @@ const loop = Number(params.get("loop") ?? 12)
 
 const root = document.documentElement.style
 root.setProperty("--text", PALETTE.text)
-root.setProperty("--muted", dark ? "#c9d4e6" : PALETTE.muted)
-root.setProperty("--faint", PALETTE.faint)
 root.setProperty("--accent", PALETTE.accent)
 root.setProperty("--accent2", PALETTE.accent2)
 root.setProperty("--name", dark ? "linear-gradient(180deg, #ffffff, #c7d3ea)" : "linear-gradient(180deg, #13294B, #2b4f86)")
@@ -32,16 +30,12 @@ const stage = createStage({
   width,
   height,
   loop,
-  fov: 34,
+  fov: 50,
   bloom: dark ? { strength: 0.5, radius: 0.6, threshold: 1 } : { strength: 0.22, radius: 0.6, threshold: 1.1 },
   ao: { radius: 0.6, scale: 1, intensity: dark ? 0.5 : 0.6 },
   exposure: dark ? 1.2 : 1
 })
 const { scene, camera } = stage
-const eye = new THREE.Vector3(0, 5.6, 27)
-const target = new THREE.Vector3(12, 3, -6)
-camera.position.copy(eye)
-camera.lookAt(target)
 
 const islandPosition = new THREE.Vector3(23, 0, -7)
 const lightDirection = dark ? new THREE.Vector3(-0.1, 0.21, -0.97) : new THREE.Vector3(-0.55, 0.7, -0.45)
@@ -57,7 +51,7 @@ const sea = createSea({
   sunColor: sky.sunColor,
   sunPower: dark ? 420 : 380,
   sunStrength: dark ? 0.55 : 0.9,
-  reflectivity: dark ? 1 : 0.75,
+  reflectivity: dark ? 0.55 : 0.75,
   fogNear: 150,
   fogFar: 420,
   island: new THREE.Vector4(islandPosition.x, islandPosition.z, 16, 13)
@@ -65,6 +59,32 @@ const sea = createSea({
 if (!hidden.has("sea")) scene.add(sea)
 const island = hidden.has("island") ? { userData: { update() {} } } : await createIsland({ dark, position: islandPosition })
 if (!hidden.has("island")) scene.add(island)
+
+// First-person walk at 1.7 m eye height, one closed circuit per cycle: east along the cobbled
+// road through the village to the lighthouse, then back west along the harbour side. Each
+// waypoint pairs where the feet are with what the eyes are on (x, z, height above ground), and
+// both curves are sampled at the same curve parameter, so the head turns towards the houses,
+// the well, the lighthouse lamp, the harbour and the mill as they come by.
+const waypoints = [
+  { at: [-11.2, 2.8], look: [-4, 1, 1.4] },
+  { at: [-8.5, 1.2], look: [-4, 4.6, 1.5] },
+  { at: [-4.5, 0.8], look: [1.5, -2.2, 1] },
+  { at: [-0.5, 1], look: [8, 0.5, 2.2] },
+  { at: [3.8, 0.4], look: [12.4, -4.2, 4.5] },
+  { at: [7.6, -1.2], look: [12.4, -4.2, 6.5] },
+  { at: [11, 0], look: [16, 1, 0.5] },
+  { at: [11.2, 4.4], look: [6, 9, 0.8] },
+  { at: [9.2, 7.8], look: [-4, 13, 0.4] },
+  { at: [3.6, 8.4], look: [-2, 5.4, 1.2] },
+  { at: [-1.5, 9.4], look: [-5, 5, 1.8] },
+  { at: [-6.4, 8], look: [-10.2, -3.6, 4] },
+  { at: [-11.2, 6], look: [-14, 0, 1.2] }
+]
+const onIsland = (x, z, lift) => new THREE.Vector3(islandPosition.x + x, Math.max(islandHeight(x, z), 0) + lift, islandPosition.z + z)
+const walk = new THREE.CatmullRomCurve3(waypoints.map(({ at: [x, z] }) => onIsland(x, z, 1.7)), true, "catmullrom", 0.5)
+const look = new THREE.CatmullRomCurve3(waypoints.map(({ look: [x, z, lift] }) => onIsland(x, z, lift)), true, "catmullrom", 0.5)
+const eye = new THREE.Vector3()
+const target = new THREE.Vector3()
 
 // Typing: each tagline is typed, held, erased, inside its slot of the loop.
 const taglines = PROFILE.taglines
@@ -88,14 +108,15 @@ function typing(t) {
 document.querySelector(".name").textContent = PROFILE.name
 document.querySelector(".name").dataset.text = PROFILE.name
 document.querySelector(".role").textContent = PROFILE.role
-document.querySelector(".aff-1").textContent = PROFILE.affiliations[0]
-document.querySelector(".aff-2").textContent = PROFILE.affiliations[1]
 
 stage.onFrame(({ phase, t }) => {
   sea.material.uniforms.phase.value = phase
   sky.update(phase)
   island.userData.update(phase)
-  camera.position.set(eye.x + 0.9 * wave(phase, 1), eye.y + 0.25 * wave(phase, 1, 0.25), eye.z + 0.5 * wave(phase, 1, 0.5))
+  walk.getPointAt(phase, eye)
+  look.getPoint(walk.getUtoTmapping(phase), target)
+  eye.y += 0.04 * wave(phase, loop * 2)
+  camera.position.copy(eye)
   camera.lookAt(target)
   typing(t % loop)
   caret.style.opacity = wave(phase, 13) > -0.2 ? "1" : "0"

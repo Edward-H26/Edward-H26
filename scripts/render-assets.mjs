@@ -7,7 +7,8 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { PROFILE } from "./profile-data.mjs"
 import { fetchGithub, summarize } from "./github-stats.mjs"
-import { renderActivity, renderConstellation, renderMilestones, renderStats } from "./render-dynamic.mjs"
+import { renderReadme } from "./readme.mjs"
+import { renderCode, renderMilestones, renderStats } from "./render-dynamic.mjs"
 import { SINGLE_ASSETS, STATIC_ASSETS } from "./render-static.mjs"
 import { THEMES } from "./svg.mjs"
 
@@ -28,8 +29,7 @@ export function renderDynamicAssets(stats) {
   for (const theme of Object.values(THEMES)) {
     files[`stats-${theme.name}.svg`] = renderStats(stats, theme)
     files[`milestones-${theme.name}.svg`] = renderMilestones(stats, theme)
-    files[`constellation-${theme.name}.svg`] = renderConstellation(stats, theme)
-    files[`activity-${theme.name}.svg`] = renderActivity(stats, theme)
+    files[`code-${theme.name}.svg`] = renderCode(stats, theme)
   }
   return files
 }
@@ -45,6 +45,9 @@ function writeAll(dir, files) {
 async function main(args) {
   if (!args.includes("--dynamic")) {
     writeAll(path.join(ROOT, "assets"), renderStaticAssets())
+    const readme = path.join(ROOT, "README.md")
+    writeFileSync(readme, renderReadme(readFileSync(readme, "utf8")))
+    console.log("README blocks regenerated")
     return
   }
   let data

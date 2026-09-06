@@ -3,10 +3,11 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs"
 import path from "node:path"
 import { describe, it } from "node:test"
 import { fileURLToPath } from "node:url"
-import { commitsByRepository, computeStreaks, publicRepositories, relativeTime, slimEvent, summarize, summarizeEvents, topLanguages } from "./github-stats.mjs"
+import { codeSummary, commitsByRepository, computeStreaks, summarize, topLanguages } from "./github-stats.mjs"
 import { LINKS, PAPERS, PAPER_BUTTONS, PROFILE, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
 import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
-import { MAX_BUBBLE_RADIUS, bubbleHalfHeight, bubbleHalfWidth, layoutBubbles, milestones } from "./render-dynamic.mjs"
+import { renderReadme } from "./readme.mjs"
+import { milestones } from "./render-dynamic.mjs"
 import { THEMES, escapeXml, rng } from "./svg.mjs"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
@@ -49,7 +50,7 @@ describe("static assets", () => {
   const files = renderStaticAssets()
 
   it("renders every card in both themes as self-contained, well-formed SVG", () => {
-    assert.equal(Object.keys(files).length, (2 + LINKS.length + PAPER_BUTTONS.length) * 2 + PAPERS.filter((paper) => paper.thumbnail).length)
+    assert.equal(Object.keys(files).length, (1 + LINKS.length + PAPER_BUTTONS.length) * 2 + PAPERS.filter((paper) => paper.thumbnail).length)
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -62,21 +63,22 @@ describe("static assets", () => {
     for (const link of LINKS) {
       const svg = files[`link-${link.id}-dark.svg`]
       assert.ok(svg.includes(escapeXml(link.label)), link.id)
-      assert.ok(svg.includes(`viewBox="0 0 ${link.width} 60"`))
+      assert.ok(svg.includes('viewBox="0 0 64 64"'))
     }
   })
 
 
 
 
-  it("links every button to the address in the profile data", () => {
+  it("links every icon to the address in the profile data and keeps the README blocks in sync", () => {
     const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
     for (const link of LINKS) {
-      const anchor = new RegExp(`<a href="([^"]+)"><picture><source[^>]*srcset="assets/link-${link.id}-dark.svg"`)
+      const anchor = new RegExp(`<a href="([^"]+)" title="[^"]*"><picture><source[^>]*srcset="assets/link-${link.id}-dark.svg"`)
       const match = readme.match(anchor)
-      assert.ok(match, `README has no button for ${link.id}`)
+      assert.ok(match, `README has no icon for ${link.id}`)
       assert.equal(match[1].replace(/&amp;/g, "&"), link.url)
     }
+    assert.equal(renderReadme(readme), readme, "README blocks are stale (run: npm run render)")
   })
 
   it("lists every paper with its thumbnail, authors, and buttons in the README", () => {
@@ -106,7 +108,7 @@ describe("static assets", () => {
 
   it("references the three rendered 3D loops in both themes, each committed and within budget", () => {
     const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
-    for (const scene of ["hero", "planet", "paper"]) {
+    for (const scene of ["hero", "planet"]) {
       for (const theme of ["dark", "light"]) {
         const file = `assets/scenes/${scene}-${theme}.webp`
         assert.ok(readme.includes(file), `README lacks ${file}`)
@@ -147,29 +149,9 @@ describe("github stats", () => {
     assert.deepEqual(topLanguages([]), [])
   })
 
-  it("describes public events in plain words with relative times", () => {
-    const events = [
-      { type: "PushEvent", repo: { name: "Edward-H26/PersonalWebsite" }, created_at: "2026-09-02T11:30:00Z", payload: {} },
-      { type: "WatchEvent", repo: { name: "Platane/snk" }, created_at: "2026-09-01T12:00:00Z", payload: { action: "started" } },
-      { type: "UnknownEvent", repo: { name: "x/y" }, created_at: "2026-09-01T12:00:00Z", payload: {} },
-      { type: "PullRequestEvent", repo: { name: "a/b" }, created_at: "2026-08-20T12:00:00Z", payload: { action: "closed", pull_request: { merged: true } } }
-    ]
-    assert.deepEqual(summarizeEvents(events, FIXED_NOW), [
-      { type: "PushEvent", text: "Pushed to", repo: "Edward-H26/PersonalWebsite", when: "30 min ago" },
-      { type: "WatchEvent", text: "Starred", repo: "Platane/snk", when: "1 d ago" },
-      { type: "PullRequestEvent", text: "Merged a pull request in", repo: "a/b", when: "13 d ago" }
-    ])
-    assert.equal(relativeTime("2026-03-02T12:00:00Z", FIXED_NOW), "6 mo ago")
-  })
 
-  it("keeps only the event fields the cards use", () => {
-    const slim = slimEvent({ type: "PushEvent", repo: { name: "a/b" }, created_at: "2026-09-02T00:00:00Z", payload: { size: 2, commits: [{ message: "secret", author: { email: "x@y" } }] } })
-    assert.deepEqual(slim, { type: "PushEvent", repo: { name: "a/b" }, created_at: "2026-09-02T00:00:00Z", payload: { size: 2 } })
-    assert.ok(!JSON.stringify(fixture.events).includes('"email"'))
-    assert.ok(!JSON.stringify(fixture.events).includes('"message"'))
-  })
 
-  it("ranks repositories by commits and by stars", () => {
+  it("ranks repositories by commits", () => {
     const byCommits = commitsByRepository({ commitContributionsByRepository: [
       { repository: { name: "b", primaryLanguage: { name: "Python", color: "#3572A5" } }, contributions: { totalCount: 5 } },
       { repository: { name: "a", primaryLanguage: null }, contributions: { totalCount: 5 } },
@@ -177,21 +159,34 @@ describe("github stats", () => {
     ] })
     assert.deepEqual(byCommits, [{ name: "a", commits: 5, color: "#8b949e" }, { name: "b", commits: 5, color: "#3572A5" }])
     assert.deepEqual(commitsByRepository({}), [])
-    const repos = publicRepositories([
-      { name: "fork", isFork: true, stargazerCount: 99, forkCount: 0 },
-      { name: "z", isFork: false, stargazerCount: 2, forkCount: 1, primaryLanguage: { name: "Go", color: "bad" } },
-      { name: "a", isFork: false, stargazerCount: 2, forkCount: 1, primaryLanguage: { name: "TypeScript", color: "#3178c6" } }
-    ])
-    assert.deepEqual(repos.map((repo) => `${repo.name}:${repo.language}:${repo.color}`), ["a:TypeScript:#3178c6", "z:Go:#8b949e"])
+  })
+
+  it("sums lines of code per week and per repository over the past year", () => {
+    const now = new Date("2026-09-02T12:00:00Z")
+    const sunday = Date.UTC(2026, 7, 30) / 1000
+    const week = 7 * 86400
+    const stats = {
+      app: [{ w: sunday, a: 120, d: 30, c: 2 }, { w: sunday - week, a: 10, d: 5, c: 1 }, { w: sunday - 60 * week, a: 999, d: 999, c: 9 }],
+      lib: [{ w: sunday - week, a: 40, d: 0, c: 1 }],
+      quiet: []
+    }
+    const nodes = [{ name: "app", primaryLanguage: { color: "#3178c6" } }, { name: "lib", primaryLanguage: null }]
+    const code = codeSummary(stats, nodes, now)
+    assert.deepEqual({ added: code.added, deleted: code.deleted, commits: code.commits }, { added: 170, deleted: 35, commits: 4 })
+    assert.equal(code.weeks.length, 52)
+    assert.deepEqual(code.weeks.at(-1), { week: sunday, added: 120, deleted: 30, commits: 2 })
+    assert.deepEqual(code.weeks.at(-2), { week: sunday - week, added: 50, deleted: 5, commits: 2 })
+    assert.deepEqual(code.byRepo.map((repo) => `${repo.name}:${repo.added}:${repo.color}`), ["app:130:#3178c6", "lib:40:#8b949e"])
+    assert.deepEqual(codeSummary({}, [], now).byRepo, [])
   })
 
   it("summarizes the recorded fixture into card numbers", () => {
     const stats = summarize(fixture, CAPTURED_AT)
     assert.equal(stats.login, PROFILE.handle)
     assert.ok(stats.total > 0 && stats.commits > 0 && stats.repos > 0)
-    assert.ok(stats.repositoriesByCommits.length > 0 && stats.repositories.length > 0)
+    assert.ok(stats.repositoriesByCommits.length > 0 && stats.code.byRepo.length > 0)
     assert.ok(stats.languages.length >= 3 && stats.languages.length <= 6)
-    assert.ok(stats.activity.length > 0)
+    assert.equal(stats.code.weeks.length, 52)
     assert.equal(stats.updated, fixture.capturedAt.slice(0, 10))
   })
 })
@@ -200,8 +195,8 @@ describe("dynamic assets", () => {
   const stats = summarize(fixture, CAPTURED_AT)
   const files = renderDynamicAssets(stats)
 
-  it("renders the four live cards for both themes", () => {
-    assert.deepEqual(Object.keys(files).sort(), ["activity-dark.svg", "activity-light.svg", "constellation-dark.svg", "constellation-light.svg", "milestones-dark.svg", "milestones-light.svg", "stats-dark.svg", "stats-light.svg"])
+  it("renders the three live cards for both themes", () => {
+    assert.deepEqual(Object.keys(files).sort(), ["code-dark.svg", "code-light.svg", "milestones-dark.svg", "milestones-light.svg", "stats-dark.svg", "stats-light.svg"])
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -209,70 +204,41 @@ describe("dynamic assets", () => {
     assert.ok(files["stats-dark.svg"].includes(`@${PROFILE.handle}`))
     assert.ok(files["stats-dark.svg"].includes(stats.languages[0].name))
     assert.ok(files["stats-dark.svg"].includes(escapeXml(stats.repositoriesByCommits[0].name.slice(0, 20))))
-    for (const repo of stats.repositories) assert.ok(files["constellation-light.svg"].includes(escapeXml(repo.name.slice(0, 20))), repo.name)
-    for (const item of stats.activity) assert.ok(files["activity-light.svg"].includes(escapeXml(item.repo)))
+    for (const repo of stats.code.byRepo) assert.ok(files["code-light.svg"].includes(escapeXml(repo.name.slice(0, 20))), repo.name)
   })
 
-  it("escapes repository names and copes with an empty activity feed", () => {
-    const hostile = { ...stats, activity: [{ type: "PushEvent", text: "Pushed 1 commit to", repo: 'evil/<script>"x"', when: "1 h ago" }] }
-    const svg = renderDynamicAssets(hostile)["activity-dark.svg"]
-    assertWellFormed(svg, "hostile activity")
+  it("escapes repository names in the code card and copes with no code at all", () => {
+    const hostile = { ...stats, code: { ...stats.code, byRepo: [{ name: 'evil/<script>"x"', added: 5, deleted: 1, commits: 1, color: "#3572A5" }] } }
+    const svg = renderDynamicAssets(hostile)["code-dark.svg"]
+    assertWellFormed(svg, "hostile code card")
     assert.ok(svg.includes("evil/&lt;script&gt;&quot;x&quot;"))
-    const empty = renderDynamicAssets({ ...stats, activity: [] })["activity-dark.svg"]
-    assertWellFormed(empty, "empty activity")
-    assert.ok(empty.includes("No public activity"))
+    const idle = renderDynamicAssets({ ...stats, code: codeSummary({}, [], CAPTURED_AT) })["code-dark.svg"]
+    assertWellFormed(idle, "idle code card")
+    assert.ok(idle.includes("No code pushed"))
   })
+
 
   it("keeps bars inside their tracks and copes with an empty repository list", () => {
     const svg = renderDynamicAssets({ ...stats, languages: [{ name: "Python", color: "#3572A5", share: 100 }], repositoriesByCommits: [{ name: "only", commits: 7, color: "#3572A5" }] })["stats-light.svg"]
     assert.deepEqual([...svg.matchAll(/to="([\d.]+)" begin="0\.3s"/g)].map((m) => Number(m[1])), [280])
     assert.ok(svg.includes('<rect width="540" height="12" fill="#3572A5"/>'))
-    const empty = renderDynamicAssets({ ...stats, repositories: [], repositoriesByCommits: [] })
-    assertWellFormed(empty["constellation-dark.svg"], "empty constellation")
+    const empty = renderDynamicAssets({ ...stats, repositoriesByCommits: [] })
     assertWellFormed(empty["stats-dark.svg"], "empty stats")
   })
 
-  it("unlocks milestones from live numbers and keeps the static ones", () => {
+  it("unlocks milestones from live numbers only", () => {
     const items = milestones(stats)
     assert.equal(items.length, 7)
     assert.ok(items.every((item) => item.label && item.detail))
-    const quiet = milestones({ ...stats, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python" }] })
-    assert.deepEqual(quiet.map((item) => item.unlocked), [true, true, false, false, false, false, false])
+    const quiet = milestones({ ...stats, followers: 2, pullRequests: 1, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python" }] })
+    assert.deepEqual(quiet.map((item) => item.unlocked), [false, false, false, false, false, false, false])
     const busy = milestones({ ...stats, stars: 300, total: 6000, streak: { current: 1, longest: 99 }, repos: 45, languages: stats.languages })
     assert.deepEqual(busy.slice(2, 6).map((item) => item.label), ["5,000+ contributions", "60-day streak", "40+ repositories", "250+ stars"])
-    const svg = renderDynamicAssets({ ...stats, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python", color: "#3572A5", share: 100 }] })["milestones-dark.svg"]
+    const svg = renderDynamicAssets({ ...stats, followers: 2, pullRequests: 1, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python", color: "#3572A5", share: 100 }] })["milestones-dark.svg"]
     assertWellFormed(svg, "milestones")
-    assert.ok(svg.includes("2 OF 7 UNLOCKED"))
+    assert.ok(svg.includes("0 OF 7 UNLOCKED"))
     assert.ok(svg.includes(">locked<"))
   })
 
-  it("keeps every constellation bubble inside the card", () => {
-    const svg = renderDynamicAssets(stats)["constellation-dark.svg"]
-    const height = Number(svg.match(/viewBox="0 0 1200 (\d+)"/)[1])
-    const bubbles = [...svg.matchAll(/<g transform="translate\((-?[\d.]+) (-?[\d.]+)\)" opacity="0">[\s\S]*?<circle cx="0" cy="0" r="([\d.]+)" fill="url\(#sphere-/g)]
-    assert.equal(bubbles.length, stats.repositories.length)
-    for (const match of bubbles) {
-      const [, x, y, r] = match.map(Number)
-      assert.ok(x - r > 24 && x + r < 1176, `bubble at ${x} overflows horizontally`)
-      assert.ok(y - r > 60 && y + r + 20 < height - 40, `bubble at ${y} overflows vertically`)
-    }
-  })
 
-  it("keeps constellation bubbles and their labels apart, even with a very popular repository", () => {
-    const popular = { name: "a-repository-with-a-long-name", stars: 500, forks: 40, language: "Python", color: "#3572A5" }
-    for (const repos of [stats.repositories, [popular, ...stats.repositories]]) {
-      const bubbles = layoutBubbles(repos, { random: rng(29) })
-      for (let i = 0; i < bubbles.length; i += 1) {
-        assert.ok(bubbles[i].r <= MAX_BUBBLE_RADIUS)
-        assert.ok(bubbles[i].cx - bubbleHalfWidth(bubbles[i]) >= 40 && bubbles[i].cx + bubbleHalfWidth(bubbles[i]) <= 1160, `${bubbles[i].repo.name} leaves the card`)
-        for (let j = i + 1; j < bubbles.length; j += 1) {
-          const a = bubbles[i]
-          const b = bubbles[j]
-          const boxesApart = Math.abs(b.cx - a.cx) >= bubbleHalfWidth(a) + bubbleHalfWidth(b) - 1 || Math.abs(b.cy - a.cy) >= bubbleHalfHeight(a) + bubbleHalfHeight(b) - 1
-          assert.ok(boxesApart, `${a.repo.name} and ${b.repo.name} overlap`)
-        }
-      }
-    }
-    assert.deepEqual(layoutBubbles([], { random: rng(1) }), [])
-  })
 })

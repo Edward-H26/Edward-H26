@@ -265,7 +265,7 @@ function lighthouse({ dark, stone }) {
       blendDst: THREE.OneFactor,
       blendSrcAlpha: THREE.ZeroFactor,
       blendDstAlpha: THREE.OneFactor,
-      uniforms: { strength: { value: dark ? 0.3 : 0.08 }, color: { value: new THREE.Color("#fff3c4") } },
+      uniforms: { strength: { value: dark ? 0.3 : 0 }, color: { value: new THREE.Color("#fff3c4") } },
       vertexShader: /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
       fragmentShader: /* glsl */ `
         uniform float strength; uniform vec3 color; varying vec2 vUv;
@@ -411,10 +411,10 @@ export async function createIsland({ dark, position }) {
     return object
   }
   const buildings = [
-    [models.houseA, -4.8, 3.6, 0.35, 3.9],
-    [models.houseB, 3.2, -4.2, -0.5, 3.8],
-    [models.houseC, 7.6, 2.9, 1.1, 2.6],
-    [models.mill, -9.8, -2.6, 0.7, 5.6],
+    [models.houseA, -4.8, 5, 0.35, 3.9],
+    [models.houseB, 3.6, -5.4, -0.5, 3.8],
+    [models.houseC, 8.4, -6.6, -0.4, 2.6],
+    [models.mill, -10.2, -3.6, 0.7, 5.6],
     [models.well, 0.4, -1.4, 0.2, 1.4]
   ]
   const footprints = []
@@ -422,8 +422,8 @@ export async function createIsland({ dark, position }) {
     onGround(place(model, { rotation, height }), x, z, 0.08)
     footprints.push([x, z, height * 0.9])
   }
-  onGround(place(models.cart, { rotation: 0.9, height: 1.1 }), -2.4, 4.6, 0.02)
-  footprints.push([-2.4, 4.6, 1.2])
+  onGround(place(models.cart, { rotation: 0.9, height: 1.1 }), -2, 5.4, 0.02)
+  footprints.push([-2, 5.4, 1.2])
   // Fence along the road's south side.
   for (let t = 0.12; t < 0.5; t += 0.032) {
     const p = ROAD.getPointAt(t)
@@ -432,8 +432,8 @@ export async function createIsland({ dark, position }) {
     onGround(place(models.fence, { rotation: -Math.atan2(tangent.z, tangent.x), height: 0.55 }), p.x + side.x, p.z + side.z, 0.03)
   }
 
-  const lighthouseX = 11.6
-  const lighthouseZ = -3
+  const lighthouseX = 12.4
+  const lighthouseZ = -4.2
   onGround(lighthouse({ dark, stone }), lighthouseX, lighthouseZ, 0.25)
   footprints.push([lighthouseX, lighthouseZ, 2.2])
 
@@ -441,11 +441,11 @@ export async function createIsland({ dark, position }) {
     [models.treeLarge, -8.6, 4.6, 0.4, 5.2],
     [models.tree, -1.6, -5.2, 1.8, 4.2],
     [models.tree, 5.8, 5.1, 2.6, 4.4],
-    [models.treeSmall, 9.6, -1.2, 0.2, 3.9],
+    [models.treeSmall, 9.4, -2.7, 0.2, 3.9],
     [models.treeSmall, -12.6, 0.6, 1.1, 3.6],
     [models.tree, 12.6, 2.4, 0.9, 3.5],
     [models.cypress, -6.8, -4.9, 0, 6.8],
-    [models.cypress, 1.2, 5.6, 0.5, 6.2],
+    [models.cypress, 5.4, -9.6, 0.5, 6.2],
     [models.treeLarge, 6.4, -7.2, 2.2, 4.6]
   ]
   const swaying = []
@@ -464,9 +464,9 @@ export async function createIsland({ dark, position }) {
   const rocks = [
     [models.boulder, 13.6, -6.2, 0.4, 1.3],
     [models.boulderFlat, -13.2, -3.6, 1.2, 0.9],
-    [models.boulder, 3.6, 8.2, 2.1, 1.1],
+    [models.boulder, -1, -9.8, 2.1, 1.1],
     [models.mossRocks, -4.2, -8.4, 0.3, 1.1],
-    [models.boulderFlat, 10.2, 6.8, 2.9, 0.8]
+    [models.boulderFlat, 8.6, -9, 2.9, 0.8]
   ]
   for (const [model, x, z, rotation, height] of rocks) {
     onGround(place(model, { rotation, height }), x, z, 0.2)
@@ -515,7 +515,7 @@ export async function createIsland({ dark, position }) {
   }
   if (dark) {
     for (const [x, z] of [[-4.8, 3.6], [3.2, -4.2], [7.6, 2.9]]) {
-      const warm = new THREE.PointLight("#ffb347", 14, 10, 2)
+      const warm = new THREE.PointLight("#ffb347", 7, 10, 2)
       warm.position.set(x, islandHeight(x, z) + 1.6, z)
       group.add(warm)
     }

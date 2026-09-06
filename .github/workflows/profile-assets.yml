@@ -31,7 +31,7 @@ jobs:
       - name: Test renderers
         run: npm test
 
-      - name: Render stats, milestones, constellation, and activity cards
+      - name: Render stats, milestones, and lines-of-code cards
         run: node scripts/render-assets.mjs --dynamic
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -48,10 +48,19 @@ jobs:
       - name: Collect the two calendar variants the README uses
         run: cp profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-green-animate.svg dist/ || echo "no calendar files this run"
 
+      - name: Draw the contribution snake
+        continue-on-error: true
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-light.svg?palette=github-light
+            dist/snake-dark.svg?palette=github-dark
+
       - name: Keep the previous copy of any file that was not generated
         run: |
           git fetch --depth=1 origin output || exit 0
-          for file in profile-night-rainbow.svg profile-green-animate.svg; do
+          for file in profile-night-rainbow.svg profile-green-animate.svg snake-light.svg snake-dark.svg; do
             [ -f "dist/$file" ] || git show "origin/output:$file" > "dist/$file" 2>/dev/null || rm -f "dist/$file"
           done
 
