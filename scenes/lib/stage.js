@@ -26,18 +26,15 @@ export const effectLayer = (object) => {
   return object
 }
 
-export function createStage({ width, height, loop, page = { width, height }, fov = 35, near = 0.1, far = 600, bloom = { strength: 0.55, radius: 0.6, threshold: 0.92 }, ao = null, exposure = 1, alpha = false }) {
+export function createStage({ width, height, loop, fov = 35, near = 0.1, far = 600, bloom = { strength: 0.55, radius: 0.6, threshold: 0.92 }, ao = null, exposure = 1 }) {
   // GSAP normally advances on requestAnimationFrame; the capture script sets the time instead.
   gsap.ticker.remove(gsap.updateRoot)
-  document.documentElement.style.setProperty("--w", `${page.width}px`)
-  document.documentElement.style.setProperty("--h", `${page.height}px`)
-  document.documentElement.style.setProperty("--cw", `${width}px`)
-  document.documentElement.style.setProperty("--ch", `${height}px`)
+  document.documentElement.style.setProperty("--w", `${width}px`)
+  document.documentElement.style.setProperty("--h", `${height}px`)
   // The HTML overlay is authored for the design width; `scale` shrinks it with the output.
   document.documentElement.style.setProperty("--scale", params.get("scale") ?? "1")
   const canvas = document.getElementById("stage")
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha, preserveDrawingBuffer: true, powerPreference: "high-performance" })
-  if (alpha) renderer.setClearColor(0x000000, 0)
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true, powerPreference: "high-performance" })
   renderer.setPixelRatio(SUPERSAMPLE)
   renderer.setSize(width, height)
   renderer.outputColorSpace = THREE.SRGBColorSpace

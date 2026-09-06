@@ -1,11 +1,11 @@
-// Hand-designed, animated SVG cards for the profile README: the skills marquee, the footer, the
-// link and paper buttons, and the paper thumbnails. Everything is plain SVG with SMIL animation, so
+// Hand-designed, animated SVG cards for the profile README: the skills marquee, the link icons,
+// the paper buttons, and the paper thumbnails. Everything is plain SVG with SMIL animation, so
 // GitHub's image proxy can serve it. The hero, planet, and featured paper are three.js loops rendered
 // by scenes/render.mjs into assets/scenes/.
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
-import { faceGradient, glassBody, glassDefs, keycap } from "./materials.mjs"
+import { faceGradient, keycap } from "./materials.mjs"
 import { LINKS, PAPERS, PAPER_BUTTONS, SKILL_COLORS, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
 import { THEMES, chip, escapeXml, linearGradient, mix, round, shade, svgDocument, textWidth } from "./svg.mjs"
 
@@ -37,7 +37,6 @@ export function renderSkillsMarquee(theme) {
 }
 
 const LINK_ICONS = {
-  spark: `<path d="M0,-9 L2.4,-2.4 L9,0 L2.4,2.4 L0,9 L-2.4,2.4 L-9,0 L-2.4,-2.4 Z" fill="currentColor"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="9s" repeatCount="indefinite"/></path>`,
   globe: `<circle r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><ellipse rx="3.5" ry="8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M-8,0 H8 M-6.5,-4.5 H6.5 M-6.5,4.5 H6.5" stroke="currentColor" stroke-width="1.2"/>`,
   cap: `<path d="M-9,-2 L0,-6.5 L9,-2 L0,2.5 Z" fill="currentColor"/><path d="M-5,0 V4 Q0,7.5 5,4 V0" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8,-1.5 V4" stroke="currentColor" stroke-width="1.6"/>`,
   in: `<rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M-4.5,-1 V5 M-4.5,-4.2 V-4 M0,5 V-1 M0,1.5 Q1.5,-1.5 4.5,0.5 V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`,
@@ -45,32 +44,21 @@ const LINK_ICONS = {
   mail: `<rect x="-9" y="-6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M-9,-5 L0,1.5 L9,-5" fill="none" stroke="currentColor" stroke-width="1.8"/>`
 }
 
-// One glass pill per link, with the icon on a small glass disc; the README wraps each image in an
-// anchor. A light sweep crosses the glass every few seconds.
-export function renderLinkButton(theme, link) {
-  const height = 60
-  const width = link.width
+// A round icon button like the website's sidebar: a warm disc with a line icon and a slow sheen.
+export function renderLinkIcon(theme, link) {
+  const size = 64
   const dark = theme.name === "dark"
-  const accent = link.id === "collab" ? theme.accent : theme.accent2
-  const ink = link.id === "collab" ? theme.accent : theme.text
   const id = `link-${link.id}`
-  const glass = glassBody(id, { x: 3, y: 4, width: width - 6, height: 48, radius: 24, dark })
-  const shimmer = `<g clip-path="url(#${id}-shape)"><rect x="-120" y="0" width="90" height="${height}" fill="url(#${id}-shine)" transform="skewX(-22)"><animate attributeName="x" from="-120" to="${width + 100}" dur="${round(4 + width / 120)}s" repeatCount="indefinite"/></rect></g>`
   const body = [
-    glass.svg,
-    shimmer,
-    `<circle cx="30" cy="28" r="15" fill="#ffffff" fill-opacity="${dark ? 0.16 : 0.7}" stroke="url(#${id}-rim)" stroke-width="1"/>`,
-    `<g transform="translate(30 28)" style="color:${accent}">${LINK_ICONS[link.icon]}</g>`,
-    `<text x="54" y="34" font-size="15" font-weight="700" fill="${dark ? "#000000" : "#ffffff"}" opacity="${dark ? 0.35 : 0.8}">${escapeXml(link.label)}</text>`,
-    `<text x="54" y="33" font-size="15" font-weight="700" fill="${ink}">${escapeXml(link.label)}</text>`,
-    `<path d="M${width - 30},23 l5,5 -5,5" fill="none" stroke="${accent}" stroke-width="2" stroke-linecap="round"><animateTransform attributeName="transform" type="translate" values="0 0;3 0;0 0" dur="1.6s" repeatCount="indefinite"/></path>`
+    `<circle cx="32" cy="32" r="30" fill="${dark ? "#f7e3c9" : "#fdefd9"}"/>`,
+    `<g clip-path="url(#${id}-clip)"><rect x="-70" y="0" width="34" height="${size}" fill="url(#${id}-shine)" transform="skewX(-22)"><animate attributeName="x" from="-70" to="110" dur="7s" begin="${LINKS.indexOf(link) * 0.6}s" repeatCount="indefinite"/></rect></g>`,
+    `<g transform="translate(32 32) scale(1.55)" style="color:#3d4a5c">${LINK_ICONS[link.icon]}</g>`
   ].join("")
   const defs = [
-    glassDefs(id, { dark, tint: accent }),
-    glass.defs,
-    linearGradient(`${id}-shine`, [["0", "#ffffff", 0], ["0.5", "#ffffff", dark ? 0.22 : 0.7], ["1", "#ffffff", 0]])
+    `<clipPath id="${id}-clip"><circle cx="32" cy="32" r="30"/></clipPath>`,
+    linearGradient(`${id}-shine`, [["0", "#ffffff", 0], ["0.5", "#ffffff", 0.7], ["1", "#ffffff", 0]])
   ].join("")
-  return svgDocument({ id, width, height, title: link.label, theme, defs, body })
+  return svgDocument({ id, width: size, height: size, title: link.label, theme, defs, body, background: false })
 }
 
 // A paper link button in the style of academic homepages: a plain outlined pill (PDF, Project
@@ -116,31 +104,9 @@ export function renderPaperThumbnail(paper) {
   return svgDocument({ id, width, height, title: alt, theme: THEMES.light, defs, body, background: false })
 }
 
-// Sea footer: layered waves built from identical 300px cycles (so the loop never jumps) and a
-// sailboat crossing slowly. Each wave is lit along its crest and darker below.
-export function renderFooter(theme) {
-  const height = 110
-  const cycle = 300
-  const wave = (amplitude, baseline, fill, opacity, duration) => {
-    let d = `M0 ${baseline}`
-    for (let i = 0; i < 6; i += 1) d += ` q 75 ${-amplitude} 150 0 t 150 0`
-    d += ` V ${height} H 0 Z`
-    return `<path d="${d}" fill="${fill}" opacity="${opacity}"><animateTransform attributeName="transform" type="translate" from="0 0" to="${-cycle} 0" dur="${duration}s" repeatCount="indefinite"/></path>`
-  }
-  const boat = `<g><animateMotion dur="40s" repeatCount="indefinite" path="M -40 62 C 300 58 700 66 1240 60"/><g transform="scale(0.8)"><path d="M-16,0 L16,0 L11,7 L-11,7 Z" fill="${theme.name === "dark" ? "#dbe4f2" : "#2b4f86"}"/><line x1="0" y1="0" x2="0" y2="-24" stroke="${theme.name === "dark" ? "#dbe4f2" : "#2b4f86"}" stroke-width="1.4"/><path d="M0,-24 L14,-4 L0,-4 Z" fill="${theme.name === "dark" ? "#dbe4f2" : "#2b4f86"}"/><animateTransform attributeName="transform" type="rotate" values="-3;3;-3" dur="3s" repeatCount="indefinite" additive="sum"/></g></g>`
-  const body = [wave(14, 64, "url(#footer-wave-0)", 0.45, 9), boat, wave(18, 74, "url(#footer-wave-1)", 0.5, 13), wave(12, 84, "url(#footer-wave-2)", 0.6, 7)].join("")
-  const defs = [
-    linearGradient("footer-wave-0", [["0", shade(theme.accent2, 0.35)], ["1", shade(theme.accent2, -0.4)]], { x2: "0", y2: "1" }),
-    linearGradient("footer-wave-1", [["0", shade(theme.accent2, 0.2)], ["1", shade(theme.accent2, -0.55)]], { x2: "0", y2: "1" }),
-    linearGradient("footer-wave-2", [["0", shade(theme.accent, 0.25)], ["1", shade(theme.accent, -0.5)]], { x2: "0", y2: "1" })
-  ].join("")
-  return svgDocument({ id: "footer", width: WIDTH, height, title: "Footer", theme, defs, body })
-}
-
 export const STATIC_ASSETS = {
   "skills-marquee": renderSkillsMarquee,
-  footer: renderFooter,
-  ...Object.fromEntries(LINKS.map((link) => [`link-${link.id}`, (theme) => renderLinkButton(theme, link)])),
+  ...Object.fromEntries(LINKS.map((link) => [`link-${link.id}`, (theme) => renderLinkIcon(theme, link)])),
   ...Object.fromEntries(PAPER_BUTTONS.map((label) => [paperButtonId(label), (theme) => renderPaperButton(theme, label)]))
 }
 

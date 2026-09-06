@@ -8,21 +8,15 @@ import { createPlanet, createSpaceDust } from "./lib/planet.js"
 import { gradientDome, starField } from "./lib/sky.js"
 import { PALETTE, createStage, dark, params } from "./lib/stage.js"
 import { labelTexture } from "./lib/textures.js"
-import { FOCUS, PROFILE } from "../scripts/profile-data.mjs"
+import { FOCUS } from "../scripts/profile-data.mjs"
 
 const width = Number(params.get("width") ?? 1440)
 const height = Number(params.get("height") ?? 672)
 const loop = Number(params.get("loop") ?? 12)
 const TOPICS = FOCUS.map((item) => item.label)
-document.querySelector(".who").textContent = PROFILE.name
 
 const root = document.documentElement.style
-root.setProperty("--text", PALETTE.text)
 root.setProperty("--muted", PALETTE.muted)
-root.setProperty("--accent", PALETTE.accent)
-root.setProperty("--plate-a", dark ? "rgba(255,255,255,0.26)" : "rgba(255,255,255,0.92)")
-root.setProperty("--plate-b", dark ? "rgba(255,255,255,0.07)" : "rgba(255,255,255,0.6)")
-root.setProperty("--plate-rim", dark ? "rgba(255,255,255,0.45)" : "rgba(19,41,75,0.22)")
 
 const stage = createStage({ width, height, loop, fov: 28, bloom: dark ? { strength: 0.4, radius: 0.5, threshold: 1.35 } : { strength: 0.2, radius: 0.5, threshold: 1.2 }, exposure: dark ? 1 : 1.3 })
 const { scene, camera } = stage

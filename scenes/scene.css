@@ -13,8 +13,8 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: var(--cw, var(--w)) !important;
-  height: var(--ch, var(--h)) !important;
+  width: var(--w) !important;
+  height: var(--h) !important;
   display: block;
 }
 

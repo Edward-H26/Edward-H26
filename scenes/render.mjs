@@ -25,9 +25,8 @@ const SITE_URL = "https://edward-h26.github.io/PersonalWebsite"
 // Loop lengths are chosen so every integer-cycle animation in the scene repeats exactly.
 // Scenes are authored at 1440 px wide; `output` is the width of the encoded loop.
 export const SCENES = {
-  hero: { width: 1440, height: 456, loop: 10, output: 1440 },
-  planet: { width: 1440, height: 672, loop: 10, output: 1200 },
-  paper: { width: 1440, height: 288, loop: 8, output: 1440 }
+  hero: { width: 1440, height: 520, loop: 24, output: 860, fps: 10, quality: { dark: 58, light: 42 } },
+  planet: { width: 1440, height: 672, loop: 20, output: 1100, fps: 10, quality: 62 }
 }
 
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json", ".css": "text/css", ".glb": "model/gltf-binary", ".wasm": "application/wasm", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" }
@@ -67,8 +66,7 @@ async function main(args) {
   const name = args[0]
   const scene = SCENES[name]
   if (!scene) throw new Error(`unknown scene ${name}; choose one of ${Object.keys(SCENES).join(", ")}`)
-  const fps = Number(option(args, "fps", 15))
-  const quality = Number(option(args, "quality", 80))
+  const fps = Number(option(args, "fps", scene.fps ?? 15))
   const still = option(args, "still", null)
   const keep = args.includes("--keep")
   const outputWidth = Number(option(args, "width", still !== null ? scene.width : scene.output))
@@ -78,6 +76,8 @@ async function main(args) {
   const browser = await chromium.launch({ channel: "chromium", args: ["--use-angle=metal", "--ignore-gpu-blocklist", "--enable-gpu-rasterization", "--use-gl=angle"] })
   try {
     for (const theme of themes) {
+      // Daylight foliage and waves compress worse than the night, so the hero sets quality per theme.
+      const quality = Number(option(args, "quality", scene.quality?.[theme] ?? scene.quality ?? 80))
       const page = await browser.newPage({ viewport: { width: size.width, height: size.height }, deviceScaleFactor: 1 })
       page.on("pageerror", (error) => console.error(`[${name} ${theme}] page error:`, error.message))
       page.on("console", (message) => { if (message.type() === "error" || message.type() === "warning") console.error(`[${name} ${theme}]`, message.text()) })

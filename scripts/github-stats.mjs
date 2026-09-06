@@ -44,25 +44,36 @@ async function request(url, token, init = {}) {
 export async function fetchGithub(login, token) {
   const graphql = await request("https://api.github.com/graphql", token, { method: "POST", body: JSON.stringify({ query: STATS_QUERY, variables: { login } }) })
   if (graphql.errors) throw new Error(`GraphQL: ${JSON.stringify(graphql.errors).slice(0, 300)}`)
-  const events = await request(`https://api.github.com/users/${login}/events/public?per_page=40`, token)
-  return { capturedAt: new Date().toISOString(), user: graphql.data.user, events: events.map(slimEvent) }
+  const user = graphql.data.user
+  const repos = user.repositories.nodes.filter((repo) => !repo.isFork).map((repo) => repo.name)
+  return { capturedAt: new Date().toISOString(), user, codeStats: await fetchCodeStats(login, token, repos) }
 }
 
-// Only the fields the activity card needs are kept, so fixtures never store commit
-// messages or author emails.
-export function slimEvent(event) {
-  const payload = event.payload ?? {}
-  return {
-    type: event.type,
-    repo: { name: event.repo?.name },
-    created_at: event.created_at,
-    payload: {
-      ...(payload.size !== undefined ? { size: payload.size } : {}),
-      ...(payload.action ? { action: payload.action } : {}),
-      ...(payload.ref_type ? { ref_type: payload.ref_type, ref: payload.ref ?? null } : {}),
-      ...(payload.pull_request ? { pull_request: { merged: Boolean(payload.pull_request.merged) } } : {})
+// GitHub computes contributor statistics lazily and answers 202 until they are ready.
+async function requestStats(url, token) {
+  for (let attempt = 0; attempt < 8; attempt += 1) {
+    const response = await fetch(url, { headers: { Authorization: `bearer ${token}`, "User-Agent": "profile-assets", Accept: "application/vnd.github+json" } })
+    if (response.status === 202) {
+      await new Promise((resolve) => setTimeout(resolve, 3000))
+      continue
     }
+    if (response.status === 204) return []
+    if (!response.ok) throw new Error(`${url} answered ${response.status}`)
+    return response.json()
   }
+  return []
+}
+
+// The user's own weekly lines added, deleted, and commits per repository; only weeks with
+// activity are kept, so fixtures stay small.
+export async function fetchCodeStats(login, token, repos) {
+  const stats = {}
+  for (const repo of repos) {
+    const contributors = await requestStats(`https://api.github.com/repos/${login}/${repo}/stats/contributors`, token)
+    const own = (Array.isArray(contributors) ? contributors : []).find((entry) => entry.author?.login === login)
+    if (own) stats[repo] = own.weeks.filter((week) => week.a || week.d || week.c).map((week) => ({ w: week.w, a: week.a, d: week.d, c: week.c }))
+  }
+  return stats
 }
 
 export function calendarDays(user) {
@@ -112,50 +123,38 @@ export function commitsByRepository(contributions) {
     .sort((a, b) => b.commits - a.commits || a.name.localeCompare(b.name))
 }
 
-// Public, non-fork repositories ranked by stars, then forks, then name; the constellation shows the top ones.
-export function publicRepositories(nodes, limit = 12) {
-  return nodes
-    .filter((repo) => !repo.isFork)
-    .map((repo) => ({ name: repo.name, stars: repo.stargazerCount, forks: repo.forkCount, language: repo.primaryLanguage?.name ?? "Other", color: safeColor(repo.primaryLanguage?.color) }))
-    .sort((a, b) => b.stars - a.stars || b.forks - a.forks || a.name.localeCompare(b.name))
-    .slice(0, limit)
-}
+const WEEK = 7 * 86400
 
-export function relativeTime(iso, now) {
-  const minutes = Math.max(1, Math.round((now.getTime() - new Date(iso).getTime()) / 60000))
-  if (minutes < 60) return `${minutes} min ago`
-  const hours = Math.round(minutes / 60)
-  if (hours < 24) return `${hours} h ago`
-  const days = Math.round(hours / 24)
-  if (days < 30) return `${days} d ago`
-  const months = Math.round(days / 30)
-  return months < 12 ? `${months} mo ago` : `${Math.round(months / 12)} y ago`
-}
-
-const EVENT_TEXT = {
-  PushEvent: () => "Pushed to",
-  PullRequestEvent: (event) => `${event.payload.pull_request?.merged ? "Merged" : event.payload.action === "opened" ? "Opened" : "Updated"} a pull request in`,
-  IssuesEvent: (event) => `${event.payload.action === "opened" ? "Opened" : "Updated"} an issue in`,
-  IssueCommentEvent: () => "Commented on an issue in",
-  CreateEvent: (event) => (event.payload.ref_type === "repository" ? "Created the repository" : `Created ${event.payload.ref_type} ${event.payload.ref ?? ""} in`),
-  WatchEvent: () => "Starred",
-  ForkEvent: () => "Forked",
-  ReleaseEvent: () => "Published a release in",
-  PublicEvent: () => "Open sourced"
-}
-
-export function summarizeEvents(events, now, limit = 5) {
-  const items = []
-  for (const event of events) {
-    const describe = EVENT_TEXT[event.type]
-    if (!describe || !event.repo?.name) continue
-    items.push({ type: event.type, text: describe(event).trim(), repo: event.repo.name, when: relativeTime(event.created_at, now) })
-    if (items.length === limit) break
+// Lines the user pushed in the past year: totals, the busiest repositories, and one entry per
+// week (GitHub's weeks start on Sunday, UTC) with gaps filled in.
+export function codeSummary(codeStats = {}, nodes = [], now = new Date()) {
+  const sunday = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - now.getUTCDay()) / 1000
+  const since = sunday - 51 * WEEK
+  const colors = new Map(nodes.map((repo) => [repo.name, safeColor(repo.primaryLanguage?.color)]))
+  const weekly = new Map()
+  const byRepo = []
+  for (const [name, weeks] of Object.entries(codeStats)) {
+    const repo = { name, added: 0, deleted: 0, commits: 0, color: colors.get(name) ?? "#8b949e" }
+    for (const week of weeks) {
+      if (week.w < since || week.w > sunday) continue
+      repo.added += week.a
+      repo.deleted += week.d
+      repo.commits += week.c
+      const slot = weekly.get(week.w) ?? { week: week.w, added: 0, deleted: 0, commits: 0 }
+      slot.added += week.a
+      slot.deleted += week.d
+      slot.commits += week.c
+      weekly.set(week.w, slot)
+    }
+    if (repo.added + repo.deleted > 0) byRepo.push(repo)
   }
-  return items
+  byRepo.sort((a, b) => b.added + b.deleted - (a.added + a.deleted) || a.name.localeCompare(b.name))
+  const weeks = Array.from({ length: 52 }, (_, i) => weekly.get(since + i * WEEK) ?? { week: since + i * WEEK, added: 0, deleted: 0, commits: 0 })
+  const sum = (key) => weeks.reduce((acc, week) => acc + week[key], 0)
+  return { added: sum("added"), deleted: sum("deleted"), commits: sum("commits"), byRepo: byRepo.slice(0, 6), weeks }
 }
 
-export function summarize({ user, events }, now = new Date()) {
+export function summarize({ user, codeStats }, now = new Date()) {
   const today = now.toISOString().slice(0, 10)
   const days = calendarDays(user)
   const nodes = user.repositories.nodes
@@ -176,7 +175,6 @@ export function summarize({ user, events }, now = new Date()) {
     streak: computeStreaks(days, today),
     languages: topLanguages(nodes),
     repositoriesByCommits: commitsByRepository(contributions),
-    repositories: publicRepositories(nodes),
-    activity: summarizeEvents(events, now)
+    code: codeSummary(codeStats, nodes, now)
   }
 }

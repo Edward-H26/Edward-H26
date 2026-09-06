@@ -143,7 +143,7 @@ function auroraCurtain({ seed, width, height, intensity }) {
         // Curtain: a crisp bright lower edge that thins upward.
         float base = 0.1 + 0.05 * ribbon;
         float curtain = smoothstep(base - 0.03, base + 0.06, vUv.y) * pow(clamp(1.0 - (vUv.y - base) / (1.0 - base), 0.0, 1.0), 1.7);
-        float edge = smoothstep(0.0, 0.12, vUv.x) * (1.0 - smoothstep(0.88, 1.0, vUv.x));
+        float edge = smoothstep(0.0, 0.05, vUv.x) * (1.0 - smoothstep(0.95, 1.0, vUv.x));
         float a = pow(bands, 1.6) * curtain * edge * rays * intensity;
         vec3 col = mix(colorA, colorB, smoothstep(0.1, 0.45, vUv.y));
         col = mix(col, colorC, smoothstep(0.4, 0.95, vUv.y));
@@ -158,14 +158,18 @@ function auroraCurtain({ seed, width, height, intensity }) {
 
 function aurora() {
   const group = new THREE.Group()
-  const back = auroraCurtain({ seed: 1.7, width: 520, height: 130, intensity: 0.75 })
-  back.position.set(30, 84, -290)
+  const back = auroraCurtain({ seed: 1.7, width: 980, height: 170, intensity: 0.8 })
+  back.position.set(30, 92, -290)
   back.rotation.x = 0.22
   group.add(back)
-  const front = auroraCurtain({ seed: 4.3, width: 420, height: 100, intensity: 0.95 })
-  front.position.set(-20, 62, -230)
+  const front = auroraCurtain({ seed: 4.3, width: 820, height: 130, intensity: 1 })
+  front.position.set(-20, 68, -230)
   front.rotation.x = 0.18
   group.add(front)
+  const high = auroraCurtain({ seed: 7.9, width: 1100, height: 190, intensity: 0.45 })
+  high.position.set(60, 150, -330)
+  high.rotation.x = 0.3
+  group.add(high)
   group.userData.curtains = [back, front]
   return group
 }
@@ -288,7 +292,7 @@ export function createNightSky({ scene, loop, moonDirection, focus = new THREE.V
       stars.material.uniforms.phase.value = phase
       curtain.userData.curtains.forEach((layer, i) => {
         layer.material.uniforms.phase.value = phase
-        layer.material.uniforms.intensity.value = (i ? 0.95 : 0.75) * (0.85 + 0.15 * wave(phase, 2, i * 0.3))
+        layer.material.uniforms.intensity.value = [0.8, 1, 0.45][i] * (0.85 + 0.15 * wave(phase, 2, i * 0.3))
       })
       driftClouds(phase)
     }
