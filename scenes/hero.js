@@ -1,7 +1,7 @@
 // Hero: the island at dusk (or in golden-hour daylight), seen across a reflecting sea, with the
 // profile text typed over it. Loop: 12 s.
 import * as THREE from "three"
-import { createIsland, islandHeight } from "./lib/island.js"
+import { createIsland } from "./lib/island.js"
 import { wave } from "./lib/periodic.js"
 import { createSea } from "./lib/sea.js"
 import { createDaySky, createNightSky } from "./lib/sky.js"
@@ -30,7 +30,7 @@ const stage = createStage({
   width,
   height,
   loop,
-  fov: 50,
+  fov: 32,
   bloom: dark ? { strength: 0.5, radius: 0.6, threshold: 1 } : { strength: 0.22, radius: 0.6, threshold: 1.1 },
   ao: { radius: 0.6, scale: 1, intensity: dark ? 0.5 : 0.6 },
   exposure: dark ? 1.2 : 1
@@ -60,31 +60,13 @@ if (!hidden.has("sea")) scene.add(sea)
 const island = hidden.has("island") ? { userData: { update() {} } } : await createIsland({ dark, position: islandPosition })
 if (!hidden.has("island")) scene.add(island)
 
-// First-person walk at 1.7 m eye height, one closed circuit per cycle: east along the cobbled
-// road through the village to the lighthouse, then back west along the harbour side. Each
-// waypoint pairs where the feet are with what the eyes are on (x, z, height above ground), and
-// both curves are sampled at the same curve parameter, so the head turns towards the houses,
-// the well, the lighthouse lamp, the harbour and the mill as they come by.
-const waypoints = [
-  { at: [-11.2, 2.8], look: [-4, 1, 1.4] },
-  { at: [-8.5, 1.2], look: [-4, 4.6, 1.5] },
-  { at: [-4.5, 0.8], look: [1.5, -2.2, 1] },
-  { at: [-0.5, 1], look: [8, 0.5, 2.2] },
-  { at: [3.8, 0.4], look: [12.4, -4.2, 4.5] },
-  { at: [7.6, -1.2], look: [12.4, -4.2, 6.5] },
-  { at: [11, 0], look: [16, 1, 0.5] },
-  { at: [11.2, 4.4], look: [6, 9, 0.8] },
-  { at: [9.2, 7.8], look: [-4, 13, 0.4] },
-  { at: [3.6, 8.4], look: [-2, 5.4, 1.2] },
-  { at: [-1.5, 9.4], look: [-5, 5, 1.8] },
-  { at: [-6.4, 8], look: [-10.2, -3.6, 4] },
-  { at: [-11.2, 6], look: [-14, 0, 1.2] }
-]
-const onIsland = (x, z, lift) => new THREE.Vector3(islandPosition.x + x, Math.max(islandHeight(x, z), 0) + lift, islandPosition.z + z)
-const walk = new THREE.CatmullRomCurve3(waypoints.map(({ at: [x, z] }) => onIsland(x, z, 1.7)), true, "catmullrom", 0.5)
-const look = new THREE.CatmullRomCurve3(waypoints.map(({ look: [x, z, lift] }) => onIsland(x, z, lift)), true, "catmullrom", 0.5)
-const eye = new THREE.Vector3()
-const target = new THREE.Vector3()
+// A fixed vantage over the whole island from the harbour side, high enough to see the village and
+// the lighthouse, with the island set to the right of the profile text. Only the sea, clouds,
+// aurora, beam, mill blades, birds and ship move, which keeps the loop small and smooth.
+const forward = new THREE.Vector3(0.45, 0, -0.89)
+const right = new THREE.Vector3(-forward.z, 0, forward.x)
+camera.position.copy(islandPosition).addScaledVector(forward, -42).add(new THREE.Vector3(0, 13, 0))
+camera.lookAt(new THREE.Vector3(islandPosition.x, 4.5, islandPosition.z).addScaledVector(right, -9))
 
 // Typing: each tagline is typed, held, erased, inside its slot of the loop.
 const taglines = PROFILE.taglines
@@ -113,11 +95,6 @@ stage.onFrame(({ phase, t }) => {
   sea.material.uniforms.phase.value = phase
   sky.update(phase)
   island.userData.update(phase)
-  walk.getPointAt(phase, eye)
-  look.getPoint(walk.getUtoTmapping(phase), target)
-  eye.y += 0.04 * wave(phase, loop * 2)
-  camera.position.copy(eye)
-  camera.lookAt(target)
   typing(t % loop)
   caret.style.opacity = wave(phase, 13) > -0.2 ? "1" : "0"
 })
