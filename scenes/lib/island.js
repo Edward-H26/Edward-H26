@@ -8,6 +8,7 @@ import { effectLayer } from "./stage.js"
 import { heightTexture, tileableNoise } from "./textures.js"
 
 export const RADIUS = 15
+const UP = new THREE.Vector3(0, 1, 0)
 const PLATEAU = 3.4
 const noise = tileableNoise(256, { seed: 4, octaves: 5, period: 4 })
 
@@ -265,7 +266,7 @@ function lighthouse({ dark, stone }) {
       blendDst: THREE.OneFactor,
       blendSrcAlpha: THREE.ZeroFactor,
       blendDstAlpha: THREE.OneFactor,
-      uniforms: { strength: { value: dark ? 0.3 : 0 }, color: { value: new THREE.Color("#fff3c4") } },
+      uniforms: { strength: { value: dark ? 0.15 : 0 }, color: { value: new THREE.Color("#fff3c4") } },
       vertexShader: /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
       fragmentShader: /* glsl */ `
         uniform float strength; uniform vec3 color; varying vec2 vUv;
@@ -414,7 +415,7 @@ export async function createIsland({ dark, position }) {
     [models.houseA, -4.8, 5, 0.35, 3.9],
     [models.houseB, 3.6, -5.4, -0.5, 3.8],
     [models.houseC, 8.4, -6.6, -0.4, 2.6],
-    [models.mill, -10.2, -3.6, 0.7, 5.6],
+    [models.mill, 1.2, 9, -0.6, 5.6],
     [models.well, 0.4, -1.4, 0.2, 1.4]
   ]
   const footprints = []
@@ -422,6 +423,11 @@ export async function createIsland({ dark, position }) {
     onGround(place(model, { rotation, height }), x, z, 0.08)
     footprints.push([x, z, height * 0.9])
   }
+  // The windmill's blades turn once per loop about their hub.
+  const blades = group.getObjectByName("Mill_Blades")
+  const bladesRest = blades.quaternion.clone()
+  const spin = new THREE.Quaternion()
+  updaters.push((phase) => blades.quaternion.copy(bladesRest).multiply(spin.setFromAxisAngle(UP, turns(phase, 1))))
   onGround(place(models.cart, { rotation: 0.9, height: 1.1 }), -2, 5.4, 0.02)
   footprints.push([-2, 5.4, 1.2])
   // Fence along the road's south side.
@@ -483,7 +489,7 @@ export async function createIsland({ dark, position }) {
   pier.position.set(-4.2, -0.35, 12.8)
   group.add(pier)
   const ship = place(models.ship, { rotation: -0.55, scale: 0.13 })
-  ship.position.set(-9.5, -0.22, 19.5)
+  ship.position.set(-7.2, -0.22, 15.4)
   group.add(ship)
   const buoy = place(models.buoy, { scale: 0.3 })
   buoy.position.set(6.5, -0.35, 17)

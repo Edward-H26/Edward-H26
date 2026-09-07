@@ -25,7 +25,7 @@ const SITE_URL = "https://edward-h26.github.io/PersonalWebsite"
 // Loop lengths are chosen so every integer-cycle animation in the scene repeats exactly.
 // Scenes are authored at 1440 px wide; `output` is the width of the encoded loop.
 export const SCENES = {
-  hero: { width: 1440, height: 520, loop: 24, output: 860, fps: 10, quality: { dark: 58, light: 42 } },
+  hero: { width: 1440, height: 520, loop: 12, output: 1100, fps: 20, quality: { dark: 72, light: 70 } },
   planet: { width: 1440, height: 672, loop: 20, output: 1100, fps: 10, quality: 62 }
 }
 
