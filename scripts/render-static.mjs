@@ -13,7 +13,8 @@ export const WIDTH = 1200
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 
 export function renderSkillsMarquee(theme) {
-  const height = 122
+  // One scrolling row per SKILL_ROWS entry, alternating direction; the card grows with the rows.
+  const height = 18 + SKILL_ROWS.length * 52
   const gap = 12
   const speed = 34
   const dark = theme.name === "dark"

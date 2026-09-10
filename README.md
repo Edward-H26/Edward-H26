@@ -11,7 +11,7 @@
   <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&amp;hl=en" title="Google Scholar"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="56" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/qiranhu/" title="LinkedIn"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="56" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>&nbsp;&nbsp;
   <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="56" alt="X" src="assets/link-x-dark.svg" /></picture></a>&nbsp;&nbsp;
-  <a href="mailto:qiranhu8@gmail.com" title="Email"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="56" alt="Email" src="assets/link-email-dark.svg" /></picture></a>
+  <a href="mailto:qh2332@columbia.edu" title="Email"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="56" alt="Email" src="assets/link-email-dark.svg" /></picture></a>
 </p>
 
 <p align="center">
@@ -49,15 +49,11 @@
 <!-- featured-paper:start -->
 <table width="100%">
 <tr>
-<td width="400" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="400" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
+<td width="400" valign="top"><img src="assets/papers/sv4d.svg" width="400" alt="One diffusion step turning noise into a scene that stays consistent across camera views over time"/></td>
 <td valign="top">
-<b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
-Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
-<i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
-<a href="https://arxiv.org/pdf/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-pdf-light.svg" /><img height="36" alt="PDF" src="assets/paper-link-pdf-dark.svg" /></picture></a>
-<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-project-page-light.svg" /><img height="36" alt="Project Page" src="assets/paper-link-project-page-dark.svg" /></picture></a>
-<a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
-<a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
+<b>SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation</b><br/>
+<b>Qiran Hu</b>, Wei Cao, Yaoyao Liu<br/>
+<i>Under Review</i>
 </td>
 </tr>
 </table>
@@ -65,7 +61,9 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 
 ## News
 
+- **[August 2026]** Our paper REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
+- **[February 2026]** I am admitted to the M.S. in Data Science program at the [Fu Foundation School of Engineering and Applied Science](https://www.engineering.columbia.edu/about) at [Columbia University](https://www.columbia.edu/).
 
 ## Interactive 3D Portfolio
 
@@ -105,6 +103,17 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 <!-- papers:start -->
 <table width="100%">
 <tr>
+<td width="300" valign="top"><img src="assets/papers/sv4d.svg" width="300" alt="One diffusion step turning noise into a scene that stays consistent across camera views over time"/></td>
+<td valign="top">
+<b>SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation</b><br/>
+<b>Qiran Hu</b>, Wei Cao, Yaoyao Liu<br/>
+<i>Under Review</i>
+</td>
+</tr>
+</table>
+
+<table width="100%">
+<tr>
 <td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
@@ -120,10 +129,21 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><img src="assets/papers/crowdsourced.svg" width="300" alt="Contributors feeding a shared open research record"/></td>
+<td width="300" valign="top"><img src="assets/papers/reva.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></td>
 <td valign="top">
-<b>Crowdsourced Open-Source Research: A Research Paradigm Probe</b><br/>
-Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Yun Huang<br/>
+<b>REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</b><br/>
+Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
+<i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i>
+</td>
+</tr>
+</table>
+
+<table width="100%">
+<tr>
+<td width="300" valign="top"><img src="assets/papers/aisim.svg" width="300" alt="Simulated interview transcripts scaffolding an early-stage qualitative study design"/></td>
+<td valign="top">
+<b>AISim: Using LLM-Simulation as Epistemic Scaffolds for Early Stage Qualitative Research Design</b><br/>
+Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Hyanghee Park, Yun Huang<br/>
 <i>Under Review</i>
 </td>
 </tr>
@@ -131,20 +151,9 @@ Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Yun Huang<br/>
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><img src="assets/papers/context-under-budget.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></td>
+<td width="300" valign="top"><img src="assets/papers/alphawise.svg" width="300" alt="Two model checkpoints blended into one fused model"/></td>
 <td valign="top">
-<b>Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation</b><br/>
-Tuan Minh Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D Doan, Kok-Seng Wong, Fan Lai<br/>
-<i>Under Review</i>
-</td>
-</tr>
-</table>
-
-<table width="100%">
-<tr>
-<td width="300" valign="top"><img src="assets/papers/alphawiseft.svg" width="300" alt="Two model checkpoints blended into one fused model"/></td>
-<td valign="top">
-<b>AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning</b><br/>
+<b>AlphaWiSE: Adaptive Weight Interpolation for Continual Multimodal Representation Learning</b><br/>
 Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 <i>Under Review</i>
 </td>
@@ -152,126 +161,132 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 </table>
 <!-- papers:end -->
 
-## Research Groups
-
-### **UIUC Computer Vision and Machine Learning Group**
-**Undergraduate Research Assistant, advised by Professor Yaoyao Liu**
-
-- Develop 3D-consistent generative models for world understanding and embodied AI, and implement diffusion-based approaches for spatially coherent scene synthesis with applications in interactive simulation.
-- Investigate real-time 3D reconstruction methods for interactive experiences and integrate neural rendering with depth estimation for embodied agent perception systems.
-- Train large-scale vision transformers on TB-level image datasets using a high-performance computing cluster through distributed training at the National Center for Supercomputing Applications (NCSA), optimizing spatial tokenization and enforcing multi-view consistency for 3D-aware diffusion-based scene generation.
-
-[![Lab Page](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://vision.ischool.illinois.edu/people/)
-
-### **UIUC Social Computing System Lab**
-**Undergraduate Research Assistant, advised by Professor Yun Huang**
-
-- Architect streaming video-language models with temporal transformer blocks for long-form video understanding beyond 30-minute sequences with competitive zero-shot accuracy.
-- Build joint audio-visual perception pipelines for human-centric social understanding, fusing facial action units, body pose dynamics, and acoustic prosody through cross-modal attention to predict social intent and conversational role in clinical sessions.
-- Design a context fluidity framework for personalized AI adaptation, advancing from static prompt engineering toward dynamic context engineering that models individual communication preferences and emotional states across conversation sessions.
-
-[![Lab Page](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://socialcomputing.web.illinois.edu/)
-
 ## Research Experience
 
-### **Multi-modal Generative Models for Large-scale Continual Learning**
-**Undergraduate Research Assistant**<br/>
-_2026.02 - Present_
+### **UIUC Computer Vision and Machine Learning Group**
+**Undergraduate Research Assistant - Advised by Professor Yaoyao Liu**<br/>
+_Champaign, IL · 2025.05 - Present_
 
-- Selected for the NVIDIA Academic Grant Program Award with 32,000 A100 GPU-hours allocated on the Brev cloud platform to advance multimodal generative models that continuously incorporate new knowledge across text, image, and 3D data without catastrophic forgetting of previously learned cross-modal alignment.
-- Scaled multimodal continual-learning experiments across audio, image, and text modalities through distributed training on the National Artificial Intelligence Research Resource (NAIRR), profiling throughput and memory trade-offs to enable post-hoc weight-space fusion.
-- Optimized a parameter-efficient post-hoc fusion framework that learns to compose frozen checkpoints from different continual-learning strategies.
+- Architect adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% and increasing pose accuracy by 4.2x on PASCAL3D+.
+- Conduct large-scale foundation model training across TB-level datasets on the National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and low-level custom kernels, improving pose accuracy by 11.3% on PASCAL3D+ and reducing generation latency by 78.7% at p95.
+- Design camera-controlled novel view synthesis on video generation pipelines to improve real-time perception for SLAM, visual odometry, and 3D reconstruction, reducing LPIPS by 21.0% on GSO and FV4D by 52.0% on OmniObject3D.
+
+[![Lab](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://vision.ischool.illinois.edu/people/)
+
+### **Multimodal Continual Learning Project**
+**Undergraduate Research Assistant**<br/>
+_Champaign, IL · 2026.02 - Present_
+
+- Selected for the NVIDIA Academic Grant Program Award to improve multimodal foundation models in class-incremental learning across audio, image, and text without catastrophic forgetting and cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
+- Advance post-hoc tensor-level weight-interpolation methods to improve multimodal retrieval through National Artificial Intelligence Research Resource (NAIRR) HPC clusters, reducing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and increasing R@1 by 33.5% on AudioSet.
+- Improve checkpoint fusion pipelines that merge separately trained checkpoints into a single model with no additional inference time, increasing last-task accuracy by 40.9% on UrbanSound8K.
 
 [![NVIDIA Grant](https://img.shields.io/badge/NVIDIA_Grant-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
-### **Multi-agent HCI Research Synthesis Engine**
-**Systems Architect**<br/>
-_2025.11 - Present_
+### **Long-Form Video-Language and Audio-Visual Social Understanding**
+**Undergraduate Research Assistant, University of Illinois Urbana-Champaign**<br/>
+_Champaign, IL · 2025.12 - 2026.05_
 
-- Architected an 8-agent orchestration system for HCI literature synthesis, implementing specialized agents of Planner, Researcher, Writer, Critic, SafetyGuardian, ReflexionEngine, LLMJudge, and Evaluation across a 12-step reasoning workflow, achieving 0.955 overall evaluation score, 0.925 on relevance, safety, and clarity.
-- Designed Model Context Protocol integration for standardized tool interfaces, enabling seamless connection between LLM agents and external data sources, including academic databases, code repositories, and document management systems.
-- Constructed parallel tool-calling infrastructure integrating Semantic Scholar API and Tavily web search with ThreadPoolExecutor, reducing query latency 40% (8.2s to 4.9s) and adding production-grade fallback handling for API failures.
-
-### **Node Optimized Orchestration Design for Educational Intelligence Architecture**
-**Full Stack Developer**<br/>
-_2025.08 - Present_
-
-- Built a K-12 intelligent tutoring platform integrating multi-agent orchestration with memory-enhanced GraphRAG and designed an adaptive learning system that personalizes responses beyond static Q&A.
-- Implemented a self-evolving long-term memory module that retrieves contextually relevant prior interactions, addressing the recency bias of FIFO memory structures used in standard RAG systems.
-- Deployed to 2 partner institutions and iterated through 6 development cycles incorporating user feedback to refine interface design and response quality based on student engagement data.
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SALT-Lab-Human-AI/project-check-point-1-NOODEIA)
+- Trained streaming video-language models with temporal transformer blocks for long-form video understanding beyond 30-minute sequences, increasing zero-shot accuracy by 17.4%.
+- Designed context fluidity pipelines that fused facial action units, body pose, and prosody through cross-modal attention to infer social intent and conversational role from raw recordings, achieving 89.1% accuracy on speaker-role classification.
+- Built video annotation pipelines for long clinical sessions with automatic transcription and detailed labeling, achieving 90.0% accuracy on role-inversion recovery.
 
 ## Professional Experience
 
-### **Computer Vision and Machine Learning Group, Champaign, IL**
-**Undergraduate Research Assistant**<br/>
-_2025.05 - Present_
+### **Memoria**
+**Founding Technical Lead**<br/>
+_Champaign, IL · 2026.01 - Present_
 
-- Designed a consistency-trajectory distillation framework that compresses multi-step 3D-aware diffusion teachers into single-step student samplers conditioned on 3D pose and depth.
-- Built a parameter-efficient continual-learning pipeline for billion-parameter large multimodal models, extending the partial-retraining methodology with Fisher-aware adapter routing.
-- Generalized weight-space interpolation from Euclidean linear combinations to Fisher-Rao geodesic interpolation across continual checkpoints.
-- Conducted experiments on real-time 3D reconstruction and visual-inertial odometry for embodied agent perception systems by evaluating spatial intelligence metrics for world model applications.
+- Build end-to-end agentic workflow deployments for medium-sized businesses to deliver customized MCP servers, sub-agents, and agent skills that automate manual handoffs across each client's systems, reducing delivery time by 4.0x compared to traditional approaches.
+- Improve self-evolving memory architectures for enterprise workflows to provide persistent per-user context without retraining, reducing token cost by 99.0%.
+- Build production logging, monitoring, and evaluation infrastructure for system performance, user behavior, and cost.
 
-### **UIUC Student Affairs, WRC Department, Champaign, IL**
+[![Website](https://img.shields.io/badge/Website-13294B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://miramemoria.com/)
+
+### **Two by Two Learning**
+**Full Stack Developer**<br/>
+_Champaign, IL · 2025.08 - 2026.08_
+
+- Launched NOODEIA to help K-12 students who are falling behind grade level with multi-agent tutoring systems that plan, critique, and monitor each individual user with long-horizon memory through GraphRAG, increasing learner confidence by 2.4x in counterbalanced within-subjects studies.
+- Advanced recency-biased FIFO memory architecture with self-evolving long-term memory that retrieves contextually relevant interactions, reducing memory query latency by 3.6x compared to PostgreSQL.
+- Deployed complexity-aware model selection mechanisms across the planner, retrieval, solver, and critic stages that score each request and reserve frontier-tier inference for priority calls, reducing monthly serving cost by 89.9% compared to GPT-4o.
+
+[![NOODEIA](https://img.shields.io/badge/NOODEIA-FF6B35?style=for-the-badge&logo=render&logoColor=white)](https://noodiea.onrender.com/)
+
+### **University of Illinois Urbana-Champaign Women's Resources Center**
 **Data Analyst**<br/>
-_2024.08 - 2024.12_
+_Champaign, IL · 2024.08 - 2024.12_
 
-- Conducted rigorous statistical analysis of student performance metrics and survey responses among 19,800 students and implemented a comprehensive data analysis framework for the program.
-- Leveraged complex institutional datasets to generate actionable insights by enhancing strategic planning processes and contributing to a 6.5% improvement in resource allocation for student success programs.
-- Designed and implemented comprehensive program evaluation frameworks for key educational initiatives by utilizing mixed-methods research to analyze effectiveness.
+- Built paired pre/post analytics pipelines over survey data from 9,935 incoming students to measure seven learning outcomes for university-wide consent-education programs, increasing correct-response rates by 14.0% and reducing ambiguous responses by 61.9%.
+- Conducted A/B tests on two consent scenarios stratified across five gender-identity subgroups to locate where misconceptions persisted after the workshop, achieving 19.5% improvement on consent comprehension.
+- Proposed scenario-based learning modules for underrepresented subgroups by coding open-ended bystander responses into five-theme taxonomies, decreasing spread by 5.6x in direct-intervention rates.
 
-<details>
-<summary><strong>Leadership Experience</strong></summary>
+## Research Projects
 
-### **CS 107 Data Science Discovery, University of Illinois Urbana-Champaign, Champaign, IL**
+### **REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving**
+**Undergraduate Research Assistant**<br/>
+_Champaign, IL · 2026.02 - 2026.09_
+
+- Proposed attention-based scoring for post-retrieval RAG context compression to reuse the generator's own attention traces across queries with a document-keyed score store built offline, achieving a 92.0% cache hit rate on HotpotQA.
+- Developed word-unit scoring with original-order rendering for budgeted evidence materialization to preserve document structure under compression, increasing F1 by 13.2% on Natural Questions and reducing compression overhead by 96.7% compared to Selective Context.
+- Optimized the online path of score lookup, quota allocation, and budget repair for interactive RAG serving, reducing compression latency by 98.9% compared to EXIT and 99.7% compared to FaviComp.
+
+### **Multi-agent Research Synthesis Engine**
+**Undergraduate Research Assistant**<br/>
+_Champaign, IL · 2025.11 - 2026.05_
+
+- Orchestrated eight specialized agents across a 12-step workflow for automated literature synthesis to cover planning, retrieval, drafting, reflection, and safety review in a single loop with LLM-as-judge evaluation, achieving 95.5% accuracy on deep research pipelines.
+- Optimized Semantic Scholar and Tavily tool calls for multi-source literature retrieval to reduce latency on the critical path with a bounded thread pool and typed fallbacks, reducing query time by 40.2%.
+- Built Model Context Protocol servers for agent tool access to centralize governed tool integration behind one typed interface over academic databases, code repositories, and document stores, reducing integration latency by 87.5% across eight agents.
+
+[![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
+
+### **Realistic Neural Style Transfer Architecture**
+**Undergraduate Research Assistant**<br/>
+_2025.01 - 2025.08_
+
+- Architected style transfer frameworks for maintaining photorealistic results under highly abstract styles with VGG perceptual losses and edge-preserving constraints, improving SSIM by 77.0% and MS-SSIM by 49.0% compared to TensorFlow's NST.
+- Proposed multi-layer Gram matrix losses with adaptive layer weighting to suppress texture and chromatic artifacts, increasing SSIM by 4.4x and MS-SSIM by 6.4x compared to ChatGPT-4o.
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
+
+### **Anime Statistics and Analysis Platform, ASAP**
+**Undergraduate Research Assistant**<br/>
+_2025.02 - 2025.06_
+
+- Deployed interactive R Shiny analytics platforms to surface anime popularity trends and market opportunities with live Jikan REST API data and predictive analysis on shinyapps.io.
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP)
+
+## Teaching
+
+### **CS 107 Data Science Discovery, University of Illinois Urbana-Champaign**
 **Teaching Assistant**<br/>
-_2023.08 - Present_
+_Champaign, IL · 2023.08 - 2026.05_
 
-- Facilitated weekly in-person/online office hours and lab sections to provide technical assistance for over 2,000 students.
-- Authored instructional content for DISCOVERY's Guides explaining data science concepts through applied Python examples.
-- Designed advanced problem sets, exam questions, test suites, and autograder scripts for DISCOVERY's Mastery Platform.
+- Led weekly lab sections and office hours for in-person and online sessions, mentoring 1,200 students every semester through data science foundations in Python, statistical inference, data wrangling, and machine learning.
+- Authored DISCOVERY Guides on the course website for self-serve concept review to provide every cohort the same worked explanations with applied Python and statistics walkthroughs.
+- Designed problem sets, exam questions, test suites, and autograder scripts to deliver instant, consistent feedback to 1,200 students every semester on the course's mastery-learning platform.
 
 [![Guides](https://img.shields.io/badge/Guides-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://discovery.cs.illinois.edu/guides/)
 [![Mastery](https://img.shields.io/badge/Mastery-4285F4?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mastery.cs.illinois.edu/)
 
-### **Student Government, University of Illinois Urbana-Champaign, Champaign, IL**
-**iSchool Student Representative**<br/>
-_2022.09 - 2023.09_
+## Service
 
-- Supervised iSchool community forums to handle student concerns with adherence to predetermined guidelines.
-- Assisted the university with campus tours for prospective students and parents, answering questions and providing insight.
-- Secured approval for changes to existing and new activities based on student feedback.
+### **OnePromptClaudeCode**
+**Lead Developer**<br/>
+_2026.03 - Present_
 
-</details>
+- Open-source OnePromptClaudeCode under the MIT License for agentic software development to replace manual configuration with 95 agent skills, 14 specialized sub-agents, 10 MCP servers, and policy guardrails in one agent harness spanning planning, tool execution, review, and shipping.
+- Design three-tier capability routers for the agent harness to optimize tokens, latency, and cost on every turn, with keyword matching and session-memory recall ahead of a 4.5 s model reasoning pass, resolving intent in 120 ms and running 37.5x faster than routing every prompt through the model.
+- Improve the agent harness runtime for secure agent execution with four lifecycle hooks that gate every tool call before it runs, applying pattern-based deny rules to destructive commands, a pinned reasoning environment, and idempotent install modes with timestamped backups, reducing router latency by 92.7%.
 
-<details>
-<summary><strong>Project Experience</strong></summary>
-
-### **Realistic Neural Style Transfer Architecture**
-**Independent Researcher**<br/>
-_2025.01 - 2025.08_
-
-- Proposed a multi-scale neural style transfer architecture for transferring abstract art styles onto photographic content, combining VGG-based perceptual losses with edge-preserving structural constraints to retain global content geometry.
-- Reduced texture and chromatic distortion artifacts common in patch-based and single-layer loss formulations through a multi-layer Gram matrix loss with adaptive layer weighting.
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
-
-### **Anime Statistics and Analysis Platform**
-**Project Lead**<br/>
-_2025.02 - 2025.06_
-
-- Built interactive analytics platform using anime data API for popularity trend visualization and predictive analysis of market opportunities.
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP)
-
-</details>
-
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Edward-H26/OnePromptClaudeCode)
 ## Honors
 
 - [Neo4j Certified Professional](https://graphacademy.neo4j.com/c/2e386da7-2b30-4575-9fd0-b0b0918a6fe0/)
 - [Neo4j Graph Data Science Certification](https://graphacademy.neo4j.com/c/6559f827-9dca-4199-bc9d-8be10fd74891/)
-- UIUC Dean's List - 2023 Spring, 2024 Fall, 2025 Spring, 2025 Fall, 2026 Spring
+- UIUC Dean's List
 - UIUC James Scholar
 
 ## Skills
@@ -279,14 +294,14 @@ _2025.02 - 2025.06_
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg" />
-  <img width="100%" alt="Skills: PyTorch, JAX, TensorFlow, OpenCV, diffusion models, world models, 3D reconstruction, distributed training, CUDA, PEFT, LangGraph, LangChain, GraphRAG, MCP, Python, C++, TypeScript, React, Next.js, Node.js, R, PostgreSQL, Neo4j, MongoDB, Docker, Kubernetes, AWS, HPC, Unity." src="assets/skills-marquee-dark.svg" />
+  <img width="100%" alt="Skills: Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Generation, Multi-View Geometry, Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes." src="assets/skills-marquee-dark.svg" />
 </picture>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,opencv,react,nextjs,nodejs,ts,js,html,tailwind,postgres,mongodb,docker,kubernetes,aws,git,unity&perline=9" alt="Technology logos: Python, PyTorch, TensorFlow, OpenCV, React, Next.js, Node.js, TypeScript, JavaScript, HTML, Tailwind CSS, PostgreSQL, MongoDB, Docker, Kubernetes, AWS, Git, Unity" />
+  <img src="https://skillicons.dev/icons?i=py,cpp,rust,go,java,swift,kotlin,ruby,r,pytorch,tensorflow,opencv,react,vue,angular,ts,js,html,tailwind,fastapi,postgres,neo4j,mongodb,kafka,docker,kubernetes,aws,gcp,azure,figma,unity,git&perline=8" alt="Technology logos: Python, C++, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, TensorFlow, OpenCV, React, Vue, Angular, TypeScript, JavaScript, HTML, Tailwind CSS, FastAPI, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, AWS, GCP, Azure, Figma, Unity, Git" />
 </p>
 
-**Languages:** Chinese (native), English (native), Spanish (elementary)
+**Languages:** Chinese (Native), English (Native), Spanish (Elementary)
 
 ## GitHub Activity
 
