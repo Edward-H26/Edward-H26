@@ -24,6 +24,14 @@ export const FOCUS = [
 // label renders as one keycap button (assets/paper-link-<label>).
 export const PAPERS = [
   {
+    id: "sv4d",
+    title: "SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation",
+    authors: ["Qiran Hu", "Wei Cao", "Yaoyao Liu"],
+    venue: "Under Review",
+    thumbnail: { badge: "Under Review", alt: "One diffusion step turning noise into a scene that stays consistent across camera views over time" },
+    links: []
+  },
+  {
     id: "ac3s",
     title: "AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation",
     authors: ["Eric Ji", "Qiran Hu", "Wufei Ma", "Sarthak Jain", "Yingying Li", "Minh N. Do", "Yaoyao Liu"],
@@ -37,24 +45,24 @@ export const PAPERS = [
     ]
   },
   {
-    id: "crowdsourced",
-    title: "Crowdsourced Open-Source Research: A Research Paradigm Probe",
-    authors: ["Hangyue Zhang", "Qiran Hu", "Ziyi Zhang", "Yun Huang"],
-    venue: "Under Review",
-    thumbnail: { badge: "Under Review", alt: "Contributors feeding a shared open research record" },
+    id: "reva",
+    title: "REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving",
+    authors: ["Tuan Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D. Doan", "Kok-Seng Wong", "Fan Lai"],
+    venue: "IEEE International Conference on Data Mining (ICDM), 2026",
+    thumbnail: { badge: "ICDM", alt: "Retrieved documents compressed into a compact context for a model" },
     links: []
   },
   {
-    id: "context-under-budget",
-    title: "Context Under Budget: A Controlled Benchmark for Post-Retrieval Compression in Retrieval-Augmented Generation",
-    authors: ["Tuan Minh Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D Doan", "Kok-Seng Wong", "Fan Lai"],
+    id: "aisim",
+    title: "AISim: Using LLM-Simulation as Epistemic Scaffolds for Early Stage Qualitative Research Design",
+    authors: ["Hangyue Zhang", "Qiran Hu", "Ziyi Zhang", "Hyanghee Park", "Yun Huang"],
     venue: "Under Review",
-    thumbnail: { badge: "Under Review", alt: "Retrieved documents compressed into a compact context for a model" },
+    thumbnail: { badge: "Under Review", alt: "Simulated interview transcripts scaffolding an early-stage qualitative study design" },
     links: []
   },
   {
-    id: "alphawiseft",
-    title: "AlphaWiseFT: Adaptive Weight Interpolation for Continual Multimodal Representation Learning",
+    id: "alphawise",
+    title: "AlphaWiSE: Adaptive Weight Interpolation for Continual Multimodal Representation Learning",
     authors: ["Sarthak Jain", "Qiran Hu", "Zhen Zhu", "Yaoyao Liu"],
     venue: "Under Review",
     thumbnail: { badge: "Under Review", alt: "Two model checkpoints blended into one fused model" },
@@ -69,15 +77,21 @@ export const paperButtonId = (label) => `paper-link-${label.toLowerCase().replac
 
 export const SKILL_ROWS = [
   [
-    ["PyTorch", "ai"], ["JAX", "ai"], ["TensorFlow", "ai"], ["OpenCV", "ai"], ["Diffusion Models", "ai"], ["World Models", "ai"],
-    ["3D Reconstruction", "ai"], ["Distributed Training", "ai"], ["CUDA", "ai"], ["PEFT", "ai"], ["LangGraph", "agents"], ["LangChain", "agents"],
-    ["GraphRAG", "agents"], ["MCP", "agents"], ["Long-Term Memory", "agents"], ["SAS", "data"], ["Arduino", "infra"]
+    ["PyTorch", "ai"], ["CUDA", "ai"], ["JAX", "ai"], ["TensorFlow", "ai"], ["Triton", "ai"], ["TensorRT", "ai"], ["vLLM", "ai"], ["SGLang", "ai"], ["NeMo", "ai"], ["Megatron-LM", "ai"], ["NCCL", "ai"], ["LangGraph", "agents"],
+    ["Distributed Training", "ai"], ["FSDP", "ai"], ["LoRA", "ai"], ["QLoRA", "ai"], ["Quantization", "ai"], ["Kernel Optimization", "ai"], ["SFT", "ai"], ["RLHF", "ai"], ["DPO", "ai"], ["GRPO", "ai"],
+    ["Continual Learning", "ai"], ["Knowledge Distillation", "ai"], ["Synthetic Data Generation", "ai"]
   ],
   [
-    ["Python", "code"], ["C++", "code"], ["TypeScript", "code"], ["JavaScript", "code"], ["Java", "code"], ["Kotlin", "code"], ["Ruby", "code"], ["PHP", "code"], ["R", "code"],
-    ["React", "code"], ["Next.js", "code"], ["Vue.js", "code"], ["Angular.js", "code"], ["Node.js", "code"], ["HTML5", "code"], ["Tailwind CSS", "code"],
-    ["PostgreSQL", "data"], ["Neo4j", "data"], ["MongoDB", "data"], ["Docker", "infra"], ["Kubernetes", "infra"], ["AWS", "infra"], ["HPC", "infra"], ["Unity", "infra"],
-    ["Figma", "infra"], ["Canva", "infra"], ["Adobe Creative Suite", "infra"], ["Microsoft Office", "infra"]
+    ["World Models", "ai"], ["Diffusion Models", "ai"], ["Flow Matching", "ai"], ["3D/4D Generation", "ai"], ["Multi-View Geometry", "ai"], ["3D Reconstruction", "ai"], ["Novel View Synthesis", "ai"],
+    ["Spatial Intelligence", "ai"], ["NeRFs", "ai"], ["3D Gaussian Splatting", "ai"], ["SLAM", "ai"], ["Visual-Inertial Odometry", "ai"], ["Depth Estimation", "ai"], ["OpenCV", "ai"],
+    ["Multi-Agent Orchestration", "agents"], ["Agent Harness", "agents"], ["Context Engineering", "agents"], ["Prompt Caching", "agents"], ["MCP", "agents"], ["A2A", "agents"], ["Tool Calling", "agents"],
+    ["Long-Horizon Memory", "agents"], ["RAG", "agents"], ["Computer-Use Agents", "agents"], ["Policy Guardrails", "agents"]
+  ],
+  [
+    ["Python", "code"], ["C++", "code"], ["C", "code"], ["Rust", "code"], ["Go", "code"], ["Java", "code"], ["Swift", "code"], ["Kotlin", "code"], ["Ruby", "code"], ["R", "code"], ["TypeScript", "code"], ["JavaScript", "code"],
+    ["React", "code"], ["Vue", "code"], ["Angular", "code"], ["HTML5", "code"], ["Tailwind CSS", "code"], ["FastAPI", "code"],
+    ["PostgreSQL", "data"], ["Neo4j", "data"], ["MongoDB", "data"], ["Kafka", "data"],
+    ["Docker", "infra"], ["Kubernetes", "infra"], ["CI/CD", "infra"], ["AWS", "infra"], ["GCP", "infra"], ["Azure", "infra"], ["Figma", "infra"], ["Canva", "infra"], ["Adobe Creative Suite", "infra"], ["Microsoft Office", "infra"], ["Unity", "infra"]
   ]
 ]
 
@@ -90,7 +104,7 @@ export const LINKS = [
   { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap" },
   { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in" },
   { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x" },
-  { id: "email", label: "Email", url: "mailto:qiranhu8@gmail.com", icon: "mail" }
+  { id: "email", label: "Email", url: "mailto:qh2332@columbia.edu", icon: "mail" }
 ]
 
 export const PHONE = "+1 (347)-957-9176"
