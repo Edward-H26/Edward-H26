@@ -2,14 +2,14 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg" />
-  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/hero-dark.svg" />
+  <img width="100%" alt="Qiran Hu, Research Assistant. Teaching machines to see in 3D, diffusion that respects geometry, generating worlds that stay consistent, from pixels to spatial understanding." src="assets/hero-dark.svg" />
 </picture>
 
 <!-- links:start -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/qiranhu/" title="LinkedIn"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="44" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>&nbsp;&nbsp;
   <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&amp;hl=en" title="Google Scholar"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="44" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>&nbsp;&nbsp;
   <a href="https://edward-h26.github.io/" title="Website"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg" /><img height="44" alt="Website" src="assets/link-website-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/qiranhu/" title="LinkedIn"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="44" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>&nbsp;&nbsp;
   <a href="mailto:qh2332@columbia.edu" title="Email"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="44" alt="Email" src="assets/link-email-dark.svg" /></picture></a>&nbsp;&nbsp;
   <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="44" alt="X" src="assets/link-x-dark.svg" /></picture></a>
 </p>
@@ -87,31 +87,6 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 </a>
 
 <p align="center">Click the preview to walk the island: scroll to move, look sideways with the arrow keys. Built with React and three.js.</p>
-
-## Education
-
-<p>
-  <a href="https://www.engineering.columbia.edu/">
-    <img src="assets/columbia-logo.jpeg" width="104" height="104" align="left" alt="Columbia University crown logo"/>
-  </a>
-  <strong>Columbia University</strong>, New York City, NY<br/>
-  <strong>MS in Data Science</strong><br/>
-  Fu Foundation School of Engineering and Applied Science<br/>
-  <em>2026.08 - 2028.05</em>
-</p>
-<br clear="left"/>
-
-<p>
-  <a href="https://www.illinois.edu/">
-    <img src="assets/uiuc-logo.jpeg" width="104" height="104" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
-  </a>
-  <strong>University of Illinois Urbana-Champaign</strong>, Champaign, IL<br/>
-  <strong>BS in Data Science and Information Science</strong><br/>
-  Minors: Computer Science and Statistics<br/>
-  Siebel School of Computing and Data Science<br/>
-  <em>2022.08 - 2026.05</em>
-</p>
-<br clear="left"/>
 
 ## Papers
 
@@ -304,8 +279,34 @@ _2026.03 - Present_
 
 - [Neo4j Certified Professional](https://graphacademy.neo4j.com/c/2e386da7-2b30-4575-9fd0-b0b0918a6fe0/)
 - [Neo4j Graph Data Science Certification](https://graphacademy.neo4j.com/c/6559f827-9dca-4199-bc9d-8be10fd74891/)
-- UIUC Dean's List
-- UIUC James Scholar
+
+## Education
+
+<p>
+  <a href="https://www.engineering.columbia.edu/">
+    <img src="assets/columbia-logo.jpeg" width="104" height="104" align="left" alt="Columbia University crown logo"/>
+  </a>
+  <strong>Columbia University</strong>, New York City, NY<br/>
+  <strong>M.S. in Data Science</strong><br/>
+  Fu Foundation School of Engineering and Applied Science<br/>
+  Courses: High Performance Machine Learning<br/>
+  <em>2026.08 - 2028.05</em>
+</p>
+<br clear="left"/>
+
+<p>
+  <a href="https://www.illinois.edu/">
+    <img src="assets/uiuc-logo.jpeg" width="104" height="104" align="left" alt="University of Illinois Urbana-Champaign Block I logo"/>
+  </a>
+  <strong>University of Illinois Urbana-Champaign</strong>, Champaign, IL<br/>
+  <strong>B.S. in Data Science and Information Science</strong><br/>
+  Minors: Computer Science and Statistics<br/>
+  Siebel School of Computing and Data Science<br/>
+  Honors: Dean's List and James Scholar<br/>
+  Courses: Applied Machine Learning, Generative AI for Human-AI Collaboration, Advanced AI Web-App Development, Graph Databases, Data Visualization, Computational Photography, Linear Algebra with Computational Applications<br/>
+  <em>2022.08 - 2026.05</em>
+</p>
+<br clear="left"/>
 
 ## Skills
 

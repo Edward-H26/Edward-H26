@@ -3,8 +3,12 @@ export const PROFILE = {
   name: "Qiran Hu",
   handle: "Edward-H26",
   role: "Research Assistant",
-  affiliations: ["Computer Vision and Machine Learning Group, UIUC", "M.S. in Data Science, Columbia University"],
-  taglines: ["Advancing Human-Centered Intelligence", "Building Agentic Systems and Computer Vision", "Creating AI That Understands the World"]
+  taglines: [
+    "Teaching Machines to See in 3D",
+    "Diffusion That Respects Geometry",
+    "Generating Worlds That Stay Consistent",
+    "From Pixels to Spatial Understanding"
+  ]
 }
 
 export const FOCUS = [
@@ -117,10 +121,10 @@ export const SKILL_COLORS = { ai: "accent", agents: "accent", code: "accent2", d
 // Round icon links rendered into assets/link-<id>-<theme>.svg, like the website's sidebar; the
 // README wraps each in one <a>.
 export const LINKS = [
-  { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in" },
-  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap" },
-  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe" },
-  { id: "email", label: "Email", url: "mailto:qh2332@columbia.edu", icon: "mail" },
+  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "scholar" },
+  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "website" },
+  { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "linkedin" },
+  { id: "email", label: "Email", url: "mailto:qh2332@columbia.edu", icon: "email" },
   { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x" },
 ]
 
