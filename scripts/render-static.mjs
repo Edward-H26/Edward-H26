@@ -26,57 +26,24 @@ function fadeCycle(index, count, seconds) {
 }
 
 export function renderHero(theme) {
-  const height = 340
-  const random = rng(7)
-  const particles = Array.from({ length: 40 }, () => {
-    const x = round(random() * WIDTH)
-    const y = round(60 + random() * (height - 60))
-    const radius = round(1 + random() * 2.2)
-    const dur = round(7 + random() * 9)
-    const delay = round(random() * 7)
-    return `<circle cx="${x}" cy="${y}" r="${radius}" fill="${theme.accent2}" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="${dur}s" begin="${delay}s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -46" dur="${dur}s" begin="${delay}s" repeatCount="indefinite"/></circle>`
-  }).join("")
-  const blobOpacity = theme.name === "dark" ? 0.2 : 0.14
-  const blobs = [
-    { cx: 170, cy: 80, r: 230, color: theme.accent2, dur: 19, dx: 50, dy: -20 },
-    { cx: 1040, cy: 260, r: 270, color: theme.accent, dur: 23, dx: -60, dy: 30 },
-    { cx: 690, cy: 30, r: 190, color: theme.accent4, dur: 27, dx: 30, dy: 40 }
-  ]
-    .map((blob) => `<circle cx="${blob.cx}" cy="${blob.cy}" r="${blob.r}" fill="${blob.color}" opacity="${blobOpacity}" filter="url(#hero-blur)"><animateTransform attributeName="transform" type="translate" values="0 0;${blob.dx} ${blob.dy};0 0" dur="${blob.dur}s" repeatCount="indefinite"/></circle>`)
-    .join("")
-  const ringColors = [theme.accent, theme.accent2, theme.accent3]
-  const rings = [150, 108, 68]
-    .map((radius, i) => {
-      const ry = round(radius * 0.42)
-      const tilt = -18 + i * 14
-      return `<g transform="translate(985 170) rotate(${tilt})"><ellipse rx="${radius}" ry="${ry}" fill="none" stroke="${theme.accent2}" stroke-opacity="${round(0.38 - i * 0.08)}" stroke-width="1.2"/><circle r="${5 - i}" fill="${ringColors[i]}"><animateMotion dur="${8 + i * 5}s" repeatCount="indefinite" path="M ${radius} 0 A ${radius} ${ry} 0 1 1 ${-radius} 0 A ${radius} ${ry} 0 1 1 ${radius} 0"/></circle></g>`
-    })
-    .join("")
-  const core = `<g transform="translate(985 170)"><circle r="34" fill="${theme.accent}" opacity="0.25"><animate attributeName="r" values="30;44;30" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.08;0.3" dur="4s" repeatCount="indefinite"/></circle><circle r="22" fill="url(#hero-core)"/></g>`
+  // Text only: the name, the role, the affiliations, and a shell prompt whose taglines cycle.
+  // The canvas is sized to the longest line so the type fills the README's width.
+  const width = 760
+  const height = 310
   const taglines = PROFILE.taglines
     .map((line, i) => {
       const cycle = fadeCycle(i, PROFILE.taglines.length, 13.5)
-      return `<g opacity="0">${cycle.opacity}<text x="60" y="308" font-size="21" font-weight="600" fill="${theme.accent2}">${escapeXml(line)}${cycle.slide}</text></g>`
+      return `<g opacity="0">${cycle.opacity}<text x="56" y="266" font-size="21" font-weight="600" fill="${theme.accent2}">${escapeXml(line)}${cycle.slide}</text></g>`
     })
     .join("")
   const body = [
-    blobs,
-    `<rect width="${WIDTH}" height="${height}" fill="url(#hero-grid)"/>`,
-    particles,
-    rings,
-    core,
-    `<text x="60" y="140" font-size="66" font-weight="800" letter-spacing="-1.5" fill="${theme.text}">${escapeXml(PROFILE.name)}</text>`,
-    `<text x="60" y="190" font-size="26" font-weight="700" fill="${theme.accent}">${escapeXml(PROFILE.role)}</text>`,
-    ...PROFILE.affiliations.map((line, i) => `<text x="60" y="${226 + i * 26}" font-size="17" fill="${theme.muted}">${escapeXml(line)}</text>`),
-    `<text x="60" y="282" font-size="13" font-family="${MONO}" fill="${theme.faint}">$ echo ${escapeXml("$FOCUS")}</text>`,
+    `<text x="56" y="100" font-size="66" font-weight="800" letter-spacing="-1.5" fill="${theme.text}">${escapeXml(PROFILE.name)}</text>`,
+    `<text x="56" y="148" font-size="26" font-weight="700" fill="${theme.accent}">${escapeXml(PROFILE.role)}</text>`,
+    ...PROFILE.affiliations.map((line, i) => `<text x="56" y="${184 + i * 26}" font-size="17" fill="${theme.muted}">${escapeXml(line)}</text>`),
+    `<text x="56" y="240" font-size="13" font-family="${MONO}" fill="${theme.faint}">$ echo ${escapeXml("$FOCUS")}</text>`,
     taglines
   ].join("\n")
-  const defs = [
-    `<filter id="hero-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="46"/></filter>`,
-    `<radialGradient id="hero-core"><stop offset="0" stop-color="#ffffff"/><stop offset="0.35" stop-color="${theme.accent}"/><stop offset="1" stop-color="${theme.glow}"/></radialGradient>`,
-    `<pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="${theme.grid}"/></pattern>`
-  ].join("")
-  return svgDocument({ id: "hero", width: WIDTH, height, title: `${PROFILE.name}, ${PROFILE.role}`, theme, defs, body })
+  return svgDocument({ id: "hero", width, height, title: `${PROFILE.name}, ${PROFILE.role}`, theme, body })
 }
 
 export function renderSkillsMarquee(theme) {
