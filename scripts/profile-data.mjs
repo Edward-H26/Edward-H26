@@ -28,7 +28,7 @@ export const PAPERS = [
     title: "SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation",
     authors: ["Qiran Hu", "Wei Cao", "Yaoyao Liu"],
     venue: "Under Review",
-    thumbnail: { badge: "Under Review", alt: "One diffusion step turning noise into a scene that stays consistent across camera views over time" },
+    thumbnail: { badge: "Under Review", alt: "No public figure yet; this paper is under review" },
     links: []
   },
   {
@@ -38,7 +38,7 @@ export const PAPERS = [
     venue: "European Conference on Computer Vision (ECCV), 2026",
     thumbnail: { badge: "ECCV", alt: "The AC3S pipeline: a CAD model rendered and turned into a canny edge prompt, a modulator that sets the ControlNet conditioning scale, a diffusion generator that returns a photo in the same 3D pose, and a multi-agent vision language model that composes the text prompt" },
     links: [
-      { label: "PDF", url: "https://arxiv.org/pdf/2606.31204" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2606.31204" },
       { label: "Project Page", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
       { label: "Video", url: "https://youtu.be/3jOJaT2a8iQ" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2606.31204" }
@@ -51,7 +51,7 @@ export const PAPERS = [
     venue: "IEEE International Conference on Data Mining (ICDM), 2026",
     thumbnail: { badge: "ICDM", alt: "Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document" },
     links: [
-      { label: "PDF", url: "https://arxiv.org/pdf/2609.11209" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2609.11209" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2609.11209" }
     ]
   },
@@ -60,7 +60,7 @@ export const PAPERS = [
     title: "AISim: Using LLM-Simulation as Epistemic Scaffolds for Early Stage Qualitative Research Design",
     authors: ["Hangyue Zhang", "Qiran Hu", "Ziyi Zhang", "Hyanghee Park", "Yun Huang"],
     venue: "Under Review",
-    thumbnail: { badge: "Under Review", alt: "Simulated interview transcripts scaffolding an early-stage qualitative study design" },
+    thumbnail: { badge: "Under Review", alt: "No public figure yet; this paper is under review" },
     links: []
   },
   {
@@ -68,7 +68,7 @@ export const PAPERS = [
     title: "AlphaWiSE: Adaptive Weight Interpolation for Continual Multimodal Representation Learning",
     authors: ["Sarthak Jain", "Qiran Hu", "Zhen Zhu", "Yaoyao Liu"],
     venue: "Under Review",
-    thumbnail: { badge: "Under Review", alt: "Two model checkpoints blended into one fused model" },
+    thumbnail: { badge: "Under Review", alt: "No public figure yet; this paper is under review" },
     links: []
   }
 ]
