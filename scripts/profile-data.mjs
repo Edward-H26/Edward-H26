@@ -36,7 +36,7 @@ export const PAPERS = [
     title: "AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation",
     authors: ["Eric Ji", "Qiran Hu", "Wufei Ma", "Sarthak Jain", "Yingying Li", "Minh N. Do", "Yaoyao Liu"],
     venue: "European Conference on Computer Vision (ECCV), 2026",
-    thumbnail: { badge: "ECCV", alt: "A 3D model turned into an edge map whose strength a dial controls, joined by an agent-written prompt, feeding a generator that returns a photo in the same pose" },
+    thumbnail: { badge: "ECCV", alt: "The AC3S pipeline: a CAD model rendered and turned into a canny edge prompt, a modulator that sets the ControlNet conditioning scale, a diffusion generator that returns a photo in the same 3D pose, and a multi-agent vision language model that composes the text prompt" },
     links: [
       { label: "PDF", url: "https://arxiv.org/pdf/2606.31204" },
       { label: "Project Page", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
@@ -49,7 +49,7 @@ export const PAPERS = [
     title: "REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving",
     authors: ["Tuan Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D. Doan", "Kok-Seng Wong", "Fan Lai"],
     venue: "IEEE International Conference on Data Mining (ICDM), 2026",
-    thumbnail: { badge: "ICDM", alt: "Retrieved documents compressed into a compact context for a model" },
+    thumbnail: { badge: "ICDM", alt: "Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document" },
     links: [
       { label: "PDF", url: "https://arxiv.org/pdf/2609.11209" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2609.11209" }

@@ -14,10 +14,7 @@
   <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="44" alt="X" src="assets/link-x-dark.svg" /></picture></a>
 </p>
 
-<p align="center">
-  +1 (347)-957-9176<br />
-  <img src="https://komarev.com/ghpvc/?username=Edward-H26&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />
-</p>
+<p align="center">+1 (347)-957-9176</p>
 <!-- links:end -->
 <div>
   <p>
@@ -44,16 +41,33 @@
 </picture>
 </a>
 
-## Featured Paper
+## Featured Papers
 
 <!-- featured-paper:start -->
 <table width="100%">
 <tr>
-<td width="400" valign="top"><img src="assets/papers/sv4d.svg" width="400" alt="One diffusion step turning noise into a scene that stays consistent across camera views over time"/></td>
+<td width="400" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="400" alt="The AC3S pipeline: a CAD model rendered and turned into a canny edge prompt, a modulator that sets the ControlNet conditioning scale, a diffusion generator that returns a photo in the same 3D pose, and a multi-agent vision language model that composes the text prompt"/></a></td>
 <td valign="top">
-<b>SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation</b><br/>
-<b>Qiran Hu</b>, Wei Cao, Yaoyao Liu<br/>
-<i>Under Review</i>
+<b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
+Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
+<i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
+<a href="https://arxiv.org/pdf/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-pdf-light.svg" /><img height="36" alt="PDF" src="assets/paper-link-pdf-dark.svg" /></picture></a>
+<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-project-page-light.svg" /><img height="36" alt="Project Page" src="assets/paper-link-project-page-dark.svg" /></picture></a>
+<a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
+<a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
+</td>
+</tr>
+</table>
+
+<table width="100%">
+<tr>
+<td width="400" valign="top"><a href="https://arxiv.org/pdf/2609.11209"><img src="assets/papers/reva.svg" width="400" alt="Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document"/></a></td>
+<td valign="top">
+<b><a href="https://arxiv.org/pdf/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
+Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
+<i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i><br/><br/>
+<a href="https://arxiv.org/pdf/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-pdf-light.svg" /><img height="36" alt="PDF" src="assets/paper-link-pdf-dark.svg" /></picture></a>
+<a href="https://arxiv.org/bibtex/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
 </table>
@@ -61,7 +75,7 @@
 
 ## News
 
-- **[September 2026]** I presented our [AC3S](https://eccv.ecva.net/virtual/2026/poster/5183) poster at [ECCV 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/calendar).
+- **[September 2026]** I presented our [AC3S poster](https://eccv.ecva.net/virtual/2026/poster/5183) at [ECCV 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/poster/5183).
 - **[August 2026]** Our paper [REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving](https://arxiv.org/abs/2609.11209) is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
 - **[May 2026]** I received my B.S. in Data Science and Information Science at the [University of Illinois Urbana-Champaign](https://www.illinois.edu/).
@@ -115,7 +129,7 @@
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="A 3D model turned into an edge map whose strength a dial controls, joined by an agent-written prompt, feeding a generator that returns a photo in the same pose"/></a></td>
+<td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="The AC3S pipeline: a CAD model rendered and turned into a canny edge prompt, a modulator that sets the ControlNet conditioning scale, a diffusion generator that returns a photo in the same 3D pose, and a multi-agent vision language model that composes the text prompt"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
@@ -130,7 +144,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><a href="https://arxiv.org/pdf/2609.11209"><img src="assets/papers/reva.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></a></td>
+<td width="300" valign="top"><a href="https://arxiv.org/pdf/2609.11209"><img src="assets/papers/reva.svg" width="300" alt="Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/pdf/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
@@ -353,3 +367,9 @@ _2026.03 - Present_
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/snake-light.svg" />
   <img width="100%" alt="Contribution snake eating the contribution graph of Edward-H26." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/snake-dark.svg" />
 </picture>
+
+<!-- views:start -->
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Edward-H26&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />
+</p>
+<!-- views:end -->

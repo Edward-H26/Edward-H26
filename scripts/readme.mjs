@@ -8,7 +8,7 @@ const picture = (name, alt, height) =>
 
 function links() {
   const icons = LINKS.map((link) => `  <a href="${escapeXml(link.url)}" title="${escapeXml(link.label)}">${picture(`link-${link.id}`, link.label, 44)}</a>`).join("&nbsp;&nbsp;\n")
-  return `<p align="center">\n${icons}\n</p>\n\n<p align="center">\n  ${escapeXml(PHONE)}<br />\n  <img src="https://komarev.com/ghpvc/?username=${PROFILE.handle}&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />\n</p>`
+  return `<p align="center">\n${icons}\n</p>\n\n<p align="center">${escapeXml(PHONE)}</p>`
 }
 
 // The venue acronym in parentheses is bold, as on academic homepages.
@@ -31,15 +31,21 @@ ${details}${buttons}
 </table>`
 }
 
+const ACCEPTED_PAPERS = PAPERS.filter((paper) => paper.venue !== "Under Review")
+
 const skills = () =>
   Object.entries(SKILL_CATEGORIES)
     .map(([category, items]) => `**${category}:** ${items.join(", ")}`)
     .join("\n\n")
 
+const views = () =>
+  `<p align="center">\n  <img src="https://komarev.com/ghpvc/?username=${PROFILE.handle}&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />\n</p>`
+
 export const SECTIONS = {
   links,
+  views,
   skills,
-  "featured-paper": () => paperCard(PAPERS[0], 400),
+  "featured-paper": () => ACCEPTED_PAPERS.map((paper) => paperCard(paper, 400)).join("\n\n"),
   papers: () => PAPERS.map((paper) => paperCard(paper, 300)).join("\n\n")
 }
 
