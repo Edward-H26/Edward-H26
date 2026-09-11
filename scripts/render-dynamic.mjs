@@ -76,7 +76,18 @@ export function renderCode(stats, theme) {
   const { code } = stats
   const green = theme.accent3
   const red = dark ? "#f85149" : "#cf222e"
-  const totals = `<g transform="translate(60 92)"><text font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">ADDED</text><text y="34" font-size="30" font-weight="800" fill="${green}">+${escapeXml(lines(code.added))}</text><text y="74" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">DELETED</text><text y="108" font-size="30" font-weight="800" fill="${red}">-${escapeXml(lines(code.deleted))}</text><text y="148" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">NET</text><text y="182" font-size="30" font-weight="800" fill="${theme.text}">${code.added - code.deleted >= 0 ? "+" : "-"}${escapeXml(lines(Math.abs(code.added - code.deleted)))}</text><text y="212" font-size="13" fill="${theme.muted}">${escapeXml(lines(code.commits))} commits across ${code.byRepo.length} ${code.byRepo.length === 1 ? "repository" : "repositories"}</text></g>`
+  // Two stacked blocks: the whole history, then the trailing year the chart covers.
+  const net = (sums) => `${sums.added - sums.deleted >= 0 ? "+" : "-"}${lines(Math.abs(sums.added - sums.deleted))}`
+  const block = (y, label, sums, size) =>
+    `<g transform="translate(60 ${y})"><text font-size="11" font-weight="700" letter-spacing="1.3" fill="${theme.accent}">${label}</text>` +
+    `<text y="${size + 8}" font-size="${size}" font-weight="800" fill="${green}">+${escapeXml(lines(sums.added))}</text>` +
+    `<text y="${size + 34}" font-size="${size - 8}" font-weight="800" fill="${red}">-${escapeXml(lines(sums.deleted))}</text>` +
+    `<text x="${size * 3.4}" y="${size + 34}" font-size="${size - 8}" font-weight="800" fill="${theme.text}">${escapeXml(net(sums))}</text></g>`
+  const totals = [
+    block(78, "ALL TIME", code.allTime ?? code, 30),
+    block(190, "PAST 12 MONTHS", code, 24),
+    `<text x="60" y="272" font-size="12.5" fill="${theme.muted}">${escapeXml(lines(code.commits))} commits in the past year across ${code.byRepo.length} ${code.byRepo.length === 1 ? "repository" : "repositories"}</text>`
+  ].join("")
 
   // Weekly chart: 52 columns between x = 330 and x = 1140, baseline at y = 214.
   const chart = { left: 330, right: 1140, baseline: 214, up: 118, down: 52 }
@@ -118,7 +129,7 @@ export function renderCode(stats, theme) {
     })
     .join("")
   const empty = code.byRepo.length ? "" : `<text x="600" y="360" text-anchor="middle" font-size="14" fill="${theme.muted}">No code pushed to public repositories in the past year.</text>`
-  const labels = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">LINES OF CODE · PAST 12 MONTHS</text><text x="${chart.left}" y="76" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PER WEEK · LOG SCALE</text><text x="${chart.left}" y="312" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">BUSIEST REPOSITORIES · LOG SCALE</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
+  const labels = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">LINES OF CODE</text><text x="${chart.left}" y="76" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PER WEEK · LOG SCALE</text><text x="${chart.left}" y="312" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">BUSIEST REPOSITORIES · LOG SCALE</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
   return svgDocument({ id: "code", width: WIDTH, height, title: `Lines of code pushed by ${stats.name} in the past year`, theme, defs: card.defs, body: [card.rect, labels, totals, axis, columns, months, repos, empty].join("\n") })
 }
 
@@ -134,25 +145,6 @@ const MILESTONE_ICONS = {
 
 const tier = (value, steps) => steps.filter((step) => value >= step).pop()
 
-// Achievements computed from live numbers, each shown as the tier reached.
-export function milestones(stats) {
-  const stars = tier(stats.stars, [10, 25, 50, 100, 250])
-  const contributions = tier(stats.total, [100, 500, 1000, 2500, 5000])
-  const streak = tier(stats.streak.longest, [7, 14, 21, 30, 60])
-  const repos = tier(stats.repos, [5, 10, 20, 40])
-  const followers = tier(stats.followers, [10, 25, 50, 100, 250])
-  const pulls = tier(stats.pullRequests, [5, 10, 25, 50, 100])
-  return [
-    { id: "followers", icon: "followers", label: followers ? `${followers}+ followers` : "10+ followers", detail: "on GitHub", unlocked: Boolean(followers) },
-    { id: "pulls", icon: "pulls", label: pulls ? `${pulls}+ pull requests` : "5+ pull requests", detail: "in the past year", unlocked: Boolean(pulls) },
-    { id: "commits", icon: "commits", label: contributions ? `${contributions.toLocaleString("en-US")}+ contributions` : "100+ contributions", detail: "in the past year", unlocked: Boolean(contributions) },
-    { id: "streak", icon: "streak", label: streak ? `${streak}-day streak` : "7-day streak", detail: "longest this year", unlocked: Boolean(streak) },
-    { id: "repos", icon: "repos", label: repos ? `${repos}+ repositories` : "5+ repositories", detail: "public on GitHub", unlocked: Boolean(repos) },
-    { id: "stars", icon: "stars", label: stars ? `${stars}+ stars` : "10+ stars", detail: "earned across repos", unlocked: Boolean(stars) },
-    { id: "languages", icon: "languages", label: `${tier(stats.languages.length, [3, 5, 8]) ?? 3}+ languages`, detail: "in public code", unlocked: stats.languages.length >= 3 }
-  ]
-}
-
 function medal(theme, item, x, y, index) {
   const color = item.unlocked ? (index % 2 ? theme.accent2 : theme.accent) : theme.faint
   const hex = "M0,-30 L26,-15 L26,15 L0,30 L-26,15 L-26,-15 Z"
@@ -161,24 +153,4 @@ function medal(theme, item, x, y, index) {
   const face = `<g transform="translate(0 6)"><path d="${hex}" fill="${shade(color, -0.45)}"/></g><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="${round(4 + index * 0.3)}s" repeatCount="indefinite"/><path d="${hex}" fill="url(#medal-${item.id})" stroke="${shade(color, 0.3)}" stroke-opacity="0.8" filter="url(#mat-bevel)"/><path d="M0,-22 L19,-11 L19,11 L0,22 L-19,11 L-19,-11 Z" fill="none" stroke="#fff" stroke-opacity="${item.unlocked ? 0.35 : 0.15}"/>${shine}${MILESTONE_ICONS[item.icon]}</g>`
   const label = `<text y="52" text-anchor="middle" font-size="13" font-weight="700" fill="${item.unlocked ? theme.text : theme.faint}">${escapeXml(item.label)}</text><text y="68" text-anchor="middle" font-size="11" fill="${theme.muted}">${escapeXml(item.unlocked ? item.detail : "locked")}</text>`
   return `<g transform="translate(${x} ${y})" opacity="0"><animate attributeName="opacity" from="0" to="${item.unlocked ? 1 : 0.55}" begin="${begin}s" dur="0.5s" fill="freeze"/><animateTransform attributeName="transform" type="translate" values="${x} ${y + 12};${x} ${y}" begin="${begin}s" dur="0.5s" fill="freeze"/>${face}${label}</g>`
-}
-
-export function renderMilestones(stats, theme) {
-  const height = 200
-  const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "milestones" })
-  const items = milestones(stats)
-  const step = (WIDTH - 120) / items.length
-  const medals = items.map((item, i) => medal(theme, item, round(60 + step * (i + 0.5)), 96, i)).join("\n")
-  const unlocked = items.filter((item) => item.unlocked).length
-  const header = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">MILESTONES · ${unlocked} OF ${items.length} UNLOCKED</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
-  const defs = [
-    card.defs,
-    `<clipPath id="medal-clip"><path d="M0,-30 L26,-15 L26,15 L0,30 L-26,15 L-26,-15 Z"/></clipPath>`,
-    linearGradient("medal-shine", [["0", "#ffffff", 0], ["0.5", "#ffffff", 0.45], ["1", "#ffffff", 0]]),
-    ...items.map((item, i) => {
-      const color = item.unlocked ? (i % 2 ? theme.accent2 : theme.accent) : theme.faint
-      return `<radialGradient id="medal-${item.id}" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="${shade(color, 0.45)}"/><stop offset="0.6" stop-color="${color}"/><stop offset="1" stop-color="${shade(color, -0.4)}"/></radialGradient>`
-    })
-  ].join("")
-  return svgDocument({ id: "milestones", width: WIDTH, height, title: `Milestones of ${stats.name}`, theme, defs, body: [card.rect, header, medals].join("\n") })
 }

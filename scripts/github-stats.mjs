@@ -133,9 +133,15 @@ export function codeSummary(codeStats = {}, nodes = [], now = new Date()) {
   const colors = new Map(nodes.map((repo) => [repo.name, safeColor(repo.primaryLanguage?.color)]))
   const weekly = new Map()
   const byRepo = []
+  // The contributor endpoint returns every week since each repository was created, so the same
+  // pass totals the whole history and the trailing year.
+  const allTime = { added: 0, deleted: 0, commits: 0 }
   for (const [name, weeks] of Object.entries(codeStats)) {
     const repo = { name, added: 0, deleted: 0, commits: 0, color: colors.get(name) ?? "#8b949e" }
     for (const week of weeks) {
+      allTime.added += week.a
+      allTime.deleted += week.d
+      allTime.commits += week.c
       if (week.w < since || week.w > sunday) continue
       repo.added += week.a
       repo.deleted += week.d
@@ -151,7 +157,7 @@ export function codeSummary(codeStats = {}, nodes = [], now = new Date()) {
   byRepo.sort((a, b) => b.added + b.deleted - (a.added + a.deleted) || a.name.localeCompare(b.name))
   const weeks = Array.from({ length: 52 }, (_, i) => weekly.get(since + i * WEEK) ?? { week: since + i * WEEK, added: 0, deleted: 0, commits: 0 })
   const sum = (key) => weeks.reduce((acc, week) => acc + week[key], 0)
-  return { added: sum("added"), deleted: sum("deleted"), commits: sum("commits"), byRepo: byRepo.slice(0, 6), weeks }
+  return { added: sum("added"), deleted: sum("deleted"), commits: sum("commits"), allTime, byRepo: byRepo.slice(0, 6), weeks }
 }
 
 export function summarize({ user, codeStats }, now = new Date()) {

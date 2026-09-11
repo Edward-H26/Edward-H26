@@ -1,5 +1,6 @@
-// Research focus: a planet carrying a knowledge network, with the eight research topics as
-// keycap satellites on a tilted orbit that passes behind it. Loop: 12 s.
+// Research focus: a planet carrying a knowledge network, with a satellite bead per research topic
+// on a tilted orbit that passes behind it, and the eight topic names on keycap chips that flank the
+// globe. Loop: 12 s.
 import * as THREE from "three"
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js"
 import { createNetwork } from "./lib/network.js"
@@ -64,10 +65,11 @@ const rim = new THREE.PointLight(dark ? "#3b8cff" : "#ffffff", dark ? 25 : 8, 40
 rim.position.set(7, -2, -6)
 scene.add(rim)
 
-// Satellites: keycap chips, each on its own inclined orbit (a different tilt, node and radius),
-// so they swarm around the planet at different heights and pass behind it at different times.
+// Satellites: a lit bead per topic, each on its own inclined orbit (a different tilt, node and
+// radius), so they swarm around the planet at different heights and pass behind it at different
+// times. The orbits stay inside the gutter between the globe and the label columns.
 const ORBITS = TOPICS.map((_, i) => ({
-  radius: 5.2 + (i % 3) * 0.45,
+  radius: 4.15 + (i % 3) * 0.32,
   tilt: -0.55 + (i / (TOPICS.length - 1)) * 1.1,
   node: (i * 2.399) % (Math.PI * 2),
   phase: i / TOPICS.length,
@@ -81,21 +83,58 @@ for (const orbit of ORBITS) {
   ring.rotation.set(Math.PI / 2 + orbit.tilt, orbit.node, 0, "YXZ")
   orbitGroup.add(ring)
 }
-const chips = TOPICS.map((topic, i) => {
-  const color = new THREE.Color(i % 2 ? PALETTE.accent2 : PALETTE.accent)
-  if (dark) color.multiplyScalar(0.72)
-  const label = labelTexture(topic, { font: "800 44px ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" })
-  const chipHeight = 0.46
-  const chipWidth = chipHeight * label.aspect
+const beadGeometry = new THREE.SphereGeometry(0.1, 16, 16)
+const satellites = ORBITS.map((orbit, i) => {
+  const accent = i % 2 ? PALETTE.accent2 : PALETTE.accent
+  const bead = new THREE.Mesh(beadGeometry, new THREE.MeshStandardMaterial({ color: accent, emissive: accent, emissiveIntensity: 1.5, roughness: 0.35 }))
+  bead.userData.orbit = orbit
+  orbitGroup.add(bead)
+  return bead
+})
+
+// Topic names: keycap chips in two columns flanking the globe, pinned to the camera so each one
+// holds the same slot in the frame, at the same size and always face-on, however the camera swings.
+// Long names break over two lines, so no chip has to reach the frame edge to fit.
+const LABEL_FONT = "800 52px ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+const LABEL_DEPTH = 18.5
+const EDGE_MARGIN = 0.34
+const ROW_PITCH = 2
+const ROW_CENTRE = 0.3
+const CHIP_HEIGHT = 1.4
+
+const probe = document.createElement("canvas").getContext("2d")
+probe.font = LABEL_FONT
+const textWidth = (text) => probe.measureText(text).width
+
+// Splits a topic at the space or hyphen that leaves the two lines closest in width.
+function twoLines(text) {
+  const parts = text.split(/(?<=[- ])/)
+  if (parts.length < 2) return [text]
+  let best = null
+  for (let i = 1; i < parts.length; i += 1) {
+    const lines = [parts.slice(0, i).join("").trimEnd(), parts.slice(i).join("")]
+    const width = Math.max(textWidth(lines[0]), textWidth(lines[1]))
+    if (!best || width < best.width) best = { width, lines }
+  }
+  return best.lines
+}
+
+const labels = TOPICS.map((topic) => labelTexture(twoLines(topic), { font: LABEL_FONT, padding: 30, padY: 17, leading: 1.04 }))
+const frameHalfHeight = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * LABEL_DEPTH
+const frameHalfWidth = frameHalfHeight * camera.aspect
+// The inner edges line up in a column whose widest chip stops EDGE_MARGIN short of the frame.
+const columnInner = frameHalfWidth - EDGE_MARGIN - CHIP_HEIGHT * Math.max(...labels.map((label) => label.aspect))
+const chips = labels.map((label, i) => {
+  const color = new THREE.Color(i % 2 ? PALETTE.accent2 : PALETTE.accent).multiplyScalar(dark ? 0.13 : 0.15)
+  const chipWidth = CHIP_HEIGHT * label.aspect
   const chip = new THREE.Group()
-  const body = new THREE.Mesh(new RoundedBoxGeometry(chipWidth, chipHeight, 0.16, 4, 0.11), new THREE.MeshPhysicalMaterial({ color, roughness: 0.5, metalness: 0.05, clearcoat: 0.8, clearcoatRoughness: 0.3 }))
-  body.castShadow = true
+  const body = new THREE.Mesh(new RoundedBoxGeometry(chipWidth, CHIP_HEIGHT, 0.44, 4, 0.22), new THREE.MeshPhysicalMaterial({ color, roughness: 0.6, metalness: 0.05, clearcoat: 0.1, clearcoatRoughness: 0.7, specularIntensity: 0.25 }))
   chip.add(body)
-  const face = new THREE.Mesh(new THREE.PlaneGeometry(chipWidth, chipHeight), new THREE.MeshBasicMaterial({ map: label.texture, transparent: true, toneMapped: false }))
-  face.position.z = 0.085
+  const face = new THREE.Mesh(new THREE.PlaneGeometry(chipWidth, CHIP_HEIGHT), new THREE.MeshBasicMaterial({ map: label.texture, transparent: true, toneMapped: false }))
+  face.position.z = 0.225
   chip.add(face)
-  chip.userData.orbit = ORBITS[i]
-  orbitGroup.add(chip)
+  chip.userData.slot = new THREE.Vector3((i < 4 ? -1 : 1) * (columnInner + chipWidth / 2), ROW_CENTRE + (1.5 - (i % 4)) * ROW_PITCH, -LABEL_DEPTH)
+  scene.add(chip)
   return chip
 })
 const AXIAL_TILT = 0.41
@@ -108,18 +147,23 @@ stage.onFrame(({ phase }) => {
   network.rotation.y = turns(phase, 1)
   planet.userData.clouds.rotation.y = turns(phase, 1, 0.13) + 0.06 * wave(phase, 1)
   network.userData.update(phase)
-  for (const chip of chips) {
-    const orbit = chip.userData.orbit
+  for (const bead of satellites) {
+    const orbit = bead.userData.orbit
     const angle = turns(phase, orbit.turns, orbit.phase)
     orbitPoint.set(Math.cos(angle) * orbit.radius, 0, Math.sin(angle) * orbit.radius)
     orbitPoint.applyEuler(orbitRotation.set(orbit.tilt, orbit.node, 0, "YXZ"))
-    chip.position.copy(orbitPoint)
-    chip.lookAt(camera.position)
+    bead.position.copy(orbitPoint)
   }
   // The camera swings around the planet a little, so the globe visibly turns in depth as well.
   const swing = 0.35 * wave(phase, 1)
   camera.position.set(Math.sin(swing) * eye.z, eye.y + 0.4 * wave(phase, 1, 0.25), Math.cos(swing) * eye.z)
   camera.lookAt(0, 0.1, 0)
+  // Chips ride in front of the camera, so the swing moves the globe behind them, never the names:
+  // each one holds the same pixels of the frame for the whole loop.
+  for (const chip of chips) {
+    chip.position.copy(chip.userData.slot).applyQuaternion(camera.quaternion).add(camera.position)
+    chip.quaternion.copy(camera.quaternion)
+  }
 })
 stage.render(0)
 stage.ready = true

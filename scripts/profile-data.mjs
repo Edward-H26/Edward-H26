@@ -36,7 +36,7 @@ export const PAPERS = [
     title: "AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation",
     authors: ["Eric Ji", "Qiran Hu", "Wufei Ma", "Sarthak Jain", "Yingying Li", "Minh N. Do", "Yaoyao Liu"],
     venue: "European Conference on Computer Vision (ECCV), 2026",
-    thumbnail: { badge: "ECCV", alt: "AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM" },
+    thumbnail: { badge: "ECCV", alt: "A 3D model turned into an edge map whose strength a dial controls, joined by an agent-written prompt, feeding a generator that returns a photo in the same pose" },
     links: [
       { label: "PDF", url: "https://arxiv.org/pdf/2606.31204" },
       { label: "Project Page", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
@@ -50,7 +50,10 @@ export const PAPERS = [
     authors: ["Tuan Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D. Doan", "Kok-Seng Wong", "Fan Lai"],
     venue: "IEEE International Conference on Data Mining (ICDM), 2026",
     thumbnail: { badge: "ICDM", alt: "Retrieved documents compressed into a compact context for a model" },
-    links: []
+    links: [
+      { label: "PDF", url: "https://arxiv.org/pdf/2609.11209" },
+      { label: "BibTeX", url: "https://arxiv.org/bibtex/2609.11209" }
+    ]
   },
   {
     id: "aisim",
@@ -74,6 +77,19 @@ export const PAPER_BUTTONS = [...new Set(PAPERS.flatMap((paper) => paper.links.m
 
 export const paperButtonId = (label) => `paper-link-${label.toLowerCase().replace(/\W+/g, "-")}`
 
+
+// The CV's technical skill categories, listed in the README above the marquee.
+export const SKILL_CATEGORIES = {
+  "Programming Languages": ["Python", "C++", "C", "Rust", "Go", "Java", "Swift", "Kotlin", "Ruby", "R"],
+  "AI/ML Frameworks": ["PyTorch", "CUDA", "JAX", "TensorFlow", "Triton", "TensorRT", "vLLM", "SGLang", "NeMo", "Megatron-LM", "LangGraph", "NCCL", "GPU/TPU/CPU Architecture"],
+  "Foundation Model Training": ["Pre-training", "Post-training", "Test-time Training", "Reinforcement Learning", "Continual Learning", "SFT", "RLHF", "RLAIF", "RLVF", "PPO", "DPO", "GRPO", "Reward Modeling", "Model Alignment", "Synthetic Data Generation", "Knowledge Distillation", "Quantization", "Context Compression", "Token Pruning", "Kernel Optimization", "LoRA", "QLoRA", "Distributed Training", "FSDP"],
+  "Computer Vision": ["World Models", "Diffusion Models", "Autoregressive Models", "Flow Matching", "3D/4D Generation", "Multi-View Geometry", "3D Reconstruction", "Novel View Synthesis", "Spatial Intelligence", "Visual-Inertial Odometry", "Depth Estimation", "NeRFs", "3D Gaussian Splatting", "OpenCV", "SLAM"],
+  "Agentic AI": ["Multi-Agent Orchestration", "Sub-Agent Parallelization", "Computer-Use Agents", "Agent Harness", "Policy Guardrails", "Context Engineering", "Prompt Caching", "MCP", "A2A", "Tool Calling", "Autonomous Workflows", "Long-Horizon Memory", "RAG"],
+  "Full-stack Development": ["React", "Vue", "Angular", "JavaScript", "TypeScript", "HTML5", "Tailwind CSS", "FastAPI"],
+  "Databases and Infrastructure": ["PostgreSQL", "Neo4j", "MongoDB", "Kafka", "Docker", "Kubernetes", "CI/CD", "AWS", "GCP", "Azure"],
+  "Design and Other Tools": ["Figma", "Canva", "Adobe Creative Suite", "Microsoft Office Suite", "Unity"],
+  Languages: ["Chinese (Native)", "English (Native)", "Spanish (Elementary)"]
+}
 
 export const SKILL_ROWS = [
   [
@@ -100,11 +116,11 @@ export const SKILL_COLORS = { ai: "accent", agents: "accent", code: "accent2", d
 // Round icon links rendered into assets/link-<id>-<theme>.svg, like the website's sidebar; the
 // README wraps each in one <a>.
 export const LINKS = [
-  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe" },
-  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap" },
   { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/qiranhu/", icon: "in" },
+  { id: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=4jv03f4AAAAJ&hl=en", icon: "cap" },
+  { id: "website", label: "Website", url: "https://edward-h26.github.io/", icon: "globe" },
+  { id: "email", label: "Email", url: "mailto:qh2332@columbia.edu", icon: "mail" },
   { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x" },
-  { id: "email", label: "Email", url: "mailto:qh2332@columbia.edu", icon: "mail" }
 ]
 
 export const PHONE = "+1 (347)-957-9176"
