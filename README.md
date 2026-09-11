@@ -1,8 +1,8 @@
 <!-- Generated cards live in assets/ (node scripts/render-assets.mjs) and on the output branch (GitHub Actions). -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/scenes/hero-dark.webp" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/scenes/hero-light.webp" />
-  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/scenes/hero-dark.webp" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg" />
+  <img width="100%" alt="Qiran Hu, Research Assistant. Computer Vision and Machine Learning Group at UIUC, M.S. in Data Science at Columbia University." src="assets/hero-dark.svg" />
 </picture>
 
 <!-- links:start -->

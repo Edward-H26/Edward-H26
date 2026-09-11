@@ -49,7 +49,8 @@ describe("static assets", () => {
   const files = renderStaticAssets()
 
   it("renders every card in both themes as self-contained, well-formed SVG", () => {
-    assert.equal(Object.keys(files).length, (1 + LINKS.length + PAPER_BUTTONS.length) * 2 + PAPERS.filter((paper) => paper.thumbnail).length)
+    // the hero and the skills marquee, plus one icon per link and one button per paper action
+    assert.equal(Object.keys(files).length, (2 + LINKS.length + PAPER_BUTTONS.length) * 2 + PAPERS.filter((paper) => paper.thumbnail).length)
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -105,9 +106,9 @@ describe("static assets", () => {
     assert.deepEqual(renderStaticAssets(), files)
   })
 
-  it("references the three rendered 3D loops in both themes, each committed and within budget", () => {
+  it("references the rendered 3D loop in both themes, each committed and within budget", () => {
     const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
-    for (const scene of ["hero", "planet"]) {
+    for (const scene of ["planet"]) {
       for (const theme of ["dark", "light"]) {
         const file = `assets/scenes/${scene}-${theme}.webp`
         assert.ok(readme.includes(file), `README lacks ${file}`)
@@ -115,6 +116,12 @@ describe("static assets", () => {
         assert.ok(statSync(path.join(ROOT, file)).size < 4.9 * 1024 * 1024, `${file} is over 4.9 MB`)
       }
     }
+  })
+
+  it("opens with the animated SVG hero in both themes", () => {
+    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    for (const theme of ["dark", "light"]) assert.ok(readme.includes(`assets/hero-${theme}.svg`), `README lacks the ${theme} hero`)
+    assert.ok(files["hero-dark.svg"].includes(PROFILE.taglines[0]), "hero is missing the taglines")
   })
 
   it("matches the committed files in assets/ (run: npm run render)", () => {
