@@ -109,12 +109,16 @@ export function cloudTexture(size = 512, seed = 3) {
   })
 }
 
-// A label drawn at 2x for sharp text on a plane or sprite; returns the texture and its aspect.
-export function labelTexture(text, { font = "700 40px ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif", color = "#ffffff", padding = 28 } = {}) {
+// A label for a plane or sprite: one string, or an array of lines stacked and centred. Returns the
+// texture and its aspect, so the caller can size the plane it goes on.
+export function labelTexture(text, { font = "700 40px ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif", color = "#ffffff", padding = 28, padY = 19, leading = 1.06 } = {}) {
+  const lines = Array.isArray(text) ? text : [text]
   const probe = document.createElement("canvas").getContext("2d")
   probe.font = font
-  const width = Math.ceil(probe.measureText(text).width + padding * 2)
-  const height = 76
+  const box = probe.measureText("Hg")
+  const lineHeight = Math.round((box.fontBoundingBoxAscent + box.fontBoundingBoxDescent) * leading)
+  const width = Math.ceil(Math.max(...lines.map((line) => probe.measureText(line).width)) + padding * 2)
+  const height = lineHeight * lines.length + padY * 2
   const canvas = document.createElement("canvas")
   canvas.width = width
   canvas.height = height
@@ -125,9 +129,11 @@ export function labelTexture(text, { font = "700 40px ui-sans-serif, -apple-syst
   ctx.lineJoin = "round"
   ctx.lineWidth = 5
   ctx.strokeStyle = "rgba(0, 0, 0, 0.45)"
-  ctx.strokeText(text, width / 2, height / 2 + 2)
+  // Every outline first, so the line below cannot cut into the letters above it.
+  const baselines = lines.map((_, i) => height / 2 + (i - (lines.length - 1) / 2) * lineHeight)
+  lines.forEach((line, i) => ctx.strokeText(line, width / 2, baselines[i]))
   ctx.fillStyle = color
-  ctx.fillText(text, width / 2, height / 2 + 2)
+  lines.forEach((line, i) => ctx.fillText(line, width / 2, baselines[i]))
   const texture = new THREE.CanvasTexture(canvas)
   texture.colorSpace = THREE.SRGBColorSpace
   texture.anisotropy = 8

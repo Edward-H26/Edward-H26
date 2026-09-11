@@ -7,7 +7,6 @@ import { codeSummary, commitsByRepository, computeStreaks, summarize, topLanguag
 import { LINKS, PAPERS, PAPER_BUTTONS, PROFILE, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
 import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
 import { renderReadme } from "./readme.mjs"
-import { milestones } from "./render-dynamic.mjs"
 import { THEMES, escapeXml, rng } from "./svg.mjs"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
@@ -195,8 +194,8 @@ describe("dynamic assets", () => {
   const stats = summarize(fixture, CAPTURED_AT)
   const files = renderDynamicAssets(stats)
 
-  it("renders the three live cards for both themes", () => {
-    assert.deepEqual(Object.keys(files).sort(), ["code-dark.svg", "code-light.svg", "milestones-dark.svg", "milestones-light.svg", "stats-dark.svg", "stats-light.svg"])
+  it("renders the two live cards for both themes", () => {
+    assert.deepEqual(Object.keys(files).sort(), ["code-dark.svg", "code-light.svg", "stats-dark.svg", "stats-light.svg"])
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -226,19 +225,6 @@ describe("dynamic assets", () => {
     assertWellFormed(empty["stats-dark.svg"], "empty stats")
   })
 
-  it("unlocks milestones from live numbers only", () => {
-    const items = milestones(stats)
-    assert.equal(items.length, 7)
-    assert.ok(items.every((item) => item.label && item.detail))
-    const quiet = milestones({ ...stats, followers: 2, pullRequests: 1, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python" }] })
-    assert.deepEqual(quiet.map((item) => item.unlocked), [false, false, false, false, false, false, false])
-    const busy = milestones({ ...stats, stars: 300, total: 6000, streak: { current: 1, longest: 99 }, repos: 45, languages: stats.languages })
-    assert.deepEqual(busy.slice(2, 6).map((item) => item.label), ["5,000+ contributions", "60-day streak", "40+ repositories", "250+ stars"])
-    const svg = renderDynamicAssets({ ...stats, followers: 2, pullRequests: 1, stars: 3, total: 40, streak: { current: 0, longest: 2 }, repos: 2, languages: [{ name: "Python", color: "#3572A5", share: 100 }] })["milestones-dark.svg"]
-    assertWellFormed(svg, "milestones")
-    assert.ok(svg.includes("0 OF 7 UNLOCKED"))
-    assert.ok(svg.includes(">locked<"))
-  })
 
 
 })

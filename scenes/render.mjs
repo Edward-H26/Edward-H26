@@ -26,7 +26,7 @@ const SITE_URL = "https://edward-h26.github.io/PersonalWebsite"
 // Scenes are authored at 1440 px wide; `output` is the width of the encoded loop.
 export const SCENES = {
   hero: { width: 1440, height: 520, loop: 12, output: 1100, fps: 20, quality: { dark: 72, light: 70 } },
-  planet: { width: 1440, height: 672, loop: 20, output: 1100, fps: 10, quality: 62 }
+  planet: { width: 1440, height: 672, loop: 20, output: 950, fps: 10, quality: 52 }
 }
 
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json", ".css": "text/css", ".glb": "model/gltf-binary", ".wasm": "application/wasm", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" }

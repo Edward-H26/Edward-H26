@@ -1,13 +1,13 @@
 // The README blocks that mirror scripts/profile-data.mjs (links, featured paper, paper list) are
 // generated between HTML comment markers, so the data file stays the single source of truth.
-import { LINKS, PAPERS, PHONE, PROFILE, paperButtonId } from "./profile-data.mjs"
+import { LINKS, PAPERS, PHONE, PROFILE, SKILL_CATEGORIES, paperButtonId } from "./profile-data.mjs"
 import { escapeXml } from "./svg.mjs"
 
 const picture = (name, alt, height) =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="assets/${name}-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/${name}-light.svg" /><img height="${height}" alt="${escapeXml(alt)}" src="assets/${name}-dark.svg" /></picture>`
 
 function links() {
-  const icons = LINKS.map((link) => `  <a href="${escapeXml(link.url)}" title="${escapeXml(link.label)}">${picture(`link-${link.id}`, link.label, 56)}</a>`).join("&nbsp;&nbsp;\n")
+  const icons = LINKS.map((link) => `  <a href="${escapeXml(link.url)}" title="${escapeXml(link.label)}">${picture(`link-${link.id}`, link.label, 44)}</a>`).join("&nbsp;&nbsp;\n")
   return `<p align="center">\n${icons}\n</p>\n\n<p align="center">\n  ${escapeXml(PHONE)}<br />\n  <img src="https://komarev.com/ghpvc/?username=${PROFILE.handle}&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />\n</p>`
 }
 
@@ -31,8 +31,14 @@ ${details}${buttons}
 </table>`
 }
 
+const skills = () =>
+  Object.entries(SKILL_CATEGORIES)
+    .map(([category, items]) => `**${category}:** ${items.join(", ")}`)
+    .join("\n\n")
+
 export const SECTIONS = {
   links,
+  skills,
   "featured-paper": () => paperCard(PAPERS[0], 400),
   papers: () => PAPERS.map((paper) => paperCard(paper, 300)).join("\n\n")
 }

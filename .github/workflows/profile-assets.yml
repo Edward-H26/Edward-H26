@@ -31,7 +31,7 @@ jobs:
       - name: Test renderers
         run: npm test
 
-      - name: Render stats, milestones, and lines-of-code cards
+      - name: Render the stats and lines-of-code cards
         run: node scripts/render-assets.mjs --dynamic
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

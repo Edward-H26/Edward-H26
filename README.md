@@ -7,11 +7,11 @@
 
 <!-- links:start -->
 <p align="center">
-  <a href="https://edward-h26.github.io/" title="Website"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg" /><img height="56" alt="Website" src="assets/link-website-dark.svg" /></picture></a>&nbsp;&nbsp;
-  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&amp;hl=en" title="Google Scholar"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="56" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/qiranhu/" title="LinkedIn"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="56" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>&nbsp;&nbsp;
-  <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="56" alt="X" src="assets/link-x-dark.svg" /></picture></a>&nbsp;&nbsp;
-  <a href="mailto:qh2332@columbia.edu" title="Email"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="56" alt="Email" src="assets/link-email-dark.svg" /></picture></a>
+  <a href="https://www.linkedin.com/in/qiranhu/" title="LinkedIn"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-linkedin-light.svg" /><img height="44" alt="LinkedIn" src="assets/link-linkedin-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://scholar.google.com/citations?user=4jv03f4AAAAJ&amp;hl=en" title="Google Scholar"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-scholar-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-scholar-light.svg" /><img height="44" alt="Google Scholar" src="assets/link-scholar-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://edward-h26.github.io/" title="Website"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg" /><img height="44" alt="Website" src="assets/link-website-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="mailto:qh2332@columbia.edu" title="Email"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-email-light.svg" /><img height="44" alt="Email" src="assets/link-email-dark.svg" /></picture></a>&nbsp;&nbsp;
+  <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="44" alt="X" src="assets/link-x-dark.svg" /></picture></a>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
   <img src="https://komarev.com/ghpvc/?username=Edward-H26&style=flat&color=E84A27&label=Profile+views" alt="Profile views" />
 </p>
 <!-- links:end -->
-<div align="center">
+<div>
   <p>
     I am a current student in <strong><a href="https://www.engineering.columbia.edu/about">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
   </p>
@@ -61,10 +61,10 @@
 
 ## News
 
-- **[September 2026]** I am presenting our [AC3S](https://eccv.ecva.net/virtual/2026/poster/5183) poster at [ECCV 2026](https://eccv.ecva.net/Conferences/2026) in Malmö, Sweden, ExHall #107 on September 12.
-- **[August 2026]** Our paper REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
+- **[September 2026]** I presented our [AC3S](https://eccv.ecva.net/virtual/2026/poster/5183) poster at [ECCV 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/calendar).
+- **[August 2026]** Our paper [REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving](https://arxiv.org/abs/2609.11209) is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
-- **[February 2026]** I am admitted to the M.S. in Data Science program at the [Fu Foundation School of Engineering and Applied Science](https://www.engineering.columbia.edu/about) at [Columbia University](https://www.columbia.edu/).
+- **[May 2026]** I received my B.S. in Data Science and Information Science at the [University of Illinois Urbana-Champaign](https://www.illinois.edu/).
 
 ## Interactive 3D Portfolio
 
@@ -115,7 +115,7 @@
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="AC3S pipeline: visual prompt extractor, adaptive modulator, image generator, and multi-agent VLM"/></a></td>
+<td width="300" valign="top"><a href="https://arxiv.org/pdf/2606.31204"><img src="assets/papers/ac3s.svg" width="300" alt="A 3D model turned into an edge map whose strength a dial controls, joined by an agent-written prompt, feeding a generator that returns a photo in the same pose"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/pdf/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
@@ -130,11 +130,13 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><img src="assets/papers/reva.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></td>
+<td width="300" valign="top"><a href="https://arxiv.org/pdf/2609.11209"><img src="assets/papers/reva.svg" width="300" alt="Retrieved documents compressed into a compact context for a model"/></a></td>
 <td valign="top">
-<b>REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</b><br/>
+<b><a href="https://arxiv.org/pdf/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
-<i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i>
+<i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i><br/><br/>
+<a href="https://arxiv.org/pdf/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-pdf-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-pdf-light.svg" /><img height="36" alt="PDF" src="assets/paper-link-pdf-dark.svg" /></picture></a>
+<a href="https://arxiv.org/bibtex/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
 </table>
@@ -229,7 +231,7 @@ _Champaign, IL · 2024.08 - 2024.12_
 _Champaign, IL · 2026.02 - 2026.09_
 
 - Proposed attention-based scoring for post-retrieval RAG context compression to reuse the generator's own attention traces across queries with a document-keyed score store built offline, achieving a 92.0% cache hit rate on HotpotQA.
-- Developed word-unit scoring with original-order rendering for budgeted evidence materialization to preserve document structure under compression, increasing F1 by 13.2% on Natural Questions and reducing compression overhead by 96.7% compared to Selective Context.
+- Developed word-unit scoring with original-order rendering for budgeted evidence materialization to preserve document structure under compression, increasing F1 by 13.2% on Natural Questions and reducing compression overhead by 93.6%.
 - Optimized the online path of score lookup, quota allocation, and budget repair for interactive RAG serving, reducing compression latency by 98.9% compared to EXIT and 99.7% compared to FaviComp.
 
 ### **Multi-agent Research Synthesis Engine**
@@ -292,6 +294,26 @@ _2026.03 - Present_
 
 ## Skills
 
+<!-- skills:start -->
+**Programming Languages:** Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R
+
+**AI/ML Frameworks:** PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, LangGraph, NCCL, GPU/TPU/CPU Architecture
+
+**Foundation Model Training:** Pre-training, Post-training, Test-time Training, Reinforcement Learning, Continual Learning, SFT, RLHF, RLAIF, RLVF, PPO, DPO, GRPO, Reward Modeling, Model Alignment, Synthetic Data Generation, Knowledge Distillation, Quantization, Context Compression, Token Pruning, Kernel Optimization, LoRA, QLoRA, Distributed Training, FSDP
+
+**Computer Vision:** World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Generation, Multi-View Geometry, 3D Reconstruction, Novel View Synthesis, Spatial Intelligence, Visual-Inertial Odometry, Depth Estimation, NeRFs, 3D Gaussian Splatting, OpenCV, SLAM
+
+**Agentic AI:** Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, Context Engineering, Prompt Caching, MCP, A2A, Tool Calling, Autonomous Workflows, Long-Horizon Memory, RAG
+
+**Full-stack Development:** React, Vue, Angular, JavaScript, TypeScript, HTML5, Tailwind CSS, FastAPI
+
+**Databases and Infrastructure:** PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, AWS, GCP, Azure
+
+**Design and Other Tools:** Figma, Canva, Adobe Creative Suite, Microsoft Office Suite, Unity
+
+**Languages:** Chinese (Native), English (Native), Spanish (Elementary)
+<!-- skills:end -->
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg" />
@@ -310,12 +332,6 @@ _2026.03 - Present_
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-light.svg" />
   <img width="100%" alt="GitHub statistics of Edward-H26: contributions in the past year, streak, commits, pull requests, issues, reviews, stars, repositories, followers, forks, top languages, and commits by repository as extruded bars." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/stats-dark.svg" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-light.svg" />
-  <img width="100%" alt="Milestones of Edward-H26 drawn as medals: followers, pull requests, contributions, streak, repositories, stars, and languages." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/milestones-dark.svg" />
 </picture>
 
 <picture>
