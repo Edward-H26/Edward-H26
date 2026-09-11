@@ -105,10 +105,12 @@ async function main(args) {
       await page.close()
       console.log(`rendering ${(rendering / frames).toFixed(0)} ms/frame, capture ${((Date.now() - started) / frames).toFixed(0)} ms/frame total`)
       const file = path.join(OUT, `${name}-${theme}.webp`)
-      const encode = spawnSync("ffmpeg", ["-y", "-loglevel", "error", "-framerate", String(fps), "-i", path.join(dir, "%04d.png"), "-c:v", "libwebp_anim", "-lossless", "0", "-quality", String(quality), "-compression_level", "6", "-loop", "0", file], { stdio: "inherit" })
+      // img2webp from libwebp, because ffmpeg 9 dropped its libwebp encoders.
+      const frameFiles = Array.from({ length: frames }, (_, i) => path.join(dir, `${String(i).padStart(4, "0")}.png`))
+      const encode = spawnSync("img2webp", ["-loop", "0", "-d", String(Math.round(1000 / fps)), "-lossy", "-q", String(quality), "-m", "6", ...frameFiles, "-o", file], { stdio: "inherit" })
       if (keep) console.log(`frames kept in ${dir}`)
       else rmSync(dir, { recursive: true, force: true })
-      if (encode.status !== 0) throw new Error("ffmpeg failed")
+      if (encode.status !== 0) throw new Error("img2webp failed")
       console.log(`${file}: ${frames} frames at ${fps} fps, ${(statSync(file).size / 1024).toFixed(0)} KB, captured in ${((Date.now() - started) / 1000).toFixed(1)}s`)
     }
   } finally {
