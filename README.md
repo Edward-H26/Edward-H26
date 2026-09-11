@@ -40,7 +40,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/scenes/planet-dark.webp" />
   <source media="(prefers-color-scheme: light)" srcset="assets/scenes/planet-light.webp" />
-  <img width="100%" alt="Research focus: 3D-aware generation, multi-agent systems, multimodal LLMs, world models, continual learning, human-AI interaction, spatial intelligence, agent evaluation and safety." src="assets/scenes/planet-dark.webp" />
+  <img width="100%" alt="Research focus: 3d and 4d generation, world models, spatial intelligence, continual learning, multi-agent orchestration, long-horizon agent memory, context-efficient rag, video-language models." src="assets/scenes/planet-dark.webp" />
 </picture>
 </a>
 

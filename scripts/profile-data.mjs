@@ -8,14 +8,14 @@ export const PROFILE = {
 }
 
 export const FOCUS = [
-  { label: "3D-Aware Generation" },
-  { label: "Multi-Agent Systems" },
-  { label: "Multimodal LLMs" },
+  { label: "3D and 4D Generation" },
   { label: "World Models" },
-  { label: "Continual Learning" },
-  { label: "Human-AI Interaction" },
   { label: "Spatial Intelligence" },
-  { label: "Agent Evaluation and Safety" }
+  { label: "Continual Learning" },
+  { label: "Multi-Agent Orchestration" },
+  { label: "Long-Horizon Agent Memory" },
+  { label: "Context-Efficient RAG" },
+  { label: "Video-Language Models" },
 ]
 
 // Papers in README order. A paper with a `thumbnail` gets a figure card: its cropped figure
