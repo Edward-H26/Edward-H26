@@ -61,6 +61,7 @@
 
 ## News
 
+- **[September 2026]** I am presenting our [AC3S](https://eccv.ecva.net/virtual/2026/poster/5183) poster at [ECCV 2026](https://eccv.ecva.net/Conferences/2026) in Malmö, Sweden, ExHall #107 on September 12.
 - **[August 2026]** Our paper REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
 - **[February 2026]** I am admitted to the M.S. in Data Science program at the [Fu Foundation School of Engineering and Applied Science](https://www.engineering.columbia.edu/about) at [Columbia University](https://www.columbia.edu/).
