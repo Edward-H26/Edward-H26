@@ -52,7 +52,7 @@
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
 <i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
-<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-project-page-light.svg" /><img height="36" alt="Project Page" src="assets/paper-link-project-page-dark.svg" /></picture></a>
+<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
@@ -67,6 +67,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
 <i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
+<a href="https://github.com/UIUC-MLSys/REVA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
@@ -134,7 +135,7 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
 <i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
-<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-project-page-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-project-page-light.svg" /><img height="36" alt="Project Page" src="assets/paper-link-project-page-dark.svg" /></picture></a>
+<a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
@@ -149,6 +150,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
 <i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
+<a href="https://github.com/UIUC-MLSys/REVA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>

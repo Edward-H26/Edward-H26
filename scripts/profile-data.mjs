@@ -39,7 +39,7 @@ export const PAPERS = [
     thumbnail: { badge: "ECCV", alt: "The AC3S pipeline: a CAD model rendered and turned into a canny edge prompt, a modulator that sets the ControlNet conditioning scale, a diffusion generator that returns a photo in the same 3D pose, and a multi-agent vision language model that composes the text prompt" },
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2606.31204" },
-      { label: "Project Page", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
+      { label: "Code", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
       { label: "Video", url: "https://youtu.be/3jOJaT2a8iQ" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2606.31204" }
     ]
@@ -52,6 +52,7 @@ export const PAPERS = [
     thumbnail: { badge: "ICDM", alt: "Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document" },
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2609.11209" },
+      { label: "Code", url: "https://github.com/UIUC-MLSys/REVA" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2609.11209" }
     ]
   },
