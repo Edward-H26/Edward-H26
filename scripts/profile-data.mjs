@@ -28,14 +28,6 @@ export const FOCUS = [
 // label renders as one keycap button (assets/paper-link-<label>).
 export const PAPERS = [
   {
-    id: "sv4d",
-    title: "SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation",
-    authors: ["Qiran Hu", "Wei Cao", "Yaoyao Liu"],
-    venue: "Under Review",
-    thumbnail: { badge: "Under Review", alt: "No public figure yet; this paper is under review" },
-    links: []
-  },
-  {
     id: "ac3s",
     title: "AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation",
     authors: ["Eric Ji", "Qiran Hu", "Wufei Ma", "Sarthak Jain", "Yingying Li", "Minh N. Do", "Yaoyao Liu"],
@@ -59,6 +51,22 @@ export const PAPERS = [
       { label: "Code", url: "https://github.com/UIUC-MLSys/REVA" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2609.11209" }
     ]
+  },
+  {
+    id: "acdn",
+    title: "ACDN: Agent-Aware Content Delivery Network",
+    authors: ["Tuan Nguyen", "Qiran Hu", "Dibyadeep Saha", "Banruo Liu", "Khoa D. Doan", "Kok-Seng Wong", "Fan Lai"],
+    venue: "Under Review",
+    thumbnail: { badge: "Under Review", alt: "No public figure yet; this paper is under review" },
+    links: []
+  },
+  {
+    id: "sv4d",
+    title: "SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation",
+    authors: ["Qiran Hu", "Wei Cao", "Yaoyao Liu"],
+    venue: "Under Review",
+    thumbnail: { badge: "Under Review", alt: "No public figure yet; this paper is under review" },
+    links: []
   },
   {
     id: "aisim",
