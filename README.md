@@ -2,7 +2,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg" />
-  <img width="100%" alt="Qiran Hu, Research Assistant. Teaching machines to see in 3D, diffusion that respects geometry, generating worlds that stay consistent, from pixels to spatial understanding." src="assets/hero-dark.svg" />
+  <img width="100%" alt="Qiran Hu, Research Assistant. Developing 3D and 4D generation models, building world models for embodied agents, advancing multimodal continual learning, deploying agentic workflows in production." src="assets/hero-dark.svg" />
 </picture>
 
 <!-- links:start -->
@@ -76,7 +76,7 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 
 ## News
 
-- **[September 2026]** I presented our [AC3S poster](https://eccv.ecva.net/virtual/2026/poster/5183) at [ECCV 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/poster/5183).
+- **[September 2026]** I am honored to present our poster [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://eccv.ecva.net/virtual/2026/poster/5183) at the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/poster/5183).
 - **[August 2026]** Our paper [REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving](https://arxiv.org/abs/2609.11209) is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
 
@@ -364,7 +364,7 @@ _2026.03 - Present_
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-light.svg" />
-  <img width="100%" alt="Lines of code pushed by Edward-H26 in the past year: additions and deletions per week and per repository." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-dark.svg" />
+  <img width="100%" alt="Lines of code pushed by Edward-H26 in the past year: additions and deletions per week." src="https://raw.githubusercontent.com/Edward-H26/Edward-H26/output/code-dark.svg" />
 </picture>
 
 <div align="center">

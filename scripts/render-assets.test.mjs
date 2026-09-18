@@ -210,17 +210,18 @@ describe("dynamic assets", () => {
     assert.ok(files["stats-dark.svg"].includes(`@${PROFILE.handle}`))
     assert.ok(files["stats-dark.svg"].includes(stats.languages[0].name))
     assert.ok(files["stats-dark.svg"].includes(escapeXml(stats.repositoriesByCommits[0].name.slice(0, 20))))
-    for (const repo of stats.code.byRepo) assert.ok(files["code-light.svg"].includes(escapeXml(repo.name.slice(0, 20))), repo.name)
+    // The busiest-repositories bars were dropped from the code card on 2026-09-18.
+    assert.ok(!files["code-light.svg"].includes("BUSIEST REPOSITORIES"))
   })
 
-  it("escapes repository names in the code card and copes with no code at all", () => {
+  it("keeps hostile repository names out of the code card and copes with no code at all", () => {
     const hostile = { ...stats, code: { ...stats.code, byRepo: [{ name: 'evil/<script>"x"', added: 5, deleted: 1, commits: 1, color: "#3572A5" }] } }
     const svg = renderDynamicAssets(hostile)["code-dark.svg"]
     assertWellFormed(svg, "hostile code card")
-    assert.ok(svg.includes("evil/&lt;script&gt;&quot;x&quot;"))
+    assert.ok(!svg.includes("<script>"))
     const idle = renderDynamicAssets({ ...stats, code: codeSummary({}, [], CAPTURED_AT) })["code-dark.svg"]
     assertWellFormed(idle, "idle code card")
-    assert.ok(idle.includes("No code pushed"))
+    assert.ok(idle.includes("0 commits in the past year"))
   })
 
 

@@ -4,10 +4,10 @@ export const PROFILE = {
   handle: "Edward-H26",
   role: "Research Assistant",
   taglines: [
-    "Teaching Machines to See in 3D",
-    "Diffusion That Respects Geometry",
-    "Generating Worlds That Stay Consistent",
-    "From Pixels to Spatial Understanding"
+    "Developing 3D and 4D generation models",
+    "Building world models for embodied agents",
+    "Advancing multimodal continual learning",
+    "Deploying agentic workflows in production"
   ]
 }
 
