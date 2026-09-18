@@ -209,8 +209,8 @@ describe("dynamic assets", () => {
     }
     assert.ok(files["stats-dark.svg"].includes(`@${PROFILE.handle}`))
     assert.ok(files["stats-dark.svg"].includes(stats.languages[0].name))
-    assert.ok(files["stats-dark.svg"].includes(escapeXml(stats.repositoriesByCommits[0].name.slice(0, 20))))
-    // The busiest-repositories bars were dropped from the code card on 2026-09-18.
+    // The repository bars were dropped from both cards on 2026-09-18.
+    assert.ok(!files["stats-dark.svg"].includes("COMMITS BY REPOSITORY"))
     assert.ok(!files["code-light.svg"].includes("BUSIEST REPOSITORIES"))
   })
 
@@ -228,7 +228,6 @@ describe("dynamic assets", () => {
   it("keeps bars inside their tracks and copes with an empty repository list", () => {
     const svg = renderDynamicAssets({ ...stats, languages: [{ name: "Python", color: "#3572A5", share: 100 }], repositoriesByCommits: [{ name: "only", commits: 7, color: "#3572A5" }] })["stats-light.svg"]
     assert.deepEqual([...svg.matchAll(/to="([\d.]+)" begin="0\.3s"/g)].map((m) => Number(m[1])), [280])
-    assert.ok(svg.includes('<rect width="540" height="12" fill="#3572A5"/>'))
     const empty = renderDynamicAssets({ ...stats, repositoriesByCommits: [] })
     assertWellFormed(empty["stats-dark.svg"], "empty stats")
   })

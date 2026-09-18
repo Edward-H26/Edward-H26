@@ -6,7 +6,8 @@ import { WIDTH } from "./render-static.mjs"
 const compact = (value) => (value >= 1000 ? `${round(value / 1000)}k` : String(value))
 
 export function renderStats(stats, theme) {
-  const height = 452
+  // The commits-by-repository bars were dropped on 2026-09-18, so the card ends under the streak block.
+  const height = 324
   const dark = theme.name === "dark"
   const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "stats" })
   const ringLength = round(2 * Math.PI * 54)
@@ -40,22 +41,10 @@ export function renderStats(stats, theme) {
     })
     .join("")
   const languageDefs = stats.languages.map((language, i) => sphereGradient(`stats-lang-dot-${i}`, language.color) + linearGradient(`stats-lang-${i}`, [["0", shade(language.color, 0.5)], ["0.45", language.color], ["1", shade(language.color, -0.4)]], { x2: "0", y2: "1" })).join("")
-  const repos = stats.repositoriesByCommits.slice(0, 6)
-  const maxCommits = Math.max(1, ...repos.map((repo) => repo.commits))
-  // Extruded bars: a front face, a lit top, and a shaded side, growing from the left.
-  const byRepo = repos
-    .map((repo, i) => {
-      const y = 290 + i * 22
-      const width = round(Math.max(8, (repo.commits / maxCommits) * 540))
-      const begin = round(0.4 + i * 0.1)
-      const bar = `<g transform="scale(0.01 1)"><animateTransform attributeName="transform" type="scale" values="0.01 1;1 1" begin="${begin}s" dur="0.9s" fill="freeze"/><rect x="2" y="12" width="${width + 5}" height="5" fill="#000000" opacity="${dark ? 0.45 : 0.18}"/><polygon points="0,0 ${width},0 ${width + 7},-7 7,-7" fill="${shade(repo.color, 0.35)}"/><polygon points="${width},0 ${width + 7},-7 ${width + 7},5 ${width},12" fill="${shade(repo.color, -0.35)}"/><rect width="${width}" height="12" fill="${repo.color}"/></g>`
-      return `<g transform="translate(300 ${y})"><text x="0" y="10" font-size="12" font-family="${MONO}" fill="${theme.text}">${escapeXml(repo.name.length > 26 ? `${repo.name.slice(0, 25)}…` : repo.name)}</text><g transform="translate(230 0)">${bar}</g><text x="${round(230 + width + 16)}" y="11" font-size="11" font-family="${MONO}" fill="${theme.muted}" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(begin + 0.7)}s" dur="0.4s" fill="freeze"/>${repo.commits}</text></g>`
-    })
-    .join("")
-  const labels = `<text x="60" y="52" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PAST 12 MONTHS</text><text x="800" y="44" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">TOP LANGUAGES</text><text x="300" y="266" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">COMMITS BY REPOSITORY</text>`
+  const labels = `<text x="60" y="52" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PAST 12 MONTHS</text><text x="800" y="44" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">TOP LANGUAGES</text>`
   const footer = `<text x="${WIDTH - 48}" y="${height - 26}" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">@${escapeXml(stats.login)} · updated ${escapeXml(stats.updated)}</text>`
   const defs = `${card.defs}${linearGradient("stats-ring", [["0", theme.accent2], ["1", theme.accent]])}${linearGradient("stats-groove", [["0", "#000000", dark ? 0.55 : 0.22], ["1", "#ffffff", dark ? 0.1 : 0.7]], { x2: "0", y2: "1" })}${glowFilter("stats-glow", 3)}${tileFaces}${languageDefs}`
-  return svgDocument({ id: "stats", width: WIDTH, height, title: `GitHub activity of ${stats.name}`, theme, defs, body: [card.rect, labels, ring, streak, tiles, languages, byRepo, footer].join("\n") })
+  return svgDocument({ id: "stats", width: WIDTH, height, title: `GitHub activity of ${stats.name}`, theme, defs, body: [card.rect, labels, ring, streak, tiles, languages, footer].join("\n") })
 }
 
 // Lines of code pushed in the past year: weekly additions rise above the baseline and deletions
