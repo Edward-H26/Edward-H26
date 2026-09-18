@@ -131,16 +131,6 @@ export function renderPaperButton(theme, label) {
   return svgDocument({ id, width, height, title: label, theme, defs, body })
 }
 
-// Pixel size of a WebP file from its header (VP8X, lossy VP8 and lossless VP8L layouts).
-function webpSize(bytes) {
-  const chunk = bytes.toString("ascii", 12, 16)
-  if (chunk === "VP8X") return { width: 1 + bytes.readUIntLE(24, 3), height: 1 + bytes.readUIntLE(27, 3) }
-  if (chunk === "VP8L") {
-    const bits = bytes.readUInt32LE(21)
-    return { width: 1 + (bits & 0x3fff), height: 1 + ((bits >> 14) & 0x3fff) }
-  }
-  return { width: bytes.readUInt16LE(26) & 0x3fff, height: bytes.readUInt16LE(28) & 0x3fff }
-}
 
 // A paper thumbnail: the cropped figure (assets/papers/figures/<id>.webp) under a rounded frame,
 // with the venue badge as a keycap in the corner. The frame takes the figure's own aspect ratio
@@ -149,9 +139,9 @@ function webpSize(bytes) {
 export function renderPaperThumbnail(paper) {
   const width = 600
   const { badge, alt } = paper.thumbnail
+  // Every paper gets the same 10:7 frame; the figure is centred inside it so the cards line up.
+  const height = 420
   const bytes = readFileSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`))
-  const size = webpSize(bytes)
-  const height = Math.round((width * size.height) / size.width)
   const figure = bytes.toString("base64")
   const navy = badge === "Under Review" ? "#4c5b73" : "#13294B"
   const badgeWidth = round(textWidth(badge, 17, 700) + 34)
