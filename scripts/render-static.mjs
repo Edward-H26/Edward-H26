@@ -131,18 +131,33 @@ export function renderPaperButton(theme, label) {
   return svgDocument({ id, width, height, title: label, theme, defs, body })
 }
 
-// A paper thumbnail: the cropped figure (assets/papers/figures/<id>.webp, 1000x700) under a
-// rounded frame, with the venue badge as a keycap in the corner. One file serves both themes.
+// Pixel size of a WebP file from its header (VP8X, lossy VP8 and lossless VP8L layouts).
+function webpSize(bytes) {
+  const chunk = bytes.toString("ascii", 12, 16)
+  if (chunk === "VP8X") return { width: 1 + bytes.readUIntLE(24, 3), height: 1 + bytes.readUIntLE(27, 3) }
+  if (chunk === "VP8L") {
+    const bits = bytes.readUInt32LE(21)
+    return { width: 1 + (bits & 0x3fff), height: 1 + ((bits >> 14) & 0x3fff) }
+  }
+  return { width: bytes.readUInt16LE(26) & 0x3fff, height: bytes.readUInt16LE(28) & 0x3fff }
+}
+
+// A paper thumbnail: the cropped figure (assets/papers/figures/<id>.webp) under a rounded frame,
+// with the venue badge as a keycap in the corner. The frame takes the figure's own aspect ratio
+// so the diagram fills it edge to edge (the figures keep a white band on top for the badge).
+// One file serves both themes.
 export function renderPaperThumbnail(paper) {
   const width = 600
-  const height = 420
   const { badge, alt } = paper.thumbnail
-  const figure = readFileSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`)).toString("base64")
+  const bytes = readFileSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`))
+  const size = webpSize(bytes)
+  const height = Math.round((width * size.height) / size.width)
+  const figure = bytes.toString("base64")
   const navy = badge === "Under Review" ? "#4c5b73" : "#13294B"
   const badgeWidth = round(textWidth(badge, 17, 700) + 34)
   const id = `paper-${paper.id}`
   const body = [
-    `<g clip-path="url(#${id}-frame)"><image xlink:href="data:image/webp;base64,${figure}" width="${width}" height="${height}" preserveAspectRatio="xMidYMin slice"/><rect x="1" y="1" width="${width - 2}" height="${round(height * 0.3)}" rx="23" fill="url(#mat-gloss)" opacity="0.35"/></g>`,
+    `<g clip-path="url(#${id}-frame)"><image xlink:href="data:image/webp;base64,${figure}" width="${width}" height="${height}" preserveAspectRatio="xMidYMid meet"/><rect x="1" y="1" width="${width - 2}" height="${round(height * 0.3)}" rx="23" fill="url(#mat-gloss)" opacity="0.35"/></g>`,
     `<rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="23" fill="none" stroke="#13294B" stroke-opacity="0.22" stroke-width="2"/>`,
     `<g transform="translate(18 18)">${keycap({ width: badgeWidth, height: 34, radius: 10, fill: `url(#${id}-badge)`, side: shade(navy, -0.5), depth: 4 })}<g clip-path="url(#${id}-badge-clip)"><rect x="-60" y="0" width="30" height="34" fill="url(#${id}-shine)" transform="skewX(-22)"><animate attributeName="x" from="-60" to="${badgeWidth + 40}" dur="6s" repeatCount="indefinite"/></rect></g><text x="${badgeWidth / 2}" y="24" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="0.6" fill="#ffffff">${escapeXml(badge)}</text></g>`
   ].join("")

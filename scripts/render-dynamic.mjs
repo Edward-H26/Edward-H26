@@ -59,10 +59,10 @@ export function renderStats(stats, theme) {
 }
 
 // Lines of code pushed in the past year: weekly additions rise above the baseline and deletions
-// hang below it, both as lit extruded bars; the busiest repositories follow as horizontal bars.
+// hang below it, both as lit extruded bars. (The busiest-repositories bars were dropped on 2026-09-18.)
 const lines = (value) => (value >= 1000000 ? `${round(value / 1000000)}M` : value >= 1000 ? `${round(value / 1000)}k` : String(value))
 
-// Both charts use a log scale: one bulk data commit would otherwise flatten every other bar.
+// The chart uses a log scale: one bulk data commit would otherwise flatten every other bar.
 const logScale = (value, max) => (value > 0 ? Math.log10(1 + value) / Math.log10(1 + max) : 0)
 
 function extruded(width, height, color, depth = 6) {
@@ -70,7 +70,7 @@ function extruded(width, height, color, depth = 6) {
 }
 
 export function renderCode(stats, theme) {
-  const height = 460
+  const height = 324
   const dark = theme.name === "dark"
   const card = cardFrame(theme, { x: 20, y: 14, width: WIDTH - 40, height: height - 28, radius: 20, id: "code" })
   const { code } = stats
@@ -113,24 +113,8 @@ export function renderCode(stats, theme) {
     .join("")
   const axis = `<line x1="${chart.left}" y1="${chart.baseline + 2}" x2="${chart.right}" y2="${chart.baseline + 2}" stroke="${theme.border}"/><text x="${chart.right}" y="${chart.baseline - chart.up - 8}" text-anchor="end" font-size="10" font-family="${MONO}" fill="${theme.faint}">peak week +${escapeXml(lines(maxAdded))}</text>`
 
-  // Busiest repositories: bar length follows the log of the lines touched, and the green and
-  // red parts split it in the true proportion of additions to deletions.
-  const repoMax = Math.max(1, ...code.byRepo.map((repo) => repo.added + repo.deleted))
-  const repos = code.byRepo
-    .map((repo, i) => {
-      const y = 330 + i * 18
-      const total = repo.added + repo.deleted
-      const length = logScale(total, repoMax) * 420
-      const added = round(Math.max((length * repo.added) / Math.max(total, 1), repo.added ? 3 : 0))
-      const deleted = round(Math.max((length * repo.deleted) / Math.max(total, 1), repo.deleted ? 3 : 0))
-      const begin = round(1.2 + i * 0.1)
-      const name = repo.name.length > 26 ? `${repo.name.slice(0, 25)}…` : repo.name
-      return `<g transform="translate(330 ${y})"><text x="-8" y="9" text-anchor="end" font-size="11.5" font-family="${MONO}" fill="${theme.text}">${escapeXml(name)}</text><g transform="scale(0.01 1)"><animateTransform attributeName="transform" type="scale" values="0.01 1;1 1" begin="${begin}s" dur="0.8s" fill="freeze"/><rect width="${added}" height="10" rx="2" fill="${green}"/><rect x="${added + 2}" width="${deleted}" height="10" rx="2" fill="${red}" opacity="0.85"/></g><text x="${added + deleted + 12}" y="9" font-size="10.5" font-family="${MONO}" fill="${theme.muted}" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${round(begin + 0.6)}s" dur="0.4s" fill="freeze"/>+${escapeXml(lines(repo.added))} / -${escapeXml(lines(repo.deleted))}</text></g>`
-    })
-    .join("")
-  const empty = code.byRepo.length ? "" : `<text x="600" y="360" text-anchor="middle" font-size="14" fill="${theme.muted}">No code pushed to public repositories in the past year.</text>`
-  const labels = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">LINES OF CODE</text><text x="${chart.left}" y="76" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PER WEEK · LOG SCALE</text><text x="${chart.left}" y="312" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">BUSIEST REPOSITORIES · LOG SCALE</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
-  return svgDocument({ id: "code", width: WIDTH, height, title: `Lines of code pushed by ${stats.name} in the past year`, theme, defs: card.defs, body: [card.rect, labels, totals, axis, columns, months, repos, empty].join("\n") })
+  const labels = `<text x="60" y="54" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">LINES OF CODE</text><text x="${chart.left}" y="76" font-size="12" font-weight="600" letter-spacing="1.2" fill="${theme.muted}">PER WEEK · LOG SCALE</text><text x="${WIDTH - 52}" y="54" text-anchor="end" font-size="11" font-family="${MONO}" fill="${theme.faint}">updated ${escapeXml(stats.updated)}</text>`
+  return svgDocument({ id: "code", width: WIDTH, height, title: `Lines of code pushed by ${stats.name} in the past year`, theme, defs: card.defs, body: [card.rect, labels, totals, axis, columns, months].join("\n") })
 }
 
 const MILESTONE_ICONS = {
