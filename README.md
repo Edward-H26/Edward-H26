@@ -76,6 +76,7 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 
 ## News
 
+- **[September 2026]** I am honored to join [IBM Research](https://research.ibm.com/) as a Research Intern advised by Dr. Dhaval Patel to work on Causal Diagnosis and Intervention Evaluation for [AssetOpsBench](https://github.com/IBM/AssetOpsBench).
 - **[September 2026]** I am honored to present our poster [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://eccv.ecva.net/virtual/2026/poster/5183) at the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/poster/5183).
 - **[August 2026]** Our paper [REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving](https://arxiv.org/abs/2609.11209) is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
 - **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
@@ -168,7 +169,7 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 ## Research Experience
 
 ### **UIUC Computer Vision and Machine Learning Group**
-**Undergraduate Research Assistant - Advised by Professor Yaoyao Liu**<br/>
+**Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2025.05 - Present_
 
 - Develop adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% on ImageNet and enhancing pose accuracy by 4.2x on PASCAL3D+.
@@ -177,8 +178,8 @@ _Champaign, IL · 2025.05 - Present_
 
 [![Lab](https://img.shields.io/badge/Lab_Page-13294B?style=for-the-badge&logo=readthedocs&logoColor=white)](https://vision.ischool.illinois.edu/people/)
 
-### **Multimodal Continual Learning Project**
-**Undergraduate Research Assistant**<br/>
+### **Multi-modal Generative Models for Continual Learning**
+**Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2026.02 - Present_
 
 - Selected for NVIDIA Academic Grant Program Award to streamline multimodal foundation models in class-incremental learning across audio, image, and text without catastrophic forgetting and cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
@@ -188,7 +189,7 @@ _Champaign, IL · 2026.02 - Present_
 [![NVIDIA Grant](https://img.shields.io/badge/NVIDIA_Grant-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
 ### **REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving**
-**Undergraduate Research Assistant, University of Illinois Urbana-Champaign**<br/>
+**Undergraduate Research Assistant, University of Illinois Urbana-Champaign (Advisor: Prof. Fan Lai)**<br/>
 _Champaign, IL · 2026.02 - 2026.09_
 
 - Proposed attention-based scoring for post-retrieval RAG context compression to reuse generator attention traces across queries and update the system offline, achieving a 91.6% cache hit rate on HotpotQA.
@@ -196,6 +197,16 @@ _Champaign, IL · 2026.02 - 2026.09_
 - Optimized online serving to keep context compression off the GPU critical path for high-volume production RAG traffic under strict per-request latency targets, minimizing compression latency by 99.3% compared to EXIT and 99.8% compared to FaviComp.
 
 ## Professional Experience
+
+### **IBM Research**
+**Research Intern (Advisor: Dr. Dhaval Patel)**<br/>
+_New York, NY · 2026.09 - Present_
+
+- Lead MCP server architecture for AssetOpsBench to give tool-using LLM agents typed access to failure-mode knowledge graphs, causal root-cause ranking, and intervention estimation with deterministic Neo4j queries and provenance on every result.
+- Create industrial fault-diagnosis RL environments for multi-step LLM agents over predictive-maintenance telemetry from 100 machines to benchmark evidence gathering and maintenance actions under hidden ground truth, look-alike faults, and incomplete observations.
+- Conduct controlled evaluations of four LLM agents under one model and action budget to identify latency bottlenecks in causal estimation, graph retrieval, MCP calls, and inference with PyTorch Profiler and Nsight on H100 GPUs.
+
+[![AssetOpsBench](https://img.shields.io/badge/AssetOpsBench-13294B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/IBM/AssetOpsBench)
 
 ### **Memoria**
 **Founding Technical Lead**<br/>
@@ -247,7 +258,7 @@ _Champaign, IL · 2025.11 - 2026.05_
 
 ### **Realistic Neural Style Transfer Architecture**
 **Undergraduate Research Assistant**<br/>
-_2025.01 - 2025.08_
+_Champaign, IL · 2025.01 - 2025.08_
 
 - Proposed style transfer frameworks to maintain photorealistic results under highly abstract styles with VGG perceptual losses and edge-preserving constraints, improving SSIM by 77.0% and MS-SSIM by 49.0% compared to TensorFlow's NST.
 - Proposed multi-layer Gram matrix losses with adaptive layer weighting to suppress texture and chromatic artifacts, boosting SSIM by 4.4x and MS-SSIM by 6.4x compared to ChatGPT-4o.
@@ -256,7 +267,7 @@ _2025.01 - 2025.08_
 
 ### **Anime Statistics and Analysis Platform, ASAP**
 **Undergraduate Research Assistant**<br/>
-_2025.02 - 2025.06_
+_Champaign, IL · 2025.02 - 2025.06_
 
 - Deployed interactive R Shiny analytics platforms to surface anime popularity trends and market opportunities with live Jikan REST API data and predictive analysis on shinyapps.io.
 
@@ -279,7 +290,7 @@ _Champaign, IL · 2023.08 - 2026.05_
 
 ### **OnePromptClaudeCode**
 **Lead Developer**<br/>
-_2026.03 - Present_
+_Champaign, IL · 2026.03 - Present_
 
 - Lead development of an MIT-licensed open-source agent harness for agentic software development, minimizing setup time by 99.5%.
 - Design three-tier capability routers for the agent harness to optimize tokens, latency, and cost on every turn, with keyword matching and session-memory recall ahead of a 4.5 s model reasoning pass, resolving intent in 120 ms and running 37.5x faster than routing every prompt through the model.
