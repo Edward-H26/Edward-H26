@@ -204,7 +204,7 @@ _New York, NY · 2026.09 - Present_
 
 - Lead MCP server architecture for AssetOpsBench to give tool-using LLM agents typed access to failure-mode knowledge graphs, causal root-cause ranking, and intervention estimation with deterministic Neo4j queries and provenance on every result.
 - Create industrial fault-diagnosis RL environments for multi-step LLM agents over predictive-maintenance telemetry from 100 machines to benchmark evidence gathering and maintenance actions under hidden ground truth, look-alike faults, and incomplete observations.
-- Conduct controlled evaluations of four LLM agents under one model and action budget to identify latency bottlenecks in causal estimation, graph retrieval, MCP calls, and inference with PyTorch Profiler and Nsight on H100 GPUs.
+- Conduct controlled evaluations of four LLM agents under one model and action budget, raising Top-1 diagnosis accuracy by 88% over a Plan-Execute agent, and profile inference latency with PyTorch Profiler and Nsight on H100 GPUs.
 
 [![AssetOpsBench](assets/badges/assetopsbench.svg)](https://github.com/IBM/AssetOpsBench)
 
