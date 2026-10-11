@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url"
 import { PROFILE } from "./profile-data.mjs"
 import { fetchGithub, summarize } from "./github-stats.mjs"
 import { renderReadme } from "./readme.mjs"
-import { renderCode, renderStats } from "./render-dynamic.mjs"
+import { renderCode, renderContributions3d, renderStats } from "./render-dynamic.mjs"
 import { SINGLE_ASSETS, STATIC_ASSETS } from "./render-static.mjs"
 import { THEMES } from "./svg.mjs"
 
@@ -29,6 +29,7 @@ export function renderDynamicAssets(stats) {
   for (const theme of Object.values(THEMES)) {
     files[`stats-${theme.name}.svg`] = renderStats(stats, theme)
     files[`code-${theme.name}.svg`] = renderCode(stats, theme)
+    files[`contrib-3d-${theme.name}.svg`] = renderContributions3d(stats, theme)
   }
   return files
 }

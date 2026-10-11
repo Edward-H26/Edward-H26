@@ -3,7 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs"
 import path from "node:path"
 import { describe, it } from "node:test"
 import { fileURLToPath } from "node:url"
-import { codeSummary, commitsByRepository, computeStreaks, summarize, topLanguages } from "./github-stats.mjs"
+import { allTimeSummary, codeSummary, commitsByRepository, computeStreaks, summarize, topLanguages, weeklyGrid } from "./github-stats.mjs"
 import { LINKS, PAPERS, PAPER_BUTTONS, PROFILE, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
 import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
 import { renderReadme } from "./readme.mjs"
@@ -142,6 +142,38 @@ describe("github stats", () => {
     assert.deepEqual(computeStreaks([], "2026-09-02"), { current: 0, longest: 0 })
   })
 
+  it("sums the yearly windows into all-time totals, days, and languages weighted by commits", () => {
+    const year = (number, days, repos) => ({
+      year: number,
+      totalCommitContributions: 10 * number,
+      totalIssueContributions: 2,
+      totalPullRequestContributions: 1,
+      totalPullRequestReviewContributions: 0,
+      totalRepositoryContributions: 3,
+      commitContributionsByRepository: repos.map(([name, count]) => ({ repository: { primaryLanguage: name ? { name } : null }, contributions: { totalCount: count } })),
+      contributionCalendar: { totalContributions: days.reduce((acc, [, count]) => acc + count, 0), weeks: [{ contributionDays: days.map(([date, contributionCount]) => ({ date, contributionCount })) }] }
+    })
+    const history = [
+      year(2025, [["2025-08-01", 4], ["2025-12-30", 1], ["2025-12-31", 2]], [["Python", 6], [null, 9]]),
+      year(2026, [["2026-01-01", 3], ["2026-01-02", 0], ["2026-03-01", 5]], [["TypeScript", 4], ["Python", 1]])
+    ]
+    const summary = allTimeSummary(history, "2025-12-30", "2026-01-02")
+    assert.deepEqual(summary.totals, { contributions: 15, commits: 40510, issues: 4, pullRequests: 2, reviews: 0, repositories: 6 })
+    assert.deepEqual(summary.days.map((day) => day.date), ["2025-12-30", "2025-12-31", "2026-01-01", "2026-01-02"])
+    assert.deepEqual(computeStreaks(summary.days, "2026-01-02"), { current: 3, longest: 3 })
+    assert.deepEqual(summary.languages, [{ name: "Python", commits: 7 }, { name: "TypeScript", commits: 4 }])
+  })
+
+  it("puts each GitHub week of the account's lifetime in a column of its year's row", () => {
+    const days = [{ date: "2025-12-30", count: 1 }, { date: "2025-12-31", count: 2 }, { date: "2026-01-01", count: 4 }, { date: "2026-01-04", count: 8 }, { date: "2026-01-07", count: 16 }]
+    assert.deepEqual(weeklyGrid(days, "2025-12-30", "2026-01-06"), [
+      { year: 2025, weeks: [{ column: 52, count: 3 }] },
+      { year: 2026, weeks: [{ column: 0, count: 4 }, { column: 1, count: 8 }] }
+    ])
+    // 2028 starts on a Saturday and is a leap year, so its last day would open a 54th week.
+    assert.deepEqual(weeklyGrid([{ date: "2028-12-31", count: 2 }], "2028-12-30", "2028-12-31"), [{ year: 2028, weeks: [{ column: 52, count: 2 }] }])
+  })
+
   it("ranks languages by bytes across non-fork repositories", () => {
     const nodes = [
       { isFork: false, languages: { edges: [{ size: 300, node: { name: "Python", color: "#3572A5" } }, { size: 100, node: { name: "R", color: 'url("x")' } }] } },
@@ -149,8 +181,8 @@ describe("github stats", () => {
       { isFork: false, languages: { edges: [{ size: 100, node: { name: "Python", color: "#3572A5" } }] } }
     ]
     assert.deepEqual(topLanguages(nodes), [
-      { name: "Python", color: "#3572A5", share: 80 },
-      { name: "R", color: "#8b949e", share: 20 }
+      { name: "Python", share: 80 },
+      { name: "R", share: 20 }
     ])
     assert.deepEqual(topLanguages([]), [])
   })
@@ -201,8 +233,8 @@ describe("dynamic assets", () => {
   const stats = summarize(fixture, CAPTURED_AT)
   const files = renderDynamicAssets(stats)
 
-  it("renders the two live cards for both themes", () => {
-    assert.deepEqual(Object.keys(files).sort(), ["code-dark.svg", "code-light.svg", "stats-dark.svg", "stats-light.svg"])
+  it("renders the three live cards for both themes", () => {
+    assert.deepEqual(Object.keys(files).sort(), ["code-dark.svg", "code-light.svg", "contrib-3d-dark.svg", "contrib-3d-light.svg", "stats-dark.svg", "stats-light.svg"])
     for (const [name, svg] of Object.entries(files)) {
       assertWellFormed(svg, name)
       assertSelfContained(svg, name)
@@ -212,6 +244,51 @@ describe("dynamic assets", () => {
     // The repository bars were dropped from both cards on 2026-09-18.
     assert.ok(!files["stats-dark.svg"].includes("COMMITS BY REPOSITORY"))
     assert.ok(!files["code-light.svg"].includes("BUSIEST REPOSITORIES"))
+  })
+
+  it("counts the stats card and the 3D chart from the day the account was created", () => {
+    assert.ok(files["stats-dark.svg"].includes(">SINCE AUG 2022<"))
+    assert.ok(!files["stats-dark.svg"].includes("past year"))
+    const cells = stats.grid.reduce((acc, row) => acc + row.weeks.length, 0)
+    assert.equal(stats.grid[0].year, 2022)
+    for (const name of ["contrib-3d-dark.svg", "contrib-3d-light.svg"]) {
+      const svg = files[name]
+      // Three faces per weekly bar, plus five radar rings and the radar shape.
+      assert.equal((svg.match(/<polygon /g) ?? []).length, cells * 3 + 6, name)
+      assert.ok(svg.includes(`>${stats.total}</text>`) && svg.includes(`>${stats.since} / ${stats.updated}<`), name)
+      assert.ok(svg.includes(`>${escapeXml(stats.commitLanguages[0].name)}<title>`), name)
+      for (const row of stats.grid) assert.ok(svg.includes(`>${row.year}</text>`), `${name} labels ${row.year}`)
+    }
+    assert.ok(files["contrib-3d-dark.svg"].includes("@keyframes rb4t") && files["contrib-3d-dark.svg"].includes('class="rb'))
+    assert.ok(!files["contrib-3d-light.svg"].includes("<style>"))
+  })
+
+  it("gives every shown language its own colour, the same on both cards", () => {
+    // GitHub's colours put TypeScript and Python about 34 RGB units apart; the palette keeps every pair above 60.
+    const rgbDistance = (a, b) => Math.hypot(...[1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16) - parseInt(b.slice(i, i + 2), 16)))
+    const assertDistinct = (colors, label) => colors.forEach((a, i) => colors.slice(i + 1).forEach((b) => assert.ok(rgbDistance(a, b) >= 60, `${label}: ${a} and ${b} look alike`)))
+    for (const theme of ["dark", "light"]) {
+      const legend = [...files[`contrib-3d-${theme}.svg`].matchAll(/width="22" height="22" rx="3" fill="(#[0-9a-f]{6})"\/><text [^>]*>([^<]+)<title>/g)].map(([, color, name]) => ({ color, name }))
+      assert.equal(legend.length, Math.min(6, stats.commitLanguages.length))
+      assertDistinct(legend.map((entry) => entry.color), `${theme} donut`)
+      const card = files[`stats-${theme}.svg`]
+      const barColors = stats.languages.map((_, i) => card.match(new RegExp(`id="stats-lang-${i}"[^>]*><stop[^>]*><stop offset="0.45" stop-color="(#[0-9a-f]{6})"`))[1])
+      assertDistinct(barColors, `${theme} stats card`)
+      for (const { color, name } of legend) {
+        const i = stats.languages.findIndex((language) => language.name === name)
+        if (i >= 0) assert.equal(barColors[i], color, `${name} changes colour between cards`)
+      }
+    }
+  })
+
+  it("draws the 3D chart for an account with no contributions yet", () => {
+    const quiet = { ...stats, total: 0, commits: 0, issues: 0, pullRequests: 0, reviews: 0, repositoriesCreated: 0, commitLanguages: [], grid: [{ year: 2026, weeks: [{ column: 0, count: 0 }] }] }
+    for (const theme of ["dark", "light"]) {
+      const svg = renderDynamicAssets(quiet)[`contrib-3d-${theme}.svg`]
+      assertWellFormed(svg, `quiet ${theme} 3D chart`)
+      assertSelfContained(svg, `quiet ${theme} 3D chart`)
+      assert.ok(!svg.includes("<path d=\"M"), "no language arcs without commits")
+    }
   })
 
   it("keeps hostile repository names out of the code card and copes with no code at all", () => {
