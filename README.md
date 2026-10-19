@@ -180,17 +180,17 @@ _Champaign, IL · 2025.05 - Present_
 
 ### **Multi-modal Generative Models for Continual Learning**
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
-_Champaign, IL · 2026.02 - Present_
+_Champaign, IL · 2026.02 - 2026.08_
 
-- Selected for NVIDIA Academic Grant Program Award to streamline multimodal foundation models in class-incremental learning across audio, image, and text without catastrophic forgetting and cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
-- Implement post-hoc tensor-level weight-interpolation methods for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, minimizing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and increasing R@1 by 33.5% on AudioSet.
-- Optimize checkpoint fusion pipelines to compose frozen checkpoints into one deployable model with no additional inference time, boosting last-task accuracy by 40.9% on UrbanSound8K.
+- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline multimodal foundation models in class-incremental learning across audio, image, and text without catastrophic forgetting and cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
+- Implemented post-hoc tensor-level weight-interpolation methods for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, minimizing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and increasing R@1 by 33.5% on AudioSet.
+- Optimized checkpoint fusion pipelines to compose frozen checkpoints into one deployable model with no additional inference time, boosting last-task accuracy by 40.9% on UrbanSound8K.
 
 [![NVIDIA Grant](assets/badges/nvidia-grant.svg)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
 ### **REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving**
 **Undergraduate Research Assistant, University of Illinois Urbana-Champaign (Advisor: Prof. Fan Lai)**<br/>
-_Champaign, IL · 2026.02 - 2026.09_
+_Champaign, IL · 2026.02 - 2026.06_
 
 - Proposed attention-based scoring for post-retrieval RAG context compression to reuse generator attention traces across queries and update the system offline, achieving a 91.6% cache hit rate on HotpotQA.
 - Developed reusable evidence views to scale compression cost with unique documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
@@ -209,12 +209,12 @@ _New York, NY · 2026.09 - Present_
 [![AssetOpsBench](assets/badges/assetopsbench.svg)](https://github.com/IBM/AssetOpsBench)
 
 ### **Memoria**
-**Founding Technical Lead**<br/>
-_Champaign, IL · 2026.01 - Present_
+**Technical Lead**<br/>
+_Champaign, IL · 2026.01 - 2026.08_
 
-- Lead end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
-- Manage production operations for deployed workflows with logging, evaluation harnesses, and monthly improvement cycles with client stakeholders, saving 90.5% in serving cost.
-- Optimize enterprise workflows with self-evolving per-user memory and cost-aware model routing across sessions, saving 96.0% in token cost compared to GPT-4 Turbo.
+- Led end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
+- Managed production operations for deployed workflows with logging, evaluation harnesses, and monthly improvement cycles with client stakeholders, saving 90.5% in serving cost.
+- Optimized enterprise workflows with self-evolving per-user memory and cost-aware model routing across sessions, saving 96.0% in token cost compared to GPT-4 Turbo.
 
 [![Website](assets/badges/website.svg)](https://miramemoria.com/)
 
