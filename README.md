@@ -337,11 +337,11 @@ _Champaign, IL · 2026.03 - Present_
 
 **AI/ML Frameworks:** PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, LangGraph, NCCL, GPU/TPU/CPU Architecture
 
-**Foundation Model Training:** Pre-training, Post-training, Test-time Training, Reinforcement Learning, Continual Learning, SFT, RLHF, RLAIF, RLVF, PPO, DPO, GRPO, Reward Modeling, Model Alignment, Synthetic Data Generation, Knowledge Distillation, Quantization, Context Compression, Token Pruning, Kernel Optimization, LoRA, QLoRA, Distributed Training, FSDP
+**Foundation Model Training:** Pre-training, Post-training, Test-time Training, Reinforcement Learning, Continual Learning, SFT, RLHF, RLAIF, RLVF, PPO, DPO, GRPO, Reward Modeling, Model Alignment and Instruction Following, Synthetic Data Generation, Knowledge Distillation, Quantization, Context Compression, Token Pruning, Kernel Optimization, LoRA, QLoRA, Distributed Training, FSDP
 
-**Computer Vision:** World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Generation, Multi-View Geometry, 3D Reconstruction, Novel View Synthesis, Spatial Intelligence, Visual-Inertial Odometry, Depth Estimation, NeRFs, 3D Gaussian Splatting, OpenCV, SLAM
+**Computer Vision:** World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Image and Video Generation, Multi-View Geometry, 3D Reconstruction, Novel View Synthesis, Spatial Intelligence, Visual-Inertial Odometry, Depth Estimation, NeRFs, 3D Gaussian Splatting, OpenCV, SLAM
 
-**Agentic AI:** Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, Context Engineering, Prompt Caching, MCP, A2A, Tool Calling, Autonomous Workflows, Long-Horizon Memory, RAG
+**Agentic AI:** Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, Context Engineering, Prompt Caching, MCP, A2A, Tool Calling, Multi-Step Autonomous Workflows, Long-Horizon Agent Memory, RAG
 
 **Full-stack Development:** React, Vue, Angular, JavaScript, TypeScript, HTML5, Tailwind CSS, FastAPI
 
@@ -355,7 +355,7 @@ _Champaign, IL · 2026.03 - Present_
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg" />
-  <img width="100%" alt="Skills: Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Generation, Multi-View Geometry, Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes." src="assets/skills-marquee-dark.svg" />
+  <img width="100%" alt="Skills: Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Image and Video Generation, Multi-View Geometry, Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes." src="assets/skills-marquee-dark.svg" />
 </picture>
 
 <p align="center">
