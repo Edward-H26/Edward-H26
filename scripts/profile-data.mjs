@@ -95,9 +95,9 @@ export const paperButtonId = (label) => `paper-link-${label.toLowerCase().replac
 export const SKILL_CATEGORIES = {
   "Programming Languages": ["Python", "C++", "C", "Rust", "Go", "Java", "Swift", "Kotlin", "Ruby", "R"],
   "AI/ML Frameworks": ["PyTorch", "CUDA", "JAX", "TensorFlow", "Triton", "TensorRT", "vLLM", "SGLang", "NeMo", "Megatron-LM", "LangGraph", "NCCL", "GPU/TPU/CPU Architecture"],
-  "Foundation Model Training": ["Pre-training", "Post-training", "Test-time Training", "Reinforcement Learning", "Continual Learning", "SFT", "RLHF", "RLAIF", "RLVF", "PPO", "DPO", "GRPO", "Reward Modeling", "Model Alignment", "Synthetic Data Generation", "Knowledge Distillation", "Quantization", "Context Compression", "Token Pruning", "Kernel Optimization", "LoRA", "QLoRA", "Distributed Training", "FSDP"],
-  "Computer Vision": ["World Models", "Diffusion Models", "Autoregressive Models", "Flow Matching", "3D/4D Generation", "Multi-View Geometry", "3D Reconstruction", "Novel View Synthesis", "Spatial Intelligence", "Visual-Inertial Odometry", "Depth Estimation", "NeRFs", "3D Gaussian Splatting", "OpenCV", "SLAM"],
-  "Agentic AI": ["Multi-Agent Orchestration", "Sub-Agent Parallelization", "Computer-Use Agents", "Agent Harness", "Policy Guardrails", "Context Engineering", "Prompt Caching", "MCP", "A2A", "Tool Calling", "Autonomous Workflows", "Long-Horizon Memory", "RAG"],
+  "Foundation Model Training": ["Pre-training", "Post-training", "Test-time Training", "Reinforcement Learning", "Continual Learning", "SFT", "RLHF", "RLAIF", "RLVF", "PPO", "DPO", "GRPO", "Reward Modeling", "Model Alignment and Instruction Following", "Synthetic Data Generation", "Knowledge Distillation", "Quantization", "Context Compression", "Token Pruning", "Kernel Optimization", "LoRA", "QLoRA", "Distributed Training", "FSDP"],
+  "Computer Vision": ["World Models", "Diffusion Models", "Autoregressive Models", "Flow Matching", "3D/4D Image and Video Generation", "Multi-View Geometry", "3D Reconstruction", "Novel View Synthesis", "Spatial Intelligence", "Visual-Inertial Odometry", "Depth Estimation", "NeRFs", "3D Gaussian Splatting", "OpenCV", "SLAM"],
+  "Agentic AI": ["Multi-Agent Orchestration", "Sub-Agent Parallelization", "Computer-Use Agents", "Agent Harness", "Policy Guardrails", "Context Engineering", "Prompt Caching", "MCP", "A2A", "Tool Calling", "Multi-Step Autonomous Workflows", "Long-Horizon Agent Memory", "RAG"],
   "Full-stack Development": ["React", "Vue", "Angular", "JavaScript", "TypeScript", "HTML5", "Tailwind CSS", "FastAPI"],
   "Databases and Infrastructure": ["PostgreSQL", "Neo4j", "MongoDB", "Kafka", "Docker", "Kubernetes", "CI/CD", "AWS", "GCP", "Azure"],
   "Design and Other Tools": ["Figma", "Canva", "Adobe Creative Suite", "Microsoft Office Suite", "Unity"],
@@ -111,10 +111,10 @@ export const SKILL_ROWS = [
     ["Continual Learning", "ai"], ["Knowledge Distillation", "ai"], ["Synthetic Data Generation", "ai"]
   ],
   [
-    ["World Models", "ai"], ["Diffusion Models", "ai"], ["Flow Matching", "ai"], ["3D/4D Generation", "ai"], ["Multi-View Geometry", "ai"], ["3D Reconstruction", "ai"], ["Novel View Synthesis", "ai"],
+    ["World Models", "ai"], ["Diffusion Models", "ai"], ["Flow Matching", "ai"], ["3D/4D Image and Video Generation", "ai"], ["Multi-View Geometry", "ai"], ["3D Reconstruction", "ai"], ["Novel View Synthesis", "ai"],
     ["Spatial Intelligence", "ai"], ["NeRFs", "ai"], ["3D Gaussian Splatting", "ai"], ["SLAM", "ai"], ["Visual-Inertial Odometry", "ai"], ["Depth Estimation", "ai"], ["OpenCV", "ai"],
     ["Multi-Agent Orchestration", "agents"], ["Agent Harness", "agents"], ["Context Engineering", "agents"], ["Prompt Caching", "agents"], ["MCP", "agents"], ["A2A", "agents"], ["Tool Calling", "agents"],
-    ["Long-Horizon Memory", "agents"], ["RAG", "agents"], ["Computer-Use Agents", "agents"], ["Policy Guardrails", "agents"]
+    ["Long-Horizon Agent Memory", "agents"], ["RAG", "agents"], ["Computer-Use Agents", "agents"], ["Policy Guardrails", "agents"]
   ],
   [
     ["Python", "code"], ["C++", "code"], ["C", "code"], ["Rust", "code"], ["Go", "code"], ["Java", "code"], ["Swift", "code"], ["Kotlin", "code"], ["Ruby", "code"], ["R", "code"], ["TypeScript", "code"], ["JavaScript", "code"],
