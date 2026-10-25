@@ -142,7 +142,7 @@ export function renderPaperThumbnail(paper) {
   const height = 338
   const bytes = readFileSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`))
   const figure = bytes.toString("base64")
-  const navy = badge === "Under Review" ? "#4c5b73" : "#13294B"
+  const navy = badge === "Under review" ? "#4c5b73" : "#13294B"
   const badgeWidth = round(textWidth(badge, 17, 700) + 34)
   const id = `paper-${paper.id}`
   const body = [

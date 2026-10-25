@@ -18,10 +18,10 @@
 <!-- links:end -->
 <div>
   <p>
-    I am a current M.S. student in <strong><a href="https://www.engineering.columbia.edu/about">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
+    I am a current M.S. student in <strong><a href="https://www.engineering.columbia.edu/">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
   </p>
   <p>
-    I am a research assistant in the <strong><a href="https://vision.ischool.illinois.edu/index.html">Computer Vision and Machine Learning Group</a></strong> at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>. I am also affiliated with the <strong><a href="https://www.ncsa.illinois.edu/">National Center for Supercomputing Applications</a></strong> and <strong><a href="https://nairrpilot.org/">National Artificial Intelligence Research Resource Pilot</a></strong>.
+    I am a research assistant in the <strong><a href="https://vision.ischool.illinois.edu/people/">Computer Vision and Machine Learning Group</a></strong> at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>. I am also affiliated with the <strong><a href="https://www.ncsa.illinois.edu/">National Center for Supercomputing Applications</a></strong> and <strong><a href="https://nairrpilot.org/">National Artificial Intelligence Research Resource Pilot</a></strong>.
   </p>
   <p>
     Previously, I received my B.S. in Data Science and Information Science with minors in Computer Science and Statistics at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>.
@@ -50,11 +50,10 @@
 <td valign="top">
 <b><a href="https://arxiv.org/abs/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
-<i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
+<i>European Conference on Computer Vision (<b>ECCV</b>) 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
 <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
-<a href="https://eccv.ecva.net/virtual/2026/poster/5183"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-poster-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-poster-light.svg" /><img height="36" alt="Poster" src="assets/paper-link-poster-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
@@ -66,7 +65,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 <td valign="top">
 <b><a href="https://arxiv.org/abs/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
-<i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i><br/><br/>
+<i>IEEE International Conference on Data Mining (<b>ICDM</b>) 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
 <a href="https://github.com/UIUC-MLSys/REVA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
@@ -78,9 +77,9 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 ## News
 
 - **[September 2026]** I am honored to join [IBM Research](https://research.ibm.com/) as a Research Intern advised by Dr. Dhaval Patel to work on Causal Diagnosis and Intervention Evaluation for [AssetOpsBench](https://github.com/IBM/AssetOpsBench).
-- **[September 2026]** I am honored to present our poster [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://eccv.ecva.net/virtual/2026/poster/5183) at the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), [ExHall #107 on September 12](https://eccv.ecva.net/virtual/2026/poster/5183).
+- **[September 2026]** I am honored to present our poster [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) at the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/Conferences/2026) in [Malmö, Sweden](https://eccv.ecva.net/Conferences/2026/Venues), ExHall #107 on September 12.
 - **[August 2026]** Our paper [REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving](https://arxiv.org/abs/2609.11209) is accepted to the [IEEE International Conference on Data Mining (ICDM) 2026](https://www.datamining.org/).
-- **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/).
+- **[June 2026]** Our paper [AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation](https://arxiv.org/abs/2606.31204) is accepted to the [European Conference on Computer Vision (ECCV) 2026](https://eccv.ecva.net/Conferences/2026).
 
 ## Interactive 3D Portfolio
 
@@ -99,11 +98,10 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 <td valign="top">
 <b><a href="https://arxiv.org/abs/2606.31204">AC3S: Adaptive Conditioning for 3D-Aware Synthetic Data Generation</a></b><br/>
 Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoyao Liu<br/>
-<i>European Conference on Computer Vision (<b>ECCV</b>), 2026</i><br/><br/>
+<i>European Conference on Computer Vision (<b>ECCV</b>) 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
 <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
-<a href="https://eccv.ecva.net/virtual/2026/poster/5183"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-poster-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-poster-light.svg" /><img height="36" alt="Poster" src="assets/paper-link-poster-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
@@ -115,7 +113,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 <td valign="top">
 <b><a href="https://arxiv.org/abs/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
-<i>IEEE International Conference on Data Mining (<b>ICDM</b>), 2026</i><br/><br/>
+<i>IEEE International Conference on Data Mining (<b>ICDM</b>) 2026</i><br/><br/>
 <a href="https://arxiv.org/abs/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
 <a href="https://github.com/UIUC-MLSys/REVA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2609.11209"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
@@ -129,7 +127,7 @@ Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<b
 <td valign="top">
 <b>ACDN: Agent-Aware Content Delivery Network</b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Dibyadeep Saha, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
-<i>Under Review</i>
+<i>Under review</i>
 </td>
 </tr>
 </table>
@@ -140,7 +138,7 @@ Tuan Nguyen, <b>Qiran Hu</b>, Dibyadeep Saha, Banruo Liu, Khoa D. Doan, Kok-Seng
 <td valign="top">
 <b>SV4D 3.0: Single-Step 3D-Aware Diffusion for Multi-View-Consistent 4D Scene Generation</b><br/>
 <b>Qiran Hu</b>, Wei Cao, Yaoyao Liu<br/>
-<i>Under Review</i>
+<i>Under review</i>
 </td>
 </tr>
 </table>
@@ -151,7 +149,7 @@ Tuan Nguyen, <b>Qiran Hu</b>, Dibyadeep Saha, Banruo Liu, Khoa D. Doan, Kok-Seng
 <td valign="top">
 <b>AISim: Using LLM-Simulation as Epistemic Scaffolds for Early Stage Qualitative Research Design</b><br/>
 Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Hyanghee Park, Yun Huang<br/>
-<i>Under Review</i>
+<i>Under review</i>
 </td>
 </tr>
 </table>
@@ -162,7 +160,7 @@ Hangyue Zhang, <b>Qiran Hu</b>, Ziyi Zhang, Hyanghee Park, Yun Huang<br/>
 <td valign="top">
 <b>AlphaWiSE: Adaptive Weight Interpolation for Continual Multimodal Representation Learning</b><br/>
 Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
-<i>Under Review</i>
+<i>Under review</i>
 </td>
 </tr>
 </table>
@@ -170,7 +168,7 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 
 ## Research Experience
 
-### **UIUC Computer Vision and Machine Learning Group**
+### **Computer Vision and Machine Learning Group, University of Illinois Urbana-Champaign**
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2025.05 - Present_
 
@@ -180,7 +178,7 @@ _Champaign, IL · 2025.05 - Present_
 
 [![Lab](assets/badges/lab-page.svg)](https://vision.ischool.illinois.edu/people/)
 
-### **Multi-modal Generative Models for Continual Learning**
+### **Multi-modal Generative Models for Continual Learning, University of Illinois Urbana-Champaign**
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2026.02 - 2026.08_
 
@@ -197,6 +195,8 @@ _Champaign, IL · 2026.02 - 2026.06_
 - Proposed attention-based scoring for post-retrieval RAG context compression to reuse generator attention traces across queries and update the system offline, achieving a 91.6% cache hit rate on HotpotQA.
 - Developed reusable evidence views to scale compression cost with unique documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
 - Optimized online serving to keep context compression off the GPU critical path for high-volume production RAG traffic under strict per-request latency targets, minimizing compression latency by 99.3% compared to EXIT and 99.8% compared to FaviComp.
+
+[![IEEE ICDM 2026](assets/badges/icdm-2026.svg)](https://arxiv.org/abs/2609.11209)
 
 ## Professional Experience
 
@@ -228,7 +228,7 @@ _Champaign, IL · 2025.08 - 2026.08_
 - Designed self-evolving long-term memory architectures to replace recency-biased FIFO memory architectures by retrieving contextually relevant prior interactions, accelerating memory queries by 3.6x compared to PostgreSQL.
 - Deployed complexity-aware model selection across planner, retrieval, solver, and critic stages to score each request and reserve frontier-tier inference for priority calls, eliminating 89.9% of monthly serving cost compared to GPT-4o.
 
-[![NOODEIA](assets/badges/noodeia.svg)](https://noodiea.onrender.com/)
+[![Website](assets/badges/website.svg)](https://noodiea.onrender.com/)
 
 ### **WRC, University of Illinois Urbana-Champaign**
 **Data Analyst**<br/>
@@ -256,7 +256,7 @@ _Champaign, IL · 2025.11 - 2026.05_
 - Developed concurrent multi-source retrieval across Semantic Scholar and Tavily with production-grade fallback handling for API failures, minimizing query latency by 40.2%.
 - Built customized Model Context Protocol servers to centralize governed tool access behind unified interfaces over academic databases, code repositories, and document stores, minimizing serving latency by 87.5%.
 
-[![Demo](assets/badges/demo.svg)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
+[![Project Page](assets/badges/project-page.svg)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
 
 ### **Realistic Neural Style Transfer Architecture**
 **Undergraduate Research Assistant**<br/>
@@ -299,6 +299,7 @@ _Champaign, IL · 2026.03 - Present_
 - Implement secure agent execution runtime with four lifecycle hooks to gate every tool call before it runs, eliminating 92.7% of router latency.
 
 [![GitHub](assets/badges/github.svg)](https://github.com/Edward-H26/OnePromptClaudeCode)
+
 ## Honors
 
 - [Neo4j Certified Professional](https://graphacademy.neo4j.com/c/2e386da7-2b30-4575-9fd0-b0b0918a6fe0/)
@@ -314,7 +315,7 @@ _Champaign, IL · 2026.03 - Present_
   <strong>M.S. in Data Science</strong><br/>
   Fu Foundation School of Engineering and Applied Science<br/>
   Courses: High Performance Machine Learning, Algorithms<br/>
-  <em>2026.08 - 2028.05</em>
+  <em>2026.08 - Expected 2028.05</em>
 </p>
 <br clear="left"/>
 
@@ -337,31 +338,31 @@ _Champaign, IL · 2026.03 - Present_
 <!-- skills:start -->
 **Programming Languages:** Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R
 
-**AI/ML Frameworks:** PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, LangGraph, NCCL, GPU/TPU/CPU Architecture
+**AI/ML Frameworks:** PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, LangGraph, NCCL, GPU/TPU/CPU architecture
 
-**Foundation Model Training:** Pre-training, Post-training, Test-time Training, Reinforcement Learning, Continual Learning, SFT, RLHF, RLAIF, RLVF, PPO, DPO, GRPO, Reward Modeling, Model Alignment and Instruction Following, Synthetic Data Generation, Knowledge Distillation, Quantization, Context Compression, Token Pruning, Kernel Optimization, LoRA, QLoRA, Distributed Training, FSDP
+**Foundation Model Training:** pre-training, post-training, test-time training, reinforcement learning, continual learning, SFT, RLHF, RLAIF, RLVF, PPO, DPO, GRPO, reward modeling, model alignment and instruction following, synthetic data generation, knowledge distillation, quantization, context compression, token pruning, kernel optimization, LoRA, QLoRA, distributed training, FSDP
 
-**Computer Vision:** World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Image and Video Generation, Multi-View Geometry, 3D Reconstruction, Novel View Synthesis, Spatial Intelligence, Visual-Inertial Odometry, Depth Estimation, NeRFs, 3D Gaussian Splatting, OpenCV, SLAM
+**Computer Vision:** world models, diffusion models, autoregressive models, flow matching, 3D/4D image and video generation, multi-view geometry, 3D reconstruction, novel view synthesis, spatial intelligence, visual-inertial odometry, depth estimation, NeRFs, 3D Gaussian Splatting, OpenCV, SLAM
 
-**Agentic AI:** Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, Context Engineering, Prompt Caching, MCP, A2A, Tool Calling, Multi-Step Autonomous Workflows, Long-Horizon Agent Memory, RAG
+**Agentic AI:** multi-agent orchestration, sub-agent parallelization, computer-use agents, agent harness, policy guardrails, context engineering, prompt caching, MCP, A2A, tool calling, multi-step autonomous workflows, long-horizon agent memory, RAG
 
 **Full-stack Development:** React, Vue, Angular, JavaScript, TypeScript, HTML5, Tailwind CSS, FastAPI
 
-**Databases and Infrastructure:** PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, AWS, GCP, Azure
+**Databases and Infrastructure:** PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, cloud platforms (AWS, GCP, Azure)
 
 **Design and Other Tools:** Figma, Canva, Adobe Creative Suite, Microsoft Office Suite, Unity
 
-**Languages:** Chinese (Native), English (Native), Spanish (Limited Working Proficiency)
+**Languages:** Chinese (native), English (native), Spanish (limited working proficiency)
 <!-- skills:end -->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg" />
-  <img width="100%" alt="Skills: Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, World Models, Diffusion Models, Autoregressive Models, Flow Matching, 3D/4D Image and Video Generation, Multi-View Geometry, Multi-Agent Orchestration, Sub-Agent Parallelization, Computer-Use Agents, Agent Harness, Policy Guardrails, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes." src="assets/skills-marquee-dark.svg" />
+  <img width="100%" alt="Skills: PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, NCCL, LangGraph, distributed training, FSDP, LoRA, QLoRA, quantization, kernel optimization, SFT, RLHF, DPO, GRPO, continual learning, knowledge distillation, synthetic data generation, world models, diffusion models, flow matching, 3D/4D image and video generation, multi-view geometry, 3D reconstruction, novel view synthesis, spatial intelligence, NeRFs, 3D Gaussian Splatting, SLAM, visual-inertial odometry, depth estimation, OpenCV, multi-agent orchestration, agent harness, context engineering, prompt caching, MCP, A2A, tool calling, long-horizon agent memory, RAG, computer-use agents, policy guardrails, Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, TypeScript, JavaScript, React, Vue, Angular, HTML5, Tailwind CSS, FastAPI, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, AWS, GCP, Azure, Figma, Canva, Adobe Creative Suite, Microsoft Office Suite, Unity" src="assets/skills-marquee-dark.svg" />
 </picture>
 
 <p align="center">
-  <img src="assets/skill-icons.svg" alt="Technology logos: Python, C++, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, TensorFlow, OpenCV, React, Vue, Angular, TypeScript, JavaScript, HTML, Tailwind CSS, FastAPI, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, AWS, GCP, Azure, Figma, Unity, Git" />
+  <img src="assets/skill-icons.svg" alt="Technology logos: Python, C++, Rust, Go, Java, Swift, Kotlin, Ruby, R, PyTorch, TensorFlow, OpenCV, React, Vue, Angular, TypeScript, JavaScript, HTML5, Tailwind CSS, FastAPI, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, AWS, GCP, Azure, Figma, Unity" />
 </p>
 
 ## GitHub Activity

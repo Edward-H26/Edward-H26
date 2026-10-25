@@ -31,7 +31,7 @@ ${details}${buttons}
 </table>`
 }
 
-const ACCEPTED_PAPERS = PAPERS.filter((paper) => paper.venue !== "Under Review")
+const ACCEPTED_PAPERS = PAPERS.filter((paper) => paper.venue !== "Under review")
 
 const skills = () =>
   Object.entries(SKILL_CATEGORIES)
