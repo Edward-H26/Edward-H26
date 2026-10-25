@@ -37,6 +37,7 @@ export const PAPERS = [
       { label: "arXiv", url: "https://arxiv.org/abs/2606.31204" },
       { label: "Code", url: "https://ac3s.cvmlgroup.web.illinois.edu/" },
       { label: "Video", url: "https://youtu.be/3jOJaT2a8iQ" },
+      { label: "Poster", url: "https://eccv.ecva.net/virtual/2026/poster/5183" },
       { label: "BibTeX", url: "https://arxiv.org/bibtex/2606.31204" }
     ]
   },
@@ -45,7 +46,7 @@ export const PAPERS = [
     title: "REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving",
     authors: ["Tuan Nguyen", "Qiran Hu", "Banruo Liu", "Khoa D. Doan", "Kok-Seng Wong", "Fan Lai"],
     venue: "IEEE International Conference on Data Mining (ICDM), 2026",
-    thumbnail: { badge: "ICDM", alt: "Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document" },
+    thumbnail: { badge: "ICDM", alt: "The REVA system: past requests leave reusable word scores in a word-score store, and a new request materializes per-document views from them" },
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2609.11209" },
       { label: "Code", url: "https://github.com/UIUC-MLSys/REVA" },
@@ -101,7 +102,7 @@ export const SKILL_CATEGORIES = {
   "Full-stack Development": ["React", "Vue", "Angular", "JavaScript", "TypeScript", "HTML5", "Tailwind CSS", "FastAPI"],
   "Databases and Infrastructure": ["PostgreSQL", "Neo4j", "MongoDB", "Kafka", "Docker", "Kubernetes", "CI/CD", "AWS", "GCP", "Azure"],
   "Design and Other Tools": ["Figma", "Canva", "Adobe Creative Suite", "Microsoft Office Suite", "Unity"],
-  Languages: ["Chinese (Native)", "English (Native)", "Spanish (Elementary)"]
+  Languages: ["Chinese (Native)", "English (Native)", "Spanish (Limited Working Proficiency)"]
 }
 
 export const SKILL_ROWS = [
@@ -136,4 +137,4 @@ export const LINKS = [
   { id: "x", label: "X", url: "https://x.com/QiranHu", icon: "x" },
 ]
 
-export const PHONE = "+1 (347)-957-9176"
+export const PHONE = "+1 (347) 957-9176"

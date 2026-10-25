@@ -14,11 +14,11 @@
   <a href="https://x.com/QiranHu" title="X"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-x-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/link-x-light.svg" /><img height="44" alt="X" src="assets/link-x-dark.svg" /></picture></a>
 </p>
 
-<p align="center">+1 (347)-957-9176</p>
+<p align="center">+1 (347) 957-9176</p>
 <!-- links:end -->
 <div>
   <p>
-    I am a current student in <strong><a href="https://www.engineering.columbia.edu/about">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
+    I am a current M.S. student in <strong><a href="https://www.engineering.columbia.edu/about">Fu Foundation School of Engineering and Applied Science</a></strong> at <strong><a href="https://www.columbia.edu/">Columbia University</a></strong>.
   </p>
   <p>
     I am a research assistant in the <strong><a href="https://vision.ischool.illinois.edu/index.html">Computer Vision and Machine Learning Group</a></strong> at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>. I am also affiliated with the <strong><a href="https://www.ncsa.illinois.edu/">National Center for Supercomputing Applications</a></strong> and <strong><a href="https://nairrpilot.org/">National Artificial Intelligence Research Resource Pilot</a></strong>.
@@ -54,6 +54,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 <a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
 <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
+<a href="https://eccv.ecva.net/virtual/2026/poster/5183"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-poster-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-poster-light.svg" /><img height="36" alt="Poster" src="assets/paper-link-poster-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
@@ -61,7 +62,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 
 <table width="100%">
 <tr>
-<td width="400" valign="top"><a href="https://arxiv.org/abs/2609.11209"><img src="assets/papers/reva.svg" width="400" alt="Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document"/></a></td>
+<td width="400" valign="top"><a href="https://arxiv.org/abs/2609.11209"><img src="assets/papers/reva.svg" width="400" alt="The REVA system: past requests leave reusable word scores in a word-score store, and a new request materializes per-document views from them"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/abs/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
@@ -102,6 +103,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 <a href="https://arxiv.org/abs/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-arxiv-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-arxiv-light.svg" /><img height="36" alt="arXiv" src="assets/paper-link-arxiv-dark.svg" /></picture></a>
 <a href="https://ac3s.cvmlgroup.web.illinois.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-code-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-code-light.svg" /><img height="36" alt="Code" src="assets/paper-link-code-dark.svg" /></picture></a>
 <a href="https://youtu.be/3jOJaT2a8iQ"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-video-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-video-light.svg" /><img height="36" alt="Video" src="assets/paper-link-video-dark.svg" /></picture></a>
+<a href="https://eccv.ecva.net/virtual/2026/poster/5183"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-poster-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-poster-light.svg" /><img height="36" alt="Poster" src="assets/paper-link-poster-dark.svg" /></picture></a>
 <a href="https://arxiv.org/bibtex/2606.31204"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/paper-link-bibtex-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/paper-link-bibtex-light.svg" /><img height="36" alt="BibTeX" src="assets/paper-link-bibtex-dark.svg" /></picture></a>
 </td>
 </tr>
@@ -109,7 +111,7 @@ Eric Ji, <b>Qiran Hu</b>, Wufei Ma, Sarthak Jain, Yingying Li, Minh N. Do, Yaoya
 
 <table width="100%">
 <tr>
-<td width="300" valign="top"><a href="https://arxiv.org/abs/2609.11209"><img src="assets/papers/reva.svg" width="300" alt="Three charts from the paper: online overhead per query across five compressors, F1 change over global truncation on four QA datasets, and the share of queries that re-access a stored document"/></a></td>
+<td width="300" valign="top"><a href="https://arxiv.org/abs/2609.11209"><img src="assets/papers/reva.svg" width="300" alt="The REVA system: past requests leave reusable word scores in a word-score store, and a new request materializes per-document views from them"/></a></td>
 <td valign="top">
 <b><a href="https://arxiv.org/abs/2609.11209">REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving</a></b><br/>
 Tuan Nguyen, <b>Qiran Hu</b>, Banruo Liu, Khoa D. Doan, Kok-Seng Wong, Fan Lai<br/>
@@ -204,7 +206,7 @@ _New York, NY · 2026.09 - Present_
 
 - Lead MCP server architecture for AssetOpsBench to give tool-using LLM agents typed access to failure-mode knowledge graphs, causal root-cause ranking, and intervention estimation with deterministic Neo4j queries and provenance on every result.
 - Create industrial fault-diagnosis RL environments for multi-step LLM agents over predictive-maintenance telemetry from 100 machines to benchmark evidence gathering and maintenance actions under hidden ground truth, look-alike faults, and incomplete observations.
-- Conduct controlled evaluations of four LLM agents under one model and action budget, raising Top-1 diagnosis accuracy by 88% over a Plan-Execute agent, and profile inference latency with PyTorch Profiler and Nsight on H100 GPUs.
+- Conduct controlled evaluations of four LLM agents under one model and action budget, raising Top-1 diagnosis accuracy by 88.0% over a Plan-Execute agent, and profile inference latency with PyTorch Profiler and Nsight on H100 GPUs.
 
 [![AssetOpsBench](assets/badges/assetopsbench.svg)](https://github.com/IBM/AssetOpsBench)
 
@@ -218,7 +220,7 @@ _Champaign, IL · 2026.01 - 2026.08_
 
 [![Website](assets/badges/website.svg)](https://miramemoria.com/)
 
-### **Two by Two Learning**
+### **Two by Two Learning Center**
 **Full Stack Developer**<br/>
 _Champaign, IL · 2025.08 - 2026.08_
 
@@ -308,7 +310,7 @@ _Champaign, IL · 2026.03 - Present_
   <a href="https://www.engineering.columbia.edu/">
     <img src="assets/columbia-logo.jpeg" width="104" height="104" align="left" alt="Columbia University crown logo"/>
   </a>
-  <strong>Columbia University</strong>, New York City, NY<br/>
+  <strong>Columbia University</strong>, New York, NY<br/>
   <strong>M.S. in Data Science</strong><br/>
   Fu Foundation School of Engineering and Applied Science<br/>
   Courses: High Performance Machine Learning, Algorithms<br/>
@@ -349,7 +351,7 @@ _Champaign, IL · 2026.03 - Present_
 
 **Design and Other Tools:** Figma, Canva, Adobe Creative Suite, Microsoft Office Suite, Unity
 
-**Languages:** Chinese (Native), English (Native), Spanish (Elementary)
+**Languages:** Chinese (Native), English (Native), Spanish (Limited Working Proficiency)
 <!-- skills:end -->
 
 <picture>

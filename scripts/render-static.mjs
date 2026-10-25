@@ -133,15 +133,13 @@ export function renderPaperButton(theme, label) {
 
 
 // A paper thumbnail: the cropped figure (assets/papers/figures/<id>.webp) under a rounded frame,
-// with the venue badge as a keycap in the corner. The frame takes the figure's own aspect ratio
-// so the diagram fills it edge to edge (the figures keep a white band on top for the badge).
-// One file serves both themes.
+// with the venue badge as a keycap in the corner. One file serves both themes.
 export function renderPaperThumbnail(paper) {
   const width = 600
   const { badge, alt } = paper.thumbnail
-  // normalize-paper-figures.py pads every figure onto one 10:7 canvas with the same margin, so this
-  // frame matches the file exactly and the badge sits in that margin rather than over the diagram.
-  const height = 420
+  // normalize-paper-figures.py places every figure on one 16:9 canvas with a white band on top for
+  // the badge, so this frame matches the file exactly and the keycap sits in that band.
+  const height = 338
   const bytes = readFileSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`))
   const figure = bytes.toString("base64")
   const navy = badge === "Under Review" ? "#4c5b73" : "#13294B"
