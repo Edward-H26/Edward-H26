@@ -1,39 +1,21 @@
-// CLI. `node scripts/render-assets.mjs` writes the static cards into assets/.
-// `--dynamic` fetches GitHub data (GH_TOKEN) and writes the live cards into dist/;
-// add `--fixture` to render dist/ from scripts/fixtures instead of the network,
-// or `--save-fixture` (npm run fixture) to refresh that fixture from the network.
+// @ts-check
+// CLI. `node scripts/render-assets.mjs` writes the static cards into assets/ and regenerates the
+// README blocks. `--dynamic` fetches GitHub data (GH_TOKEN) and writes the live cards into dist/;
+// add `--fixture` to render dist/ from scripts/fixtures instead of the network, or
+// `--save-fixture` (npm run fixture) to refresh that fixture from the network.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import path from "node:path"
-import { fileURLToPath } from "node:url"
-import { PROFILE } from "./profile-data.mjs"
-import { fetchGithub, summarize } from "./github-stats.mjs"
+import { PROFILE } from "./data/index.mjs"
+import { fetchGithub, summarize } from "./github/index.mjs"
+import { ASSETS_DIR, DIST_DIR, FIXTURE_PATH, README_PATH, ROOT } from "./paths.mjs"
 import { renderReadme } from "./readme.mjs"
-import { renderCode, renderContributions3d, renderStats } from "./render-dynamic.mjs"
-import { SINGLE_ASSETS, STATIC_ASSETS } from "./render-static.mjs"
-import { THEMES } from "./svg.mjs"
+import { renderDynamicAssets } from "./render-dynamic.mjs"
+import { renderStaticAssets } from "./render-static.mjs"
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
-const FIXTURE = path.join(ROOT, "scripts/fixtures/github.json")
-
-export function renderStaticAssets() {
-  const files = {}
-  for (const [name, render] of Object.entries(STATIC_ASSETS)) {
-    for (const theme of Object.values(THEMES)) files[`${name}-${theme.name}.svg`] = render(theme)
-  }
-  for (const [name, render] of Object.entries(SINGLE_ASSETS)) files[`${name}.svg`] = render()
-  return files
-}
-
-export function renderDynamicAssets(stats) {
-  const files = {}
-  for (const theme of Object.values(THEMES)) {
-    files[`stats-${theme.name}.svg`] = renderStats(stats, theme)
-    files[`code-${theme.name}.svg`] = renderCode(stats, theme)
-    files[`contrib-3d-${theme.name}.svg`] = renderContributions3d(stats, theme)
-  }
-  return files
-}
-
+/**
+ * @param {string} dir
+ * @param {Record<string, string>} files relative path to content
+ */
 function writeAll(dir, files) {
   for (const [name, content] of Object.entries(files)) {
     mkdirSync(path.dirname(path.join(dir, name)), { recursive: true })
@@ -42,29 +24,31 @@ function writeAll(dir, files) {
   console.log(`${Object.keys(files).length} files written to ${path.relative(ROOT, dir)}/`)
 }
 
-async function main(args) {
-  if (!args.includes("--dynamic")) {
-    writeAll(path.join(ROOT, "assets"), renderStaticAssets())
-    const readme = path.join(ROOT, "README.md")
-    writeFileSync(readme, renderReadme(readFileSync(readme, "utf8")))
-    console.log("README blocks regenerated")
-    return
-  }
-  let data
-  if (args.includes("--fixture")) data = JSON.parse(readFileSync(FIXTURE, "utf8"))
-  else {
-    const token = process.env.GH_TOKEN
-    if (!token) throw new Error("GH_TOKEN is required for --dynamic (or pass --fixture)")
-    data = await fetchGithub(PROFILE.handle, token)
-    if (args.includes("--save-fixture")) {
-      writeFileSync(FIXTURE, JSON.stringify(data, null, 2))
-      console.log(`fixture saved to ${path.relative(ROOT, FIXTURE)}`)
-    }
-  }
-  const stats = summarize(data, new Date(data.capturedAt))
-  writeAll(path.join(ROOT, "dist"), renderDynamicAssets(stats))
+function renderStatic() {
+  writeAll(ASSETS_DIR, renderStaticAssets())
+  writeFileSync(README_PATH, renderReadme(readFileSync(README_PATH, "utf8")))
+  console.log("README blocks regenerated")
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  await main(process.argv.slice(2))
+/** @param {string[]} args */
+async function loadGithubData(args) {
+  if (args.includes("--fixture")) return JSON.parse(readFileSync(FIXTURE_PATH, "utf8"))
+  const token = process.env.GH_TOKEN
+  if (!token) throw new Error("GH_TOKEN is required for --dynamic (or pass --fixture)")
+  const data = await fetchGithub(PROFILE.handle, token)
+  if (args.includes("--save-fixture")) {
+    writeFileSync(FIXTURE_PATH, JSON.stringify(data, null, 2))
+    console.log(`fixture saved to ${path.relative(ROOT, FIXTURE_PATH)}`)
+  }
+  return data
 }
+
+/** @param {string[]} args */
+async function renderDynamic(args) {
+  const data = await loadGithubData(args)
+  writeAll(DIST_DIR, renderDynamicAssets(summarize(data, new Date(data.capturedAt))))
+}
+
+const args = process.argv.slice(2)
+if (args.includes("--dynamic")) await renderDynamic(args)
+else renderStatic()

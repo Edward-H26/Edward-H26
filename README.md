@@ -173,8 +173,8 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 _Champaign, IL · 2025.05 - Present_
 
 - Develop adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% on ImageNet and enhancing pose accuracy by 4.2x on PASCAL3D+.
-- Conduct large-scale foundation model training across TB-level datasets on National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and low-level custom kernels, improving pose accuracy by 11.3% on PASCAL3D+ and reducing generation latency by 78.7% at p95.
-- Design camera-controlled novel view synthesis on video generation pipelines to advance real-time perception for SLAM, visual odometry, and 3D reconstruction, decreasing LPIPS by 21.0% on GSO and FV4D by 52.0% on OmniObject3D.
+- Scale foundation model training across TB-level datasets on National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and low-level custom kernels, improving pose accuracy by 11.3% on PASCAL3D+ and reducing generation latency by 78.7% at p95.
+- Build camera-controlled novel view synthesis in video generation to advance real-time perception for SLAM, visual odometry, and 3D reconstruction, decreasing LPIPS by 21.0% on GSO and FV4D by 52.0% on OmniObject3D compared to SV4D 2.0.
 
 [![Lab](assets/badges/lab-page.svg)](https://vision.ischool.illinois.edu/people/)
 
@@ -182,9 +182,9 @@ _Champaign, IL · 2025.05 - Present_
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2026.02 - 2026.08_
 
-- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline multimodal foundation models in class-incremental learning across audio, image, and text without catastrophic forgetting and cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
-- Implemented post-hoc tensor-level weight-interpolation methods for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, minimizing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and increasing R@1 by 33.5% on AudioSet.
-- Optimized checkpoint fusion pipelines to compose frozen checkpoints into one deployable model with no additional inference time, boosting last-task accuracy by 40.9% on UrbanSound8K.
+- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline class-incremental learning in multimodal foundation models across audio, image, and text without catastrophic forgetting or cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
+- Implemented post-hoc tensor-level weight interpolation for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, training 499 sigmoid-parameterized coefficients instead of 182M parameters and increasing R@1 by 33.5% on AudioSet.
+- Optimized checkpoint fusion pipelines to compose frozen continual-learning checkpoints into one deployable model without additional inference latency, boosting last-task accuracy by 40.9% on UrbanSound8K.
 
 [![NVIDIA Grant](assets/badges/nvidia-grant.svg)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
@@ -192,8 +192,8 @@ _Champaign, IL · 2026.02 - 2026.08_
 **Undergraduate Research Assistant, University of Illinois Urbana-Champaign (Advisor: Prof. Fan Lai)**<br/>
 _Champaign, IL · 2026.02 - 2026.06_
 
-- Proposed attention-based scoring for post-retrieval RAG context compression to reuse generator attention traces across queries and update the system offline, achieving a 91.6% cache hit rate on HotpotQA.
-- Developed reusable evidence views to scale compression cost with unique documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
+- Proposed attention-based scoring for post-retrieval context compression in retrieval-augmented generation (RAG) to reuse generator attention traces across queries and update scores offline, achieving a 91.6% cache hit rate on HotpotQA.
+- Built reusable evidence views keyed to unique documents to scale compression cost with documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
 - Optimized online serving to keep context compression off the GPU critical path for high-volume production RAG traffic under strict per-request latency targets, minimizing compression latency by 99.3% compared to EXIT and 99.8% compared to FaviComp.
 
 [![IEEE ICDM 2026](assets/badges/icdm-2026.svg)](https://arxiv.org/abs/2609.11209)
@@ -204,9 +204,9 @@ _Champaign, IL · 2026.02 - 2026.06_
 **Research Intern (Advisor: Dr. Dhaval Patel)**<br/>
 _New York, NY · 2026.09 - Present_
 
-- Lead MCP server architecture for AssetOpsBench to give tool-using LLM agents typed access to failure-mode knowledge graphs, causal root-cause ranking, and intervention estimation with deterministic Neo4j queries and provenance on every result.
-- Create industrial fault-diagnosis RL environments for multi-step LLM agents over predictive-maintenance telemetry from 100 machines to benchmark evidence gathering and maintenance actions under hidden ground truth, look-alike faults, and incomplete observations.
-- Conduct controlled evaluations of four LLM agents under one model and action budget, raising Top-1 diagnosis accuracy by 88.0% over a Plan-Execute agent, and profile inference latency with PyTorch Profiler and Nsight on H100 GPUs.
+- Lead Model Context Protocol (MCP) server architecture for AssetOpsBench, granting large language model (LLM) agents typed access to failure-mode knowledge graphs, root-cause ranking, and intervention estimation via deterministic Neo4j queries with provenance.
+- Create fault-diagnosis reinforcement learning (RL) environments for multi-step LLM agents over predictive-maintenance telemetry from 100 machines to benchmark evidence gathering and repairs under hidden ground truth, look-alike faults, and partial observations.
+- Conduct extensive experiments on four LLM agents under one model and action budget, raising Top-1 diagnosis accuracy by 88.0% compared to a Plan-Execute agent, and profile inference with PyTorch Profiler and Nsight on H100 GPUs, cutting latency by 52.7%.
 
 [![AssetOpsBench](assets/badges/assetopsbench.svg)](https://github.com/IBM/AssetOpsBench)
 
@@ -214,9 +214,9 @@ _New York, NY · 2026.09 - Present_
 **Technical Lead**<br/>
 _Champaign, IL · 2026.01 - 2026.08_
 
-- Led end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
-- Managed production operations for deployed workflows with logging, evaluation harnesses, and monthly improvement cycles with client stakeholders, saving 90.5% in serving cost.
-- Optimized enterprise workflows with self-evolving per-user memory and cost-aware model routing across sessions, saving 96.0% in token cost compared to GPT-4 Turbo.
+- Spearheaded end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
+- Managed production operations for agentic workflows with logging, evaluation harnesses, and monthly iteration cycles in partnership with client stakeholders, saving 75% of per-client deployment time through a reusable Deployment Kit.
+- Integrated self-evolving per-user memory across sessions and cost-aware model routing into enterprise agent workflows, saving 96.0% in token cost compared to GPT-5.1.
 
 [![Website](assets/badges/website.svg)](https://miramemoria.com/)
 
@@ -224,8 +224,8 @@ _Champaign, IL · 2026.01 - 2026.08_
 **Full Stack Developer**<br/>
 _Champaign, IL · 2025.08 - 2026.08_
 
-- Launched NOODEIA to help K-12 students falling behind grade level with multi-agent tutoring systems to plan, critique, and monitor each user with long-horizon memory, boosting user confidence by 2.4x in counterbalanced within-subjects studies.
-- Designed self-evolving long-term memory architectures to replace recency-biased FIFO memory architectures by retrieving contextually relevant prior interactions, accelerating memory queries by 3.6x compared to PostgreSQL.
+- Launched NOODEIA, a multi-agent tutoring platform for K-12 students who are falling behind their grade levels, to plan, critique, and monitor each learner with long-horizon memory, boosting user confidence by 2.4x in counterbalanced within-subjects studies.
+- Implemented self-evolving long-term memory architectures on Neo4j to retrieve contextually relevant prior interactions, accelerating memory queries by 3.6x compared to recency-biased FIFO memory architectures on PostgreSQL.
 - Deployed complexity-aware model selection across planner, retrieval, solver, and critic stages to score each request and reserve frontier-tier inference for priority calls, eliminating 89.9% of monthly serving cost compared to GPT-4o.
 
 [![Website](assets/badges/website.svg)](https://noodiea.onrender.com/)
@@ -294,9 +294,9 @@ _Champaign, IL · 2023.08 - 2026.05_
 **Lead Developer**<br/>
 _Champaign, IL · 2026.03 - Present_
 
-- Lead development of an MIT-licensed open-source agent harness for agentic software development, minimizing setup time by 99.5%.
-- Design three-tier capability routers for the agent harness to optimize tokens, latency, and cost on every turn, with keyword matching and session-memory recall ahead of a 4.5 s model reasoning pass, resolving intent in 120 ms and running 37.5x faster than routing every prompt through the model.
-- Implement secure agent execution runtime with four lifecycle hooks to gate every tool call before it runs, eliminating 92.7% of router latency.
+- Engineer an MIT-licensed open-source agent harness for agentic software development, packaging skills, slash commands, specialized agents, hooks, and MCP servers into a one-prompt install, minimizing environment initialization time by 99.5%.
+- Implement three-tier capability routers for the agent harness to optimize tokens, latency, and cost on every turn, with keyword matching and session-memory recall ahead of a 4.5 s model reasoning pass, resolving intent in 120 ms and running 37.5x faster than routing every prompt through the model.
+- Design the security layer: four lifecycle hooks gating every tool call before it runs, auto-denial of destructive commands, directory-scoped edit sandboxing, and a permission and gitignore audit, eliminating 92.7% of router latency.
 
 [![GitHub](assets/badges/github.svg)](https://github.com/Edward-H26/OnePromptClaudeCode)
 
@@ -314,7 +314,7 @@ _Champaign, IL · 2026.03 - Present_
   <strong>Columbia University</strong>, New York, NY<br/>
   <strong>M.S. in Data Science</strong><br/>
   Fu Foundation School of Engineering and Applied Science<br/>
-  Courses: High Performance Machine Learning, Algorithms<br/>
+  Courses: High Performance Machine Learning, Algorithms, Continual Learning and Memory Models, Computer Systems<br/>
   <em>2026.08 - Expected 2028.05</em>
 </p>
 <br clear="left"/>
@@ -340,13 +340,13 @@ _Champaign, IL · 2026.03 - Present_
 
 **AI/ML Frameworks:** PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, LangGraph, NCCL, GPU/TPU/CPU architecture
 
-**Foundation Model Training:** pre-training, post-training, test-time training, reinforcement learning, continual learning, SFT, RLHF, RLAIF, RLVF, PPO, DPO, GRPO, reward modeling, model alignment and instruction following, synthetic data generation, knowledge distillation, quantization, context compression, token pruning, kernel optimization, LoRA, QLoRA, distributed training, FSDP
+**Foundation Model Training:** continual learning, synthetic data generation, distributed training, quantization, context compression, knowledge distillation, pre-training, post-training, reinforcement learning, RLHF, reward modeling, SFT, DPO, PPO, GRPO, RLAIF, RLVF, model alignment and instruction following, test-time training, token pruning, kernel optimization, LoRA, QLoRA, FSDP
 
-**Computer Vision:** world models, diffusion models, autoregressive models, flow matching, 3D/4D image and video generation, multi-view geometry, 3D reconstruction, novel view synthesis, spatial intelligence, visual-inertial odometry, depth estimation, NeRFs, 3D Gaussian Splatting, OpenCV, SLAM
+**Computer Vision:** diffusion models, 3D/4D image and video generation, novel view synthesis, multi-view geometry, 3D reconstruction, world models, depth estimation, visual-inertial odometry, SLAM, spatial intelligence, autoregressive models, flow matching, NeRFs, 3D Gaussian Splatting, OpenCV
 
-**Agentic AI:** multi-agent orchestration, sub-agent parallelization, computer-use agents, agent harness, policy guardrails, context engineering, prompt caching, MCP, A2A, tool calling, multi-step autonomous workflows, long-horizon agent memory, RAG
+**Agentic AI:** multi-agent orchestration, tool calling, agent harness, long-horizon agent memory, context engineering, RAG, MCP, policy guardrails, sub-agent parallelization, prompt caching, computer-use agents, multi-step autonomous workflows, A2A
 
-**Full-stack Development:** React, Vue, Angular, JavaScript, TypeScript, HTML5, Tailwind CSS, FastAPI
+**Full-stack Development:** TypeScript, JavaScript, React, Tailwind CSS, FastAPI, HTML5, Vue, Angular
 
 **Databases and Infrastructure:** PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, cloud platforms (AWS, GCP, Azure)
 

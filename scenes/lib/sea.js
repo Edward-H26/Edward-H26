@@ -94,7 +94,23 @@ const fragmentShader = /* glsl */ `
   }
 `
 
-export function createSea({ size = 520, segments = 260, textureSize = 1536, color, deepColor, shallowColor, fogColor, sunDir, sunColor, sunPower = 380, sunStrength = 1.4, fogNear = 110, fogFar = 320, reflectivity = 1, island = new THREE.Vector4(0, 0, 1, 1) }) {
+export function createSea({
+  size = 520,
+  segments = 260,
+  textureSize = 1536,
+  color,
+  deepColor,
+  shallowColor,
+  fogColor,
+  sunDir,
+  sunColor,
+  sunPower = 380,
+  sunStrength = 1.4,
+  fogNear = 110,
+  fogFar = 320,
+  reflectivity = 1,
+  island = new THREE.Vector4(0, 0, 1, 1)
+}) {
   const geometry = new THREE.PlaneGeometry(size, size, segments, segments)
   geometry.rotateX(-Math.PI / 2)
   const shader = {

@@ -21,7 +21,7 @@ function equirect(width, height, paint) {
 function sampler(noise) {
   return (u, v) => {
     const size = noise.size
-    const x = ((u % 1) + 1) % 1 * size
+    const x = (((u % 1) + 1) % 1) * size
     const y = Math.max(0, Math.min(size - 1.001, v * size))
     const x0 = Math.floor(x)
     const y0 = Math.floor(y)
@@ -91,7 +91,17 @@ export function createPlanet({ radius, dark }) {
 
   const planet = new THREE.Mesh(
     new THREE.SphereGeometry(radius, 128, 96),
-    new THREE.MeshStandardMaterial({ map, roughnessMap: roughness, roughness: 1, metalness: 0.05, normalMap: relief, normalScale: new THREE.Vector2(0.35, 0.35), emissiveMap: lights, emissive: "#ffb347", emissiveIntensity: dark ? 0.9 : 0.25 })
+    new THREE.MeshStandardMaterial({
+      map,
+      roughnessMap: roughness,
+      roughness: 1,
+      metalness: 0.05,
+      normalMap: relief,
+      normalScale: new THREE.Vector2(0.35, 0.35),
+      emissiveMap: lights,
+      emissive: "#ffb347",
+      emissiveIntensity: dark ? 0.9 : 0.25
+    })
   )
   planet.castShadow = true
   planet.receiveShadow = true

@@ -1,12 +1,12 @@
 // Hero: the island at dusk (or in golden-hour daylight), seen across a reflecting sea, with the
 // profile text typed over it. Loop: 12 s.
 import * as THREE from "three"
-import { createIsland } from "./lib/island.js"
+import { createIsland } from "./lib/island/index.js"
 import { wave } from "./lib/periodic.js"
 import { createSea } from "./lib/sea.js"
-import { createDaySky, createNightSky } from "./lib/sky.js"
+import { createDaySky, createNightSky } from "./lib/sky/index.js"
 import { PALETTE, createStage, dark, params } from "./lib/stage.js"
-import { PROFILE } from "../scripts/profile-data.mjs"
+import { PROFILE } from "../scripts/data/index.mjs"
 
 const width = Number(params.get("width") ?? 1440)
 const height = Number(params.get("height") ?? 456)
@@ -21,7 +21,12 @@ root.setProperty("--extrude", dark ? "#7d8fb3" : "#9fb2d3")
 root.setProperty("--extrude-2", dark ? "#66779a" : "#8a9dc0")
 root.setProperty("--extrude-3", dark ? "#4f5f80" : "#7488ad")
 root.setProperty("--extrude-4", dark ? "#3a4761" : "#5f7399")
-root.setProperty("--shade", dark ? "linear-gradient(90deg, rgba(5,8,15,0.62) 0%, rgba(5,8,15,0.4) 32%, rgba(5,8,15,0) 56%)" : "linear-gradient(90deg, rgba(255,255,255,0.68) 0%, rgba(255,255,255,0.42) 32%, rgba(255,255,255,0) 56%)")
+root.setProperty(
+  "--shade",
+  dark
+    ? "linear-gradient(90deg, rgba(5,8,15,0.62) 0%, rgba(5,8,15,0.4) 32%, rgba(5,8,15,0) 56%)"
+    : "linear-gradient(90deg, rgba(255,255,255,0.68) 0%, rgba(255,255,255,0.42) 32%, rgba(255,255,255,0) 56%)"
+)
 root.setProperty("--vignette", dark ? "rgba(13,17,23,0.75)" : "rgba(255,255,255,0.22)")
 
 // ?hide=sea,sky,island renders a still without those parts, for debugging.
@@ -39,7 +44,11 @@ const { scene, camera } = stage
 
 const islandPosition = new THREE.Vector3(23, 0, -7)
 const lightDirection = dark ? new THREE.Vector3(-0.1, 0.21, -0.97) : new THREE.Vector3(-0.55, 0.7, -0.45)
-const sky = hidden.has("sky") ? { sunColor: "#ffffff", update() {} } : dark ? createNightSky({ scene, loop, moonDirection: lightDirection, focus: islandPosition }) : createDaySky({ scene, sunDirection: lightDirection, focus: islandPosition })
+const sky = hidden.has("sky")
+  ? { sunColor: "#ffffff", update() {} }
+  : dark
+    ? createNightSky({ scene, loop, moonDirection: lightDirection, focus: islandPosition })
+    : createDaySky({ scene, sunDirection: lightDirection, focus: islandPosition })
 if (sky.dome) stage.useSkyEnvironment(sky.dome)
 if (params.get("fog") !== "0") scene.fog = new THREE.Fog(dark ? "#2c2440" : "#dcebfa", 150, 420)
 const sea = createSea({
@@ -65,7 +74,10 @@ if (!hidden.has("island")) scene.add(island)
 // aurora, beam, mill blades, birds and ship move, which keeps the loop small and smooth.
 const forward = new THREE.Vector3(0.45, 0, -0.89)
 const right = new THREE.Vector3(-forward.z, 0, forward.x)
-camera.position.copy(islandPosition).addScaledVector(forward, -42).add(new THREE.Vector3(0, 13, 0))
+camera.position
+  .copy(islandPosition)
+  .addScaledVector(forward, -42)
+  .add(new THREE.Vector3(0, 13, 0))
 camera.lookAt(new THREE.Vector3(islandPosition.x, 4.5, islandPosition.z).addScaledVector(right, -9))
 
 // Typing: each tagline is typed, held, erased, inside its slot of the loop.

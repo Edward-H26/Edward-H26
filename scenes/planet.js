@@ -6,10 +6,10 @@ import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.j
 import { createNetwork } from "./lib/network.js"
 import { turns, wave } from "./lib/periodic.js"
 import { createPlanet, createSpaceDust } from "./lib/planet.js"
-import { gradientDome, starField } from "./lib/sky.js"
+import { gradientDome, starField } from "./lib/sky/index.js"
 import { PALETTE, createStage, dark, params } from "./lib/stage.js"
 import { labelTexture } from "./lib/textures.js"
-import { FOCUS } from "../scripts/profile-data.mjs"
+import { FOCUS } from "../scripts/data/index.mjs"
 
 const width = Number(params.get("width") ?? 1440)
 const height = Number(params.get("height") ?? 672)
@@ -128,7 +128,10 @@ const chips = labels.map((label, i) => {
   const color = new THREE.Color(i % 2 ? PALETTE.accent2 : PALETTE.accent).multiplyScalar(dark ? 0.13 : 0.15)
   const chipWidth = CHIP_HEIGHT * label.aspect
   const chip = new THREE.Group()
-  const body = new THREE.Mesh(new RoundedBoxGeometry(chipWidth, CHIP_HEIGHT, 0.44, 4, 0.22), new THREE.MeshPhysicalMaterial({ color, roughness: 0.6, metalness: 0.05, clearcoat: 0.1, clearcoatRoughness: 0.7, specularIntensity: 0.25 }))
+  const body = new THREE.Mesh(
+    new RoundedBoxGeometry(chipWidth, CHIP_HEIGHT, 0.44, 4, 0.22),
+    new THREE.MeshPhysicalMaterial({ color, roughness: 0.6, metalness: 0.05, clearcoat: 0.1, clearcoatRoughness: 0.7, specularIntensity: 0.25 })
+  )
   chip.add(body)
   const face = new THREE.Mesh(new THREE.PlaneGeometry(chipWidth, CHIP_HEIGHT), new THREE.MeshBasicMaterial({ map: label.texture, transparent: true, toneMapped: false }))
   face.position.z = 0.225

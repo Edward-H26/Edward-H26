@@ -1,0 +1,18 @@
+# Dependencies and generated output.
+node_modules/
+scenes/node_modules/
+dist/
+assets/
+.cache/
+.claude/
+package-lock.json
+scenes/package-lock.json
+
+# README.md is the public profile page; its generated blocks come from `npm run render`.
+README.md
+
+# Recorded GitHub API response, written by `npm run fixture`.
+scripts/fixtures/
+
+# The scene overlays are whitespace sensitive and feed the committed WebP loops.
+scenes/*.html

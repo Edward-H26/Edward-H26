@@ -40,7 +40,7 @@ jobs:
       # restores the previous copy of any file it did not produce.
       - name: Draw the contribution snake
         continue-on-error: true
-        uses: Platane/snk@v3
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
@@ -64,7 +64,7 @@ jobs:
 
       # The branch holds only the current set of files, so it stays small.
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v5
+        uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4 # v5
         with:
           target_branch: output
           build_dir: dist

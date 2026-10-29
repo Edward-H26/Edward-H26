@@ -1,7 +1,28 @@
-// Helpers shared by every generated SVG: themes, escaping, a seeded random source (so re-rendering
-// never changes committed files), rough text measurement, and the document and card frames.
+// @ts-check
+// Primitives shared by every generated SVG: the two themes, escaping, rough text measurement, and
+// the document, card, pill, gradient and filter builders. Rendering is deterministic, so a
+// re-render only changes a committed file when the data or the code changed.
+import { shade } from "./color.mjs"
 import { materialDefs } from "./materials.mjs"
+import { round } from "./numbers.mjs"
 
+/**
+ * @typedef {object} Theme
+ * @property {"dark" | "light"} name
+ * @property {string} bg page background
+ * @property {string} card card face
+ * @property {string} cardTop lighter top of a card face
+ * @property {string} text
+ * @property {string} muted secondary text
+ * @property {string} faint tertiary text and axes
+ * @property {string} accent orange
+ * @property {string} accent2 blue
+ * @property {string} accent3 green
+ * @property {string} accent4 purple
+ * @property {string} border card outline
+ */
+
+/** @type {{ dark: Theme, light: Theme }} */
 export const THEMES = {
   dark: {
     name: "dark",
@@ -15,9 +36,7 @@ export const THEMES = {
     accent2: "#58a6ff",
     accent3: "#3fb950",
     accent4: "#d2a8ff",
-    border: "rgba(255,255,255,0.12)",
-    grid: "rgba(255,255,255,0.05)",
-    glow: "#E84A27"
+    border: "rgba(255,255,255,0.12)"
   },
   light: {
     name: "light",
@@ -31,43 +50,37 @@ export const THEMES = {
     accent2: "#0969da",
     accent3: "#1a7f37",
     accent4: "#8250df",
-    border: "rgba(19,41,75,0.16)",
-    grid: "rgba(19,41,75,0.06)",
-    glow: "#E84A27"
+    border: "rgba(19,41,75,0.16)"
   }
 }
 
-export const FONT = "ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+/** Width of the full-width cards: the skills marquee and the live GitHub cards. */
+export const CARD_WIDTH = 1200
+
+const FONT = "ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
 export const MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 
+/** @param {unknown} value */
 export function escapeXml(value) {
   return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
 }
 
-// mulberry32.
-export function rng(seed) {
-  let state = seed >>> 0
-  return () => {
-    state = (state + 0x6d2b79f5) >>> 0
-    let t = state
-    t = Math.imul(t ^ (t >>> 15), t | 1)
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-}
-
-// GitHub renders SVGs with system fonts, so widths are estimated, never measured.
+/**
+ * GitHub renders SVGs with system fonts, so widths are estimated, never measured.
+ * @param {string} text
+ * @param {number} size font size in pixels
+ * @param {number} [weight]
+ */
 export function textWidth(text, size, weight = 400) {
   const factor = weight >= 600 ? 0.6 : 0.54
   return text.length * size * factor
 }
 
-export function round(value) {
-  return Math.round(value * 100) / 100
-}
-
-// Every document carries the shared material defs, so any card can use the lit surfaces.
-// `background: false` leaves the page showing through, for images with rounded corners.
+/**
+ * A complete SVG file. Every document carries the shared material defs, so any card can use the
+ * lit surfaces. `background: false` leaves the page showing through, for images with rounded corners.
+ * @param {{ id: string, width: number, height: number, title: string, theme: Theme, defs?: string, body: string, background?: boolean }} options
+ */
 export function svgDocument({ id, width, height, title, theme, defs = "", body, background = true }) {
   return [
     `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-labelledby="${id}-title" font-family="${FONT}">`,
@@ -79,7 +92,12 @@ export function svgDocument({ id, width, height, title, theme, defs = "", body, 
   ].join("\n")
 }
 
-// A card is a slab: a shaded edge below the face and a sheen along the top.
+/**
+ * A card is a slab: a shaded edge below the face and a sheen along the top. Returns the gradient
+ * for `<defs>` and the rectangles for the body.
+ * @param {Theme} theme
+ * @param {{ x: number, y: number, width: number, height: number, radius?: number, id: string }} frame
+ */
 export function cardFrame(theme, { x, y, width, height, radius = 18, id }) {
   const dark = theme.name === "dark"
   const side = dark ? "#04070d" : "#c3cddd"
@@ -89,44 +107,40 @@ export function cardFrame(theme, { x, y, width, height, radius = 18, id }) {
   }
 }
 
-// A pill with a shaded edge and a gloss: `face` is the paint of the top surface.
+/**
+ * A pill with a shaded edge and a gloss: `face` is the paint of the top surface, otherwise the
+ * pill is a translucent tint of `color`. Returns the markup and the width it takes.
+ * @param {Theme} theme
+ * @param {{ x: number, y: number, label: string, color: string, size?: number, face?: string }} options
+ */
 export function chip(theme, { x, y, label, color, size = 15, face }) {
   const padding = 14
   const width = round(textWidth(label, size, 600) + padding * 2)
   const height = size + 16
-  const top = face ? `<rect width="${width}" height="${height}" rx="${height / 2}" fill="${face}" stroke="${color}" stroke-opacity="0.5"/>` : `<rect width="${width}" height="${height}" rx="${height / 2}" fill="${color}" fill-opacity="0.22" stroke="${color}" stroke-opacity="0.55"/>`
+  const top = face
+    ? `<rect width="${width}" height="${height}" rx="${height / 2}" fill="${face}" stroke="${color}" stroke-opacity="0.5"/>`
+    : `<rect width="${width}" height="${height}" rx="${height / 2}" fill="${color}" fill-opacity="0.22" stroke="${color}" stroke-opacity="0.55"/>`
   return {
     width,
     svg: `<g transform="translate(${round(x)} ${round(y)})"><rect y="3" width="${width}" height="${height}" rx="${height / 2}" fill="${shade(color, -0.5)}"/>${top}<rect x="1.5" y="1.5" width="${width - 3}" height="${round(height / 2 - 2)}" rx="${round(height / 2 - 2)}" fill="url(#mat-gloss)" opacity="0.4"/><text x="${width / 2}" y="${height / 2 + size * 0.36}" text-anchor="middle" font-size="${size}" font-weight="600" fill="${theme.text}">${escapeXml(label)}</text></g>`
   }
 }
 
-// Film grain and soft glow, the two effects that make flat SVG shapes read as material.
-export function grainFilter(id, alpha = 0.06) {
-  return `<filter id="${id}" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="${alpha}"/></feComponentTransfer></filter>`
-}
-
+/**
+ * Soft glow: the blurred shape merged under itself.
+ * @param {string} id
+ * @param {number} [deviation] blur radius
+ */
 export function glowFilter(id, deviation = 4) {
   return `<filter id="${id}" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="${deviation}" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`
 }
 
+/**
+ * @param {string} id
+ * @param {[string, string, number?][]} stops [offset, colour, opacity] triples
+ * @param {{ x1?: string, y1?: string, x2?: string, y2?: string }} [direction] left to right by default
+ */
 export function linearGradient(id, stops, { x1 = "0", y1 = "0", x2 = "1", y2 = "0" } = {}) {
   const body = stops.map(([offset, color, opacity]) => `<stop offset="${offset}" stop-color="${color}"${opacity === undefined ? "" : ` stop-opacity="${opacity}"`}/>`).join("")
   return `<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${body}</linearGradient>`
-}
-
-const channelsOf = (hex) => hex.replace("#", "").match(/.{2}/g).map((c) => parseInt(c, 16))
-const hexOf = (channels) => `#${channels.map((c) => Math.round(c).toString(16).padStart(2, "0")).join("")}`
-
-// Mix a hex colour toward white (amount > 0) or black (amount < 0) for lit and shaded faces.
-export function shade(hex, amount) {
-  const target = amount > 0 ? 255 : 0
-  return hexOf(channelsOf(hex).map((c) => c + (target - c) * Math.abs(amount)))
-}
-
-// Blend two hex colours; t = 0 gives `a`, t = 1 gives `b`.
-export function mix(a, b, t) {
-  const from = channelsOf(a)
-  const to = channelsOf(b)
-  return hexOf(from.map((c, i) => c + (to[i] - c) * t))
 }

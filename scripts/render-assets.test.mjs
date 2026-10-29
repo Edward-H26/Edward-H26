@@ -2,15 +2,15 @@ import assert from "node:assert/strict"
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs"
 import path from "node:path"
 import { describe, it } from "node:test"
-import { fileURLToPath } from "node:url"
-import { allTimeSummary, codeSummary, commitsByRepository, computeStreaks, summarize, topLanguages, weeklyGrid } from "./github-stats.mjs"
-import { LINKS, PAPERS, PAPER_BUTTONS, PROFILE, SKILL_ROWS, paperButtonId } from "./profile-data.mjs"
-import { renderDynamicAssets, renderStaticAssets } from "./render-assets.mjs"
+import { LINKS, PAPERS, PAPER_BUTTONS, PROFILE, SKILL_ROWS, paperButtonId } from "./data/index.mjs"
+import { allTimeSummary, codeSummary, commitsByRepository, computeStreaks, summarize, topLanguages, weeklyGrid } from "./github/index.mjs"
+import { ASSETS_DIR, FIGURES_DIR, FIXTURE_PATH, README_PATH, ROOT } from "./paths.mjs"
 import { renderReadme } from "./readme.mjs"
-import { THEMES, escapeXml, rng } from "./svg.mjs"
+import { renderDynamicAssets } from "./render-dynamic.mjs"
+import { renderStaticAssets } from "./render-static.mjs"
+import { THEMES, escapeXml } from "./svg.mjs"
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
-const fixture = JSON.parse(readFileSync(path.join(ROOT, "scripts/fixtures/github.json"), "utf8"))
+const fixture = JSON.parse(readFileSync(FIXTURE_PATH, "utf8"))
 const CAPTURED_AT = new Date(fixture.capturedAt)
 // Hand-written event cases use a fixed clock so refreshing the fixture cannot change them.
 const FIXED_NOW = new Date("2026-09-02T12:00:00Z")
@@ -38,7 +38,10 @@ function assertWellFormed(svg, name) {
 function assertSelfContained(svg, name) {
   const urls = svg.match(/https?:\/\/[^\s"')]+/g) ?? []
   const namespaces = ["http://www.w3.org/2000/svg", "http://www.w3.org/1999/xlink"]
-  assert.ok(urls.every((url) => namespaces.includes(url)), `${name} must not reference external resources`)
+  assert.ok(
+    urls.every((url) => namespaces.includes(url)),
+    `${name} must not reference external resources`
+  )
   assert.ok(svg.startsWith('<svg xmlns="http://www.w3.org/2000/svg"'))
   assert.match(svg, /aria-labelledby="([a-z0-9-]+)-title"[\s\S]*<title id="\1-title">/)
   const markup = svg.replace(/data:[^"]+/g, "")
@@ -67,11 +70,8 @@ describe("static assets", () => {
     }
   })
 
-
-
-
   it("links every icon to the address in the profile data and keeps the README blocks in sync", () => {
-    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    const readme = readFileSync(README_PATH, "utf8")
     for (const link of LINKS) {
       const anchor = new RegExp(`<a href="([^"]+)" title="[^"]*"><picture><source[^>]*srcset="assets/link-${link.id}-dark.svg"`)
       const match = readme.match(anchor)
@@ -82,13 +82,13 @@ describe("static assets", () => {
   })
 
   it("lists every paper with its thumbnail, authors, and buttons in the README", () => {
-    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    const readme = readFileSync(README_PATH, "utf8")
     for (const paper of PAPERS) {
       if (paper.thumbnail) {
         assert.ok(readme.includes(`src="assets/papers/${paper.id}.svg"`), `${paper.id} thumbnail`)
         const thumbnail = files[`papers/${paper.id}.svg`]
         assert.ok(thumbnail.includes("data:image/webp;base64,") && thumbnail.includes(escapeXml(paper.thumbnail.badge)), `${paper.id} thumbnail content`)
-        assert.ok(existsSync(path.join(ROOT, "assets/papers/figures", `${paper.id}.webp`)), `${paper.id} figure file`)
+        assert.ok(existsSync(path.join(FIGURES_DIR, `${paper.id}.webp`)), `${paper.id} figure file`)
       } else assert.ok(!readme.includes(`assets/papers/${paper.id}`), `${paper.id} must stay text-only`)
       assert.ok(readme.includes(escapeXml(paper.title)), `${paper.id} title`)
       assert.ok(readme.includes(`<b>${PROFILE.name}</b>`))
@@ -107,7 +107,7 @@ describe("static assets", () => {
   })
 
   it("references the rendered 3D loop in both themes, each committed and within budget", () => {
-    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    const readme = readFileSync(README_PATH, "utf8")
     for (const scene of ["planet"]) {
       for (const theme of ["dark", "light"]) {
         const file = `assets/scenes/${scene}-${theme}.webp`
@@ -119,16 +119,16 @@ describe("static assets", () => {
   })
 
   it("opens with the animated SVG hero in both themes", () => {
-    const readme = readFileSync(path.join(ROOT, "README.md"), "utf8")
+    const readme = readFileSync(README_PATH, "utf8")
     for (const theme of ["dark", "light"]) assert.ok(readme.includes(`assets/hero-${theme}.svg`), `README lacks the ${theme} hero`)
     assert.ok(files["hero-dark.svg"].includes(PROFILE.taglines[0]), "hero is missing the taglines")
   })
 
   it("matches the committed files in assets/ (run: npm run render)", () => {
     for (const [name, svg] of Object.entries(files)) {
-      assert.equal(readFileSync(path.join(ROOT, "assets", name), "utf8"), svg, `${name} is stale`)
+      assert.equal(readFileSync(path.join(ASSETS_DIR, name), "utf8"), svg, `${name} is stale`)
     }
-    const stale = readdirSync(path.join(ROOT, "assets")).filter((file) => /-(dark|light)\.svg$/.test(file) && !(file in files))
+    const stale = readdirSync(ASSETS_DIR).filter((file) => /-(dark|light)\.svg$/.test(file) && !(file in files))
     assert.deepEqual(stale, [], "assets/ has generated files that no renderer produces")
   })
 })
@@ -137,7 +137,13 @@ describe("github stats", () => {
   it("computes streaks like GitHub, including a still-alive streak with no contribution today", () => {
     const days = ["2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02"].map((date, i) => ({ date, count: [1, 0, 2, 3, 1, 0][i] }))
     assert.deepEqual(computeStreaks(days, "2026-09-02"), { current: 3, longest: 3 })
-    assert.deepEqual(computeStreaks(days.map((d) => ({ ...d, count: 0 })), "2026-09-02"), { current: 0, longest: 0 })
+    assert.deepEqual(
+      computeStreaks(
+        days.map((d) => ({ ...d, count: 0 })),
+        "2026-09-02"
+      ),
+      { current: 0, longest: 0 }
+    )
     assert.deepEqual(computeStreaks([{ date: "2026-09-02", count: 4 }], "2026-09-02"), { current: 1, longest: 1 })
     assert.deepEqual(computeStreaks([], "2026-09-02"), { current: 0, longest: 0 })
   })
@@ -151,24 +157,67 @@ describe("github stats", () => {
       totalPullRequestReviewContributions: 0,
       totalRepositoryContributions: 3,
       commitContributionsByRepository: repos.map(([name, count]) => ({ repository: { primaryLanguage: name ? { name } : null }, contributions: { totalCount: count } })),
-      contributionCalendar: { totalContributions: days.reduce((acc, [, count]) => acc + count, 0), weeks: [{ contributionDays: days.map(([date, contributionCount]) => ({ date, contributionCount })) }] }
+      contributionCalendar: {
+        totalContributions: days.reduce((acc, [, count]) => acc + count, 0),
+        weeks: [{ contributionDays: days.map(([date, contributionCount]) => ({ date, contributionCount })) }]
+      }
     })
     const history = [
-      year(2025, [["2025-08-01", 4], ["2025-12-30", 1], ["2025-12-31", 2]], [["Python", 6], [null, 9]]),
-      year(2026, [["2026-01-01", 3], ["2026-01-02", 0], ["2026-03-01", 5]], [["TypeScript", 4], ["Python", 1]])
+      year(
+        2025,
+        [
+          ["2025-08-01", 4],
+          ["2025-12-30", 1],
+          ["2025-12-31", 2]
+        ],
+        [
+          ["Python", 6],
+          [null, 9]
+        ]
+      ),
+      year(
+        2026,
+        [
+          ["2026-01-01", 3],
+          ["2026-01-02", 0],
+          ["2026-03-01", 5]
+        ],
+        [
+          ["TypeScript", 4],
+          ["Python", 1]
+        ]
+      )
     ]
     const summary = allTimeSummary(history, "2025-12-30", "2026-01-02")
     assert.deepEqual(summary.totals, { contributions: 15, commits: 40510, issues: 4, pullRequests: 2, reviews: 0, repositories: 6 })
-    assert.deepEqual(summary.days.map((day) => day.date), ["2025-12-30", "2025-12-31", "2026-01-01", "2026-01-02"])
+    assert.deepEqual(
+      summary.days.map((day) => day.date),
+      ["2025-12-30", "2025-12-31", "2026-01-01", "2026-01-02"]
+    )
     assert.deepEqual(computeStreaks(summary.days, "2026-01-02"), { current: 3, longest: 3 })
-    assert.deepEqual(summary.languages, [{ name: "Python", commits: 7 }, { name: "TypeScript", commits: 4 }])
+    assert.deepEqual(summary.languages, [
+      { name: "Python", commits: 7 },
+      { name: "TypeScript", commits: 4 }
+    ])
   })
 
   it("puts each GitHub week of the account's lifetime in a column of its year's row", () => {
-    const days = [{ date: "2025-12-30", count: 1 }, { date: "2025-12-31", count: 2 }, { date: "2026-01-01", count: 4 }, { date: "2026-01-04", count: 8 }, { date: "2026-01-07", count: 16 }]
+    const days = [
+      { date: "2025-12-30", count: 1 },
+      { date: "2025-12-31", count: 2 },
+      { date: "2026-01-01", count: 4 },
+      { date: "2026-01-04", count: 8 },
+      { date: "2026-01-07", count: 16 }
+    ]
     assert.deepEqual(weeklyGrid(days, "2025-12-30", "2026-01-06"), [
       { year: 2025, weeks: [{ column: 52, count: 3 }] },
-      { year: 2026, weeks: [{ column: 0, count: 4 }, { column: 1, count: 8 }] }
+      {
+        year: 2026,
+        weeks: [
+          { column: 0, count: 4 },
+          { column: 1, count: 8 }
+        ]
+      }
     ])
     // 2028 starts on a Saturday and is a leap year, so its last day would open a 54th week.
     assert.deepEqual(weeklyGrid([{ date: "2028-12-31", count: 2 }], "2028-12-30", "2028-12-31"), [{ year: 2028, weeks: [{ column: 52, count: 2 }] }])
@@ -176,7 +225,15 @@ describe("github stats", () => {
 
   it("ranks languages by bytes across non-fork repositories", () => {
     const nodes = [
-      { isFork: false, languages: { edges: [{ size: 300, node: { name: "Python", color: "#3572A5" } }, { size: 100, node: { name: "R", color: 'url("x")' } }] } },
+      {
+        isFork: false,
+        languages: {
+          edges: [
+            { size: 300, node: { name: "Python", color: "#3572A5" } },
+            { size: 100, node: { name: "R", color: 'url("x")' } }
+          ]
+        }
+      },
       { isFork: true, languages: { edges: [{ size: 9000, node: { name: "Go", color: "#00ADD8" } }] } },
       { isFork: false, languages: { edges: [{ size: 100, node: { name: "Python", color: "#3572A5" } }] } }
     ]
@@ -187,34 +244,47 @@ describe("github stats", () => {
     assert.deepEqual(topLanguages([]), [])
   })
 
-
-
   it("ranks repositories by commits", () => {
-    const byCommits = commitsByRepository({ commitContributionsByRepository: [
-      { repository: { name: "b", primaryLanguage: { name: "Python", color: "#3572A5" } }, contributions: { totalCount: 5 } },
-      { repository: { name: "a", primaryLanguage: null }, contributions: { totalCount: 5 } },
-      { repository: { name: "empty", primaryLanguage: null }, contributions: { totalCount: 0 } }
-    ] })
-    assert.deepEqual(byCommits, [{ name: "a", commits: 5, color: "#8b949e" }, { name: "b", commits: 5, color: "#3572A5" }])
+    const byCommits = commitsByRepository({
+      commitContributionsByRepository: [
+        { repository: { name: "b", primaryLanguage: { name: "Python", color: "#3572A5" } }, contributions: { totalCount: 5 } },
+        { repository: { name: "a", primaryLanguage: null }, contributions: { totalCount: 5 } },
+        { repository: { name: "empty", primaryLanguage: null }, contributions: { totalCount: 0 } }
+      ]
+    })
+    assert.deepEqual(byCommits, [
+      { name: "a", commits: 5, color: "#8b949e" },
+      { name: "b", commits: 5, color: "#3572A5" }
+    ])
     assert.deepEqual(commitsByRepository({}), [])
   })
 
   it("sums lines of code per week and per repository over the past year", () => {
-    const now = new Date("2026-09-02T12:00:00Z")
+    const now = FIXED_NOW
     const sunday = Date.UTC(2026, 7, 30) / 1000
     const week = 7 * 86400
     const stats = {
-      app: [{ w: sunday, a: 120, d: 30, c: 2 }, { w: sunday - week, a: 10, d: 5, c: 1 }, { w: sunday - 60 * week, a: 999, d: 999, c: 9 }],
+      app: [
+        { w: sunday, a: 120, d: 30, c: 2 },
+        { w: sunday - week, a: 10, d: 5, c: 1 },
+        { w: sunday - 60 * week, a: 999, d: 999, c: 9 }
+      ],
       lib: [{ w: sunday - week, a: 40, d: 0, c: 1 }],
       quiet: []
     }
-    const nodes = [{ name: "app", primaryLanguage: { color: "#3178c6" } }, { name: "lib", primaryLanguage: null }]
+    const nodes = [
+      { name: "app", primaryLanguage: { color: "#3178c6" } },
+      { name: "lib", primaryLanguage: null }
+    ]
     const code = codeSummary(stats, nodes, now)
     assert.deepEqual({ added: code.added, deleted: code.deleted, commits: code.commits }, { added: 170, deleted: 35, commits: 4 })
     assert.equal(code.weeks.length, 52)
     assert.deepEqual(code.weeks.at(-1), { week: sunday, added: 120, deleted: 30, commits: 2 })
     assert.deepEqual(code.weeks.at(-2), { week: sunday - week, added: 50, deleted: 5, commits: 2 })
-    assert.deepEqual(code.byRepo.map((repo) => `${repo.name}:${repo.added}:${repo.color}`), ["app:130:#3178c6", "lib:40:#8b949e"])
+    assert.deepEqual(
+      code.byRepo.map((repo) => `${repo.name}:${repo.added}:${repo.color}`),
+      ["app:130:#3178c6", "lib:40:#8b949e"]
+    )
     assert.deepEqual(codeSummary({}, [], now).byRepo, [])
   })
 
@@ -270,7 +340,10 @@ describe("dynamic assets", () => {
     for (const theme of ["dark", "light"]) {
       const legend = [...files[`contrib-3d-${theme}.svg`].matchAll(/width="22" height="22" rx="3" fill="(#[0-9a-f]{6})"\/><text [^>]*>([^<]+)<title>/g)].map(([, color, name]) => ({ color, name }))
       assert.equal(legend.length, Math.min(6, stats.commitLanguages.length))
-      assertDistinct(legend.map((entry) => entry.color), `${theme} donut`)
+      assertDistinct(
+        legend.map((entry) => entry.color),
+        `${theme} donut`
+      )
       const card = files[`stats-${theme}.svg`]
       const barColors = stats.languages.map((_, i) => card.match(new RegExp(`id="stats-lang-${i}"[^>]*><stop[^>]*><stop offset="0.45" stop-color="(#[0-9a-f]{6})"`))[1])
       assertDistinct(barColors, `${theme} stats card`)
@@ -287,7 +360,7 @@ describe("dynamic assets", () => {
       const svg = renderDynamicAssets(quiet)[`contrib-3d-${theme}.svg`]
       assertWellFormed(svg, `quiet ${theme} 3D chart`)
       assertSelfContained(svg, `quiet ${theme} 3D chart`)
-      assert.ok(!svg.includes("<path d=\"M"), "no language arcs without commits")
+      assert.ok(!svg.includes('<path d="M'), "no language arcs without commits")
     }
   })
 
@@ -301,14 +374,15 @@ describe("dynamic assets", () => {
     assert.ok(idle.includes("0 commits in the past year"))
   })
 
-
   it("keeps bars inside their tracks and copes with an empty repository list", () => {
-    const svg = renderDynamicAssets({ ...stats, languages: [{ name: "Python", color: "#3572A5", share: 100 }], repositoriesByCommits: [{ name: "only", commits: 7, color: "#3572A5" }] })["stats-light.svg"]
-    assert.deepEqual([...svg.matchAll(/to="([\d.]+)" begin="0\.3s"/g)].map((m) => Number(m[1])), [280])
+    const svg = renderDynamicAssets({ ...stats, languages: [{ name: "Python", color: "#3572A5", share: 100 }], repositoriesByCommits: [{ name: "only", commits: 7, color: "#3572A5" }] })[
+      "stats-light.svg"
+    ]
+    assert.deepEqual(
+      [...svg.matchAll(/to="([\d.]+)" begin="0\.3s"/g)].map((m) => Number(m[1])),
+      [280]
+    )
     const empty = renderDynamicAssets({ ...stats, repositoriesByCommits: [] })
     assertWellFormed(empty["stats-dark.svg"], "empty stats")
   })
-
-
-
 })

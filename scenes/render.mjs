@@ -14,6 +14,9 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { chromium } from "playwright"
 
+// The callbacks handed to page.evaluate and page.waitForFunction run inside the page, not in Node.
+/* global window */
+
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(HERE, "..")
 const OUT = path.join(ROOT, "assets/scenes")
@@ -29,7 +32,18 @@ export const SCENES = {
   planet: { width: 1440, height: 672, loop: 20, output: 950, fps: 10, quality: 52 }
 }
 
-const MIME = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json", ".css": "text/css", ".glb": "model/gltf-binary", ".wasm": "application/wasm", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" }
+const MIME = {
+  ".html": "text/html",
+  ".js": "text/javascript",
+  ".mjs": "text/javascript",
+  ".json": "application/json",
+  ".css": "text/css",
+  ".glb": "model/gltf-binary",
+  ".wasm": "application/wasm",
+  ".jpg": "image/jpeg",
+  ".png": "image/png",
+  ".webp": "image/webp"
+}
 
 function serve(root) {
   const server = createServer((request, response) => {
@@ -80,7 +94,9 @@ async function main(args) {
       const quality = Number(option(args, "quality", scene.quality?.[theme] ?? scene.quality ?? 80))
       const page = await browser.newPage({ viewport: { width: size.width, height: size.height }, deviceScaleFactor: 1 })
       page.on("pageerror", (error) => console.error(`[${name} ${theme}] page error:`, error.message))
-      page.on("console", (message) => { if (message.type() === "error" || message.type() === "warning") console.error(`[${name} ${theme}]`, message.text()) })
+      page.on("console", (message) => {
+        if (message.type() === "error" || message.type() === "warning") console.error(`[${name} ${theme}]`, message.text())
+      })
       await page.goto(`http://127.0.0.1:${port}/scenes/${name}.html?theme=${theme}&width=${size.width}&height=${size.height}&loop=${scene.loop}&scale=${size.width / scene.width}`)
       await page.waitForFunction(() => window.__scene && window.__scene.ready, null, { timeout: 60000 })
       mkdirSync(OUT, { recursive: true })

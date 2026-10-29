@@ -11,7 +11,16 @@
     "scenes": "npm --prefix scenes run render --",
     "render:dynamic": "node scripts/render-assets.mjs --dynamic",
     "preview:dynamic": "node scripts/render-assets.mjs --dynamic --fixture",
-    "test": "node --test scripts/render-assets.test.mjs",
-    "fixture": "node scripts/render-assets.mjs --dynamic --save-fixture"
+    "test": "node --test",
+    "fixture": "node scripts/render-assets.mjs --dynamic --save-fixture",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10"
   }
 }
