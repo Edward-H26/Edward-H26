@@ -27,7 +27,7 @@
     Previously, I received my B.S. in Data Science and Information Science with minors in Computer Science and Statistics at <strong><a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a></strong>.
   </p>
   <p>
-    I am an applied AI researcher and full-stack software engineer creating new ways for people to interact with AI. I push the frontier of agentic experiences through rapid internal experiments. My research spans self-evolving multi-agent orchestration, dynamic context engineering for long-term memory, 3D-aware generative modeling, multimodal reasoning, and the next generation of human-AI interfaces.
+    I am an applied AI researcher and full-stack software engineer creating new ways for people to interact with AI. I push the frontier of agentic experiences through rapid internal experiments. My research spans recursive self-evolving multi-agent orchestration, dynamic context engineering for long-term memory, 3D-aware generative modeling, multimodal reasoning, and the next generation of human-AI interfaces.
   </p>
 </div>
 
@@ -170,11 +170,11 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 
 ### **Computer Vision and Machine Learning Group, University of Illinois Urbana-Champaign**
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
-_Champaign, IL · 2025.05 - Present_
+_Champaign, IL · 2025.05 - 2026.08_
 
-- Develop adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% on ImageNet and enhancing pose accuracy by 4.2x on PASCAL3D+.
-- Scale foundation model training across TB-level datasets on National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and low-level custom kernels, improving pose accuracy by 11.3% on PASCAL3D+ and reducing generation latency by 78.7% at p95.
-- Build camera-controlled novel view synthesis in video generation to advance real-time perception for SLAM, visual odometry, and 3D reconstruction, decreasing LPIPS by 21.0% on GSO and FV4D by 52.0% on OmniObject3D compared to SV4D 2.0.
+- Developed adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% on ImageNet and enhancing pose accuracy by 4.2x on PASCAL3D+.
+- Scaled distributed foundation-model training across TB-level datasets on National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and custom CUDA kernels, improving pose accuracy by 11.3% on PASCAL3D+ and reducing generation latency by 78.7% at p95.
+- Implemented camera-controlled novel view synthesis for video generation pipelines to advance real-time perception for SLAM, visual odometry, and 3D reconstruction, decreasing LPIPS by 21.0% on GSO and FV4D by 52.0% on OmniObject3D compared to SV4D 2.0.
 
 [![Lab](assets/badges/lab-page.svg)](https://vision.ischool.illinois.edu/people/)
 
@@ -182,19 +182,19 @@ _Champaign, IL · 2025.05 - Present_
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2026.02 - 2026.08_
 
-- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline class-incremental learning in multimodal foundation models across audio, image, and text without catastrophic forgetting or cross-modal alignment drift, increasing R@1 by 27.6% on AudioSet.
-- Implemented post-hoc tensor-level weight interpolation for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, training 499 sigmoid-parameterized coefficients instead of 182M parameters and increasing R@1 by 33.5% on AudioSet.
-- Optimized checkpoint fusion pipelines to compose frozen continual-learning checkpoints into one deployable model without additional inference latency, boosting last-task accuracy by 40.9% on UrbanSound8K.
+- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline class-incremental learning in multimodal foundation models across audio, image, and text without catastrophic forgetting or cross-modal alignment drift, increasing audio-to-text R@1 by 27.6% over the weaker source checkpoint and by 4.6% over the stronger one on AudioSet.
+- Implemented post-hoc tensor-level weight interpolation for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, minimizing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and decreasing memory fitting loss by 74.6% compared to fixed-coefficient interpolation.
+- Optimized checkpoint fusion pipelines to compose frozen continual-learning checkpoints into one deployable model without additional inference latency, improving last-task accuracy by 40.9% on UrbanSound8K and by 13.4% on CIFAR-100.
 
 [![NVIDIA Grant](assets/badges/nvidia-grant.svg)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
 ### **REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving**
-**Undergraduate Research Assistant, University of Illinois Urbana-Champaign (Advisor: Prof. Fan Lai)**<br/>
+**Undergraduate Research Assistant, University of Illinois Urbana-Champaign**<br/>
 _Champaign, IL · 2026.02 - 2026.06_
 
-- Proposed attention-based scoring for post-retrieval context compression in retrieval-augmented generation (RAG) to reuse generator attention traces across queries and update scores offline, achieving a 91.6% cache hit rate on HotpotQA.
-- Built reusable evidence views keyed to unique documents to scale compression cost with documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
-- Optimized online serving to keep context compression off the GPU critical path for high-volume production RAG traffic under strict per-request latency targets, minimizing compression latency by 99.3% compared to EXIT and 99.8% compared to FaviComp.
+- Designed attention-based scoring for post-retrieval context compression in retrieval-augmented generation (RAG) to reuse generator attention traces across queries and update scores offline, achieving a 91.6% cache hit rate on HotpotQA and a 12.9% F1 gain.
+- Deployed reusable evidence views keyed to unique documents in order to scale compression cost with documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
+- Accelerated online serving to keep context compression off the GPU critical path, cutting compression latency by 99.3% compared to EXIT and 99.8% compared to FaviComp.
 
 [![IEEE ICDM 2026](assets/badges/icdm-2026.svg)](https://arxiv.org/abs/2609.11209)
 
@@ -204,9 +204,9 @@ _Champaign, IL · 2026.02 - 2026.06_
 **Research Intern (Advisor: Dr. Dhaval Patel)**<br/>
 _New York, NY · 2026.09 - Present_
 
-- Lead Model Context Protocol (MCP) server architecture for AssetOpsBench, granting large language model (LLM) agents typed access to failure-mode knowledge graphs, root-cause ranking, and intervention estimation via deterministic Neo4j queries with provenance.
-- Create fault-diagnosis reinforcement learning (RL) environments for multi-step LLM agents over predictive-maintenance telemetry from 100 machines to benchmark evidence gathering and repairs under hidden ground truth, look-alike faults, and partial observations.
-- Conduct extensive experiments on four LLM agents under one model and action budget, raising Top-1 diagnosis accuracy by 88.0% compared to a Plan-Execute agent, and profile inference with PyTorch Profiler and Nsight on H100 GPUs, cutting latency by 52.7%.
+- Lead Model Context Protocol (MCP) server architecture for AssetOpsBench that exposes failure-mode knowledge graphs, root-cause ranking, and intervention estimation as typed actions for multi-turn tool-use large language model (LLM) agents via deterministic Neo4j queries with provenance, cutting standing tool context by 98.5% and raising top-1 tool accuracy to 70.0%.
+- Design fault-diagnosis reinforcement learning (RL) environments over predictive-maintenance telemetry from 100 machines with verifiable, cost-aware rewards, priced observations, partial observability, and reward-hacking checks for multi-step LLM agents, raising top-1 diagnosis accuracy by 88.0% compared to a Plan-Execute agent.
+- Streamline the environment for RLVR post-training with GRPO on verl via Gymnasium and OpenEnv with seeded reproducible rollouts, degradation schedules, graded abstention, and log-checked verifiers, and profile rollouts at kernel level with PyTorch Profiler and Nsight Systems on H100 GPUs, cutting per-episode inference latency by 52.7% across 761 failure windows.
 
 [![AssetOpsBench](assets/badges/assetopsbench.svg)](https://github.com/IBM/AssetOpsBench)
 
@@ -214,18 +214,18 @@ _New York, NY · 2026.09 - Present_
 **Technical Lead**<br/>
 _Champaign, IL · 2026.01 - 2026.08_
 
-- Spearheaded end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
-- Managed production operations for agentic workflows with logging, evaluation harnesses, and monthly iteration cycles in partnership with client stakeholders, saving 75% of per-client deployment time through a reusable Deployment Kit.
-- Integrated self-evolving per-user memory across sessions and cost-aware model routing into enterprise agent workflows, saving 96.0% in token cost compared to GPT-5.1.
+- Led end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
+- Managed production operations for agentic workflows with logging, tracing, evaluation harnesses, and monthly iteration cycles for client stakeholders, saving 75% of per-client deployment time through a reusable deployment framework.
+- Integrated recursive self-evolving memory architecture across sessions and cost-aware model routing into enterprise agent workflows, saving 96.0% in token cost compared to GPT-5.1.
 
 [![Website](assets/badges/website.svg)](https://miramemoria.com/)
 
 ### **Two by Two Learning Center**
 **Full Stack Developer**<br/>
-_Champaign, IL · 2025.08 - 2026.08_
+_Champaign, IL · 2025.08 - 2025.12_
 
-- Launched NOODEIA, a multi-agent tutoring platform for K-12 students who are falling behind their grade levels, to plan, critique, and monitor each learner with long-horizon memory, boosting user confidence by 2.4x in counterbalanced within-subjects studies.
-- Implemented self-evolving long-term memory architectures on Neo4j to retrieve contextually relevant prior interactions, accelerating memory queries by 3.6x compared to recency-biased FIFO memory architectures on PostgreSQL.
+- Launched NOODEIA, a multi-agent tutoring platform for K-12 students below grade level, to plan, critique, and monitor each user with long-horizon memory, boosting user confidence by 144.0% and increasing independence by 135.0% in counterbalanced within-subjects studies.
+- Implemented recursive self-evolving long-term memory on Neo4j to retrieve contextually relevant interactions, boosting query speed by 3.6x compared to recency-biased FIFO memory on PostgreSQL and minimizing cross-session retrieval to 2.1 s across 1,000 conversation histories.
 - Deployed complexity-aware model selection across planner, retrieval, solver, and critic stages to score each request and reserve frontier-tier inference for priority calls, eliminating 89.9% of monthly serving cost compared to GPT-4o.
 
 [![Website](assets/badges/website.svg)](https://noodiea.onrender.com/)
@@ -234,44 +234,43 @@ _Champaign, IL · 2025.08 - 2026.08_
 **Data Analyst**<br/>
 _Champaign, IL · 2024.08 - 2024.12_
 
-- Built paired pre/post analytics pipelines over survey data from 9,935 incoming students to better allocate program resources in the upcoming years, increasing correct responses among the next cohort by 14.0% with 61.9% fewer ambiguous responses.
-- Conducted A/B tests on two consent scenarios stratified across five gender-identity subgroups to locate where misconceptions persisted after each workshop, increasing accuracy on consent comprehension by 19.5%.
-- Proposed scenario-based learning modules for underrepresented subgroups by coding open-ended bystander responses into five-theme taxonomies, minimizing spread in direct-intervention rates by 5.6x.
+- Built paired pre/post analytics pipelines over survey data from 9,935 incoming students within a 19,800-student population, raising the next cohort's correct responses by 14.0% and decreasing ambiguous responses by 61.9%.
+- Conducted A/B tests on two consent scenarios stratified across five gender-identity subgroups to locate where misconceptions persisted after each workshop, increasing accuracy on consent comprehension by 19.5% and cutting persistent misconceptions by 41.6%.
+- Designed scenario-based learning modules for underrepresented subgroups by coding open-ended bystander responses into five-theme taxonomies, narrowing the spread in direct-intervention rates 5.6x and raising direct-intervention intent by 36.8% in those subgroups.
 
 ## Research Projects
 
 ### **Long-Form Video-Language and Audio-Visual Social Understanding**
-**Undergraduate Research Assistant, University of Illinois Urbana-Champaign**<br/>
 _Champaign, IL · 2025.12 - 2026.05_
 
-- Trained streaming video-language models with temporal transformer blocks for long-form video understanding beyond 30-minute sequences, boosting zero-shot accuracy by 17.4%.
-- Designed context fluidity pipelines to fuse facial action units, body pose, and prosody through cross-modal attention and infer social intent and conversational role from raw recordings, achieving 89.1% accuracy on speaker-role classification.
-- Built end-to-end annotation pipelines for full-length clinical sessions with automatic transcription and labeling, increasing speaker-role inversion accuracy to 90.0%.
+- Trained streaming video-language models with temporal transformer blocks for long-form video understanding beyond 30-minute sequences, boosting zero-shot accuracy by 17.4% and cutting peak memory by 58.2% compared to full-sequence attention.
+- Proposed multimodal fusion pipelines to combine facial action units, body pose, and prosody through cross-modal attention and infer social intent and conversational role from raw recordings, achieving 89.1% accuracy on speaker-role classification over a 2,108-turn bootstrap.
+- Scaled end-to-end annotation pipelines for full-length clinical sessions with automatic transcription and labeling, processing recordings 1.4x to 1.7x faster than real time and increasing speaker-role inversion accuracy to 90.0%.
 
 ### **Multi-agent Research Synthesis Engine**
-**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.11 - 2026.05_
 
-- Orchestrated eight specialized agents across a 12-step workflow for automated literature synthesis to cover planning, retrieval, drafting, reflection, and safety review in a single loop with LLM-as-judge evaluation, achieving 95.5% accuracy on deep research pipelines.
-- Developed concurrent multi-source retrieval across Semantic Scholar and Tavily with production-grade fallback handling for API failures, minimizing query latency by 40.2%.
-- Built customized Model Context Protocol servers to centralize governed tool access behind unified interfaces over academic databases, code repositories, and document stores, minimizing serving latency by 87.5%.
+- Orchestrated eight specialized agents across a 12-step workflow for literature synthesis to cover planning, retrieval, drafting, reflection, and safety review in a single loop with LLM-as-judge evaluation, scoring 0.955 overall and 0.925 on relevance, safety, and clarity.
+- Developed concurrent multi-source retrieval across Semantic Scholar and Tavily with production-grade fallback handling for API failures, cutting query latency from 8.2 s to 4.9 s, a 40.2% reduction.
+- Designed customized Model Context Protocol servers to centralize governed tool access behind unified interfaces over academic databases, code repositories, and document stores, cutting serving latency by 87.5%.
 
 [![Project Page](assets/badges/project-page.svg)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
 
 ### **Realistic Neural Style Transfer Architecture**
-**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.01 - 2025.08_
 
 - Proposed style transfer frameworks to maintain photorealistic results under highly abstract styles with VGG perceptual losses and edge-preserving constraints, improving SSIM by 77.0% and MS-SSIM by 49.0% compared to TensorFlow's NST.
-- Proposed multi-layer Gram matrix losses with adaptive layer weighting to suppress texture and chromatic artifacts, boosting SSIM by 4.4x and MS-SSIM by 6.4x compared to ChatGPT-4o.
+- Optimized multi-layer Gram matrix losses with adaptive layer weighting to suppress texture and chromatic artifacts, boosting SSIM by 4.4x and MS-SSIM by 6.4x compared to ChatGPT-4o.
+- Formulated Sobel edge and total variation losses to keep contours sharp and suppress high-frequency noise, decreasing LPIPS by 23.0% and DISTS by 17.0% compared to TensorFlow's NST.
 
 [![GitHub](assets/badges/github.svg)](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
 
 ### **Anime Statistics and Analysis Platform, ASAP**
-**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.02 - 2025.06_
 
-- Deployed interactive R Shiny analytics platforms to surface anime popularity trends and market opportunities with live Jikan REST API data and predictive analysis on shinyapps.io.
+- Deployed interactive R Shiny analytics platforms to surface anime popularity trends and market opportunities with live Jikan REST API data on 18,000 titles and predictive analysis on shinyapps.io.
+- Developed R data pipelines to fetch, clean, and store 18,000 anime titles from the Jikan REST API in SQLite, adding genre, studio, and producer fields for five interactive analysis and recommendation modules.
+- Trained random forest models to predict anime scores from engagement features, decreasing test RMSE by 90.1% and raising R² by 3.7% compared to linear regression.
 
 [![GitHub](assets/badges/github.svg)](https://github.com/Edward-H26/Anime-Statistics-and-Analysis-Platform-ASAP)
 
@@ -281,9 +280,9 @@ _Champaign, IL · 2025.02 - 2025.06_
 **Teaching Assistant**<br/>
 _Champaign, IL · 2023.08 - 2026.05_
 
-- Led weekly lab sections and office hours for in-person and online sessions, mentoring 1,200 students every semester through data science foundations in Python, statistical inference, data wrangling, and machine learning.
-- Authored DISCOVERY Guides on the course website to provide detailed explanations with applied Python and statistics walkthroughs.
-- Designed problem sets, exam questions, test suites, and autograder scripts to deliver instant, consistent feedback to 1,200 students every semester on Mastery Platform.
+- Led weekly lab sections and office hours for in-person and online sessions, mentoring 1,200 students every semester and 7,200+ over six semesters for data science foundations in Python, statistical inference, data wrangling, and machine learning.
+- Authored DISCOVERY Guides on the course website to provide detailed explanations with applied Python and statistics walkthroughs, giving students a self-serve reference for every lab and homework.
+- Designed problem sets, exam questions, test suites, and autograder scripts to deliver instant, consistent feedback to 1,200 students every semester on Mastery Platform, cutting grading turnaround from days to minutes.
 
 [![Guides](assets/badges/guides.svg)](https://discovery.cs.illinois.edu/guides/)
 [![Mastery](assets/badges/mastery.svg)](https://mastery.cs.illinois.edu/)
@@ -294,9 +293,9 @@ _Champaign, IL · 2023.08 - 2026.05_
 **Lead Developer**<br/>
 _Champaign, IL · 2026.03 - Present_
 
-- Engineer an MIT-licensed open-source agent harness for agentic software development, packaging skills, slash commands, specialized agents, hooks, and MCP servers into a one-prompt install, minimizing environment initialization time by 99.5%.
-- Implement three-tier capability routers for the agent harness to optimize tokens, latency, and cost on every turn, with keyword matching and session-memory recall ahead of a 4.5 s model reasoning pass, resolving intent in 120 ms and running 37.5x faster than routing every prompt through the model.
-- Design the security layer: four lifecycle hooks gating every tool call before it runs, auto-denial of destructive commands, directory-scoped edit sandboxing, and a permission and gitignore audit, eliminating 92.7% of router latency.
+- Maintain an MIT-licensed open-source agent harness for agentic software development, packaging 95 skills, 71 slash commands, 14 specialized agents, 4 hooks, and 10 MCP servers into a one-prompt install that sets up the full plan, build, review, test, and ship workflow on a fresh machine, eliminating 99.5% of environment initialization steps.
+- Automate capability routing with a three-tier router that matches each prompt to the skills and agents it needs by keyword, then by session-memory recall, and only then by a 4.5 s model reasoning pass, to load only the matched capabilities and optimize tokens, latency, and cost on every turn, resolving keyword-matched prompts in 120 ms and decreasing routing latency by 97.3% compared to model-only routing.
+- Improve the security layer with four lifecycle hooks that screen every tool call before execution, auto-deny destructive shell commands, and confine edits to a directory-scoped sandbox, cutting accidental destructive actions by 32.6%.
 
 [![GitHub](assets/badges/github.svg)](https://github.com/Edward-H26/OnePromptClaudeCode)
 
@@ -340,11 +339,11 @@ _Champaign, IL · 2026.03 - Present_
 
 **AI/ML Frameworks:** PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, LangGraph, NCCL, GPU/TPU/CPU architecture
 
-**Foundation Model Training:** continual learning, synthetic data generation, distributed training, quantization, context compression, knowledge distillation, pre-training, post-training, reinforcement learning, RLHF, reward modeling, SFT, DPO, PPO, GRPO, RLAIF, RLVF, model alignment and instruction following, test-time training, token pruning, kernel optimization, LoRA, QLoRA, FSDP
+**Foundation Model Training:** continual learning, synthetic data generation, distributed training, quantization, context compression, knowledge distillation, pre-training, post-training, reinforcement learning, RLHF, reward modeling, supervised fine-tuning (SFT), direct preference optimization (DPO), PPO, GRPO, RLAIF, RLVF, model alignment and instruction following, test-time training, token pruning, kernel optimization, LoRA, QLoRA, FSDP
 
-**Computer Vision:** diffusion models, 3D/4D image and video generation, novel view synthesis, multi-view geometry, 3D reconstruction, world models, depth estimation, visual-inertial odometry, SLAM, spatial intelligence, autoregressive models, flow matching, NeRFs, 3D Gaussian Splatting, OpenCV
+**Computer Vision:** diffusion models, 3D/4D image and video generation, novel view synthesis, multi-view geometry consistency, 3D reconstruction, world models, depth estimation, visual-inertial odometry, SLAM, spatial intelligence, autoregressive models, flow matching, NeRFs, 3D Gaussian Splatting, OpenCV
 
-**Agentic AI:** multi-agent orchestration, tool calling, agent harness, long-horizon agent memory, context engineering, RAG, MCP, policy guardrails, sub-agent parallelization, prompt caching, computer-use agents, multi-step autonomous workflows, A2A
+**Agentic AI:** multi-agent orchestration, tool calling, agent harness, long-horizon agent memory, context engineering, RAG, MCP, policy guardrails, sub-agent parallelization, prompt caching, computer-use agents, A2A
 
 **Full-stack Development:** TypeScript, JavaScript, React, Tailwind CSS, FastAPI, HTML5, Vue, Angular
 
@@ -358,7 +357,7 @@ _Champaign, IL · 2026.03 - Present_
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skills-marquee-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/skills-marquee-light.svg" />
-  <img width="100%" alt="Skills: PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, NCCL, LangGraph, distributed training, FSDP, LoRA, QLoRA, quantization, kernel optimization, SFT, RLHF, DPO, GRPO, continual learning, knowledge distillation, synthetic data generation, world models, diffusion models, flow matching, 3D/4D image and video generation, multi-view geometry, 3D reconstruction, novel view synthesis, spatial intelligence, NeRFs, 3D Gaussian Splatting, SLAM, visual-inertial odometry, depth estimation, OpenCV, multi-agent orchestration, agent harness, context engineering, prompt caching, MCP, A2A, tool calling, long-horizon agent memory, RAG, computer-use agents, policy guardrails, Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, TypeScript, JavaScript, React, Vue, Angular, HTML5, Tailwind CSS, FastAPI, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, AWS, GCP, Azure, Figma, Canva, Adobe Creative Suite, Microsoft Office Suite, Unity" src="assets/skills-marquee-dark.svg" />
+  <img width="100%" alt="Skills: PyTorch, CUDA, JAX, TensorFlow, Triton, TensorRT, vLLM, SGLang, NeMo, Megatron-LM, NCCL, LangGraph, distributed training, FSDP, LoRA, QLoRA, quantization, kernel optimization, SFT, RLHF, DPO, GRPO, continual learning, knowledge distillation, synthetic data generation, world models, diffusion models, flow matching, 3D/4D image and video generation, multi-view geometry consistency, 3D reconstruction, novel view synthesis, spatial intelligence, NeRFs, 3D Gaussian Splatting, SLAM, visual-inertial odometry, depth estimation, OpenCV, multi-agent orchestration, agent harness, context engineering, prompt caching, MCP, A2A, tool calling, long-horizon agent memory, RAG, computer-use agents, policy guardrails, Python, C++, C, Rust, Go, Java, Swift, Kotlin, Ruby, R, TypeScript, JavaScript, React, Vue, Angular, HTML5, Tailwind CSS, FastAPI, PostgreSQL, Neo4j, MongoDB, Kafka, Docker, Kubernetes, CI/CD, AWS, GCP, Azure, Figma, Canva, Adobe Creative Suite, Microsoft Office Suite, Unity" src="assets/skills-marquee-dark.svg" />
 </picture>
 
 <p align="center">
