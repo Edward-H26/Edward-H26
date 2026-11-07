@@ -168,31 +168,31 @@ Sarthak Jain, <b>Qiran Hu</b>, Zhen Zhu, Yaoyao Liu<br/>
 
 ## Research Experience
 
-### **Computer Vision and Machine Learning Group, University of Illinois Urbana-Champaign**
+### **Computer Vision and Machine Learning Group**
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2025.05 - 2026.08_
 
-- Developed adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% on ImageNet and enhancing pose accuracy by 4.2x on PASCAL3D+.
-- Scaled distributed foundation-model training across TB-level datasets on National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and custom CUDA kernels, improving pose accuracy by 11.3% on PASCAL3D+ and reducing generation latency by 78.7% at p95.
+- Proposed adaptive conditioning methods for 3D-aware synthetic data generation to enhance world model understanding and embodied agent performance in interactive simulations with geometry-conditioned diffusion approaches, reducing FID by 32.8% on ImageNet and improving pose accuracy by 4.2x on PASCAL3D+.
+- Scaled foundation-model training through distributed methods across TB-level datasets on National Center for Supercomputing Applications (NCSA) HPC clusters to enforce multi-view consistency with 4-bit NF4 quantization and custom CUDA kernels, decreasing FID by 18.3% on AC3S-50 and reducing generation latency by 78.7% at p95.
 - Implemented camera-controlled novel view synthesis for video generation pipelines to advance real-time perception for SLAM, visual odometry, and 3D reconstruction, decreasing LPIPS by 21.0% on GSO and FV4D by 52.0% on OmniObject3D compared to SV4D 2.0.
 
 [![Lab](assets/badges/lab-page.svg)](https://vision.ischool.illinois.edu/people/)
 
-### **Multi-modal Generative Models for Continual Learning, University of Illinois Urbana-Champaign**
+### **Multi-modal Generative Models for Continual Learning**
 **Undergraduate Research Assistant (Advisor: Prof. Yaoyao Liu)**<br/>
 _Champaign, IL · 2026.02 - 2026.08_
 
-- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline class-incremental learning in multimodal foundation models across audio, image, and text without catastrophic forgetting or cross-modal alignment drift, increasing audio-to-text R@1 by 27.6% over the weaker source checkpoint and by 4.6% over the stronger one on AudioSet.
-- Implemented post-hoc tensor-level weight interpolation for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, minimizing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and decreasing memory fitting loss by 74.6% compared to fixed-coefficient interpolation.
-- Optimized checkpoint fusion pipelines to compose frozen continual-learning checkpoints into one deployable model without additional inference latency, improving last-task accuracy by 40.9% on UrbanSound8K and by 13.4% on CIFAR-100.
+- Selected for NVIDIA Academic Grant Program Award, AMD University Program, and Lambda Research Grant to streamline class-incremental learning in multimodal foundation models across audio, image, and text without catastrophic forgetting or cross-modal alignment drift, increasing audio-to-text R@1 by 27.6% on AudioSet and raising last-task accuracy by 40.9% on UrbanSound8K.
+- Implemented post-hoc tensor-level weight interpolation for multimodal retrieval on National Artificial Intelligence Research Resource (NAIRR) HPC clusters, minimizing trainable parameters from 182M to 499 sigmoid-parameterized coefficients and decreasing training time by 90.2% compared to LwF.
+- Optimized checkpoint fusion pipelines to compose frozen checkpoints into one deployable model without additional inference latency, retaining 99.6% of audio-to-text R@1 after shrinking the exemplar memory by 90.0% and enhancing last-task accuracy by 10.9% on CIFAR-100.
 
 [![NVIDIA Grant](assets/badges/nvidia-grant.svg)](https://ischool.illinois.edu/news-events/news/2026/04/liu-receives-support-ai-project-through-nvidia-academic-grant-program)
 
-### **REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving**
-**Undergraduate Research Assistant, University of Illinois Urbana-Champaign**<br/>
+### **Reusable Evidence View Aggregation for Context-Efficient RAG Serving**
+**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2026.02 - 2026.06_
 
-- Designed attention-based scoring for post-retrieval context compression in retrieval-augmented generation (RAG) to reuse generator attention traces across queries and update scores offline, achieving a 91.6% cache hit rate on HotpotQA and a 12.9% F1 gain.
+- Designed attention-based scoring for post-retrieval context compression in retrieval-augmented generation (RAG) to reuse generator attention traces across queries and update scores offline, achieving a 91.6% cache hit rate and boosting F1 by 12.9% on HotpotQA.
 - Deployed reusable evidence views keyed to unique documents in order to scale compression cost with documents rather than query volume, improving F1 by 13.2% on Natural Questions and decreasing online compression overhead by 6.1x at under 40 ms per request.
 - Accelerated online serving to keep context compression off the GPU critical path, cutting compression latency by 99.3% compared to EXIT and 99.8% compared to FaviComp.
 
@@ -204,9 +204,9 @@ _Champaign, IL · 2026.02 - 2026.06_
 **Research Intern (Advisor: Dr. Dhaval Patel)**<br/>
 _New York, NY · 2026.09 - Present_
 
-- Lead Model Context Protocol (MCP) server architecture for AssetOpsBench that exposes failure-mode knowledge graphs, root-cause ranking, and intervention estimation as typed actions for multi-turn tool-use large language model (LLM) agents via deterministic Neo4j queries with provenance, cutting standing tool context by 98.5% and raising top-1 tool accuracy to 70.0%.
-- Design fault-diagnosis reinforcement learning (RL) environments over predictive-maintenance telemetry from 100 machines with verifiable, cost-aware rewards, priced observations, partial observability, and reward-hacking checks for multi-step LLM agents, raising top-1 diagnosis accuracy by 88.0% compared to a Plan-Execute agent.
-- Streamline the environment for RLVR post-training with GRPO on verl via Gymnasium and OpenEnv with seeded reproducible rollouts, degradation schedules, graded abstention, and log-checked verifiers, and profile rollouts at kernel level with PyTorch Profiler and Nsight Systems on H100 GPUs, cutting per-episode inference latency by 52.7% across 761 failure windows.
+- Lead Model Context Protocol (MCP) server architecture for AssetOpsBench that serves failure-mode knowledge graphs, root-cause ranking, and intervention estimation to multi-turn tool-use large language model (LLM) agents via deterministic Neo4j queries with provenance, raising top-1 tool accuracy by 12.9% compared to per-server sub-agents and cutting standing tool context by 98.5%.
+- Design fault-diagnosis reinforcement learning (RL) environments on a hydraulic test rig with verifiable cost-aware rewards, priced observations, and reward-hacking checks for multi-step LLM agents, raising top-1 diagnosis accuracy by 42.6 percentage points compared to a Plan-Execute agent and eliminating 87.7% of model calls per episode.
+- Streamline the diagnosis environment into standard Gymnasium and OpenEnv training interfaces for RLVR post-training with GRPO on verl, minimizing per-episode inference latency by 52.7% across 47 recorded fault combinations and saving 47.5% in maintenance cost compared to a do-nothing policy.
 
 [![AssetOpsBench](assets/badges/assetopsbench.svg)](https://github.com/IBM/AssetOpsBench)
 
@@ -214,9 +214,9 @@ _New York, NY · 2026.09 - Present_
 **Technical Lead**<br/>
 _Champaign, IL · 2026.01 - 2026.08_
 
-- Led end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x compared to traditional approaches.
-- Managed production operations for agentic workflows with logging, tracing, evaluation harnesses, and monthly iteration cycles for client stakeholders, saving 75% of per-client deployment time through a reusable deployment framework.
-- Integrated recursive self-evolving memory architecture across sessions and cost-aware model routing into enterprise agent workflows, saving 96.0% in token cost compared to GPT-5.1.
+- Led end-to-end agentic workflow deployments across MCP servers, sub-agents, and agent skills with multi-agent orchestration, permission-aware tool calling, and policy guardrails, accelerating product delivery by 4.0x and boosting overall task success by 17.9% on CL-bench.
+- Managed production operations for agentic workflows with logging, tracing, evaluation harnesses, and monthly iteration cycles for client stakeholders, reducing serving cost by 90.5% compared to GPT-4o and improving rule-application task success by 31.2% on CL-bench.
+- Integrated recursive self-evolving memory architecture across sessions with cost-aware model routing into enterprise agent workflows, saving 96.0% in token cost compared to GPT-5.1 and increasing procedural task success by 71.4% on CL-bench.
 
 [![Website](assets/badges/website.svg)](https://miramemoria.com/)
 
@@ -224,30 +224,32 @@ _Champaign, IL · 2026.01 - 2026.08_
 **Full Stack Developer**<br/>
 _Champaign, IL · 2025.08 - 2025.12_
 
-- Launched NOODEIA, a multi-agent tutoring platform for K-12 students below grade level, to plan, critique, and monitor each user with long-horizon memory, boosting user confidence by 144.0% and increasing independence by 135.0% in counterbalanced within-subjects studies.
-- Implemented recursive self-evolving long-term memory on Neo4j to retrieve contextually relevant interactions, boosting query speed by 3.6x compared to recency-biased FIFO memory on PostgreSQL and minimizing cross-session retrieval to 2.1 s across 1,000 conversation histories.
-- Deployed complexity-aware model selection across planner, retrieval, solver, and critic stages to score each request and reserve frontier-tier inference for priority calls, eliminating 89.9% of monthly serving cost compared to GPT-4o.
+- Launched NOODEIA, a multi-agent tutoring platform for K-12 students below grade level, to plan, critique, and monitor each user with long-horizon memory, boosting user confidence by 2.44x and increasing independence by 2.35x in counterbalanced within-subjects studies.
+- Implemented recursive self-evolving long-term memory on Neo4j to retrieve contextually relevant interactions, accelerating query speed by 3.6x compared to recency-biased FIFO memory on PostgreSQL and minimizing cross-session retrieval to 2.1 s.
+- Deployed complexity-aware model selection across planner, retrieval, solver, and critic stages to score each request and route it to the smallest capable model, eliminating 89.9% of monthly serving cost compared to GPT-4o and routing 75% of calls to lighter model tiers.
 
 [![Website](assets/badges/website.svg)](https://noodiea.onrender.com/)
 
-### **WRC, University of Illinois Urbana-Champaign**
+### **WRC**
 **Data Analyst**<br/>
 _Champaign, IL · 2024.08 - 2024.12_
 
-- Built paired pre/post analytics pipelines over survey data from 9,935 incoming students within a 19,800-student population, raising the next cohort's correct responses by 14.0% and decreasing ambiguous responses by 61.9%.
-- Conducted A/B tests on two consent scenarios stratified across five gender-identity subgroups to locate where misconceptions persisted after each workshop, increasing accuracy on consent comprehension by 19.5% and cutting persistent misconceptions by 41.6%.
-- Designed scenario-based learning modules for underrepresented subgroups by coding open-ended bystander responses into five-theme taxonomies, narrowing the spread in direct-intervention rates 5.6x and raising direct-intervention intent by 36.8% in those subgroups.
+- Built paired pre/post analytics pipelines over survey data from 9,935 incoming students, raising correct responses by 14.0% and decreasing ambiguous responses by 61.9%.
+- Conducted A/B tests on two consent scenarios to locate where misconceptions persisted after each workshop, increasing accuracy on consent comprehension by 19.5% and cutting persistent misconceptions by 41.6%.
+- Designed scenario-based learning modules for underrepresented subgroups, raising correct responses on bystander scenarios by 36.8% and narrowing the gap in correct-response rates between subgroups 5.6x.
 
 ## Research Projects
 
 ### **Long-Form Video-Language and Audio-Visual Social Understanding**
+**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.12 - 2026.05_
 
-- Trained streaming video-language models with temporal transformer blocks for long-form video understanding beyond 30-minute sequences, boosting zero-shot accuracy by 17.4% and cutting peak memory by 58.2% compared to full-sequence attention.
-- Proposed multimodal fusion pipelines to combine facial action units, body pose, and prosody through cross-modal attention and infer social intent and conversational role from raw recordings, achieving 89.1% accuracy on speaker-role classification over a 2,108-turn bootstrap.
+- Proposed memory-efficient streaming video-language models with temporal transformer blocks for long-form video understanding beyond 30-minute sequences, boosting zero-shot accuracy by 17.4% and cutting peak memory by 58.2% compared to full-sequence attention.
+- Developed multimodal fusion pipelines to combine facial action units, body pose, and prosody through cross-modal attention and infer social intent and conversational role from raw recordings, achieving 89.1% accuracy on speaker-role classification over a 2,108-turn bootstrap.
 - Scaled end-to-end annotation pipelines for full-length clinical sessions with automatic transcription and labeling, processing recordings 1.4x to 1.7x faster than real time and increasing speaker-role inversion accuracy to 90.0%.
 
 ### **Multi-agent Research Synthesis Engine**
+**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.11 - 2026.05_
 
 - Orchestrated eight specialized agents across a 12-step workflow for literature synthesis to cover planning, retrieval, drafting, reflection, and safety review in a single loop with LLM-as-judge evaluation, scoring 0.955 overall and 0.925 on relevance, safety, and clarity.
@@ -257,6 +259,7 @@ _Champaign, IL · 2025.11 - 2026.05_
 [![Project Page](assets/badges/project-page.svg)](https://salt-lab-human-ai-assignment-3-buildi-srcuistreamlit-app-zweknl.streamlit.app/)
 
 ### **Realistic Neural Style Transfer Architecture**
+**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.01 - 2025.08_
 
 - Proposed style transfer frameworks to maintain photorealistic results under highly abstract styles with VGG perceptual losses and edge-preserving constraints, improving SSIM by 77.0% and MS-SSIM by 49.0% compared to TensorFlow's NST.
@@ -266,6 +269,7 @@ _Champaign, IL · 2025.01 - 2025.08_
 [![GitHub](assets/badges/github.svg)](https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture)
 
 ### **Anime Statistics and Analysis Platform, ASAP**
+**Undergraduate Research Assistant**<br/>
 _Champaign, IL · 2025.02 - 2025.06_
 
 - Deployed interactive R Shiny analytics platforms to surface anime popularity trends and market opportunities with live Jikan REST API data on 18,000 titles and predictive analysis on shinyapps.io.
@@ -276,7 +280,7 @@ _Champaign, IL · 2025.02 - 2025.06_
 
 ## Teaching
 
-### **CS 107 Data Science Discovery, University of Illinois Urbana-Champaign**
+### **CS 107 Data Science Discovery**
 **Teaching Assistant**<br/>
 _Champaign, IL · 2023.08 - 2026.05_
 
@@ -314,7 +318,7 @@ _Champaign, IL · 2026.03 - Present_
   <strong>M.S. in Data Science</strong><br/>
   Fu Foundation School of Engineering and Applied Science<br/>
   Courses: High Performance Machine Learning, Algorithms, Continual Learning and Memory Models, Computer Systems<br/>
-  <em>2026.08 - Expected 2028.05</em>
+  <em>2026.09 - Expected 2028.05</em>
 </p>
 <br clear="left"/>
 
